@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Интерактивное дерево научных статей с аннотациями и PDF-файлами">
+  <title>Атлас статей — интерактивная библиотека</title>
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script defer src="./graph.js"></script>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="brand-mark" aria-hidden="true">✳</div>
+      <div>
+        <p class="eyebrow">ИНТЕРАКТИВНАЯ БИБЛИОТЕКА</p>
+        <h1>Атлас статей</h1>
+        <p class="header-description">Исследуйте темы, открывайте аннотации и скачивайте оригиналы публикаций.</p>
+      </div>
+      <div class="header-tag">Демо-проект</div>
+    </header>
+
+    <main class="layout">
+      <section class="graph-panel" aria-label="Интерактивное дерево статей">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">КАРТА ЗНАНИЙ</p>
+            <h2>Дерево публикаций</h2>
+          </div>
+          <div class="legend">
+            <span><i class="legend-dot folder"></i> Папка</span>
+            <span><i class="legend-dot article"></i> Статья</span>
+          </div>
+        </div>
+        <div class="toolbar">
+          <button id="expand-all" type="button">Развернуть всё</button>
+          <button id="collapse-all" type="button">Свернуть папки</button>
+          <button id="fit" type="button">Показать всё</button>
+        </div>
+        <div class="graph-frame" id="graph-frame">
+          <svg id="graph" role="img" aria-label="Дерево папок и статей. Нажмите на узел, чтобы открыть карточку."></svg>
+          <div class="graph-hint">Колесо мыши — масштаб · Перетаскивание — перемещение · Нажатие — выбор</div>
+        </div>
+      </section>
+
+      <aside class="details-panel" aria-live="polite">
+        <p class="eyebrow">ИНФОРМАЦИЯ ОБ УЗЛЕ</p>
+        <div class="details-main" id="details-main">
+          <div class="details-placeholder">Выберите папку или статью на дереве.</div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <span>Атлас статей · Пример для GitHub Pages</span>
+      <span>Структура дерева определяется папками и записями в <code>data/articles.json</code></span>
+    </footer>
+  </div>
+</body>
+</html>
