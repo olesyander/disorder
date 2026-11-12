@@ -1,0 +1,114 @@
+/* disorder map — interactive hierarchy. Catalog comes from a separate private repository. */
+(() => {
+  'use strict';
+  const $ = (id) => document.getElementById(id);
+  if (!window.d3) { $('message').hidden = false; $('message').textContent = 'Unable to load the graph renderer.'; return; }
+  const svg = d3.select('#map');
+  const viewport = svg.append('g').attr('class', 'viewport');
+  const links = viewport.append('g');
+  const nodes = viewport.append('g');
+  const zoom = d3.zoom().scaleExtent([0.13, 3.5]).on('zoom', (event) => viewport.attr('transform', event.transform));
+  svg.call(zoom).on('dblclick.zoom', null);
+  const treeLayout = d3.tree().nodeSize([37, 255]).separation((a, b) => a.parent === b.parent ? 1 : 1.3);
+  let root, selected = null;
+  const labelLimit = 53;
+  function short(s, n = labelLimit) { return s.length > n ? s.slice(0, n - 1) + '…' : s; }
+  function el(tag, text) { const e = document.createElement(tag); e.textContent = text; return e; }
+  function hidePanel() {
+    $('drawer').classList.remove('open'); $('drawer').setAttribute('aria-hidden','true');
+    $('overlay').classList.remove('show'); selected = null;
+    nodes.selectAll('.node').classed('active', false);
+  }
+  function detail(data) {
+    selected = data.id;
+    $('paper-title').textContent = data.title || data.name;
+    $('authors').textContent = data.authors || 'Not identified';
+    $('abstract').textContent = data.abstract || 'Abstract not available.';
+    $('type-label').textContent = data.kind === 'book' ? 'BOOK' : 'ARTICLE';
+    const access = $('access'); access.replaceChildren();
+    const ext = $('external'); ext.replaceChildren();
+    if (data.access === 'restricted') {
+      access.append(el('strong', 'Restricted access'));
+      access.append(el('div', 'This file is not publicly available.'));
+    } else if (data.access === 'download' && data.downloadUrl) {
+      access.append(el('strong', 'Publicly available'));
+      const a=el('a','Download PDF');
+      a.href='./'+data.downloadUrl; a.target='_blank'; a.rel='noopener noreferrer'; a.setAttribute('download','');
+      ext.append(a);
+    } else if (data.sourceUrl) {
+      access.append(el('strong', 'Read at source'));
+      const a=el('a',data.sourceType==='arXiv' ? 'View on arXiv' : 'View publication');
+      a.href=data.sourceUrl; a.rel='noopener noreferrer'; a.target='_blank'; ext.append(a);
+    } else {
+      access.append(el('strong', 'PDF not publicly available'));
+    }
+    $('drawer').classList.add('open'); $('drawer').setAttribute('aria-hidden','false');
+    $('overlay').classList.add('show');
+    nodes.selectAll('.node').classed('active', n => n.data.id === selected);
+  }
+  function descendants(node) { return [node, ...(node.children || []).flatMap(descendants), ...(node._children || []).flatMap(descendants)]; }
+  function expand(node) { if (node._children) { node.children = node._children; node._children = null; } (node.children || []).forEach(expand); }
+  function collapse(node) { (node.children || []).forEach(collapse); if (node.children) { node._children = node.children; node.children = null; } }
+  function fit(duration = 400) {
+    const e = viewport.node().getBBox();
+    const area=$('canvas').getBoundingClientRect();
+    if (!e.width || !e.height || !area.width || !area.height) return;
+    const side = $('drawer').classList.contains('open') && area.width > 850 ? 410 : 0;
+    const usable = area.width - side;
+    const scale = Math.min(1.15, Math.max(.13, (usable - 105) / e.width), Math.max(.13,(area.height - 95) / e.height));
+    const x = (usable - e.width * scale)/2 - e.x*scale;
+    const y = (area.height - e.height * scale)/2 - e.y*scale;
+    svg.transition().duration(duration).call(zoom.transform,d3.zoomIdentity.translate(x,y).scale(scale));
+  }
+  function render(autoFit=false) {
+    const tree=treeLayout(root);
+    const list=tree.descendants();
+    const path=d3.linkHorizontal().x(d=>d.y).y(d=>d.x);
+    links.selectAll('path.link').data(tree.links(),d=>d.target.data.id)
+      .join('path').attr('class','link').attr('d',path);
+    const selection = nodes.selectAll('g.node').data(list,d=>d.data.id)
+      .join(enter => {
+        const g=enter.append('g').attr('class', d=>'node '+d.data.kind).attr('tabindex',0).attr('role','button');
+        g.append('circle'); g.append('text').attr('x',14).attr('dy','.35em');
+        g.append('title'); return g;
+      })
+      .attr('transform', d=>`translate(${d.y},${d.x})`)
+      .classed('active', d=>d.data.id===selected)
+      .on('click', (_event,d)=>activate(d))
+      .on('keydown', (event,d)=>{if (event.key==='Enter' || event.key===' ') {event.preventDefault();activate(d);}});
+    selection.select('circle').attr('r',d=>d.depth===0?10:d.data.kind==='folder'?7:5);
+    selection.select('text').text(d=>short(d.data.name,d.data.kind==='folder'?35:labelLimit));
+    selection.select('title').text(d=>d.data.name);
+    if (autoFit) fit();
+  }
+  function activate(node) {
+    if (node.data.kind === 'folder') {
+      hidePanel();
+      if (node.children) { node._children=node.children; node.children=null; }
+      else if(node._children){node.children=node._children;node._children=null;}
+      render(true);
+    } else detail(node.data);
+  }
+  $('expand').addEventListener('click',()=>{ if(!root)return;expand(root);render(true); });
+  $('collapse').addEventListener('click',()=>{
+    if(!root)return;
+    hidePanel();
+    // Keep the topic names visible, collapse their descendants.
+    expand(root);
+    (root.children||[]).forEach(collapse);
+    render(true);
+  });
+  $('close').addEventListener('click',hidePanel);
+  $('overlay').addEventListener('click',hidePanel);
+  window.addEventListener('keydown',event=>{if(event.key==='Escape')hidePanel();});
+  window.addEventListener('resize',()=>{if(root)fit(100);});
+  fetch('./catalog.json', {cache:'no-store'})
+    .then(response=>{if(!response.ok)throw Error('Catalog unavailable');return response.json();})
+    .then(data=>{
+      root=d3.hierarchy(data.tree);
+      // Start compact: root + main topics, expand folders manually or all at once.
+      (root.children||[]).forEach(collapse);
+      render(true);
+    })
+    .catch(()=>{ $('message').hidden=false;$('message').textContent='Unable to load the library catalog.'; });
+})();

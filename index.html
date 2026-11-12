@@ -1,61 +1,44 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Интерактивное дерево научных статей с аннотациями и PDF-файлами">
-  <title>Атлас статей — интерактивная библиотека</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c0e12">
+  <meta name="description" content="disorder map — a structured map of scientific literature.">
+  <title>disorder map</title>
   <link rel="stylesheet" href="./style.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-  <script defer src="./graph.js"></script>
 </head>
 <body>
-  <div class="page">
-    <header class="site-header">
-      <div class="brand-mark" aria-hidden="true">✳</div>
-      <div>
-        <p class="eyebrow">ИНТЕРАКТИВНАЯ БИБЛИОТЕКА</p>
-        <h1>Атлас статей</h1>
-        <p class="header-description">Исследуйте темы, открывайте аннотации и скачивайте оригиналы публикаций.</p>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">disorder <span>map</span></div>
+      <div class="actions">
+        <button type="button" class="action" id="expand" aria-label="Expand all folders">Expand all</button>
+        <button type="button" class="action" id="collapse" aria-label="Collapse all folders">Collapse all</button>
       </div>
-      <div class="header-tag">Демо-проект</div>
     </header>
-
-    <main class="layout">
-      <section class="graph-panel" aria-label="Интерактивное дерево статей">
-        <div class="panel-header">
-          <div>
-            <p class="eyebrow">КАРТА ЗНАНИЙ</p>
-            <h2>Дерево публикаций</h2>
-          </div>
-          <div class="legend">
-            <span><i class="legend-dot folder"></i> Папка</span>
-            <span><i class="legend-dot article"></i> Статья</span>
-          </div>
-        </div>
-        <div class="toolbar">
-          <button id="expand-all" type="button">Развернуть всё</button>
-          <button id="collapse-all" type="button">Свернуть папки</button>
-          <button id="fit" type="button">Показать всё</button>
-        </div>
-        <div class="graph-frame" id="graph-frame">
-          <svg id="graph" role="img" aria-label="Дерево папок и статей. Нажмите на узел, чтобы открыть карточку."></svg>
-          <div class="graph-hint">Колесо мыши — масштаб · Перетаскивание — перемещение · Нажатие — выбор</div>
-        </div>
-      </section>
-
-      <aside class="details-panel" aria-live="polite">
-        <p class="eyebrow">ИНФОРМАЦИЯ ОБ УЗЛЕ</p>
-        <div class="details-main" id="details-main">
-          <div class="details-placeholder">Выберите папку или статью на дереве.</div>
-        </div>
-      </aside>
+    <main class="canvas" id="canvas" aria-label="Interactive library tree">
+      <svg id="map" role="img" aria-label="Topic folders and publications. Click folders to expand and articles to read their details."></svg>
+      <div id="message" class="message" hidden></div>
     </main>
-
-    <footer>
-      <span>Атлас статей · Пример для GitHub Pages</span>
-      <span>Структура дерева определяется папками и записями в <code>data/articles.json</code></span>
-    </footer>
+    <div id="overlay" class="overlay" aria-hidden="true"></div>
+    <aside class="drawer" id="drawer" aria-label="Publication details" aria-hidden="true">
+      <div class="drawer-header">
+        <span id="type-label" class="tag">ARTICLE</span>
+        <button id="close" class="close" type="button" aria-label="Close details">×</button>
+      </div>
+      <div class="drawer-content">
+        <h1 id="paper-title"></h1>
+        <div class="field-label">AUTHORS</div>
+        <p id="authors"></p>
+        <div class="field-label">ABSTRACT</div>
+        <p id="abstract"></p>
+        <div id="access" class="access"></div>
+        <div id="external" class="external"></div>
+      </div>
+    </aside>
   </div>
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script defer src="./app.js"></script>
 </body>
 </html>

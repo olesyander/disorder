@@ -1,0 +1,1741 @@
+{
+  "title": "disorder map",
+  "tree": {
+    "id": "root",
+    "name": "disorder map",
+    "kind": "folder",
+    "children": [
+      {
+        "id": "topic:Disorder & Localization",
+        "name": "Disorder & Localization",
+        "kind": "folder",
+        "children": [
+          {
+            "id": "section:Disorder & Localization:Articles",
+            "name": "Articles",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "db021e7a93b4dcdc",
+                "name": "Coherent Matter Wave Transport in Speckle Potentials",
+                "title": "Coherent Matter Wave Transport in Speckle Potentials",
+                "authors": "R C Kuhn,, O Sigwarth, C Miniatura,, D Delande and C ADec M ̈uller",
+                "abstract": "This article studies multiple scattering of matter waves by a disordered optical potential in two and in three dimensions. We calculate fundamental transport quantities such as the scattering mean free path ls, the Boltzmann transport mean free path lB, and the Boltzmann diffusion constant DB, using a diagrammatic Green functions approach in the weak scattering regime. Coherent multiple scattering induces interference corrections known as weak localization which entail a reduced diffusion constant. We derive the corresponding[cond-mat.other] expressions for matter wave transport in an correlated speckle potential and provide the relevant parameter values for a possible experimental study of this coherent transport regime, including the critical crossover to the regime of strong or Anderson localization.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/cond-mat/0702183",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "288de55d19938858",
+                "name": "Coherent potential approximation for spatially correlated disorder",
+                "title": "Coherent potential approximation for spatially correlated disorder",
+                "authors": "Roland Zimmermann; Christoph Schindler",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "2259544a70f72ac2",
+                "name": "Diagrammatic Technique for Nonequilibrium Systems: Derivation and Applications",
+                "title": "Diagrammatic Technique for Nonequilibrium Systems: Derivation and Applications",
+                "authors": "P. I. Arseev",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://doi.org/10.3367/UFNr.0185.201512b.1271",
+                "sourceType": "DOI",
+                "downloadUrl": null
+              },
+              {
+                "id": "09708e781b2eb4b3",
+                "name": "Disorder, Path Integrals and Localization",
+                "title": "Disorder, Path Integrals and Localization",
+                "authors": "Gregg M. Gallatin",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "1cdc50612f2bc213",
+                "name": "Effective and asymptotic criticality of structurally disordered magnets",
+                "title": "Effective and asymptotic criticality of structurally disordered magnets",
+                "authors": "Vandoeuvre les Nancy, Francee",
+                "abstract": "27 Changes in magnetic critical behaviour of quenched structurally-disordered magnets are usually exemplified in experiments and in MC simulations by diluted systems consisting of magnetic and non-magnetic compo- nents. By our study we aim to show, that similar effects can be observed not only for diluted magnets with non-magnetic impurities, but may be implemented, e.g., by presence of two (and more) chemically different magnetic components as well. To this end, we consider a model of the structurally-disordered quenched magnet where all lattice sites are occupied by Ising-like spins of different length L. In such random spin length Ising model the length L of each spin is a random variable governed by the distribution function p(L). We show that this model belongs to the universality class of the site-diluted Ising model. This proves that both models are described by the same values of asymptotic critical exponents. However, their effective critical behaviour differs. As a case study we consider a quenched mixture of two different magnets, with values of elementary magnetic moments L1 = 1 and L2 = s, and of concentration c and 1 −c, correspond- ingly. We apply field-theoretical renormalization group approach to analyze the renormalization group flow for different initial conditions, triggered by s and c, and to calculate effective critical exponents further away[cond-mat.dis-nn] from the fixed points of the renormalization group transformation. We show how the effective exponents are governed by difference in properties of the magnetic components.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/2207.13655",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "b7f26028700c3ef3",
+                "name": "Effective theory for the propagation of a wave-packet in a disordered and nonlinear",
+                "title": "Effective theory for the propagation of a wave-packet in a disordered and nonlinear",
+                "authors": "",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "f531c4cb2a9604e7",
+                "name": "Fokker–Planck Equation for Transport of Wave Packets in Nonlinear Disordered Media",
+                "title": "Fokker–Planck Equation for Transport of Wave Packets in Nonlinear Disordered Media",
+                "authors": "Nicolas Cherroret; Thomas Wellens",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://doi.org/10.1103/PhysRevE.84.021114",
+                "sourceType": "DOI",
+                "downloadUrl": null
+              },
+              {
+                "id": "4cb975cd5b3e0b62",
+                "name": "Nonlinear Wave-Packet Dynamics in a Disordered Medium",
+                "title": "Nonlinear Wave-Packet Dynamics in a Disordered Medium",
+                "authors": "",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://doi.org/10.1103/PhysRevLett.104.103904",
+                "sourceType": "DOI",
+                "downloadUrl": null
+              },
+              {
+                "id": "c6a8bbbcc8265df1",
+                "name": "Path-Integral Approach to a Quantum Particle in a Random Potential",
+                "title": "Path-Integral Approach to a Quantum Particle in a Random Potential",
+                "authors": "",
+                "abstract": "The mean square displacement of a quantum particle in random potential with long-range correlations is computed exactly using the path-integral method. The result agrees with the replica method while the variation of the mean square displacement with the density of disorder is found in our approach.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "2e978a3b38dae0e4",
+                "name": "Spin-Glass Theory for Pedestrians",
+                "title": "Spin-Glass Theory for Pedestrians",
+                "authors": "Tommaso Castellani; Andrea Cavagna",
+                "abstract": "In these notes the main theoretical concepts and techniques in the field of mean-field spin-glasses are reviewed in a compact and pedagogical way, for the benefit of the graduate and undergraduate student. One particular spin- glass model is analyzed (the p-spin spherical model) by using three different approaches. Thermodynamics, covering pure states, overlaps, overlap distribution, replica symmetry breaking, and the static transition. Dynamics, covering the generating functional method, generalized Langevin equation, equations for the correlation and the response, the Mode Coupling approximation, and the dynamical transition. And finally complexity, covering the mean-field (TAP) free energy,[cond-mat.dis-nn] metastable states, entropy crisis, threshold energy, and saddles. Particular attention has been paid on the mutual consistency of the results obtained from the different methods. arXiv:cond-mat/0505032v1",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/cond-mat/0505032",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "dff29d4a46bac91a",
+                "name": "Superconducting fluctuations at arbitrary disorder strength",
+                "title": "Superconducting fluctuations at arbitrary disorder strength",
+                "authors": "Nikolai A. Stepanov",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://doi.org/10.1103/PhysRevB.97.144517",
+                "sourceType": "DOI",
+                "downloadUrl": null
+              }
+            ]
+          },
+          {
+            "id": "section:Disorder & Localization:Restricted Books",
+            "name": "Restricted Books",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "055c052c330ab847",
+                "name": "Dephasing in Disordered Systems at Low Temperatures",
+                "title": "Dephasing in Disordered Systems at Low Temperatures",
+                "authors": "Maximilian Treiber",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "9681d3f01c763e69",
+                "name": "Disorder and Critical Phenomena",
+                "title": "Disorder and Critical Phenomena",
+                "authors": "Giambattista Giacomin",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "a8f7165ccea4f9b9",
+                "name": "Introduction to the Theory of Disordered Systems",
+                "title": "Introduction to the Theory of Disordered Systems",
+                "authors": "A. S. Ioselevich (unverified)",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "f413798796f1b922",
+                "name": "Lifshitz — Disordered Systems (bibliographic details unverified)",
+                "title": "Lifshitz — Disordered Systems (bibliographic details unverified)",
+                "authors": "",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "de4f09029f7ff4b0",
+                "name": "Supersymmetry in Disorder and Chaos",
+                "title": "Supersymmetry in Disorder and Chaos",
+                "authors": "Konstantin B. Efetov",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "topic:Disordered Bosons",
+        "name": "Disordered Bosons",
+        "kind": "folder",
+        "children": [
+          {
+            "id": "section:Disordered Bosons:Articles",
+            "name": "Articles",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "ca7ea5041cdff518",
+                "name": "Bogoliubov Excitations of Disordered Bose-Einstein Condensates",
+                "title": "Bogoliubov Excitations of Disordered Bose-Einstein Condensates",
+                "authors": "Christopher Gaul; Cord A. Müller",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "5b6e4d3160e03ffc",
+                "name": "Bogoliubov theory of disordered Bose-Einstein condensates",
+                "title": "Bogoliubov theory of disordered Bose-Einstein condensates",
+                "authors": "Christopher Gaul",
+                "abstract": "The interplay of interaction, disorder, and Bose statistics is a long standing problem of condensed matter physics, known as the ”dirty boson problem”. Here, we present a Bogoliubov theory for disordered Bose-Einstein condensates, i.e., the bosonic field operator is split into the (mean field) condensate and (quantum) fluctuations. The mean-field part consists in solving the Gross-Pitaevskii equation describing the deformed condensate wave function. The condensate, in turn, determines the Hamiltonian for the quantum fluctuations. Diagonalizing this Bogoliubov Hamiltonian is a difficult task. As it is not desirable anyway to solve the problem for a particular realization of disorder, we resort to disorder perturbation theory in terms of Green functions and compute quantities like the disorder-averaged sound velocity or the mean free path of Bogoliubov excitations. Beyond that, the Bogoliubov theory is used to count the number of particles that are excited out of the condensate, even at zero temperature. This depletion of the condensate is shown to remain small in presence of disorder, which validates a posteriori the Bogoliubov ansatz.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "6061fda0e8bf3710",
+                "name": "Coherent Potential Approximation for Disordered Bosons",
+                "title": "Coherent Potential Approximation for Disordered Bosons",
+                "authors": "S. E. Schmittner; M. R. Zirnbauer",
+                "abstract": "— A family of random models for bosonic quasi-particle excitations, e.g. the vibrations of a disordered solid, is introduced. The generator of the linearized phase spaceDec dynamics of these models is the sum of a deterministic and a random part. The former 23 may describe any model of N identical phonon bands, while the latter is a d-dimensional generalization of the random matrix model of Lueck, Sommers, and Zirnbauer (LSZ). The models are constructed so as to exclude the unphysical occurrence of runaway solu- tions. By using the Efetov-Wegner supersymmetry method in combination with the new technique of superbosonization, the disordered boson model is cast in the form of a su- permatrix field theory. A self-consistent approximation of mean-field type arises from treating the field theory as a variational problem. The resulting scheme, referred to as a coherent potential approximation, becomes exact for large values of N. In the random-[math-ph] matrix limit, agreement with the results of LSZ is found. The self-consistency equation for the full d-dimensional problem is solved numerically.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/1012.5283",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "e146439d89998e51",
+                "name": "Collusion of Interactions and Disorder at the Superfluid–Insulator Transition",
+                "title": "Collusion of Interactions and Disorder at the Superfluid–Insulator Transition",
+                "authors": "",
+                "abstract": "We study the stability of the Wilson-Fisher fixed point of the quantum O(2N) vector model to quenched disorder in the large-N limit. While a random mass is strongly relevant at the Gaussian fixed point, its effect is screened by the strong interactions of the Wilson-Fisher fixed point. This enables a perturbative renormalization group study of the interplay of disorder and interactions about this fixed point. We show that, in contrast to the spiralling flows obtained in earlier double-ε expansions, the theory flows directly to a quantum critical point characterized by finite disorder and interactions. The critical exponents we obtain for this transition are in remarkable agreement witharXiv:1909.09167v1 numerical studies of the superfluid-Mott glass transition. We additionally discuss the stability of this fixed point to scalar and vector potential disorder and use proposed boson-fermion dualities to make conjectures regarding the effects of weak disorder on dual Abelian Higgs and Chern-Simons-Dirac fermion theories when N = 1. ‡ These authors contributed equally to the development of this work.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/1909.09167",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "9efdc8195ac501cb",
+                "name": "Dirty Bosons: Twenty Years Later",
+                "title": "Dirty Bosons: Twenty Years Later",
+                "authors": "",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/0810.3263",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "6e88b459a85df2ac",
+                "name": "Effective field theory of bosons with finite-range interaction",
+                "title": "Effective field theory of bosons with finite-range interaction",
+                "authors": "Alberto Cappellaro; Luca Salasnich",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "17ac10700d8c6034",
+                "name": "Expansion of a Bose–Einstein Condensate in the Presence of Disorder",
+                "title": "Expansion of a Bose–Einstein Condensate in the Presence of Disorder",
+                "authors": "",
+                "abstract": "Expansion of a Bose-Einstein condensate (BEC) is studied, in the presence of[cond-mat.other] a random potential. The expansion is controlled by a single parameter, (μτeff/ ̄h), where μ is the chemical potential, prior to the release of the BEC from the trap, and τeff is a transport relaxation time which characterizes the strength of the disorder. Repulsive interactions (nonlinearity) facilitate transport and can lead to diffusive spreading of the condensate which, in the absence of interactions, would have remained localized in the vicinity of its initial location.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/cond-mat/0701346",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "0fb036167205e8ea",
+                "name": "Flexural Phonons in Supported Graphene: From Pinning to Localization",
+                "title": "Flexural Phonons in Supported Graphene: From Pinning to Localization",
+                "authors": "",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "f5552fb9534fd12a",
+                "name": "Green’s function approach to the Bose-Hubbard",
+                "title": "Green’s function approach to the Bose-Hubbard",
+                "authors": "",
+                "abstract": "We analyse the distinction between the three different ground states presented by a system of spinless bosons with short-range interactions submitted to a random potential using the disordered Bose-Hubbard model. The criteria for identifying the superfluid, the Mott-insulator, and the Bose-glass phases at finite temperatures are discussed for small values of the kinetic energy associated with the tunnelling of particles between potential wells. Field theoretical considerations are applied in order to construct a diagrammatic hopping expansion to the finite- temperature Green’s function. By performing a summation of subsets of diagrams we[cond-mat.quant-gas] are able to find the condition to the long-range correlations which leads to the phase boundary between superfluid and insulating phases. The perturbative expression to the local correlations allows us to calculate an approximation to the single-particle density of states of low-energy excitations in the presence of small hopping, which characterizes unambiguously the distinction between the Mott-insulator and the Bose-glass phases. We obtain the phase diagram for bounded on-site disorder. It is demonstrated that our analysis is capable of going beyond the mean-field theory results for the classification of these different ground states.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/2108.13187",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "d112abc40f17f3d8",
+                "name": "Inelastic Multiple Scattering of Interacting Bosons in Weak Random Potentials",
+                "title": "Inelastic Multiple Scattering of Interacting Bosons in Weak Random Potentials",
+                "authors": "Tobias Geiger; Thomas Wellens; Andreas Buchleitner",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://doi.org/10.1103/PhysRevLett.109.030601",
+                "sourceType": "DOI",
+                "downloadUrl": null
+              },
+              {
+                "id": "c0ceb6d172fa5173",
+                "name": "Phase diagram of the disordered Bose-Hubbard model",
+                "title": "Phase diagram of the disordered Bose-Hubbard model",
+                "authors": "Theoretische Physik, ETH Zurich, Zurich, Switzerland",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "8a7cd033d5890585",
+                "name": "Simulating dirty bosons on a quantum computer",
+                "title": "Simulating dirty bosons on a quantum computer",
+                "authors": "Lindsay Bassman Oftelie,Roel Van Beeumen,Daan Camps,Wibe A de Jong,Maxime Dupont",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://doi.org/10.1088/1367-2630/ad1a2d",
+                "sourceType": "DOI",
+                "downloadUrl": null
+              },
+              {
+                "id": "d25a244159673792",
+                "name": "Superfluidity and sound propagation in disordered Bose gases",
+                "title": "Superfluidity and sound propagation in disordered Bose gases",
+                "authors": "Kevin T. Geier, Jeff Maki, Alberto Biella, Franco Dalfovo, Stefano Giorgini, Sandro Stringari",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "8ec011c19e59f0b8",
+                "name": "Supervised Learning of Few Dirty Bosons with Variable Particle Number",
+                "title": "Supervised Learning of Few Dirty Bosons with Variable Particle Number",
+                "authors": ", Barcelona, Spain",
+                "abstract": "We investigate the supervised machine learning of few interacting bosons in op- tical speckle disorder via artificial neural networks. The learning curve shows an approximately universal power-law scaling for different particle numbers and for different interaction strengths. We introduce a network architecture that can be trained and tested on heterogeneous datasets including different particle num- bers. This network provides accurate predictions for all system sizes included in the training set and, by design, is suitable to attempt extrapolations to (com- putationally challenging) larger sizes. Notably, a novel transfer-learning strategy[cond-mat.quant-gas] is implemented, whereby the learning of the larger systems is substantially ac- celerated and made consistently accurate by including in the training set many small-size instances.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/2010.03875",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "a3c82d77f4273b85",
+                "name": "Two-dimensional spectroscopy of bosonic collective excitations in disordered many-body systems",
+                "title": "Two-dimensional spectroscopy of bosonic collective excitations in disordered many-body systems",
+                "authors": "",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              }
+            ]
+          },
+          {
+            "id": "section:Disordered Bosons:Restricted Books",
+            "name": "Restricted Books",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "94ab8e1bc3618a04",
+                "name": "Bose-Condensed Gases at Finite Temperatures",
+                "title": "Bose-Condensed Gases at Finite Temperatures",
+                "authors": "Allan Griffin; Tetsuro Nikuni; Eugene Zaremba",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "78f81527fec4f708",
+                "name": "Field theory of disordered bosons",
+                "title": "Field theory of disordered bosons",
+                "authors": "",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "6a04e495e857c0a1",
+                "name": "Models for Disordered Phonons",
+                "title": "Models for Disordered Phonons",
+                "authors": "",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "b8b426ab3cdfb812",
+                "name": "Quantum Liquids: Bose Condensation and Cooper Pairing",
+                "title": "Quantum Liquids: Bose Condensation and Cooper Pairing",
+                "authors": "Leggett, A. J.",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "topic:Electron Systems",
+        "name": "Electron Systems",
+        "kind": "folder",
+        "children": [
+          {
+            "id": "section:Electron Systems:Articles",
+            "name": "Articles",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "373a35cd782276b8",
+                "name": "Beta-functions of non-linear σ-models for disordered and interacting electron systems",
+                "title": "Beta-functions of non-linear σ-models for disordered and interacting electron systems",
+                "authors": "Luca Dell’Anna",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "82d3accbbeaa252f",
+                "name": "Disordered Electron Liquid with Interactions",
+                "title": "Disordered Electron Liquid with Interactions",
+                "authors": "Alexander M. Finkelstein",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "464498d779ecf5b9",
+                "name": "Disordered electronic systems",
+                "title": "Disordered electronic systems",
+                "authors": "Patrick A. Lee; T. V. Ramakrishnan",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "57142b88a36bc47e",
+                "name": "Dynamical Mean-Field Theory of Disordered Electrons: Coherent Potential Approximation and Beyond",
+                "title": "Dynamical Mean-Field Theory of Disordered Electrons: Coherent Potential Approximation and Beyond",
+                "authors": "Václav Janiš",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "75126cd408be2ec7",
+                "name": "Electronic Thermal Conductivity of Disordered Metals",
+                "title": "Electronic Thermal Conductivity of Disordered Metals",
+                "authors": "",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://doi.org/10.1103/PhysRevB.70.155109",
+                "sourceType": "DOI",
+                "downloadUrl": null
+              },
+              {
+                "id": "61f2fdc2dbb6af40",
+                "name": "Heat diffusion in the disordered electron gas",
+                "title": "Heat diffusion in the disordered electron gas",
+                "authors": "G. Schwiete; A. M. Finkelstein",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "5bee4756ff236b23",
+                "name": "Hydrodynamic Cooperons in Electron Fluids: Schwinger–Keldysh Derivation and Quantum Corrections to Magnetoresistance",
+                "title": "Hydrodynamic Cooperons in Electron Fluids: Schwinger–Keldysh Derivation and Quantum Corrections to Magnetoresistance",
+                "authors": "Alberto Cortijo",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "20e6e0b3b24a66d3",
+                "name": "Interaction Corrections to Thermal Transport Coefficients",
+                "title": "Interaction Corrections to Thermal Transport Coefficients",
+                "authors": "",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://doi.org/10.1134/1.1884675",
+                "sourceType": "DOI",
+                "downloadUrl": null
+              },
+              {
+                "id": "c39441525ad3848c",
+                "name": "Introduction to the Integer Quantum Hall Effect",
+                "title": "Introduction to the Integer Quantum Hall Effect",
+                "authors": "Igor S. Burmistrov",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "09a544e3bd22412f",
+                "name": "Low-temperature thermoelectric transport in the disordered two-dimensional electron",
+                "title": "Low-temperature thermoelectric transport in the disordered two-dimensional electron",
+                "authors": "Zahidul Islam Jitu and Georg Schwiete",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "6b05ea608990f7bc",
+                "name": "On Localization in the Theory of the Quantized Hall Effect",
+                "title": "On Localization in the Theory of the Quantized Hall Effect",
+                "authors": "",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "bbd0df5b4f37b61d",
+                "name": "Quantum Field-Theoretical Methods in Transport Theory of Metals",
+                "title": "Quantum Field-Theoretical Methods in Transport Theory of Metals",
+                "authors": "",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "b4f9dcd17017a456",
+                "name": "Quantum Interference Corrections in Electron Hydrodynamics",
+                "title": "Quantum Interference Corrections in Electron Hydrodynamics",
+                "authors": "Alberto Cortijo",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "3b76321646d1a716",
+                "name": "Replica Nonlinear Sigma Model for the Two-Dimensional Electron Gas",
+                "title": "Replica Nonlinear Sigma Model for the Two-Dimensional Electron Gas",
+                "authors": "Igor S. Burmistrov",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "dc505a49516927d0",
+                "name": "Scale-dependent theory of the disordered electron liquid",
+                "title": "Scale-dependent theory of the disordered electron liquid",
+                "authors": "A. M. Finkel'stein; G. Schwiete",
+                "abstract": "We review the scaling theory of disordered itinerant electrons with e-e interactions. We first show how to adjust the2023 microscopic Fermi-liquid theory to the presence of disorder. Then we describe the non-linear sigma model (NLSM) with interactions (Finkel’stein’s model). This model is closely connected to the Fermi liquid, but is more generally applicable, since it can also be viewed as a minimal effective functional describing disordered interacting electrons. Our discussion emphasizes the general structure of the theory, and the connection of the scaling parameters to con-Mar servation laws. We then move on to discuss the metal-insulator transition (MIT) in the disordered electron liquid 1 in two and three dimensions. Generally speaking, this MIT is a non-trivial example of a quantum phase transition. The NLSM approach allows to identify the dynamical exponent connecting the spatial and energy scales, which is central for the description of the kinetic and thermodynamic behavior of the system in the critical region of the MIT in three dimensions. In two dimensions, the system can be discussed in terms of a flow in the disorder-interaction phase plane, which is controlled by a fixed point. We demonstrate that the two-parameter RG-equations accurately describe electrons in Si-MOSFETs including the observed non-monotonic behavior of the resistance and its strong drop at low temperatures. The theory can also be applied to systems with an attractive interaction in the Cooper channel, where it describes the suppression of superconductivity in disordered amorphous films.…",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/2303.00655",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "c381230ab0787ba6",
+                "name": "Supersymmetry and theory of disordered metals",
+                "title": "Supersymmetry and theory of disordered metals",
+                "authors": "K.B. Efetov a",
+                "abstract": "2012 led Theoreticalto a number studiesof remarkableof the motionresults especiallyof an electronthoseinconcerneda disorderedwith systemlocalizationhave and with the importance of dimensionality. The theoretical approaches previ- ously used run into some severe technical difficulties. This article sets out theAugust bases of the recently introduced supersymmetry method which has already, as the article shows, provided unified derivations of the major results in this subject, 31 free of the technical problems. The method reduces the systems it treats to field- 10:09 theoretical models involving both bosons and fermions. at CONTENTS PAGE § 1. INTRODUCTION. 54 § 2. MATHEMATICAL RASES OF THE SUPERSYMMETRY METHOD. 56 2.1. What is supermathematics? 56Libraries] 2.2. Basic definitions. 57 2.3. Supervectors and supermatrices. 58 2.4. Integrals. 62 § 3. DIFFUSION MODES AND THE NON-LINEAR SUPERMATRIX If-MODEL. 66University 3.1. Choice of the model and averaging over impurities. 66 3.2. Diffusion modes. 71 3.3. Reduction of the problem to a non-linear supermatrix a-model. 75[Duke 3.4. Magnetic and spin-orbit interactions. 83 by §4. INTERACTION OF DIFFUSION MODES AND RENORMALIZATION GROUP IN 2 + ~ DIMENSIONS. 86 4.1. Interaction of diffusion modes. 86 4.2. Renormalization group in 2 +a dimensions. 89Downloaded § ~. ENERGY LEVEL STATISTICS IN a LIMITED VOLUME. 95 5.1. Phenomenological theories. 95 5.2. Zero-dimensional supermatrix a-model. 98 5.3. Reduction to integrals over eigenvalues. 101 5.4. The two-level correlation function and response to electro- magnetic fields. 104 §6.…",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://doi.org/10.1080/00018738300101531",
+                "sourceType": "DOI",
+                "downloadUrl": null
+              },
+              {
+                "id": "e0b6b219fa886ac6",
+                "name": "The Theory and Properties of Randomly Disordered Crystals and Related Physical Systems",
+                "title": "The Theory and Properties of Randomly Disordered Crystals and Related Physical Systems",
+                "authors": "R. J. Elliott, J. A. Krumhansl, and P. L. Leath",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              }
+            ]
+          },
+          {
+            "id": "section:Electron Systems:Restricted Books",
+            "name": "Restricted Books",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "10d893ef0a964778",
+                "name": "Mesoscopic Physics of Electrons and Photons",
+                "title": "Mesoscopic Physics of Electrons and Photons",
+                "authors": "Eric Akkermans; Gilles Montambaux",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "216afd1a0fb0c60e",
+                "name": "Quantum Kinetics in Transport and Optics of Semiconductors",
+                "title": "Quantum Kinetics in Transport and Optics of Semiconductors",
+                "authors": "Hartmut Haug; Antti-Pekka Jauho",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "1a336799065ae222",
+                "name": "Quantum Phase Transitions",
+                "title": "Quantum Phase Transitions",
+                "authors": "Subir Sachdev",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "75ea5f938dd0f6a7",
+                "name": "Quantum Transport Theory",
+                "title": "Quantum Transport Theory",
+                "authors": "Jørgen Rammer",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "4549200e59bebb7f",
+                "name": "Quantum Transport Theory (1998 edition)",
+                "title": "Quantum Transport Theory (1998 edition)",
+                "authors": "",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "topic:Mathematical Methods",
+        "name": "Mathematical Methods",
+        "kind": "folder",
+        "children": [
+          {
+            "id": "section:Mathematical Methods:Articles",
+            "name": "Articles",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "6341bc2343a7816e",
+                "name": "On Perturbation Theory, Dyson Series, and Feynman Diagrams",
+                "title": "On Perturbation Theory, Dyson Series, and Feynman Diagrams",
+                "authors": "",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              }
+            ]
+          },
+          {
+            "id": "section:Mathematical Methods:Restricted Books",
+            "name": "Restricted Books",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "9e7aaa6a75f17682",
+                "name": "Functional Integrals — Lecture Chapters",
+                "title": "Functional Integrals — Lecture Chapters",
+                "authors": "",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "0bdf419313f549df",
+                "name": "Green’s Functions in Quantum Physics",
+                "title": "Green’s Functions in Quantum Physics",
+                "authors": "Eleftherios N. Economou",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "f62489586c39bf17",
+                "name": "Path Integrals in Quantum Mechanics, Statistics,",
+                "title": "Path Integrals in Quantum Mechanics, Statistics,",
+                "authors": "",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "topic:Nonequilibrium & Hydrodynamics",
+        "name": "Nonequilibrium & Hydrodynamics",
+        "kind": "folder",
+        "children": [
+          {
+            "id": "section:Nonequilibrium & Hydrodynamics:Articles",
+            "name": "Articles",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "1b099877a04e5af3",
+                "name": "Boltzmann Equation for Relativistic Neutral Scalar Field in Non-equilibrium Thermo Field Dynamics",
+                "title": "Boltzmann Equation for Relativistic Neutral Scalar Field in Non-equilibrium Thermo Field Dynamics",
+                "authors": "Yuichi Mizutani; Tomohiro Inagaki",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/1011.0281",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "2a285b1519bb617d",
+                "name": "Dynamics of mesoscopic systems: Non-equilibrium Green’s functions",
+                "title": "Dynamics of mesoscopic systems: Non-equilibrium Green’s functions",
+                "authors": "",
+                "abstract": "Recent developments in technologies and experiments enable us to observe dynamical behavior of very small quantum systems under conditions when it is sensitive to system parameters, internal interactions, the environment and the external time–dependent fields. This contribution deals with the status and perspectives of description of such truly non-equilibrium quantum many body systems using the non-equilibrium Green’s functions (NGF). The basic aim of this approach is to describe time development of the many-body system out of equilibrium from its initial state over its transient dynamics to its long time asymptotic evolution. The early stages of the transient evolution will be characterized for a broad class of the initial conditions generated in the course of Keldysh switch-on states. Gradual loss of initial correlations due to interactions and related renormalization processes in the system may, under favorable conditions, give rise to the evolution stage expressible in terms of non-equilibrium quasiparticles. This permits to reduce the description of the system behavior to a quantum transport equation. The consistency of such approximations for NGF may be judged by checking the non-equilibrium version of transport Ward identities. These identities follow from the gauge invariance of the 1st kind for NGF. To cover the whole time domain of the transient, we obtain the non-equilibrium Ward identities for NGF with initial conditions included.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "e23d0a69c25645e4",
+                "name": "Homogeneous Boltzmann Scattering",
+                "title": "Homogeneous Boltzmann Scattering",
+                "authors": "Andreas Hohenegger",
+                "abstract": "With applications in astroparticle physics in mind, we generalize a method for the solution of the nonlinear, space homogeneous Boltzmann equation with isotropic distribution function to arbitrary matrix elements. The method is based on the expansion of the matrix element in terms of two cosines of the “scattering angles”. The scattering functions used by previous authors in particle physics for matrix elements in Fermi-approximation are retrieved as lowest order results in this expansion. The method is designed for the unified treatment of reactive mixtures of particles obeying different scattering laws, including the quantum statistical terms[astro-ph] for blocking or stimulated emission, in possibly large networks of Boltzmann equations. Al- though our notation is the relativistic one, as it is used in astroparticle physics, the results can also be applied in the classical case. arXiv:0806.3098v1 1E-mail: Andreas.Hohenegger@mpi-hd.mpg.de",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/0806.3098",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "cebb15e4fcc4c0dd",
+                "name": "Hydrodynamic approach to many-body systems: exact conservation laws",
+                "title": "Hydrodynamic approach to many-body systems: exact conservation laws",
+                "authors": "Boris N. Narozhny",
+                "abstract": "2023 In this paper I present a pedagogical derivation of continuity equations manifesting exact conservation laws in an interacting electronic system based on the nonequilibrium Keldysh technique. The purpose of this exercise is to lay the groundwork for extending the hydrodynamic approach to electronic transport toMay strongly correlated systems where the quasiparticle approximation and Boltzmann kinetic theory fail.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/2301.02567",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "17c4f3e8965ea7e2",
+                "name": "Kinetics of the disordered Bose gas with collisions",
+                "title": "Kinetics of the disordered Bose gas with collisions",
+                "authors": "",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "a81a2cf3c3aa7249",
+                "name": "Low Shear Viscosity due to Anderson Localization",
+                "title": "Low Shear Viscosity due to Anderson Localization",
+                "authors": "Ioannis Giannakis, Defu Hou,, Jia-rong Li, and Hai-cang Ren,",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/hep-ph/0610092",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "d9f554f17d9329e6",
+                "name": "Many-Body Theory of Non-Equilibrium",
+                "title": "Many-Body Theory of Non-Equilibrium",
+                "authors": "Alex Kamenev",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/cond-mat/0412296",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "249969930d037073",
+                "name": "Mesoscopic Fluctuations in Stochastic Spacetime",
+                "title": "Mesoscopic Fluctuations in Stochastic Spacetime",
+                "authors": "(Alberta Thy -)",
+                "abstract": "Mesoscopic effects associated with wave propagation in spacetime with metric stochas- ticity are studied. We show that the scalar and spinor waves in a stochastic spacetime behave similarly to the electrons in a disordered system. Viewing this as the quantum transport problem, mesoscopic fluctuations in such a spacetime are discussed. The con- ductance and its fluctuations are expressed in terms of a nonlinear sigma model in the closed time path formalism. We show that the conductance fluctuations are universal, independent of the volume of the stochastic region and the amount of stochasticity. To appear in Physical Review DarXiv:hep-th/0001088v2 ∗E-mail address: kshiok@phys.ualberta.ca 1",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/hep-th/0001088",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "480bf89fa59840c3",
+                "name": "Nonequilibrium Dynamical Mean-Field Theory and Its Applications",
+                "title": "Nonequilibrium Dynamical Mean-Field Theory and Its Applications",
+                "authors": "Hideo Aoki; Naoto Tsuji; Martin Eckstein; Marcus Kollar; Takashi Oka; Philipp Werner",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "37e8219be70ab9bd",
+                "name": "Nonequilibrium Dynamics of Closed Interacting Quantum Systems",
+                "title": "Nonequilibrium Dynamics of Closed Interacting Quantum Systems",
+                "authors": "Anatoli Polkovnikov, Krishnendu Sengupta, Alessandro Silva, Mukund Vengalattore",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "7d8ea87d57394a8e",
+                "name": "Nonequilibrium Dynamics of Scalar Fields in a Thermal Bath",
+                "title": "Nonequilibrium Dynamics of Scalar Fields in a Thermal Bath",
+                "authors": "Deuts hes Elektronen-Syn hrotron DESY, Hamburg, Germany[hep-th]",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/0812.1934",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "4a6974757f7c190f",
+                "name": "Path Integral Methods for the Dynamics of Stochastic and Disordered Systems",
+                "title": "Path Integral Methods for the Dynamics of Stochastic and Disordered Systems",
+                "authors": "John A. Hertz; Yasser Roudi; Peter Sollich",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "4625efd4f82d10f2",
+                "name": "Schwinger-Keldysh nonperturbative quantum field theory of open quantum systems",
+                "title": "Schwinger-Keldysh nonperturbative quantum field theory of open quantum systems",
+                "authors": "",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "dfd85e6a178025f0",
+                "name": "Semiclassical Approximation Meets Keldysh–Schwinger Diagrammatic Technique: Scalar φ4",
+                "title": "Semiclassical Approximation Meets Keldysh–Schwinger Diagrammatic Technique: Scalar φ4",
+                "authors": "A. A. Radovskaya; A. G. Semenov",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/2003.06395",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "396aec0ad44c1a69",
+                "name": "Thermodynamic Equilibrium as a Symmetry of the Schwinger-Keldysh Action",
+                "title": "Thermodynamic Equilibrium as a Symmetry of the Schwinger-Keldysh Action",
+                "authors": "",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              }
+            ]
+          },
+          {
+            "id": "section:Nonequilibrium & Hydrodynamics:Restricted Books",
+            "name": "Restricted Books",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "d3a8b8471de6a39e",
+                "name": "Nonequilibrium Many-Body Theory of Quantum Systems",
+                "title": "Nonequilibrium Many-Body Theory of Quantum Systems",
+                "authors": "",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "32cb576779b56c52",
+                "name": "Quantum Field Theory of Non-equilibrium States",
+                "title": "Quantum Field Theory of Non-equilibrium States",
+                "authors": "Jørgen Rammer",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "4bcb57d1d3f63d4f",
+                "name": "Schwinger–Keldysh Path Integral for the Quantum Harmonic Oscillator",
+                "title": "Schwinger–Keldysh Path Integral for the Quantum Harmonic Oscillator",
+                "authors": "Yoni BenTov",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "b4ea04d4ad5695ac",
+                "name": "Semiclassical and Stochastic Gravity",
+                "title": "Semiclassical and Stochastic Gravity",
+                "authors": "Bei-Lok Hu; Enric Verdaguer",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "topic:Polymers & Random Media",
+        "name": "Polymers & Random Media",
+        "kind": "folder",
+        "children": [
+          {
+            "id": "section:Polymers & Random Media:Articles",
+            "name": "Articles",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "1d5c0ba37fe44354",
+                "name": "Directed polymer in a random medium - an introduction",
+                "title": "Directed polymer in a random medium - an introduction",
+                "authors": "Somendra M. Bhattacharjee",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "a584b26858c1dcb3",
+                "name": "Directed Polymers and Interfaces in Disordered Media",
+                "title": "Directed Polymers and Interfaces in Disordered Media",
+                "authors": "Instituto de F ́ısica, Universidade Federal do Rio de Janeiro,",
+                "abstract": "We consider field theory formulation for directed polymers and interfaces in the presence of quenched disorder. We write a series representation for the averaged free energy, where all the integer moments of the partition function of the model contribute. The structure of field space is analysed for polymers and interfaces at finite temperature using the saddle-point equa- tions derived from each integer moments of the partition function. For the case of an interface we obtain the wandering exponent ξ = (4 −d)/2, also obtained by the conventional replica method for the replica symmetric scenario.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/1609.07084",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "cf48d65fbff94e71",
+                "name": "Replica Field Theory for a Polymer in Random Media",
+                "title": "Replica Field Theory for a Polymer in Random Media",
+                "authors": "Yadin Y. Goldschmidt",
+                "abstract": "In this paper we revisit the problem of a (non self-avoiding) polymer chain in a random medium which was previously investigated by Edwards and Muthuku- mar (EM) [1]. As noticed by Cates and Ball (CB) [2] there is a discrepancy[cond-mat.dis-nn] between the predictions of the replica calculation of EM and the expectation that in an infinite medium the quenched and annealed results should coincide (for a chain that is free to move) and a long polymer should always collapse. CB argued that only in a finite volume one might see a “localization tran- sition” (or crossover) from a stretched to a collapsed chain in three spatial dimensions. Here we carry out the replica calculation in the presence of an ad- ditional confining harmonic potential that mimics the effect of a finite volume. Using a variational scheme with five variational parameters we derive analyt- ically for d < 4 the result R ∼(g |ln μ|)−1/(4−d) ∼(g ln V )−1/(4−d), where R is the radius of gyration, g is the strength of the disorder, μ is the spring con-arXiv:cond-mat/9908275v1 stant associated with the confining potential and V is the associated effective volume of the system. Thus the EM result is recovered with their constant replaced by ln V as argued by CB. We see that in the strict infinite volume limit the polymer always collapses, but for finite volume a transition from a stretched to a collapsed form might be observed as a function of the strength 1 of the disorder. For d < 2 and for large V > V ′ ∼exp(g2/(2−d)L(4−d)/(2−d)) the annealed results are recovered and R ∼(Lg)1/(d−2), where L is the length of…",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/cond-mat/9908275",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              }
+            ]
+          },
+          {
+            "id": "section:Polymers & Random Media:Restricted Books",
+            "name": "Restricted Books",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "0de8c5c8f07096f9",
+                "name": "Lectures on Random Polymers",
+                "title": "Lectures on Random Polymers",
+                "authors": "Francesco Caravenna; Frank den Hollander; Nicolas Pétrélis",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "dcad17d90fe1f92e",
+                "name": "Random Polymer Models",
+                "title": "Random Polymer Models",
+                "authors": "Giambattista Giacomin",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "topic:Quantum Field Theory",
+        "name": "Quantum Field Theory",
+        "kind": "folder",
+        "children": [
+          {
+            "id": "section:Quantum Field Theory:Articles",
+            "name": "Articles",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "b901d3906f5e576f",
+                "name": "Critical Casimir effect in a disordered O(2)-symmetric model",
+                "title": "Critical Casimir effect in a disordered O(2)-symmetric model",
+                "authors": "G. O. Heymans; N. F. Svaiter",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "5b9b0448b2934aea",
+                "name": "Disorder Effects in Dynamical Restoration of Spontaneously Broken Continuous Symmetry",
+                "title": "Disorder Effects in Dynamical Restoration of Spontaneously Broken Continuous Symmetry",
+                "authors": "",
+                "abstract": "We discuss the Euclidean quantum O(N) model with N = 2 in a continuous[hep-th] broken symmetry phase. We study the system at low temperatures in the presence of quenched disorder linearly coupled to the scalar field. Performing an average over the ensemble of all realizations of the disorder, we represent the average free energy in terms of a series of the moments of the partition function. In the one-loop approximation, we prove that there is a denumerable collection of moments that lead the system to develop critical behavior. Our results indicate that in an equilibrium system, the strongly correlation of the disorder in imaginary produces generic scale invariance in the massive modes.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/2208.04445",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "1c876118612c0982",
+                "name": "Disordered Lattice Glass φ4 Quantum Field Theory",
+                "title": "Disordered Lattice Glass φ4 Quantum Field Theory",
+                "authors": "Dimitrios Bachtis",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/2407.06569",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "7fca039523e35692",
+                "name": "Feynman Diagram Technique — Lecture 7",
+                "title": "Feynman Diagram Technique — Lecture 7",
+                "authors": "апреля",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "3c5cdb6af30e2b21",
+                "name": "Finite-size effects in disordered λφ4 model",
+                "title": "Finite-size effects in disordered λφ4 model",
+                "authors": "R. Acosta Diaz and N. F. Svaiter",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://doi.org/10.1142/S0217979216502076",
+                "sourceType": "DOI",
+                "downloadUrl": null
+              },
+              {
+                "id": "532b57072efb6b92",
+                "name": "Hydrodynamic Transport Coefficients in Relativistic Scalar Field Theory",
+                "title": "Hydrodynamic Transport Coefficients in Relativistic Scalar Field Theory",
+                "authors": "Sangyong Jeon",
+                "abstract": "Hydrodynamic transport coefficients may be evaluated from first principles in a weakly coupled scalar field theory at arbitrary temperature. In a theory with cubic and quartic interactions, the infinite class of diagrams which con- tribute to the leading weak coupling behavior are identified and summed. The resulting expression may be reduced to a single linear integral equa- tion, which is shown to be identical to the corresponding result obtainedarXiv:hep-ph/9409250v3 from a linearized Boltzmann equation describing effective thermal excita- tions with temperature dependent masses and scattering amplitudes. The effective Boltzmann equation is valid even at very high temperature where the thermal lifetime and mean free path are short compared to the Compton wavelength of the fundamental particles. Numerical results for the shear and the bulk viscosities are presented. Submitted to Physical Review D. Typeset using REVTEX",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/hep-ph/9409250",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "6a93677c8472daa4",
+                "name": "Infrared Dynamics of Massive φ4 Theory on de Sitter Space",
+                "title": "Infrared Dynamics of Massive φ4 Theory on de Sitter Space",
+                "authors": "",
+                "abstract": "We study massive real scalar φ4 theory in the expanding Poincare patch of de Sitter space. We calculate the leading two-loop infrared contribution to the two-point function in this theory. We do that for the massive fields both from the principal and complementary series. As can be[hep-th] expected at this order light fields from the complementary series show stronger infrared effects than the heavy fields from the principal one. For the principal series, unlike the complementary one, we can derive the kinetic equation from the system of Dyson–Schwinger equation, which allows us to sum up the leading infrared contributions from all loops. We find two peculiar solutions of the kinetic equation. One of them describes the stationary Gibbons–Hawking-type distribution for the density per comoving volume. Another solution shows explosive (square root of the pole in finite proper time) growth of the particle number density per comoving volume. That signals the possibility of the destruction of the expanding Poincare patch even by the very massive fields. We conclude with the consideration of the infrared divergences in global de Sitter space and in its contracting Poincare patch.arXiv:1303.1068v6",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/1303.1068",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "ad05fe560da2ea57",
+                "name": "Nonperturbative Calculation of the Shear Viscosity in Hot φ4 Theory in Real Time",
+                "title": "Nonperturbative Calculation of the Shear Viscosity in Hot φ4 Theory in Real Time",
+                "authors": "Enke Wang; Ulrich Heinz",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "d1a1e6469fd3aa28",
+                "name": "Quenched random mass disorder",
+                "title": "Quenched random mass disorder",
+                "authors": "Han Ma",
+                "abstract": "We study the critical bosonic O(N) vector model with quenched random mass disorder in the large N limit. Due to the replicated action which is sometimes not bounded from below, we avoid the replica trick and adopt a traditional approach to directly compute the disorder averaged physical observables. At N = ∞, we can exactly solve the disor- dered model. The resulting low energy behavior can be described by two scale invariant theories, one of which has an intrinsic scale. At finite N, we find that the previously proposed attractive disordered fixed point at d = 2 continues to exist at d = 2+ε spatial dimensions. We also studied the system in the 3 < d < 4 spatial dimensions where the disorder is relevant at the Gaussian fixed point. However, no physical attractive fixed point is found right below four spatial dimensions. Nevertheless, the stable fixed point at 2+ε dimensions can still survive at d = 3 where the system has experimental realiza- tions. Some critical exponents are predicted in order to be checked by future numerics and experiments. Copyright H. Ma. Received 15-06-2022 This work is licensed under the Creative Commons Accepted 01-12-2022 Check for Attribution 4.0 International License. Published 17-03-2023 updates Published by the SciPost Foundation. doi:10.21468/SciPostPhys.14.3.039",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://doi.org/10.21468/SciPostPhys.14.3.039",
+                "sourceType": "DOI",
+                "downloadUrl": null
+              },
+              {
+                "id": "5a6da9fe0ee72528",
+                "name": "Scalar Quantum Field Theory in Disordered Media",
+                "title": "Scalar Quantum Field Theory in Disordered Media",
+                "authors": "E. Arias; E. Goulart; G. Krein; G. Menezes; N. F. Svaiter",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://doi.org/10.1103/PhysRevD.83.125022",
+                "sourceType": "DOI",
+                "downloadUrl": null
+              },
+              {
+                "id": "768f6cf863f97685",
+                "name": "Shear viscosity of a relativistic scalar field from functional renormalization",
+                "title": "Shear viscosity of a relativistic scalar field from functional renormalization",
+                "authors": "Tim Stoetzel; Stefan Floerchinger",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "97928184e9e2320f",
+                "name": "Shear Viscosity of Hot Scalar Field Theory in the Real-Time Formalism",
+                "title": "Shear Viscosity of Hot Scalar Field Theory in the Real-Time Formalism",
+                "authors": "Enke Wang; Ulrich Heinz",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "1cfb806de3a38803",
+                "name": "The random free field scalar theory",
+                "title": "The random free field scalar theory",
+                "authors": "Alessandro Piazza; Marco Serone; Emilio Trevisani",
+                "abstract": "Quantum field theories with quenched disorder are so hard to study that even exactly solvable free theories present puzzling aspects. We consider a free scalar field φ in d di- mensions coupled to a random source h with quenched disorder. Despite the presence of[hep-th] a mass scale governing the disorder distribution, we derive a new description of the theory that allows us to show that the theory is gapless and invariant under conformal symmetry, which acts in a non-trivial way on φ and h. This manifest CFT description reveals the presence of exotic continuous symmetries, such as nilpotent bosonic ones, in the quenched theory. We also reconsider Cardy’s CFT description defined through the replica trick. In this description, the nilpotent symmetries reveal a striking resemblance with Parisi-Sourlas supersymmetries. We provide explicit maps of correlation functions between such CFTs and the original quenched theory. The maps are non-trivial and show that conformal behaviour is manifest only when considering suitable linear combinations of averages of products of correlators. We also briefly discuss how familiar notions like normal ordering of compos- ite operators and OPE can be generalized in the presence of the more complicated local observables in the quenched theory.arXiv:2409.10608v2",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/2409.10608",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "e8717203be4b531c",
+                "name": "Thermodynamics of a charged scalar field in disordered media",
+                "title": "Thermodynamics of a charged scalar field in disordered media",
+                "authors": "Instituto de F ́ısica Te ́orica, Universidade Estadual Paulista",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              }
+            ]
+          },
+          {
+            "id": "section:Quantum Field Theory:Restricted Books",
+            "name": "Restricted Books",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "4be7e80c62e19b41",
+                "name": "An Introduction to Quantum Field Theory",
+                "title": "An Introduction to Quantum Field Theory",
+                "authors": "Michael E. Peskin; Daniel V. Schroeder",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "f1671a28bb8670be",
+                "name": "Condensed Matter Field Theory",
+                "title": "Condensed Matter Field Theory",
+                "authors": "Alexander Altland; Ben D. Simons",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "e4646c29c55f6d8f",
+                "name": "Field Theory of Non-Equilibrium Systems",
+                "title": "Field Theory of Non-Equilibrium Systems",
+                "authors": "Alex Kamenev",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "3e54fa2ca1dd5f8f",
+                "name": "Lectures on Selected Problems",
+                "title": "Lectures on Selected Problems",
+                "authors": "",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "a562c4570929e232",
+                "name": "Methods of Quantum Field Theory in Statistical Physics",
+                "title": "Methods of Quantum Field Theory in Statistical Physics",
+                "authors": "A. A. Abrikosov; L. P. Gorkov; I. E. Dzyaloshinski",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "41321a40e77231f9",
+                "name": "Nonequilibrium Quantum Field Theory",
+                "title": "Nonequilibrium Quantum Field Theory",
+                "authors": "",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "c415e9edf89266fd",
+                "name": "Quantum Field Theory in a Nutshell",
+                "title": "Quantum Field Theory in a Nutshell",
+                "authors": "A. Zee",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "df58dd0f10b8b1ae",
+                "name": "Quantum Field Theory: Feynman Path Integrals and Diagrammatic Techniques",
+                "title": "Quantum Field Theory: Feynman Path Integrals and Diagrammatic Techniques",
+                "authors": "Lukong Cornelius Fai",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "befe90456e7d1323",
+                "name": "Rubakov — Quantum Field Theory (bibliographic details unverified)",
+                "title": "Rubakov — Quantum Field Theory (bibliographic details unverified)",
+                "authors": "Valery Rubakov",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "7d88d5d2e8a80174",
+                "name": "Statistical Physics, Part 2: Theory of the Condensed State",
+                "title": "Statistical Physics, Part 2: Theory of the Condensed State",
+                "authors": "L. D. Landau; E. M. Lifshitz; L. P. Pitaevskii",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "0425e01f0af9d099",
+                "name": "Ultracold Quantum Fields",
+                "title": "Ultracold Quantum Fields",
+                "authors": "Henk T. C. Stoof, Dennis B. M. Dickerscheid, Koos Gubbels",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "topic:Random Matrices",
+        "name": "Random Matrices",
+        "kind": "folder",
+        "children": [
+          {
+            "id": "section:Random Matrices:Articles",
+            "name": "Articles",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "7d5c46e20394845a",
+                "name": "Energy correlations for a random matrix model of disordered bosons",
+                "title": "Energy correlations for a random matrix model of disordered bosons",
+                "authors": "T. Lueck; H.-J. Sommers; M. R. Zirnbauer",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "dc1b3432da210909",
+                "name": "Matrix Models and Matrix Integrals",
+                "title": "Matrix Models and Matrix Integrals",
+                "authors": "А. Д. Миронов",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "570a97c1d7011a08",
+                "name": "Radial Part of the Haar Measure",
+                "title": "Radial Part of the Haar Measure",
+                "authors": "Tatyana Ushakova",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "14594afe4b687e21",
+                "name": "Random Matrices — Notes",
+                "title": "Random Matrices — Notes",
+                "authors": "",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "c8a3663c07202b5b",
+                "name": "Tau Functions and Matrix Integrals",
+                "title": "Tau Functions and Matrix Integrals",
+                "authors": "",
+                "abstract": "We consider solvable matrix models. We generalize Harish-Chandra-Itzykson-Zuber and certain other integrals (Gross-Witten integral and integrals over complex matrices)2002 using the notion of tau function of matrix argument. In this case one can reduce matrix integral to the integral over eigenvalues, which in turn is certain tau function. The result-Oct ing tau functions may be analyzed either by the method of orthogonal polynomials or by 12 Schur functions expansion method.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/math-ph/0210012",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              }
+            ]
+          },
+          {
+            "id": "section:Random Matrices:Restricted Books",
+            "name": "Restricted Books",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "f4a7357f092445d4",
+                "name": "An Introduction to Random Matrices",
+                "title": "An Introduction to Random Matrices",
+                "authors": "Greg W. Anderson; Alice Guionnet; Ofer Zeitouni",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "fdb43c41c7e1d95d",
+                "name": "Random Matrices",
+                "title": "Random Matrices",
+                "authors": "Madan Lal Mehta",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "3cf186cdea83cfc7",
+                "name": "Random Matrix Models for Disordered Bosons",
+                "title": "Random Matrix Models for Disordered Bosons",
+                "authors": "",
+                "abstract": "",
+                "kind": "book",
+                "access": "restricted",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "topic:Sigma Models & Supersymmetry",
+        "name": "Sigma Models & Supersymmetry",
+        "kind": "folder",
+        "children": [
+          {
+            "id": "section:Sigma Models & Supersymmetry:Articles",
+            "name": "Articles",
+            "kind": "folder",
+            "children": [
+              {
+                "id": "6c2a255573a9506a",
+                "name": "An Introduction to Spontaneous Symmetry Breaking",
+                "title": "An Introduction to Spontaneous Symmetry Breaking",
+                "authors": ", XH Amsterdam, The Netherlands",
+                "abstract": "Perhaps the most important aspect of symmetry in physics is the idea that aDec state does not need to have the same symmetries as the theory that describes it. This phenomenon is known as spontaneous symmetry breaking. In these13 lecture notes, starting from a careful definition of symmetry in physics, we in- troduce symmetry breaking and its consequences. Emphasis is placed on the physics of singular limits, showing the reality of symmetry breaking even in small-sized systems. Topics covered include Nambu-Goldstone modes, quan- tum corrections, phase transitions, topological defects and gauge fields. We[hep-th] provide many examples from both high energy and condensed matter physics. These notes are suitable for graduate students.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/1909.01820",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "7ecb4482a4065cc0",
+                "name": "Keldysh technique and non–linear σ–model",
+                "title": "Keldysh technique and non–linear σ–model",
+                "authors": "basic principles and applications",
+                "abstract": "The purpose of this review is to provide a comprehensive pedagogical introduction into Keldysh technique for interacting out–of–equilibrium fermionic and bosonic systems. The emphasis is placed on a functional integral representation of underlying microscopic models. A large part of the review is devoted to derivation and applications of the non–linear σ–model for disor- dered metals and superconductors. We discuss such topics as transport properties, mesoscopic effects, counting statistics, interaction corrections, kinetic equation, etc. The chapter devoted to disordered superconductors includes Usadel equation, fluctuation corrections, time–dependent Ginzburg–Landau theory, proximity and Josephson effects, etc. (This review is a substantial ex- tension of arXiv:cond-mat/0412296.)",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/cond-mat/0412296",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "de71fb6e60247c50",
+                "name": "Nonlinear Sigma Model for Disordered Media: Replica Trick",
+                "title": "Nonlinear Sigma Model for Disordered Media: Replica Trick",
+                "authors": "",
+                "abstract": "In these lectures, given at the NATO ASI at Windsor (2001), applications of the replicas non- linear sigma model to disordered systems are reviewed. A particular attention is given to two sets of issues. First, obtaining non-perturbative results in the replica limit is discussed, using as exam- ples (i) an oscillatory behaviour of the two-level correlation function and (ii) long-tail asymptotes of different mesoscopic distributions. Second, a new variant of the sigma model for interacting electrons in disordered normal and superconducting systems is presented, with demonstrating how to reduce it, under certain controlled approximations, to known “phase-only” actions, including that of the “dirty bosons” model.[cond-mat.dis-nn] 1 Introduction Starting from the seminal papers of Wegner [1] and Efetov [2], a field-theoretical description based on the nonlinear σ model (NLσM) has become one of the main analytical approaches to various problems in disordered electronic systems. The ensemble averaging over all configurations of disorder is performed either using bosonic [1, 3] or fermionic [4] n-replicated fields and taking the n →0 limit in the results, or using supersymmetric fields [2, 5]. The main advantage of this approach lies in formulating the theory in terms of low lying excitations (diffusion modes) which greatly simplifies perturbative and renormalization group calculations, and also allows a non-perturbative treatment. The first application of this approach was a derivation [1–4] of the renormalization-group (RG) equations of the scaling theory [6] of Anderson…",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/cond-mat/0205555",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "8edb0b36e9b5e947",
+                "name": "Nonlinear Sigma Model in Disordered Systems — Burmistrov",
+                "title": "Nonlinear Sigma Model in Disordered Systems — Burmistrov",
+                "authors": "Input2",
+                "abstract": "—In this paper, I briefly review recent theoretical results derived within the Finkel’stein nonlinear sigma model approach for description of two-dimensional interacting disordered electron systems. The examples include an electron system with two valleys, electrons in a double quantum well, electrons on the surface of a topological insulator, an electron system with superconducting correlations, and the integer quantum Hall effect. DOI: 10.1134/S1063776119100029",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://doi.org/10.1134/S1063776119100029",
+                "sourceType": "DOI",
+                "downloadUrl": null
+              },
+              {
+                "id": "800b937e6c7143bf",
+                "name": "Non–linear supersymmetric σ–Model for Scalar Classical Waves",
+                "title": "Non–linear supersymmetric σ–Model for Scalar Classical Waves",
+                "authors": "Max-Planck-Institut f ̈ur Kernphysik, Heidelberg, Germany",
+                "abstract": "We derive a non–linear supersymmetric σ–model for the transport of light (classical waves) through a disordered medium. We compare this model with the well–established non–linear σ–model for the transport of electrons (Schr ̈odinger waves) and display similarities of and differences between both[cond-mat.dis-nn] cases. We show that for weak disorder, both models are equivalent (have the same effective Lagrangean). This effective Lagrangean correctly reproduces the (different) Ward identities for Schr ̈odinger waves and for classical waves.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/cond-mat/9802195",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "49ed099d5bcb197e",
+                "name": "Quantum mechanics with a time-dependent random unitary Hamiltonian",
+                "title": "Quantum mechanics with a time-dependent random unitary Hamiltonian",
+                "authors": "Ecole Polytechnique Federale de Lausanne (EPFL),",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "e39f3f43ff32b1d7",
+                "name": "Replica method for computational problems with randomness",
+                "title": "Replica method for computational problems with randomness",
+                "authors": "principles and illustrations",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "2857dba8f9d9ec64",
+                "name": "Response theory of the ergodic many-body delocalized phase",
+                "title": "Response theory of the ergodic many-body delocalized phase",
+                "authors": "Keldysh Finkel’stein sigma models and the -fold way",
+                "abstract": "2017 We derive the finite temperature Keldysh response theory for interacting fermions in the presence of quenched short-ranged disorder, as applicable to any of the 10 Altland-Zirnbauer classes in an Anderson de-Sep localized phase with at least a U(1) continuous symmetry. In this formulation of the interacting Finkel’stein 20 nonlinearwhile physicalsigmacorrelationsmodel, the followstatisticsfromof theone-bodyhydrodynamicwave functionsdensityareor encodedspin responseby thefield,constrainedwhich decouplesmatrix field,the interactions. Integrating out the matrix field first, we obtain weak (anti)localization and Altshuler-Aronov quantum conductance corrections from the hydrodynamic response function. This procedure automatically incorporates the correct infrared cutoffphysics, and in particular gives the Altshuler-Aronov-Khmelnitsky (AAK) equations for dephasing of weak (anti)localization due to electron-electron collisions. We explicate the method by deriving known quantum corrections in two dimensions for the symplectic metal class AII, as well as the spin-SU(2) invariant superconductor classes C and CI. We show that quantum conductance corrections due to the special modes at zero energy in nonstandard classes are automatically cut offby temperature, as previously expected, while the Wigner-Dyson class Cooperon modes that persist to all en- ergies are cut by dephasing. We also show that for short-ranged interactions, the standard self-consistent solution for the dephasing rate is equivalent to a particular summation of diagrams via the self-consistent Born…",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/1706.07066",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              },
+              {
+                "id": "ef521f5e72338308",
+                "name": "Spontaneous symmetry breaking in replica field theory",
+                "title": "Spontaneous symmetry breaking in replica field theory",
+                "authors": "R. Acosta Diaz; G. Menezes; N. F. Svaiter; C. A. D. Zarro",
+                "abstract": "",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": null
+              },
+              {
+                "id": "35a2662e8ef0172b",
+                "name": "Superbosonization Formula and Its Application to Random Matrix Theory",
+                "title": "Superbosonization Formula and Its Application to Random Matrix Theory",
+                "authors": "",
+                "abstract": "Starting from Gaussian random matrix models we derive a new supermatrix field theory model. In contrast to the conventional non-linear sigma models, the new model is applicable for any range of correlations of the elements of the random matrices. We clarify the domain of integration for the supermatrices, and give a demonstration of how the model works by calculating the density of states for an ensemble of almost diagonal matrices. It is also shown how one can reduce the supermatrix model to the conventional sigma model.",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://doi.org/10.1007/s10955-007-9405-y",
+                "sourceType": "DOI",
+                "downloadUrl": null
+              },
+              {
+                "id": "aee3ae024f95f35d",
+                "name": "The two-dimensional disordered O(N) sigma model",
+                "title": "The two-dimensional disordered O(N) sigma model",
+                "authors": "Martí Berenguer; Felix M. Haehl; Elisa Tabor",
+                "abstract": "We introduce a two-dimensional O(N) nonlinear sigma model with random Gaussian p-body interactions. The model combines the structure of a two-dimensional bosonic SYK-type quantum field theory with the stabilizing spherical constraint of the nonlinear sigma model. At large N we derive the Schwinger-Dyson equations on a torus and analyze the solutions using both analytical approximations and numerical methods. We find a phase diagram qualitatively similar to that of the one-dimensional quantum spherical p-spin model, including a low-temperature transition to a spin glass phase. This phase is characterized by a finite Edwards-Anderson order parameter, while the dynamical part of the two-point function displays an approximate scaling regime. These results provide a tractable setting for studying approximate conformal behavior and glassy physics in a two-dimensional relativistic field theory with disorder.arXiv:2606.27925v1",
+                "kind": "article",
+                "access": "catalog",
+                "sourceUrl": "https://arxiv.org/abs/2606.27925",
+                "sourceType": "arXiv",
+                "downloadUrl": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "count": 129
+}
