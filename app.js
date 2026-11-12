@@ -1,4 +1,4 @@
-/* disorder map — publication-links-fix v3; existing catalog is unchanged. */
+/* Research map · multiple libraries · external publication links · local downloads */
 (() => {
   'use strict';
   const $ = (id) => document.getElementById(id);
@@ -11,6 +11,7 @@
   svg.call(zoom).on('dblclick.zoom', null);
   const treeLayout = d3.tree().nodeSize([37, 255]).separation((a, b) => a.parent === b.parent ? 1 : 1.3);
   let root, selected = null;
+  let searchable = [];
   const labelLimit = 53;
   function short(s, n = labelLimit) { return s.length > n ? s.slice(0, n - 1) + '…' : s; }
   function el(tag, text) { const e = document.createElement(tag); e.textContent = text; return e; }
@@ -79,7 +80,7 @@
       // Second button downloads the file stored in the public repository.
       const download = el('a', isPdf ? 'Download PDF' : 'Download file');
       download.href = fileUrl;
-      download.setAttribute('download', '');
+      download.setAttribute('download', data.originalFilename || '');
       download.classList.add('download');
       ext.append(download);
     } else if (data.sourceUrl || data.title || data.name) {
@@ -92,6 +93,99 @@
     $('overlay').classList.add('show');
     nodes.selectAll('.node').classed('active', n => n.data.id === selected);
   }
+  // Search the complete catalog, including publications hidden in collapsed branches.
+  const searchInput = $('search-input');
+  const searchResults = $('search-results');
+  const norm = value => String(value || '').normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase().replace(/\s+/g, ' ').trim();
+  const searchableTitle = data => String(data.title || data.name || '');
+  const searchableAuthors = data => Array.isArray(data.authors) ? data.authors.join(', ') : String(data.authors || '');
+  function closeSearch() {
+    searchResults.hidden = true;
+    searchInput.setAttribute('aria-expanded','false');
+    searchResults.replaceChildren();
+  }
+  function centerNode(node) {
+    const canvas = $('canvas').getBoundingClientRect();
+    const openSidebar = $('drawer').classList.contains('open') && canvas.width > 850;
+    const availableWidth = canvas.width - (openSidebar ? 430 : 0);
+    const current = d3.zoomTransform(svg.node());
+    // Make the selected node readable, even if the whole tree was zoomed out.
+    const scale = Math.min(1.15, Math.max(0.8, current.k));
+    const x = availableWidth * 0.52 - node.y * scale;
+    const y = canvas.height * 0.47 - node.x * scale;
+    svg.transition().duration(350).call(zoom.transform, d3.zoomIdentity.translate(x, y).scale(scale));
+  }
+  function chooseSearchResult(node) {
+    // Unfold ancestors of the result while preserving other collapsed branches.
+    for (let p = node.parent; p; p = p.parent) {
+      if (p._children) { p.children = p._children; p._children = null; }
+    }
+    closeSearch();
+    searchInput.value = searchableTitle(node.data);
+    render(false);
+    detail(node.data);
+    centerNode(node);
+  }
+  function updateSearch() {
+    const terms = norm(searchInput.value).split(' ').filter(Boolean);
+    searchResults.replaceChildren();
+    if (!terms.length || !searchable.length) { closeSearch(); return; }
+    const matches = searchable.map(node => {
+      const title = norm(searchableTitle(node.data));
+      const authors = norm(searchableAuthors(node.data));
+      const combined = title + ' ' + authors;
+      if (!terms.every(term => combined.includes(term))) return null;
+      const query = terms.join(' ');
+      const priority = title.startsWith(query) ? 0 : title.includes(query) ? 1 :
+        authors.startsWith(query) ? 2 : 3;
+      return {node, priority};
+    }).filter(Boolean).sort((a,b) => a.priority - b.priority ||
+      searchableTitle(a.node.data).localeCompare(searchableTitle(b.node.data)));
+    searchResults.hidden = false;
+    searchInput.setAttribute('aria-expanded','true');
+    if (!matches.length) {
+      const empty = el('div', 'No matching publications');
+      empty.className = 'search-empty';
+      searchResults.append(empty);
+      return;
+    }
+    for (const {node} of matches.slice(0, 12)) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'search-result';
+      button.setAttribute('role', 'option');
+      const title = el('span', searchableTitle(node.data));
+      title.className = 'search-result-title';
+      const authors = searchableAuthors(node.data);
+      const subtitle = el('span', authors || (node.data.kind === 'book' ? 'Book' : 'Article'));
+      subtitle.className = 'search-result-meta';
+      button.append(title, subtitle);
+      button.addEventListener('click', () => chooseSearchResult(node));
+      searchResults.append(button);
+    }
+    if (matches.length > 12) {
+      searchResults.append(Object.assign(el('div', `${matches.length - 12} more matches — refine your search`), {className:'search-empty'}));
+    }
+  }
+  searchInput.addEventListener('input', updateSearch);
+  searchInput.addEventListener('focus', () => { if (searchInput.value.trim()) updateSearch(); });
+  searchInput.addEventListener('keydown', event => {
+    const buttons = searchResults.querySelectorAll('button.search-result');
+    if (event.key === 'Escape') { closeSearch(); searchInput.blur(); event.stopPropagation(); }
+    if (event.key === 'ArrowDown' && buttons.length) { event.preventDefault(); buttons[0].focus(); }
+    if (event.key === 'Enter' && buttons.length) { event.preventDefault(); buttons[0].click(); }
+  });
+  searchResults.addEventListener('keydown', event => {
+    const buttons = [...searchResults.querySelectorAll('button.search-result')];
+    const index = buttons.indexOf(document.activeElement);
+    if (event.key === 'Escape') {event.preventDefault(); closeSearch(); searchInput.focus(); event.stopPropagation();}
+    if (event.key === 'ArrowDown') {event.preventDefault(); buttons[Math.min(buttons.length - 1, index + 1)]?.focus();}
+    if (event.key === 'ArrowUp') {event.preventDefault(); if(index === 0)searchInput.focus();else buttons[Math.max(0,index-1)]?.focus();}
+  });
+  document.addEventListener('click', event => {
+    if (!event.target.closest('.search-wrap')) closeSearch();
+  });
   function descendants(node) { return [node, ...(node.children || []).flatMap(descendants), ...(node._children || []).flatMap(descendants)]; }
   function expand(node) { if (node._children) { node.children = node._children; node._children = null; } (node.children || []).forEach(expand); }
   function collapse(node) { (node.children || []).forEach(collapse); if (node.children) { node._children = node.children; node.children = null; } }
@@ -152,6 +246,15 @@
     .then(response=>{if(!response.ok)throw Error('Catalog unavailable');return response.json();})
     .then(data=>{
       root=d3.hierarchy(data.tree);
+      const mapTitle = String(data.title || data.tree?.name || 'disorder map').trim();
+      document.title = mapTitle;
+      const brand = $('brand');
+      if (brand && mapTitle) {
+        const parts = mapTitle.split(/\s+/);
+        const finalWord = parts.pop();
+        brand.replaceChildren(document.createTextNode(parts.length ? parts.join(' ') + ' ' : ''), el('span', finalWord));
+      }
+      searchable = root.descendants().filter(node => node.data.kind === 'article' || node.data.kind === 'book');
       // Start compact: root + main topics, expand folders manually or all at once.
       (root.children||[]).forEach(collapse);
       render(true);
