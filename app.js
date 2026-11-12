@@ -29,18 +29,30 @@
     const ext = $('external'); ext.replaceChildren();
     if (data.access === 'restricted') {
       access.append(el('strong', 'Restricted access'));
-      access.append(el('div', 'This file is not publicly available.'));
-    } else if (data.access === 'download' && data.downloadUrl) {
-      access.append(el('strong', 'Publicly available'));
-      const a=el('a','Download PDF');
-      a.href='./'+data.downloadUrl; a.target='_blank'; a.rel='noopener noreferrer'; a.setAttribute('download','');
-      ext.append(a);
+      access.append(el('div', 'This file is not available for public viewing or download.'));
+    } else if (data.downloadUrl) {
+      access.append(el('strong', 'Full text available'));
+      const fileUrl = './' + data.downloadUrl;
+      const isPdf = data.downloadUrl.toLowerCase().endsWith('.pdf');
+      const view = el('a', 'View publication');
+      // PDF opens in the browser's native PDF viewer; other file types may
+      // be downloaded by browsers that cannot display them natively.
+      view.href = fileUrl;
+      view.target = '_blank';
+      view.rel = 'noopener noreferrer';
+      ext.append(view);
+      const download = el('a', isPdf ? 'Download PDF' : 'Download file');
+      download.href = fileUrl;
+      download.setAttribute('download', '');
+      download.classList.add('download');
+      ext.append(download);
     } else if (data.sourceUrl) {
       access.append(el('strong', 'Read at source'));
-      const a=el('a',data.sourceType==='arXiv' ? 'View on arXiv' : 'View publication');
-      a.href=data.sourceUrl; a.rel='noopener noreferrer'; a.target='_blank'; ext.append(a);
+      const view = el('a', 'View publication');
+      view.href = data.sourceUrl; view.rel='noopener noreferrer'; view.target='_blank';
+      ext.append(view);
     } else {
-      access.append(el('strong', 'PDF not publicly available'));
+      access.append(el('strong', 'File not publicly available'));
     }
     $('drawer').classList.add('open'); $('drawer').setAttribute('aria-hidden','false');
     $('overlay').classList.add('show');
