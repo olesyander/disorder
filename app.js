@@ -1,4 +1,4 @@
-/* Research map — interactive hierarchy. Catalog comes from a separate private repository. */
+/* disorder map — publication-links-fix v3; existing catalog is unchanged. */
 (() => {
   'use strict';
   const $ = (id) => document.getElementById(id);
@@ -19,18 +19,44 @@
     $('overlay').classList.remove('show'); selected = null;
     nodes.selectAll('.node').classed('active', false);
   }
-  function setBrand(title) {
-    const normalized = String(title || 'Research map').trim();
-    document.title = normalized;
-    const parts = normalized.split(/\s+/);
-    const brand = $('brand');
-    brand.replaceChildren();
-    if (parts.length > 1) {
-      brand.append(document.createTextNode(parts.slice(0, -1).join(' ') + ' '));
-      brand.append(el('span', parts[parts.length - 1]));
-    } else {
-      brand.textContent = normalized;
+  function publicationPage(data) {
+    // Prefer a DOI/arXiv/publisher page recorded during catalog generation.
+    const source = String(data.sourceUrl || '').trim();
+    if (/^https?:\/\//i.test(source)) {
+      try {
+        const u = new URL(source);
+        const host = u.hostname.toLowerCase();
+        // A hosted copy of our PDF is NOT a publisher/publication page.
+        const isFileHost = host === 'github.com' || host.endsWith('.github.io') ||
+          host === 'raw.githubusercontent.com' || host === 'githubusercontent.com';
+        const isPdf = u.pathname.toLowerCase().endsWith('.pdf');
+        if (!isFileHost && !isPdf) {
+          return { href: u.href, label: 'View publication' };
+        }
+      } catch (_error) {
+        // Fall back to title search for malformed links.
+      }
     }
+    // If the PDF contains no identifiable DOI/arXiv, open a scholarly search,
+    // not the local PDF. The label makes it clear this is a search result.
+    const title = String(data.title || data.name || '').trim();
+    if (title) {
+      return {
+        href: 'https://scholar.google.com/scholar?q=' + encodeURIComponent(title),
+        label: 'Find publication'
+      };
+    }
+    return null;
+  }
+  function addPublicationLink(container, data) {
+    const page = publicationPage(data);
+    if (!page) return false;
+    const view = el('a', page.label);
+    view.href = page.href;
+    view.target = '_blank';
+    view.rel = 'noopener noreferrer';
+    container.append(view);
+    return true;
   }
   function detail(data) {
     selected = data.id;
@@ -47,23 +73,18 @@
       access.append(el('strong', 'Full text available'));
       const fileUrl = './' + data.downloadUrl;
       const isPdf = data.downloadUrl.toLowerCase().endsWith('.pdf');
-      const view = el('a', 'View publication');
-      // PDF opens in the browser's native PDF viewer; other file types may
-      // be downloaded by browsers that cannot display them natively.
-      view.href = fileUrl;
-      view.target = '_blank';
-      view.rel = 'noopener noreferrer';
-      ext.append(view);
+      // First button always leads outside the library to a publication page
+      // (DOI/arXiv) or, if unknown, a scholarly search by title.
+      addPublicationLink(ext, data);
+      // Second button downloads the file stored in the public repository.
       const download = el('a', isPdf ? 'Download PDF' : 'Download file');
       download.href = fileUrl;
       download.setAttribute('download', '');
       download.classList.add('download');
       ext.append(download);
-    } else if (data.sourceUrl) {
+    } else if (data.sourceUrl || data.title || data.name) {
       access.append(el('strong', 'Read at source'));
-      const view = el('a', 'View publication');
-      view.href = data.sourceUrl; view.rel='noopener noreferrer'; view.target='_blank';
-      ext.append(view);
+      addPublicationLink(ext, data);
     } else {
       access.append(el('strong', 'File not publicly available'));
     }
@@ -130,7 +151,6 @@
   fetch('./catalog.json', {cache:'no-store'})
     .then(response=>{if(!response.ok)throw Error('Catalog unavailable');return response.json();})
     .then(data=>{
-      setBrand(data.title);
       root=d3.hierarchy(data.tree);
       // Start compact: root + main topics, expand folders manually or all at once.
       (root.children||[]).forEach(collapse);
