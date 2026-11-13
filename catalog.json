@@ -191,6 +191,18 @@
                 "downloadUrl": "papers/a8f7165ccea4f9b9.pdf"
               },
               {
+                "id": "5d13724e84783bde",
+                "name": "Karslruhe & Non-linear",
+                "title": "Karslruhe & Non-linear",
+                "authors": "models Mirlin Karlsruhe",
+                "abstract": "",
+                "kind": "book",
+                "access": "download",
+                "sourceUrl": null,
+                "sourceType": null,
+                "downloadUrl": "papers/5d13724e84783bde.pdf"
+              },
+              {
                 "id": "f413798796f1b922",
                 "name": "Lifshitz — Disordered Systems (bibliographic details unverified)",
                 "title": "Lifshitz — Disordered Systems (bibliographic details unverified)",
@@ -763,6 +775,18 @@
             "kind": "folder",
             "children": [
               {
+                "id": "47480c1dacb05e32",
+                "name": "Novel Symmetry Classes in Mesoscopic Normalconducting-Superconducting Hybrid",
+                "title": "Novel Symmetry Classes in Mesoscopic Normalconducting-Superconducting Hybrid",
+                "authors": "(Mar , )",
+                "abstract": "",
+                "kind": "article",
+                "access": "download",
+                "sourceUrl": "https://arxiv.org/abs/9602137",
+                "sourceType": "arXiv",
+                "downloadUrl": "papers/47480c1dacb05e32.pdf"
+              },
+              {
                 "id": "6341bc2343a7816e",
                 "name": "On Perturbation Theory, Dyson Series, and Feynman Diagrams",
                 "title": "On Perturbation Theory, Dyson Series, and Feynman Diagrams",
@@ -792,6 +816,18 @@
                 "sourceUrl": null,
                 "sourceType": null,
                 "downloadUrl": "papers/9e7aaa6a75f17682.pdf"
+              },
+              {
+                "id": "2945081d4189e94c",
+                "name": "Fundamental problems in statistical physics XIV: lecture on correlation and response functions in statistical physics",
+                "title": "Fundamental problems in statistical physics XIV: lecture on correlation and response functions in statistical physics",
+                "authors": "Thomas Franosch",
+                "abstract": "In the first part of these short lecture notes, we will present an",
+                "kind": "book",
+                "access": "download",
+                "sourceUrl": "https://doi.org/10.1088/1742-5468/ae6c17",
+                "sourceType": "DOI",
+                "downloadUrl": "papers/2945081d4189e94c.pdf"
               },
               {
                 "id": "0bdf419313f549df",
@@ -926,6 +962,18 @@
                 "sourceUrl": "https://arxiv.org/abs/hep-th/0001088",
                 "sourceType": "arXiv",
                 "downloadUrl": "papers/249969930d037073.pdf"
+              },
+              {
+                "id": "1501f760d15f4df6",
+                "name": "NON-LINEAR QUANTUM COHERENCE EFFECTS IN",
+                "title": "NON-LINEAR QUANTUM COHERENCE EFFECTS IN",
+                "authors": "DRIVEN MESOSCOPIC SYSTEMS",
+                "abstract": "",
+                "kind": "article",
+                "access": "download",
+                "sourceUrl": "https://arxiv.org/abs/cond-mat/0504671",
+                "sourceType": "arXiv",
+                "downloadUrl": "papers/1501f760d15f4df6.pdf"
               },
               {
                 "id": "480bf89fa59840c3",
@@ -1161,6 +1209,18 @@
             "name": "Articles",
             "kind": "folder",
             "children": [
+              {
+                "id": "b2c5f6c36b0205eb",
+                "name": "Analytic structure of stress-energy response functions and new Kubo formulae",
+                "title": "Analytic structure of stress-energy response functions and new Kubo formulae",
+                "authors": "Sangyong Jeon; Alina Czajka; Juhee Hong",
+                "abstract": "",
+                "kind": "article",
+                "access": "download",
+                "sourceUrl": "https://arxiv.org/abs/2507.20302",
+                "sourceType": "arXiv",
+                "downloadUrl": "papers/b2c5f6c36b0205eb.pdf"
+              },
               {
                 "id": "b901d3906f5e576f",
                 "name": "Critical Casimir effect in a disordered O(2)-symmetric model",
@@ -1737,5 +1797,5 @@
       }
     ]
   },
-  "count": 129
+  "count": 134
 }
