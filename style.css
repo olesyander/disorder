@@ -217,13 +217,17 @@ body { background: var(--bg); color: var(--white); }
 .knowledge-filters input,.knowledge-strength input { accent-color: #f3b64f; }
 .knowledge-strength { color: #d7b994; }
 .knowledge-status { color: #c1a88c; }
-.knowledge-node circle[fill="#69aaff"] { fill: #f2c14f !important; }
-.knowledge-node circle[fill="#7e8799"] { fill: #82796f !important; stroke: #bbb0a4; }
 .knowledge-node circle { stroke: #ffe6b0; }
+.knowledge-node.is-isolated circle { stroke: #beb3a7; }
+.knowledge-node.is-isolated text { fill: #b8aea1; }
+.knowledge-node.is-connected text { fill: #f6ead8; }
 .knowledge-node:hover circle,.knowledge-node:focus-visible circle {
   stroke: #fff7e6; filter: drop-shadow(0 0 8px rgba(242,193,79,.6));
 }
-.knowledge-node text { fill: #f6ead8; stroke: #0b0b0d; }
+.knowledge-node.is-isolated:hover circle,.knowledge-node.is-isolated:focus-visible circle {
+  stroke: #d8cec2; filter: drop-shadow(0 0 6px rgba(147,135,121,.45));
+}
+.knowledge-node text { stroke: #0b0b0d; }
 
 /* ===========================================================
    v3.4: relation palette, controls and graph edges
@@ -231,11 +235,11 @@ body { background: var(--bg); color: var(--white); }
    citation > shared author > similar text > curated.
    =========================================================== */
 :root {
-  --relation-citation: #f4c34d; /* golden yellow */
-  --relation-author:   #f18f39; /* vivid orange */
-  --relation-similar:  #c18a5e; /* warm brown */
-  --relation-manual:   #d76551; /* terracotta red */
-  --relation-isolated: #b3a89d; /* neutral, no edges */
+  --relation-citation: #f3c548; /* bright gold */
+  --relation-author:   #f08a24; /* vivid orange */
+  --relation-similar:  #b8642a; /* burnt amber */
+  --relation-manual:   #d14f38; /* terracotta red */
+  --relation-isolated: #938779; /* warm grey */
 }
 .knowledge-controls { gap: 11px; }
 .knowledge-filters { gap: 12px 22px; }
@@ -262,4 +266,3 @@ body { background: var(--bg); color: var(--white); }
 .knowledge-link.relation-author   { stroke: var(--relation-author); }
 .knowledge-link.relation-similar  { stroke: var(--relation-similar); }
 .knowledge-link.relation-manual   { stroke: var(--relation-manual); }
-#knowledge-citation-arrow path { fill: var(--relation-citation) !important; }

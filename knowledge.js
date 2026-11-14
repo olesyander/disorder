@@ -15,17 +15,13 @@
   };
   const colorOf = type => getComputedStyle(document.documentElement)
     .getPropertyValue('--relation-' + type).trim() || palette[type] || '#8a8075';
-  const defs=svg.append('defs');
-  defs.append('marker').attr('id','knowledge-citation-arrow').attr('viewBox','0 -5 10 10')
-    .attr('refX',15).attr('refY',0).attr('markerWidth',6).attr('markerHeight',6)
-    .attr('orient','auto').append('path').attr('d','M0,-5L10,0L0,5').attr('fill',colorOf('citation'));
   const viewport = svg.append('g');
   const edgeLayer = viewport.append('g').attr('class','knowledge-edges');
   const nodeLayer = viewport.append('g').attr('class','knowledge-nodes');
   const zoom = d3.zoom().scaleExtent([.15,4]).on('zoom',e=>viewport.attr('transform',e.transform));
   svg.call(zoom).on('dblclick.zoom',null);
   let graph={nodes:[],edges:[]}, simulation=null, loaded=false, current='library';
-  const edgeNames={citation:'Citation',author:'Shared author',similar:'Similar content',manual:'Curated connection'};
+  const edgeNames={citation:'Citation',author:'Shared authors',similar:'Shared keywords',manual:'Curated connection'};
   const filters={citation:$('kg-citation'),author:$('kg-author'),similar:$('kg-similar'),manual:$('kg-manual')};
   // Constant minimum: the former slider's lowest value (0.15).
   // The producer uses the same threshold (0.15); no runtime API needed.
@@ -71,6 +67,27 @@
     const href=safeUrl(url);if(!href)return;
     const a=make('a',label);a.href=href;a.rel='noopener noreferrer';a.target='_blank';target.append(a);
   }
+  function relationSummary(edge, src, dest){
+    if(edge.type==='citation') return 'Citation: ' + (src?.title || 'Source publication') + ' cites ' + (dest?.title || 'target publication') + '.';
+    if(edge.type==='author') {
+      const names = Array.isArray(edge.authors) && edge.authors.length ? edge.authors.join(', ') : '';
+      return names ? 'Shared author' + (edge.authors.length>1 ? 's' : '') + ': ' + names : (edge.explanation || 'Shared authorship.');
+    }
+    if(edge.type==='similar') {
+      const terms = Array.isArray(edge.terms) && edge.terms.length ? edge.terms.join(', ') : '';
+      return terms ? 'Common keywords: ' + terms : (edge.explanation || 'Shared keywords.');
+    }
+    return edge.explanation || 'Curated connection added by the library maintainer.';
+  }
+  function setRelationMode(isRelation){
+    const authorsLabel = $('authors-label');
+    const abstractLabel = $('abstract-label');
+    const abstract = $('abstract');
+    if (authorsLabel) authorsLabel.textContent = isRelation ? 'CONNECTION' : 'AUTHORS';
+    if (abstractLabel) abstractLabel.style.display = isRelation ? 'none' : '';
+    if (abstract) abstract.style.display = isRelation ? 'none' : '';
+    if (!isRelation && abstractLabel) abstractLabel.textContent = 'ABSTRACT';
+  }
   function openPanel(node,edge=null){
     const title=$('paper-title'), authors=$('authors'), abstract=$('abstract'), access=$('access'), external=$('external');
     if(!title||!authors||!abstract||!access||!external)return;
@@ -78,16 +95,16 @@
     if(edge){
       const src=graph.nodes.find(n=>n.id===edge.sourceId);
       const dest=graph.nodes.find(n=>n.id===edge.targetId);
+      setRelationMode(true);
       $('type-label').textContent='RELATION';
-      title.textContent=(src?.title||'Unknown')+(edge.type==='citation'?' → ':' ↔ ')+(dest?.title||'Unknown');
-      authors.textContent=edgeNames[edge.type]||edge.type;
-      abstract.textContent=edge.explanation||'Relationship metadata unavailable.';
-      access.append(make('strong',edge.type==='citation'?'Directed citation: source → target':'Evidence for connection'));
-      if(edge.type==='similar')access.append(make('div','Cosine similarity: '+edge.strength.toFixed(2)+' (heuristic, not proof of a scientific link).'));
-      if(edge.type==='citation')access.append(make('div','Source: '+(src?.title||'')+' → Target: '+(dest?.title||'')));
+      title.textContent=(src?.title||'Unknown')+' ↔ '+(dest?.title||'Unknown');
+      authors.textContent=relationSummary(edge, src, dest);
+      access.append(make('strong',edgeNames[edge.type]||'Connection'));
+      if(edge.type==='citation') access.append(make('div','Direction: source publication cites target publication.'));
       if(src)anchor(external,'Source publication',src.sourceUrl||src.openUrl);
       if(dest)anchor(external,'Target publication',dest.sourceUrl||dest.openUrl);
     } else {
+      setRelationMode(false);
       $('type-label').textContent=(node.kind||'article').toUpperCase();
       title.textContent=node.title||'Untitled';
       authors.textContent=node.authors||'Not identified';
@@ -142,17 +159,18 @@
     const lines=edgeLayer.selectAll('line').data(activeEdges).join('line')
       .attr('class',d=>'knowledge-link relation-'+d.type).attr('stroke',d=>colorOf(d.type))
       .attr('stroke-width',d=>d.type==='citation'?2.7:d.type==='author'?2.25:1.9)
-      .attr('stroke-opacity',.87).attr('marker-end',d=>d.type==='citation'?'url(#knowledge-citation-arrow)':null).attr('tabindex',0).attr('role','button')
+      .attr('stroke-opacity',.9).attr('tabindex',0).attr('role','button')
       .attr('aria-label',d=>edgeNames[d.type]||'Connection')
       .on('click',(_e,d)=>openPanel(null,d))
       .on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openPanel(null,d);}});
     lines.append('title').text(d=>d.explanation);
-    const group=nodeLayer.selectAll('g').data(nodes,d=>d.id).join('g').attr('class','knowledge-node')
+    const group=nodeLayer.selectAll('g').data(nodes,d=>d.id).join('g')
+      .attr('class',d=>'knowledge-node'+(degrees.has(d.id)?' is-connected':' is-isolated')+(d.access==='restricted'?' is-restricted':''))
       .attr('tabindex',0).attr('role','button')
       .on('click',(_e,d)=>openPanel(d))
       .on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openPanel(d);}});
-    group.append('circle').attr('r',d=>degrees.has(d.id)?6.5:4.5)
-      .attr('fill',d=>d.access==='restricted'?'#7e8799':'#69aaff');
+    group.append('circle').attr('r',d=>degrees.has(d.id)?6.6:4.9)
+      .attr('fill',d=>degrees.has(d.id)?(d.access==='restricted'?'#9a8f83':'#f2c14f'):'#7f776d');
     group.append('title').text(d=>d.title);
     group.append('text').attr('x',11).attr('dy','.35em').text(d=>d.title.length>36?d.title.slice(0,35)+'…':d.title)
       .classed('label-hidden',nodes.length>65);
