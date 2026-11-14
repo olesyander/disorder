@@ -13,17 +13,6 @@
       "abstract": "Random matrix models of disordered bosons consist of matrices in the Lie algebra g=sp_n(R). Assuming dynamical stability, their eigenvalues are required to be purely imaginary. Here a method is proposed for constructing ensembles (E,P) of G-invariant sets E of such matrices with probability measures P. These arise as moment map direct images from phase spaces X which play an important role in complex geometry and representation theory. In the toy-model case of n=1, where X is the complex bidisk and P is the direct image of the uniform measure, an explicit description of the spectral measure is given."
     },
     {
-      "id": "f4a7357f092445d4e8f2",
-      "title": "An Introduction to Random Matrices",
-      "authors": "Craig A. Tracy, Harold Widom",
-      "kind": "book",
-      "access": "external",
-      "sourceUrl": "https://arxiv.org/abs/hep-th/9210073",
-      "openUrl": "https://arxiv.org/pdf/hep-th/9210073",
-      "downloadUrl": null,
-      "abstract": "These notes provide an introduction to the theory of random matrices. The central quantity studied is $τ(a)= det(1-K)$ where $K$ is the integral operator with kernel $1/π} {\\sinπ(x-y)\\over x-y} χ_I(y)$. Here $I=\\bigcup_j(a_{2j-1},a_{2j})$ and $χ_I(y)$ is the characteristic function of the set $I$. In the Gaussian Unitary Ensemble (GUE) the probability that no eigenvalues lie in $I$ is equal to $τ(a)$. Also $τ(a)$ is a tau-function and we present a new simplified derivation of the system of nonlinear completely integrable equations (the $a_j$'s are the independent variables) that were first derived by Jimbo, Miwa, M{ô}ri, and Sato in 1980. In the case of a single interval these equations are reducible to a Painlev{é} V equation. For large $s$ we give an asymptotic formula for $E_2(n;s)$, which is the probability in the GUE that exactly $n$ eigenvalues lie in an interval of length $s$."
-    },
-    {
       "id": "6c2a255573a9506ab2ab",
       "title": "An Introduction to Spontaneous Symmetry Breaking",
       "authors": "Aron J. Beekman, Louk Rademaker, Jasper van Wezel",
@@ -101,17 +90,6 @@
       "abstract": "We study equilibrium properties of Bose-Condensed gases in a one-dimensional (1D) optical lattice at finite temperatures. We assume that an additional harmonic confinement is highly anisotropic, in which the confinement in the radial directions is much tighter than in the axial direction. We derive a quasi-1D model of the Gross-Pitaeavkill equation and the Bogoliubov equations, and numerically solve these equations to obtain the condensate fraction as a function of the temperature."
     },
     {
-      "id": "7d88d5d2e8a80174c850",
-      "title": "Bose–Einstein Condensation and Superfluidity",
-      "authors": "Lev Pitaevskii, Sandro Stringari",
-      "kind": "book",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/7d88d5d2e8a80174c850.pdf",
-      "downloadUrl": "papers/7d88d5d2e8a80174c850.pdf",
-      "abstract": ""
-    },
-    {
       "id": "db021e7a93b4dcdccdbb",
       "title": "Coherent Matter Wave Transport in Speckle Potentials",
       "authors": "R. C. Kuhn, O. Sigwarth, C. Miniatura, D. Delande, C. A. Mueller",
@@ -168,7 +146,7 @@
     },
     {
       "id": "b901d3906f5e576f98dd",
-      "title": "Critical Casimir effect in a disordered O(2)-symmetric model",
+      "title": "Critical Casimir effect in a disordered $O(2)$-symmetric model",
       "authors": "G. O. Heymans, N. F. Svaiter, B. F. Svaiter, G. Krein",
       "kind": "article",
       "access": "external",
@@ -289,7 +267,7 @@
     },
     {
       "id": "1c876118612c0982e3a4",
-      "title": "Disordered Lattice Glass φ4 Quantum Field Theory",
+      "title": "Disordered Lattice Glass $φ^{4}$ Quantum Field Theory",
       "authors": "Dimitrios Bachtis",
       "kind": "article",
       "access": "external",
@@ -585,6 +563,17 @@
       "abstract": "Even the uninitiated will know that Quantum Field Theory cannot be introduced systematically in just four lectures. I try to give a reasonably connected outline of part of it, from second quantization to the path-integral technique in Euclidean space, where there is an immediate connection with the rules for Feynman diagrams and the partition function of Statistical Mechanics."
     },
     {
+      "id": "f4a7357f092445d4e8f2",
+      "title": "Introduction to Random Matrices",
+      "authors": "Craig A. Tracy, Harold Widom",
+      "kind": "book",
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/hep-th/9210073",
+      "openUrl": "https://arxiv.org/pdf/hep-th/9210073",
+      "downloadUrl": null,
+      "abstract": "These notes provide an introduction to the theory of random matrices. The central quantity studied is $τ(a)= det(1-K)$ where $K$ is the integral operator with kernel $1/π} {\\sinπ(x-y)\\over x-y} χ_I(y)$. Here $I=\\bigcup_j(a_{2j-1},a_{2j})$ and $χ_I(y)$ is the characteristic function of the set $I$. In the Gaussian Unitary Ensemble (GUE) the probability that no eigenvalues lie in $I$ is equal to $τ(a)$. Also $τ(a)$ is a tau-function and we present a new simplified derivation of the system of nonlinear completely integrable equations (the $a_j$'s are the independent variables) that were first derived by Jimbo, Miwa, M{ô}ri, and Sato in 1980. In the case of a single interval these equations are reducible to a Painlev{é} V equation. For large $s$ we give an asymptotic formula for $E_2(n;s)$, which is the probability in the GUE that exactly $n$ eigenvalues lie in an interval of length $s$."
+    },
+    {
       "id": "a8f7165ccea4f9b9c668",
       "title": "Introduction to the Theory of Disordered Systems",
       "authors": "Министерство Общего И Профессионального Образования",
@@ -608,7 +597,7 @@
     },
     {
       "id": "7ecb4482a4065cc083e0",
-      "title": "Keldysh technique and non–linear σ–model: basic principles and applications",
+      "title": "Keldysh technique and non-linear sigma-model: basic principles and applications",
       "authors": "Alex Kamenev, Alex Levchenko",
       "kind": "article",
       "access": "external",
@@ -751,7 +740,7 @@
     },
     {
       "id": "37e8219be70ab9bda23f",
-      "title": "Nonequilibrium dynamics of closed interacting quantum systems.",
+      "title": "Nonequilibrium dynamics of closed interacting quantum systems",
       "authors": "Anatoli Polkovnikov, Krishnendu Sengupta, Alessandro Silva, Mukund Vengalattore",
       "kind": "article",
       "access": "external",
@@ -813,7 +802,7 @@
       "sourceUrl": "https://arxiv.org/abs/cond-mat/0205555",
       "openUrl": "https://arxiv.org/pdf/cond-mat/0205555",
       "downloadUrl": null,
-      "abstract": "In these lectures, given at the NATO ASI at Windsor (2001), applications of the replicas nonlinear sigma model to disordered systems are reviewed. A particular attention is given to two sets of issues. First, obtaining non-perturbative results in the replica limit is discussed, using as examples (i) an oscillatory behaviour of the two-level correlation function and (ii) long-tail asymptotes of different mesoscopic distributions. Second, a new variant of the sigma model for interacting electrons in disordered normal and superconducting systems is presented, with demonstrating how to reduce it, under certain controlled approximations, to known p̀̀hase-only'' actions, including that of the d̀̀irty bosons'' model."
+      "abstract": "In these lectures, given at the NATO ASI at Windsor (2001), applications of the replicas nonlinear sigma model to disordered systems are reviewed. A particular attention is given to two sets of issues. First, obtaining non-perturbative results in the replica limit is discussed, using as examples (i) an oscillatory behaviour of the two-level correlation function and (ii) long-tail asymptotes of different mesoscopic distributions. Second, a new variant of the sigma model for interacting electrons in disordered normal and superconducting systems is presented, with demonstrating how to reduce it, under certain controlled approximations, to known `p̀hase-only'' actions, including that of the `d̀irty bosons'' model."
     },
     {
       "id": "8edb0b36e9b5e94722f1",
@@ -839,14 +828,14 @@
     },
     {
       "id": "ad05fe560da2ea573a22",
-      "title": "Nonperturbative Calculation of the Shear Viscosity in Hot φ4 Theory in Real Time",
+      "title": "Nonperturbative calculation of the shear viscosity in hot phi**4 theory in real time",
       "authors": "Enke Wang, Ulrich Heinz",
       "kind": "article",
       "access": "external",
       "sourceUrl": "https://arxiv.org/abs/hep-ph/9910367",
       "openUrl": "https://arxiv.org/pdf/hep-ph/9910367",
       "downloadUrl": null,
-      "abstract": "Starting from the Kubo formula we calculate the shear viscosity in hot phi**4 theory nonperturbatively by resumming ladders with a real-time version of the Bethe-Salpeter equation at finite temperature. In the weak coupling limit, the generalized Fluctuation-Dissipation Theorem is shown to decouple the Bethe-Salpeter equations for the different real-time components of the 4-point function. The resulting scalar integral equation is identical with the one obtained by Jeon using diagrammatic c̀̀utting rules'' in the Imaginary Time Formalism."
+      "abstract": "Starting from the Kubo formula we calculate the shear viscosity in hot phi**4 theory nonperturbatively by resumming ladders with a real-time version of the Bethe-Salpeter equation at finite temperature. In the weak coupling limit, the generalized Fluctuation-Dissipation Theorem is shown to decouple the Bethe-Salpeter equations for the different real-time components of the 4-point function. The resulting scalar integral equation is identical with the one obtained by Jeon using diagrammatic `c̀utting rules'' in the Imaginary Time Formalism."
     },
     {
       "id": "47480c1dacb05e326600",
@@ -953,7 +942,7 @@
       "authors": "Lukong Cornelius Fai",
       "kind": "book",
       "access": "open",
-      "sourceUrl": null,
+      "sourceUrl": "https://doi.org/10.1017/9781316678664.007",
       "openUrl": "papers/df58dd0f10b8b1ae9590.pdf",
       "downloadUrl": "papers/df58dd0f10b8b1ae9590.pdf",
       "abstract": ""
@@ -1014,17 +1003,6 @@
       "abstract": ""
     },
     {
-      "id": "49ed099d5bcb197e38a3",
-      "title": "Quantum mechanics with a time-dependent random unitary Hamiltonian: A perturbative study of the nonlinear Keldysh sigma-model",
-      "authors": "Peter G. Morrison",
-      "kind": "article",
-      "access": "external",
-      "sourceUrl": "https://arxiv.org/abs/1210.6977",
-      "openUrl": "https://arxiv.org/pdf/1210.6977",
-      "downloadUrl": null,
-      "abstract": "We present a systematic method for dealing with time dependent quantum dynamics, based on the quantum brachistochrone and matrix mechanics. We derive the explicit time dependence of the Hamiltonian operator for a number of constrained finite systems from this formalism. Once this has been achieved we go on to calculate the wavevector as a function of time, in order to demonstrate the use of matrix methods with respect to several concrete examples. Interesting results are derived for elliptic curves and periodic orbits on higher dimensional non-commutative geometries."
-    },
-    {
       "id": "1a336799065ae2220b0e",
       "title": "Quantum phase transitions",
       "authors": "Matthias Vojta",
@@ -1048,11 +1026,11 @@
     },
     {
       "id": "fdb43c41c7e1d95d490b",
-      "title": "RANDOM MATRICES and the Statistical Theory of Energy Levels",
+      "title": "Random Matrices and the Statistical Theory of Energy Levels",
       "authors": "M. L. Mehta",
       "kind": "book",
       "access": "open",
-      "sourceUrl": null,
+      "sourceUrl": "https://doi.org/10.1016/c2013-0-12505-6",
       "openUrl": "papers/fdb43c41c7e1d95d490b.pdf",
       "downloadUrl": "papers/fdb43c41c7e1d95d490b.pdf",
       "abstract": ""
@@ -1147,7 +1125,7 @@
     },
     {
       "id": "dfd85e6a178025f0d1dd",
-      "title": "Semiclassical Approximation meets Keldysh-Schwinger diagrammatic technique: Scalar φ4",
+      "title": "Semiclassical Approximation meets Keldysh-Schwinger diagrammatic technique: Scalar $\\varphi^4$",
       "authors": "A. A. Radovskaya, A. G. Semenov",
       "kind": "article",
       "access": "external",
@@ -1169,7 +1147,7 @@
     },
     {
       "id": "97928184e9e2320fc535",
-      "title": "Shear Viscosity of Hot Scalar Field Theory in the Real-Time Formalism",
+      "title": "Shear viscosity of hot scalar field theory in the real-time formalism",
       "authors": "Enke Wang, Ulrich W. Heinz",
       "kind": "article",
       "access": "external",
@@ -1265,6 +1243,17 @@
       "openUrl": "https://arxiv.org/pdf/2407.17558",
       "downloadUrl": null,
       "abstract": "Superfluidity describes the ability of quantum matter to flow without friction. Due to its fundamental role in many transport phenomena, it is crucial to understand the robustness of superfluid properties to external perturbations. Here, we theoretically study the effects of speckle disorder on the propagation of sound waves in a two-dimensional Bose-Einstein condensate at zero temperature. We numerically solve the Gross-Pitaevskii equation in the presence of disorder and employ a superfluid hydrodynamic approach to elucidate the role of the compressibility and superfluid fraction on the propagation of sound. A key result is that disorder reduces the superfluid fraction and hence the speed of sound; it also introduces damping and mode coupling. In the limit of weak disorder, the predictions for the speed of sound and its damping rate are well reproduced by a quadratic perturbation theory. The hydrodynamic description is valid over a wide range of parameters, while discrepancies become evident if the disorder becomes too strong, the effect being more significant for disorder applied in only one spatial direction. Our predictions are well within the reach of state-of-the-art cold-atom experiments and carry over to more general disorder potentials."
+    },
+    {
+      "id": "7d88d5d2e8a80174c850",
+      "title": "Superfluidity vs Bose-Einstein condensation in a Bose gas with disorder",
+      "authors": "G. E. Astrakharchik, J. Boronat, J. Casulleras, S. Giorgini",
+      "kind": "book",
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/cond-mat/0111165",
+      "openUrl": "https://arxiv.org/pdf/cond-mat/0111165",
+      "downloadUrl": null,
+      "abstract": "We investigate the phenomenon of Bose-Einstein condensation and superfluidity in a Bose gas at zero temperature with disorder. By using the Diffusion Monte-Carlo method we calculate the superfluid and the condensate fraction of the system as a function of density and strength of disorder. In the regime of weak disorder we find agreement with the analytical results obtained within the Bogoliubov model. For strong disorder the system enters an unusual regime where the superfluid fraction is smaller than the condensate fraction."
     },
     {
       "id": "c381230ab0787ba63cb5",
@@ -1364,6 +1353,17 @@
       "openUrl": "papers/e8717203be4b531c3a65.pdf",
       "downloadUrl": "papers/e8717203be4b531c3a65.pdf",
       "abstract": "We investigate the thermodynamics of a free relativistic charged scalar field in the presence of weak disorder. We consider nonstatic quenched disorder which couples linearly to the mass of the scalar field. After performing noise averages over the free energy of the system, we find that disorder increases the critical temperature for Bose-Einstein condensation at finite density."
+    },
+    {
+      "id": "49ed099d5bcb197e38a3",
+      "title": "Time Dependent Quantum Mechanics",
+      "authors": "Peter G. Morrison",
+      "kind": "article",
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/1210.6977",
+      "openUrl": "https://arxiv.org/pdf/1210.6977",
+      "downloadUrl": null,
+      "abstract": "We present a systematic method for dealing with time dependent quantum dynamics, based on the quantum brachistochrone and matrix mechanics. We derive the explicit time dependence of the Hamiltonian operator for a number of constrained finite systems from this formalism. Once this has been achieved we go on to calculate the wavevector as a function of time, in order to demonstrate the use of matrix methods with respect to several concrete examples. Interesting results are derived for elliptic curves and periodic orbits on higher dimensional non-commutative geometries."
     },
     {
       "id": "a3c82d77f4273b859a80",
@@ -2019,6 +2019,14 @@
     },
     {
       "source": "ca7ea5041cdff518d6a8",
+      "target": "7d88d5d2e8a80174c850",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "ca7ea5041cdff518d6a8",
       "target": "db021e7a93b4dcdccdbb",
       "type": "citation",
       "strength": 1.0,
@@ -2186,14 +2194,122 @@
       "explanation": "The source publication cites the target (OpenAlex)."
     },
     {
+      "source": "f5552fb9534fd12a04b0",
+      "target": "7d88d5d2e8a80174c850",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "09a544e3bd22412f011d",
+      "target": "17c4f3e8965ea7e23d1e",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Georg Schwiete"
+      ],
+      "explanation": "Shared author: Georg Schwiete"
+    },
+    {
+      "source": "09a544e3bd22412f011d",
+      "target": "4cb975cd5b3e0b624695",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Georg Schwiete"
+      ],
+      "explanation": "Shared author: Georg Schwiete"
+    },
+    {
+      "source": "09a544e3bd22412f011d",
+      "target": "61f2fdc2dbb6af404e4a",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Georg Schwiete"
+      ],
+      "explanation": "Shared author: Georg Schwiete"
+    },
+    {
+      "source": "09a544e3bd22412f011d",
+      "target": "b7f26028700c3ef31817",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Georg Schwiete"
+      ],
+      "explanation": "Shared author: Georg Schwiete"
+    },
+    {
+      "source": "09a544e3bd22412f011d",
+      "target": "dc505a49516927d0b8e9",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Georg Schwiete"
+      ],
+      "explanation": "Shared author: Georg Schwiete"
+    },
+    {
+      "source": "0fb036167205e8ea909f",
+      "target": "17c4f3e8965ea7e23d1e",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Alexander M. Finkel'Stein"
+      ],
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
+    },
+    {
+      "source": "0fb036167205e8ea909f",
+      "target": "4cb975cd5b3e0b624695",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Alexander M. Finkel'Stein"
+      ],
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
+    },
+    {
+      "source": "0fb036167205e8ea909f",
+      "target": "61f2fdc2dbb6af404e4a",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Alexander M. Finkel'Stein"
+      ],
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
+    },
+    {
       "source": "0fb036167205e8ea909f",
       "target": "82d3accbbeaa252fdcef",
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "alexander m finkel stein"
+        "Alexander M. Finkel'Stein"
       ],
-      "explanation": "Shared author: alexander m finkel stein"
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
+    },
+    {
+      "source": "0fb036167205e8ea909f",
+      "target": "b7f26028700c3ef31817",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "OpenAlex author A5009363330"
+      ],
+      "explanation": "Shared author: OpenAlex author A5009363330"
+    },
+    {
+      "source": "0fb036167205e8ea909f",
+      "target": "dc505a49516927d0b8e9",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Alexander M. Finkel'Stein"
+      ],
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
     },
     {
       "source": "1501f760d15f4df69a25",
@@ -2201,9 +2317,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "v e kravtsov"
+        "V. E. Kravtsov"
       ],
-      "explanation": "Shared author: v e kravtsov"
+      "explanation": "Shared author: V. E. Kravtsov"
     },
     {
       "source": "17c4f3e8965ea7e23d1e",
@@ -2211,10 +2327,10 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "a m finkel stein",
-        "g schwiete"
+        "Alexander M. Finkel'Stein",
+        "Georg Schwiete"
       ],
-      "explanation": "Shared author: a m finkel stein, g schwiete"
+      "explanation": "Shared author: Alexander M. Finkel'Stein, Georg Schwiete"
     },
     {
       "source": "17c4f3e8965ea7e23d1e",
@@ -2222,10 +2338,20 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "a m finkel stein",
-        "g schwiete"
+        "Alexander M. Finkel'Stein",
+        "Georg Schwiete"
       ],
-      "explanation": "Shared author: a m finkel stein, g schwiete"
+      "explanation": "Shared author: Alexander M. Finkel'Stein, Georg Schwiete"
+    },
+    {
+      "source": "17c4f3e8965ea7e23d1e",
+      "target": "82d3accbbeaa252fdcef",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Alexander M. Finkel'Stein"
+      ],
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
     },
     {
       "source": "17c4f3e8965ea7e23d1e",
@@ -2233,9 +2359,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "g schwiete"
+        "Georg Schwiete"
       ],
-      "explanation": "Shared author: g schwiete"
+      "explanation": "Shared author: Georg Schwiete"
     },
     {
       "source": "17c4f3e8965ea7e23d1e",
@@ -2243,10 +2369,10 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "a m finkel stein",
-        "g schwiete"
+        "Alexander M. Finkel'Stein",
+        "Georg Schwiete"
       ],
-      "explanation": "Shared author: a m finkel stein, g schwiete"
+      "explanation": "Shared author: Alexander M. Finkel'Stein, Georg Schwiete"
     },
     {
       "source": "2857dba8f9d9ec6471f6",
@@ -2254,9 +2380,19 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "alex levchenko"
+        "Alex Levchenko"
       ],
-      "explanation": "Shared author: alex levchenko"
+      "explanation": "Shared author: Alex Levchenko"
+    },
+    {
+      "source": "35a2662e8ef0172bbaf6",
+      "target": "47480c1dacb05e326600",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Martin R. Zirnbauer"
+      ],
+      "explanation": "Shared author: Martin R. Zirnbauer"
     },
     {
       "source": "35a2662e8ef0172bbaf6",
@@ -2264,9 +2400,19 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "m r zirnbauer"
+        "Martin R. Zirnbauer"
       ],
-      "explanation": "Shared author: m r zirnbauer"
+      "explanation": "Shared author: Martin R. Zirnbauer"
+    },
+    {
+      "source": "35a2662e8ef0172bbaf6",
+      "target": "7d5c46e20394845a2c86",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "OpenAlex author A5052171519"
+      ],
+      "explanation": "Shared author: OpenAlex author A5052171519"
     },
     {
       "source": "35a2662e8ef0172bbaf6",
@@ -2274,39 +2420,19 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "k b efetov"
+        "Konstantin Efetov"
       ],
-      "explanation": "Shared author: k b efetov"
+      "explanation": "Shared author: Konstantin Efetov"
     },
     {
-      "source": "3c5cdb6af30e2b21eec5",
-      "target": "5a6da9fe0ee72528e92c",
+      "source": "35a2662e8ef0172bbaf6",
+      "target": "de4f09029f7ff4b05d08",
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "n f svaiter"
+        "Konstantin Efetov"
       ],
-      "explanation": "Shared author: n f svaiter"
-    },
-    {
-      "source": "3c5cdb6af30e2b21eec5",
-      "target": "5b9b0448b2934aea906f",
-      "type": "author",
-      "strength": 0.8,
-      "authors": [
-        "n f svaiter"
-      ],
-      "explanation": "Shared author: n f svaiter"
-    },
-    {
-      "source": "3c5cdb6af30e2b21eec5",
-      "target": "b901d3906f5e576f98dd",
-      "type": "author",
-      "strength": 0.8,
-      "authors": [
-        "n f svaiter"
-      ],
-      "explanation": "Shared author: n f svaiter"
+      "explanation": "Shared author: Konstantin Efetov"
     },
     {
       "source": "3c5cdb6af30e2b21eec5",
@@ -2314,30 +2440,39 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "n f svaiter"
+        "Nami F. Svaiter"
       ],
-      "explanation": "Shared author: n f svaiter"
+      "explanation": "Shared author: Nami F. Svaiter"
     },
     {
-      "source": "3c5cdb6af30e2b21eec5",
-      "target": "ef521f5e723383086856",
+      "source": "47480c1dacb05e326600",
+      "target": "6061fda0e8bf37102849",
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "n f svaiter",
-        "r acosta diaz"
+        "Martin R. Zirnbauer"
       ],
-      "explanation": "Shared author: n f svaiter, r acosta diaz"
+      "explanation": "Shared author: Martin R. Zirnbauer"
     },
     {
-      "source": "464498d779ecf5b960e4",
-      "target": "75126cd408be2ec7038d",
+      "source": "47480c1dacb05e326600",
+      "target": "7d5c46e20394845a2c86",
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "roberto raimondi"
+        "OpenAlex author A5052171519"
       ],
-      "explanation": "Shared author: roberto raimondi"
+      "explanation": "Shared author: OpenAlex author A5052171519"
+    },
+    {
+      "source": "4be7e80c62e19b417e09",
+      "target": "df58dd0f10b8b1ae9590",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Kevin Costello"
+      ],
+      "explanation": "Shared author: Kevin Costello"
     },
     {
       "source": "4cb975cd5b3e0b624695",
@@ -2345,10 +2480,20 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "a m finkel stein",
-        "g schwiete"
+        "Alexander M. Finkel'Stein",
+        "Georg Schwiete"
       ],
-      "explanation": "Shared author: a m finkel stein, g schwiete"
+      "explanation": "Shared author: Alexander M. Finkel'Stein, Georg Schwiete"
+    },
+    {
+      "source": "4cb975cd5b3e0b624695",
+      "target": "82d3accbbeaa252fdcef",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Alexander M. Finkel'Stein"
+      ],
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
     },
     {
       "source": "4cb975cd5b3e0b624695",
@@ -2356,9 +2501,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "g schwiete"
+        "Georg Schwiete"
       ],
-      "explanation": "Shared author: g schwiete"
+      "explanation": "Shared author: Georg Schwiete"
     },
     {
       "source": "4cb975cd5b3e0b624695",
@@ -2366,10 +2511,10 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "a m finkel stein",
-        "g schwiete"
+        "Alexander M. Finkel'Stein",
+        "Georg Schwiete"
       ],
-      "explanation": "Shared author: a m finkel stein, g schwiete"
+      "explanation": "Shared author: Alexander M. Finkel'Stein, Georg Schwiete"
     },
     {
       "source": "532b57072efb6b926949",
@@ -2377,9 +2522,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "sangyong jeon"
+        "Sangyong Jeon"
       ],
-      "explanation": "Shared author: sangyong jeon"
+      "explanation": "Shared author: Sangyong Jeon"
     },
     {
       "source": "5a6da9fe0ee72528e92c",
@@ -2387,10 +2532,20 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "g krein",
-        "n f svaiter"
+        "G. Krein",
+        "Nami F. Svaiter"
       ],
-      "explanation": "Shared author: g krein, n f svaiter"
+      "explanation": "Shared author: G. Krein, Nami F. Svaiter"
+    },
+    {
+      "source": "5a6da9fe0ee72528e92c",
+      "target": "a584b26858c1dcb3fe3a",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Nami F. Svaiter"
+      ],
+      "explanation": "Shared author: Nami F. Svaiter"
     },
     {
       "source": "5a6da9fe0ee72528e92c",
@@ -2398,10 +2553,10 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "g krein",
-        "n f svaiter"
+        "G. Krein",
+        "Nami F. Svaiter"
       ],
-      "explanation": "Shared author: g krein, n f svaiter"
+      "explanation": "Shared author: G. Krein, Nami F. Svaiter"
     },
     {
       "source": "5a6da9fe0ee72528e92c",
@@ -2409,12 +2564,12 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "e arias",
-        "g krein",
-        "g menezes",
-        "n f svaiter"
+        "E. Arias",
+        "G. Krein",
+        "G. Menezes",
+        "Nami F. Svaiter"
       ],
-      "explanation": "Shared author: e arias, g krein, g menezes, n f svaiter"
+      "explanation": "Shared author: E. Arias, G. Krein, G. Menezes, Nami F. Svaiter"
     },
     {
       "source": "5a6da9fe0ee72528e92c",
@@ -2422,10 +2577,10 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "g menezes",
-        "n f svaiter"
+        "G. Menezes",
+        "Nami F. Svaiter"
       ],
-      "explanation": "Shared author: g menezes, n f svaiter"
+      "explanation": "Shared author: G. Menezes, Nami F. Svaiter"
     },
     {
       "source": "5b6e4d3160e03ffc14fc",
@@ -2433,10 +2588,30 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "christopher gaul",
-        "cord a mu ller"
+        "Christopher Gaul",
+        "Cord A. Müller"
       ],
-      "explanation": "Shared author: christopher gaul, cord a mu ller"
+      "explanation": "Shared author: Christopher Gaul, Cord A. Müller"
+    },
+    {
+      "source": "5b6e4d3160e03ffc14fc",
+      "target": "db021e7a93b4dcdccdbb",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "OpenAlex author A5111615734"
+      ],
+      "explanation": "Shared author: OpenAlex author A5111615734"
+    },
+    {
+      "source": "5b9b0448b2934aea906f",
+      "target": "a584b26858c1dcb3fe3a",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Nami F. Svaiter"
+      ],
+      "explanation": "Shared author: Nami F. Svaiter"
     },
     {
       "source": "5b9b0448b2934aea906f",
@@ -2444,11 +2619,11 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "g krein",
-        "g o heymans",
-        "n f svaiter"
+        "G. Krein",
+        "G. O. Heymans",
+        "Nami F. Svaiter"
       ],
-      "explanation": "Shared author: g krein, g o heymans, n f svaiter"
+      "explanation": "Shared author: G. Krein, G. O. Heymans, Nami F. Svaiter"
     },
     {
       "source": "5b9b0448b2934aea906f",
@@ -2456,10 +2631,10 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "g krein",
-        "n f svaiter"
+        "G. Krein",
+        "Nami F. Svaiter"
       ],
-      "explanation": "Shared author: g krein, n f svaiter"
+      "explanation": "Shared author: G. Krein, Nami F. Svaiter"
     },
     {
       "source": "5b9b0448b2934aea906f",
@@ -2467,9 +2642,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "n f svaiter"
+        "Nami F. Svaiter"
       ],
-      "explanation": "Shared author: n f svaiter"
+      "explanation": "Shared author: Nami F. Svaiter"
     },
     {
       "source": "5bee4756ff236b23ed4a",
@@ -2477,9 +2652,39 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "alberto cortijo"
+        "Alberto Cortijo"
       ],
-      "explanation": "Shared author: alberto cortijo"
+      "explanation": "Shared author: Alberto Cortijo"
+    },
+    {
+      "source": "6061fda0e8bf37102849",
+      "target": "78f81527fec4f708aa07",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Sebastian E. Schmittner"
+      ],
+      "explanation": "Shared author: Sebastian E. Schmittner"
+    },
+    {
+      "source": "6061fda0e8bf37102849",
+      "target": "7d5c46e20394845a2c86",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "OpenAlex author A5052171519"
+      ],
+      "explanation": "Shared author: OpenAlex author A5052171519"
+    },
+    {
+      "source": "61f2fdc2dbb6af404e4a",
+      "target": "82d3accbbeaa252fdcef",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Alexander M. Finkel'Stein"
+      ],
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
     },
     {
       "source": "61f2fdc2dbb6af404e4a",
@@ -2487,9 +2692,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "g schwiete"
+        "Georg Schwiete"
       ],
-      "explanation": "Shared author: g schwiete"
+      "explanation": "Shared author: Georg Schwiete"
     },
     {
       "source": "61f2fdc2dbb6af404e4a",
@@ -2497,10 +2702,20 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "a m finkel stein",
-        "g schwiete"
+        "Alexander M. Finkel'Stein",
+        "Georg Schwiete"
       ],
-      "explanation": "Shared author: a m finkel stein, g schwiete"
+      "explanation": "Shared author: Alexander M. Finkel'Stein, Georg Schwiete"
+    },
+    {
+      "source": "75ea5f938dd0f6a73d74",
+      "target": "bbd0df5b4f37b61dee38",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Jørgen Rammer"
+      ],
+      "explanation": "Shared author: Jørgen Rammer"
     },
     {
       "source": "7d88d5d2e8a80174c850",
@@ -2508,9 +2723,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "sandro stringari"
+        "Stefano Giorgini"
       ],
-      "explanation": "Shared author: sandro stringari"
+      "explanation": "Shared author: Stefano Giorgini"
     },
     {
       "source": "7ecb4482a4065cc083e0",
@@ -2518,9 +2733,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "alex kamenev"
+        "Alex Kamenev"
       ],
-      "explanation": "Shared author: alex kamenev"
+      "explanation": "Shared author: Alex Kamenev"
     },
     {
       "source": "7ecb4482a4065cc083e0",
@@ -2528,9 +2743,29 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "alex kamenev"
+        "Alex Kamenev"
       ],
-      "explanation": "Shared author: alex kamenev"
+      "explanation": "Shared author: Alex Kamenev"
+    },
+    {
+      "source": "82d3accbbeaa252fdcef",
+      "target": "b7f26028700c3ef31817",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "OpenAlex author A5009363330"
+      ],
+      "explanation": "Shared author: OpenAlex author A5009363330"
+    },
+    {
+      "source": "82d3accbbeaa252fdcef",
+      "target": "dc505a49516927d0b8e9",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Alexander M. Finkel'Stein"
+      ],
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
     },
     {
       "source": "97928184e9e2320fc535",
@@ -2538,9 +2773,41 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "enke wang"
+        "Enke Wang",
+        "Ulrich Heinz"
       ],
-      "explanation": "Shared author: enke wang"
+      "explanation": "Shared author: Enke Wang, Ulrich Heinz"
+    },
+    {
+      "source": "a584b26858c1dcb3fe3a",
+      "target": "b901d3906f5e576f98dd",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Nami F. Svaiter"
+      ],
+      "explanation": "Shared author: Nami F. Svaiter"
+    },
+    {
+      "source": "a584b26858c1dcb3fe3a",
+      "target": "e8717203be4b531c3a65",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Nami F. Svaiter"
+      ],
+      "explanation": "Shared author: Nami F. Svaiter"
+    },
+    {
+      "source": "a584b26858c1dcb3fe3a",
+      "target": "ef521f5e723383086856",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Nami F. Svaiter",
+        "Róbinson J. Acosta Diaz"
+      ],
+      "explanation": "Shared author: Nami F. Svaiter, Róbinson J. Acosta Diaz"
     },
     {
       "source": "b7f26028700c3ef31817",
@@ -2548,9 +2815,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "g schwiete"
+        "Georg Schwiete"
       ],
-      "explanation": "Shared author: g schwiete"
+      "explanation": "Shared author: Georg Schwiete"
     },
     {
       "source": "b901d3906f5e576f98dd",
@@ -2558,10 +2825,10 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "g krein",
-        "n f svaiter"
+        "G. Krein",
+        "Nami F. Svaiter"
       ],
-      "explanation": "Shared author: g krein, n f svaiter"
+      "explanation": "Shared author: G. Krein, Nami F. Svaiter"
     },
     {
       "source": "b901d3906f5e576f98dd",
@@ -2569,9 +2836,29 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "n f svaiter"
+        "Nami F. Svaiter"
       ],
-      "explanation": "Shared author: n f svaiter"
+      "explanation": "Shared author: Nami F. Svaiter"
+    },
+    {
+      "source": "c381230ab0787ba63cb5",
+      "target": "de4f09029f7ff4b05d08",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Konstantin Efetov"
+      ],
+      "explanation": "Shared author: Konstantin Efetov"
+    },
+    {
+      "source": "ca7ea5041cdff518d6a8",
+      "target": "db021e7a93b4dcdccdbb",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "OpenAlex author A5111615734"
+      ],
+      "explanation": "Shared author: OpenAlex author A5111615734"
     },
     {
       "source": "d112abc40f17f3d8abd4",
@@ -2579,9 +2866,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "thomas wellens"
+        "Thomas Wellens"
       ],
-      "explanation": "Shared author: thomas wellens"
+      "explanation": "Shared author: Thomas Wellens"
     },
     {
       "source": "d9f554f17d9329e67ab9",
@@ -2589,9 +2876,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "alex kamenev"
+        "Alex Kamenev"
       ],
-      "explanation": "Shared author: alex kamenev"
+      "explanation": "Shared author: Alex Kamenev"
     },
     {
       "source": "e8717203be4b531c3a65",
@@ -2599,1372 +2886,1100 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "g menezes",
-        "n f svaiter"
+        "G. Menezes",
+        "Nami F. Svaiter"
       ],
-      "explanation": "Shared author: g menezes, n f svaiter"
-    },
-    {
-      "source": "0425e01f0af9d0994909",
-      "target": "0bdf419313f549dfd175",
-      "type": "similar",
-      "strength": 0.2406,
-      "terms": [
-        "physics",
-        "quantum"
-      ],
-      "explanation": "Shared distinctive terms: physics, quantum"
+      "explanation": "Shared author: G. Menezes, Nami F. Svaiter"
     },
     {
       "source": "09708e781b2eb4b31214",
-      "target": "4bcb57d1d3f63d4f7fec",
+      "target": "0fb036167205e8ea909f",
       "type": "similar",
-      "strength": 0.2045,
+      "strength": 0.2,
       "terms": [
-        "path",
-        "integral",
-        "integrals",
-        "schwinger"
+        "Anderson localization",
+        "where",
+        "presence",
+        "time"
       ],
-      "explanation": "Shared distinctive terms: path, integral, integrals, schwinger"
+      "explanation": "Common keywords: Anderson localization, where, presence, time"
+    },
+    {
+      "source": "09708e781b2eb4b31214",
+      "target": "a81a2cf3c3aa7249ffd1",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Anderson localization",
+        "where"
+      ],
+      "explanation": "Common keywords: Anderson localization, where"
     },
     {
       "source": "09708e781b2eb4b31214",
       "target": "c6a8bbbcc8265df18526",
       "type": "similar",
-      "strength": 0.2879,
+      "strength": 0.2128,
       "terms": [
-        "path",
         "square",
+        "path",
         "integral",
+        "variation"
+      ],
+      "explanation": "Common keywords: square, path, integral, variation"
+    },
+    {
+      "source": "09708e781b2eb4b31214",
+      "target": "db021e7a93b4dcdccdbb",
+      "type": "similar",
+      "strength": 0.2,
+      "terms": [
+        "Anderson localization",
+        "Green's functions",
+        "path",
         "potential"
       ],
-      "explanation": "Shared distinctive terms: path, square, integral, potential"
+      "explanation": "Common keywords: Anderson localization, Green's functions, path, potential"
     },
     {
       "source": "09708e781b2eb4b31214",
       "target": "f62489586c39bf17b0fa",
       "type": "similar",
-      "strength": 0.2945,
+      "strength": 0.2058,
       "terms": [
         "integrals",
         "path",
-        "mechanics",
-        "quantum"
+        "mechanics"
       ],
-      "explanation": "Shared distinctive terms: integrals, path, mechanics, quantum"
-    },
-    {
-      "source": "09a544e3bd22412f011d",
-      "target": "20e6e0b3b24a66d38d61",
-      "type": "similar",
-      "strength": 0.215,
-      "terms": [
-        "transport",
-        "electron",
-        "corrections",
-        "coefficients"
-      ],
-      "explanation": "Shared distinctive terms: transport, electron, corrections, coefficients"
+      "explanation": "Common keywords: integrals, path, mechanics"
     },
     {
       "source": "09a544e3bd22412f011d",
       "target": "3b76321646d1a716ec2b",
       "type": "similar",
-      "strength": 0.2826,
+      "strength": 0.25,
       "terms": [
-        "gas",
-        "electron",
+        "Nonlinear sigma model",
         "dimensional",
+        "electron",
         "sigma"
       ],
-      "explanation": "Shared distinctive terms: gas, electron, dimensional, sigma"
+      "explanation": "Common keywords: Nonlinear sigma model, dimensional, electron, sigma"
     },
     {
       "source": "09a544e3bd22412f011d",
-      "target": "61f2fdc2dbb6af404e4a",
+      "target": "7ecb4482a4065cc083e0",
       "type": "similar",
-      "strength": 0.392,
+      "strength": 0.25,
       "terms": [
-        "gas",
-        "heat",
+        "Nonlinear sigma model",
+        "corrections",
+        "linear",
+        "derivation"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, corrections, linear, derivation"
+    },
+    {
+      "source": "09a544e3bd22412f011d",
+      "target": "800b937e6c7143bf871b",
+      "type": "similar",
+      "strength": 0.2,
+      "terms": [
+        "Nonlinear sigma model",
+        "linear",
+        "both",
+        "sigma"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, linear, both, sigma"
+    },
+    {
+      "source": "09a544e3bd22412f011d",
+      "target": "8edb0b36e9b5e94722f1",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Nonlinear sigma model",
         "electron",
-        "density"
+        "sigma",
+        "dimensional"
       ],
-      "explanation": "Shared distinctive terms: gas, heat, electron, density"
+      "explanation": "Common keywords: Nonlinear sigma model, electron, sigma, dimensional"
     },
     {
       "source": "09a544e3bd22412f011d",
-      "target": "6e88b459a85df2ac012b",
+      "target": "de71fb6e60247c50189d",
       "type": "similar",
-      "strength": 0.1627,
+      "strength": 0.25,
       "terms": [
-        "gas",
-        "interaction",
-        "account",
-        "range"
+        "Nonlinear sigma model",
+        "perturbative",
+        "sigma",
+        "long"
       ],
-      "explanation": "Shared distinctive terms: gas, interaction, account, range"
-    },
-    {
-      "source": "0bdf419313f549dfd175",
-      "target": "2945081d4189e94cd785",
-      "type": "similar",
-      "strength": 0.1781,
-      "terms": [
-        "physics",
-        "functions"
-      ],
-      "explanation": "Shared distinctive terms: physics, functions"
-    },
-    {
-      "source": "0bdf419313f549dfd175",
-      "target": "5a6da9fe0ee72528e92c",
-      "type": "similar",
-      "strength": 0.1841,
-      "terms": [
-        "green",
-        "functions",
-        "quantum"
-      ],
-      "explanation": "Shared distinctive terms: green, functions, quantum"
-    },
-    {
-      "source": "0bdf419313f549dfd175",
-      "target": "d3a8b8471de6a39ec861",
-      "type": "similar",
-      "strength": 0.2007,
-      "terms": [
-        "green",
-        "physics",
-        "quantum"
-      ],
-      "explanation": "Shared distinctive terms: green, physics, quantum"
-    },
-    {
-      "source": "0de8c5c8f07096f9eb4f",
-      "target": "14594afe4b687e2133e1",
-      "type": "similar",
-      "strength": 0.1697,
-      "terms": [
-        "lecture",
-        "notes",
-        "random"
-      ],
-      "explanation": "Shared distinctive terms: lecture, notes, random"
-    },
-    {
-      "source": "0de8c5c8f07096f9eb4f",
-      "target": "d9f554f17d9329e67ab9",
-      "type": "similar",
-      "strength": 0.1551,
-      "terms": [
-        "lectures",
-        "contain",
-        "covered",
-        "topics"
-      ],
-      "explanation": "Shared distinctive terms: lectures, contain, covered, topics"
+      "explanation": "Common keywords: Nonlinear sigma model, perturbative, sigma, long"
     },
     {
       "source": "0fb036167205e8ea909f",
-      "target": "6a04e495e857c0a1a28b",
+      "target": "a81a2cf3c3aa7249ffd1",
       "type": "similar",
-      "strength": 0.1583,
+      "strength": 0.25,
       "terms": [
-        "phonons",
-        "localization",
-        "localized",
-        "electronic"
+        "Anderson localization",
+        "possible",
+        "discuss",
+        "where"
       ],
-      "explanation": "Shared distinctive terms: phonons, localization, localized, electronic"
+      "explanation": "Common keywords: Anderson localization, possible, discuss, where"
     },
     {
-      "source": "10d893ef0a964778604d",
-      "target": "249969930d037073e6f7",
+      "source": "0fb036167205e8ea909f",
+      "target": "db021e7a93b4dcdccdbb",
       "type": "similar",
-      "strength": 0.1732,
+      "strength": 0.2,
       "terms": [
-        "mesoscopic",
-        "electrons"
+        "Anderson localization",
+        "possible",
+        "scattering",
+        "including"
       ],
-      "explanation": "Shared distinctive terms: mesoscopic, electrons"
+      "explanation": "Common keywords: Anderson localization, possible, scattering, including"
     },
     {
-      "source": "14594afe4b687e2133e1",
-      "target": "2945081d4189e94cd785",
+      "source": "1cfb806de3a388033455",
+      "target": "3c5cdb6af30e2b21eec5",
       "type": "similar",
-      "strength": 0.1707,
+      "strength": 0.2,
       "terms": [
-        "lecture",
-        "notes"
+        "Replica method",
+        "composite",
+        "defined",
+        "quenched"
       ],
-      "explanation": "Shared distinctive terms: lecture, notes"
+      "explanation": "Common keywords: Replica method, composite, defined, quenched"
     },
     {
-      "source": "14594afe4b687e2133e1",
-      "target": "f4a7357f092445d4e8f2",
-      "type": "similar",
-      "strength": 0.2162,
-      "terms": [
-        "matrices",
-        "notes",
-        "random"
-      ],
-      "explanation": "Shared distinctive terms: matrices, notes, random"
-    },
-    {
-      "source": "14594afe4b687e2133e1",
-      "target": "fdb43c41c7e1d95d490b",
-      "type": "similar",
-      "strength": 0.3349,
-      "terms": [
-        "matrices",
-        "random"
-      ],
-      "explanation": "Shared distinctive terms: matrices, random"
-    },
-    {
-      "source": "17ac10700d8c6034998f",
-      "target": "5b6e4d3160e03ffc14fc",
-      "type": "similar",
-      "strength": 0.2212,
-      "terms": [
-        "condensate",
-        "einstein",
-        "bose",
-        "expansion"
-      ],
-      "explanation": "Shared distinctive terms: condensate, einstein, bose, expansion"
-    },
-    {
-      "source": "17ac10700d8c6034998f",
-      "target": "ca7ea5041cdff518d6a8",
-      "type": "similar",
-      "strength": 0.1786,
-      "terms": [
-        "condensate",
-        "einstein",
-        "bose",
-        "expansion"
-      ],
-      "explanation": "Shared distinctive terms: condensate, einstein, bose, expansion"
-    },
-    {
-      "source": "17c4f3e8965ea7e23d1e",
-      "target": "216afd1a0fb0c60ee81b",
-      "type": "similar",
-      "strength": 0.1667,
-      "terms": [
-        "kinetics",
-        "transport"
-      ],
-      "explanation": "Shared distinctive terms: kinetics, transport"
-    },
-    {
-      "source": "17c4f3e8965ea7e23d1e",
-      "target": "4cb975cd5b3e0b624695",
-      "type": "similar",
-      "strength": 0.1826,
-      "terms": [
-        "packet",
-        "expanding",
-        "wave",
-        "serve"
-      ],
-      "explanation": "Shared distinctive terms: packet, expanding, wave, serve"
-    },
-    {
-      "source": "17c4f3e8965ea7e23d1e",
-      "target": "b7f26028700c3ef31817",
-      "type": "similar",
-      "strength": 0.2227,
-      "terms": [
-        "collisions",
-        "packet",
-        "expanding",
-        "wave"
-      ],
-      "explanation": "Shared distinctive terms: collisions, packet, expanding, wave"
-    },
-    {
-      "source": "1a336799065ae2220b0e",
-      "target": "c0ceb6d172fa51731d56",
-      "type": "similar",
-      "strength": 0.1654,
-      "terms": [
-        "transitions",
-        "phase",
-        "diagram",
-        "phases"
-      ],
-      "explanation": "Shared distinctive terms: transitions, phase, diagram, phases"
-    },
-    {
-      "source": "1b099877a04e5af38ba2",
-      "target": "2a285b1519bb617dbd22",
-      "type": "similar",
-      "strength": 0.1536,
-      "terms": [
-        "equilibrium",
-        "dynamics",
-        "evolution",
-        "non"
-      ],
-      "explanation": "Shared distinctive terms: equilibrium, dynamics, evolution, non"
-    },
-    {
-      "source": "1b099877a04e5af38ba2",
-      "target": "32cb576779b56c52d99c",
-      "type": "similar",
-      "strength": 0.2379,
-      "terms": [
-        "equilibrium",
-        "non",
-        "field"
-      ],
-      "explanation": "Shared distinctive terms: equilibrium, non, field"
-    },
-    {
-      "source": "1b099877a04e5af38ba2",
-      "target": "532b57072efb6b926949",
-      "type": "similar",
-      "strength": 0.1905,
-      "terms": [
-        "relativistic",
-        "boltzmann",
-        "scalar",
-        "equation"
-      ],
-      "explanation": "Shared distinctive terms: relativistic, boltzmann, scalar, equation"
-    },
-    {
-      "source": "1b099877a04e5af38ba2",
-      "target": "7d8ea87d57394a8e7f14",
-      "type": "similar",
-      "strength": 0.2181,
-      "terms": [
-        "boltzmann",
-        "scalar",
-        "dynamics",
-        "equilibrium"
-      ],
-      "explanation": "Shared distinctive terms: boltzmann, scalar, dynamics, equilibrium"
-    },
-    {
-      "source": "1c876118612c0982e3a4",
-      "target": "2e978a3b38dae0e467f4",
-      "type": "similar",
-      "strength": 0.1573,
-      "terms": [
-        "glass",
-        "spin",
-        "glasses",
-        "overlap"
-      ],
-      "explanation": "Shared distinctive terms: glass, spin, glasses, overlap"
-    },
-    {
-      "source": "1c876118612c0982e3a4",
-      "target": "aee3ae024f95f35d952e",
-      "type": "similar",
-      "strength": 0.1503,
-      "terms": [
-        "spin",
-        "glass",
-        "edwards",
-        "dimensional"
-      ],
-      "explanation": "Shared distinctive terms: spin, glass, edwards, dimensional"
-    },
-    {
-      "source": "1d5c0ba37fe4435426cd",
+      "source": "1cfb806de3a388033455",
       "target": "cf48d65fbff94e717d6c",
       "type": "similar",
-      "strength": 0.1739,
+      "strength": 0.25,
       "terms": [
-        "polymer",
-        "medium",
-        "random"
+        "Replica method",
+        "quenched",
+        "free",
+        "replica"
       ],
-      "explanation": "Shared distinctive terms: polymer, medium, random"
+      "explanation": "Common keywords: Replica method, quenched, free, replica"
     },
     {
-      "source": "20e6e0b3b24a66d38d61",
-      "target": "61f2fdc2dbb6af404e4a",
+      "source": "1cfb806de3a388033455",
+      "target": "de71fb6e60247c50189d",
       "type": "similar",
-      "strength": 0.2154,
+      "strength": 0.25,
       "terms": [
-        "heat",
-        "electron",
-        "processes",
-        "franz"
+        "Replica method",
+        "trick",
+        "behaviour",
+        "normal"
       ],
-      "explanation": "Shared distinctive terms: heat, electron, processes, franz"
+      "explanation": "Common keywords: Replica method, trick, behaviour, normal"
+    },
+    {
+      "source": "1cfb806de3a388033455",
+      "target": "e39f3f43ff32b1d7e9b9",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Replica method",
+        "when",
+        "replica"
+      ],
+      "explanation": "Common keywords: Replica method, when, replica"
+    },
+    {
+      "source": "1cfb806de3a388033455",
+      "target": "ef521f5e723383086856",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Replica method",
+        "considering",
+        "free",
+        "replica"
+      ],
+      "explanation": "Common keywords: Replica method, considering, free, replica"
     },
     {
       "source": "20e6e0b3b24a66d38d61",
       "target": "75126cd408be2ec7038d",
       "type": "similar",
-      "strength": 0.3008,
+      "strength": 0.2582,
       "terms": [
-        "metals",
-        "thermal",
         "franz",
-        "wiedemann"
-      ],
-      "explanation": "Shared distinctive terms: metals, thermal, franz, wiedemann"
-    },
-    {
-      "source": "20e6e0b3b24a66d38d61",
-      "target": "bbd0df5b4f37b61dee38",
-      "type": "similar",
-      "strength": 0.2293,
-      "terms": [
+        "wiedemann",
         "metals",
-        "transport",
-        "quantum"
+        "violation"
       ],
-      "explanation": "Shared distinctive terms: metals, transport, quantum"
-    },
-    {
-      "source": "216afd1a0fb0c60ee81b",
-      "target": "bbd0df5b4f37b61dee38",
-      "type": "similar",
-      "strength": 0.1767,
-      "terms": [
-        "transport",
-        "quantum"
-      ],
-      "explanation": "Shared distinctive terms: transport, quantum"
+      "explanation": "Common keywords: franz, wiedemann, metals, violation"
     },
     {
       "source": "249969930d037073e6f7",
-      "target": "b4ea04d4ad5695ac8397",
+      "target": "3b76321646d1a716ec2b",
       "type": "similar",
-      "strength": 0.1668,
+      "strength": 0.25,
       "terms": [
-        "stochastic",
-        "fluctuations",
-        "metric",
-        "scalar"
+        "Nonlinear sigma model",
+        "sigma",
+        "nonlinear"
       ],
-      "explanation": "Shared distinctive terms: stochastic, fluctuations, metric, scalar"
+      "explanation": "Common keywords: Nonlinear sigma model, sigma, nonlinear"
+    },
+    {
+      "source": "249969930d037073e6f7",
+      "target": "7ecb4482a4065cc083e0",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Nonlinear sigma model",
+        "mesoscopic",
+        "sigma",
+        "time"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, mesoscopic, sigma, time"
+    },
+    {
+      "source": "249969930d037073e6f7",
+      "target": "800b937e6c7143bf871b",
+      "type": "similar",
+      "strength": 0.2,
+      "terms": [
+        "Nonlinear sigma model",
+        "sigma",
+        "scalar",
+        "electrons"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, sigma, scalar, electrons"
+    },
+    {
+      "source": "249969930d037073e6f7",
+      "target": "8edb0b36e9b5e94722f1",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Nonlinear sigma model",
+        "sigma",
+        "electrons",
+        "nonlinear"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, sigma, electrons, nonlinear"
+    },
+    {
+      "source": "249969930d037073e6f7",
+      "target": "de71fb6e60247c50189d",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Nonlinear sigma model",
+        "mesoscopic",
+        "discussed",
+        "sigma"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, mesoscopic, discussed, sigma"
     },
     {
       "source": "2857dba8f9d9ec6471f6",
-      "target": "5bee4756ff236b23ed4a",
+      "target": "2a285b1519bb617dbd22",
       "type": "similar",
-      "strength": 0.1612,
+      "strength": 0.25,
       "terms": [
-        "hydrodynamic",
-        "corrections",
-        "keldysh",
-        "self"
+        "Schwinger–Keldysh formalism",
+        "follow",
+        "class",
+        "obtain"
       ],
-      "explanation": "Shared distinctive terms: hydrodynamic, corrections, keldysh, self"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, follow, class, obtain"
+    },
+    {
+      "source": "2857dba8f9d9ec6471f6",
+      "target": "396aec0ad44c1a69dd28",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "response",
+        "invariant",
+        "known"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, response, invariant, known"
+    },
+    {
+      "source": "2857dba8f9d9ec6471f6",
+      "target": "3b76321646d1a716ec2b",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Nonlinear sigma model",
+        "sigma",
+        "electron",
+        "nonlinear"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, sigma, electron, nonlinear"
+    },
+    {
+      "source": "2857dba8f9d9ec6471f6",
+      "target": "4625efd4f82d10f27c49",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "spin",
+        "class",
+        "matrix"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, spin, class, matrix"
+    },
+    {
+      "source": "2857dba8f9d9ec6471f6",
+      "target": "4bcb57d1d3f63d4f7fec",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "known",
+        "function"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, known, function"
     },
     {
       "source": "288de55d1993885892f7",
       "target": "57142b88a36bc47e0fd4",
       "type": "similar",
-      "strength": 0.2248,
+      "strength": 0.25,
       "terms": [
+        "Coherent potential approximation",
         "coherent",
-        "potential",
         "approximation",
-        "extended"
+        "potential"
       ],
-      "explanation": "Shared distinctive terms: coherent, potential, approximation, extended"
+      "explanation": "Common keywords: Coherent potential approximation, coherent, approximation, potential"
     },
     {
       "source": "288de55d1993885892f7",
       "target": "6061fda0e8bf37102849",
       "type": "similar",
-      "strength": 0.1952,
+      "strength": 0.25,
       "terms": [
+        "Coherent potential approximation",
         "coherent",
         "approximation",
-        "potential",
         "scheme"
       ],
-      "explanation": "Shared distinctive terms: coherent, approximation, potential, scheme"
-    },
-    {
-      "source": "288de55d1993885892f7",
-      "target": "db021e7a93b4dcdccdbb",
-      "type": "similar",
-      "strength": 0.1514,
-      "terms": [
-        "coherent",
-        "potential",
-        "correlated",
-        "green"
-      ],
-      "explanation": "Shared distinctive terms: coherent, potential, correlated, green"
+      "explanation": "Common keywords: Coherent potential approximation, coherent, approximation, scheme"
     },
     {
       "source": "2a285b1519bb617dbd22",
-      "target": "32cb576779b56c52d99c",
+      "target": "396aec0ad44c1a69dd28",
       "type": "similar",
-      "strength": 0.2136,
+      "strength": 0.25,
       "terms": [
+        "Schwinger–Keldysh formalism",
         "equilibrium",
-        "non",
-        "states",
-        "quantum"
+        "identities",
+        "ward"
       ],
-      "explanation": "Shared distinctive terms: equilibrium, non, states, quantum"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, equilibrium, identities, ward"
     },
     {
-      "source": "32cb576779b56c52d99c",
-      "target": "bbd0df5b4f37b61dee38",
+      "source": "2a285b1519bb617dbd22",
+      "target": "4625efd4f82d10f27c49",
       "type": "similar",
-      "strength": 0.2057,
+      "strength": 0.25,
       "terms": [
-        "field",
-        "quantum"
+        "Schwinger–Keldysh formalism",
+        "evolution",
+        "environment",
+        "time"
       ],
-      "explanation": "Shared distinctive terms: field, quantum"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, evolution, environment, time"
     },
     {
-      "source": "32cb576779b56c52d99c",
-      "target": "d9f554f17d9329e67ab9",
+      "source": "2a285b1519bb617dbd22",
+      "target": "4bcb57d1d3f63d4f7fec",
       "type": "similar",
-      "strength": 0.2273,
+      "strength": 0.25,
       "terms": [
-        "equilibrium",
-        "non",
-        "quantum"
+        "Schwinger–Keldysh formalism",
+        "evolution",
+        "describe",
+        "time"
       ],
-      "explanation": "Shared distinctive terms: equilibrium, non, quantum"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, evolution, describe, time"
+    },
+    {
+      "source": "2a285b1519bb617dbd22",
+      "target": "5bee4756ff236b23ed4a",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "time"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, time"
     },
     {
       "source": "35a2662e8ef0172bbaf6",
-      "target": "f4a7357f092445d4e8f2",
+      "target": "3b76321646d1a716ec2b",
       "type": "similar",
-      "strength": 0.1502,
+      "strength": 0.25,
       "terms": [
-        "matrices",
-        "formula",
-        "random",
-        "ensemble"
+        "Nonlinear sigma model",
+        "sigma"
       ],
-      "explanation": "Shared distinctive terms: matrices, formula, random, ensemble"
+      "explanation": "Common keywords: Nonlinear sigma model, sigma"
     },
     {
-      "source": "373a35cd782276b8a6d6",
-      "target": "dc505a49516927d0b8e9",
+      "source": "35a2662e8ef0172bbaf6",
+      "target": "6061fda0e8bf37102849",
       "type": "similar",
-      "strength": 0.1521,
+      "strength": 0.25,
       "terms": [
-        "electron",
-        "non",
-        "linear",
-        "scaling"
+        "Superbosonization",
+        "superbosonization",
+        "supermatrix",
+        "matrix"
       ],
-      "explanation": "Shared distinctive terms: electron, non, linear, scaling"
+      "explanation": "Common keywords: Superbosonization, superbosonization, supermatrix, matrix"
+    },
+    {
+      "source": "35a2662e8ef0172bbaf6",
+      "target": "7ecb4482a4065cc083e0",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Nonlinear sigma model",
+        "sigma",
+        "linear"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, sigma, linear"
+    },
+    {
+      "source": "35a2662e8ef0172bbaf6",
+      "target": "8edb0b36e9b5e94722f1",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Nonlinear sigma model",
+        "sigma"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, sigma"
+    },
+    {
+      "source": "35a2662e8ef0172bbaf6",
+      "target": "de71fb6e60247c50189d",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Nonlinear sigma model",
+        "reduce",
+        "sigma"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, reduce, sigma"
     },
     {
       "source": "396aec0ad44c1a69dd28",
-      "target": "b4ea04d4ad5695ac8397",
+      "target": "4625efd4f82d10f27c49",
       "type": "similar",
-      "strength": 0.1601,
+      "strength": 0.25,
       "terms": [
-        "stochastic",
-        "relations",
-        "stationary",
-        "dissipation"
+        "Schwinger–Keldysh formalism",
+        "action",
+        "open",
+        "dissipative"
       ],
-      "explanation": "Shared distinctive terms: stochastic, relations, stationary, dissipation"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, action, open, dissipative"
+    },
+    {
+      "source": "396aec0ad44c1a69dd28",
+      "target": "4bcb57d1d3f63d4f7fec",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "functional",
+        "associated",
+        "known"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, functional, associated, known"
+    },
+    {
+      "source": "396aec0ad44c1a69dd28",
+      "target": "5bee4756ff236b23ed4a",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "associated",
+        "response",
+        "time"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, associated, response, time"
     },
     {
       "source": "3b76321646d1a716ec2b",
       "target": "8edb0b36e9b5e94722f1",
       "type": "similar",
-      "strength": 0.318,
+      "strength": 0.3011,
       "terms": [
+        "Nonlinear sigma model",
         "sigma",
         "nonlinear",
-        "electron",
-        "dimensional"
+        "electron"
       ],
-      "explanation": "Shared distinctive terms: sigma, nonlinear, electron, dimensional"
-    },
-    {
-      "source": "3b76321646d1a716ec2b",
-      "target": "aee3ae024f95f35d952e",
-      "type": "similar",
-      "strength": 0.2092,
-      "terms": [
-        "sigma",
-        "dimensional",
-        "nonlinear"
-      ],
-      "explanation": "Shared distinctive terms: sigma, dimensional, nonlinear"
-    },
-    {
-      "source": "3b76321646d1a716ec2b",
-      "target": "de71fb6e60247c50189d",
-      "type": "similar",
-      "strength": 0.2388,
-      "terms": [
-        "replica",
-        "sigma",
-        "nonlinear"
-      ],
-      "explanation": "Shared distinctive terms: replica, sigma, nonlinear"
+      "explanation": "Common keywords: Nonlinear sigma model, sigma, nonlinear, electron"
     },
     {
       "source": "3c5cdb6af30e2b21eec5",
-      "target": "c6a8bbbcc8265df18526",
+      "target": "cf48d65fbff94e717d6c",
       "type": "similar",
-      "strength": 0.153,
+      "strength": 0.25,
       "terms": [
+        "Replica method",
+        "above",
+        "finite",
+        "long"
+      ],
+      "explanation": "Common keywords: Replica method, above, finite, long"
+    },
+    {
+      "source": "3c5cdb6af30e2b21eec5",
+      "target": "de71fb6e60247c50189d",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Replica method",
         "long",
-        "range",
-        "correlations",
-        "result"
+        "replica"
       ],
-      "explanation": "Shared distinctive terms: long, range, correlations, result"
+      "explanation": "Common keywords: Replica method, long, replica"
     },
     {
-      "source": "3cf186cdea83cfc7f64d",
-      "target": "7d5c46e20394845a2c86",
+      "source": "3c5cdb6af30e2b21eec5",
+      "target": "e39f3f43ff32b1d7e9b9",
       "type": "similar",
-      "strength": 0.1792,
+      "strength": 0.25,
       "terms": [
-        "matrix",
-        "bosons",
-        "measures",
-        "measure"
+        "Replica method",
+        "value",
+        "when",
+        "replica"
       ],
-      "explanation": "Shared distinctive terms: matrix, bosons, measures, measure"
+      "explanation": "Common keywords: Replica method, value, when, replica"
     },
     {
-      "source": "3e54fa2ca1dd5f8f6c1e",
-      "target": "4be7e80c62e19b417e09",
+      "source": "3c5cdb6af30e2b21eec5",
+      "target": "ef521f5e723383086856",
       "type": "similar",
-      "strength": 0.1617,
+      "strength": 0.25,
       "terms": [
-        "lectures",
-        "introduction",
-        "feynman",
-        "technique"
+        "Replica method",
+        "euclidean",
+        "periodic",
+        "boundary"
       ],
-      "explanation": "Shared distinctive terms: lectures, introduction, feynman, technique"
+      "explanation": "Common keywords: Replica method, euclidean, periodic, boundary"
     },
     {
-      "source": "464498d779ecf5b960e4",
-      "target": "82d3accbbeaa252fdcef",
-      "type": "similar",
-      "strength": 0.2531,
-      "terms": [
-        "liquid",
-        "electron",
-        "fermi",
-        "transition"
-      ],
-      "explanation": "Shared distinctive terms: liquid, electron, fermi, transition"
-    },
-    {
-      "source": "464498d779ecf5b960e4",
-      "target": "dc505a49516927d0b8e9",
-      "type": "similar",
-      "strength": 0.2629,
-      "terms": [
-        "liquid",
-        "electron",
-        "fermi",
-        "interaction"
-      ],
-      "explanation": "Shared distinctive terms: liquid, electron, fermi, interaction"
-    },
-    {
-      "source": "480bf89fa59840c30b9a",
-      "target": "57142b88a36bc47e0fd4",
-      "type": "similar",
-      "strength": 0.1568,
-      "terms": [
-        "mean",
-        "dynamical",
-        "body",
-        "mechanical"
-      ],
-      "explanation": "Shared distinctive terms: mean, dynamical, body, mechanical"
-    },
-    {
-      "source": "480bf89fa59840c30b9a",
-      "target": "d3a8b8471de6a39ec861",
-      "type": "similar",
-      "strength": 0.1647,
-      "terms": [
-        "nonequilibrium",
-        "body",
-        "many",
-        "physics"
-      ],
-      "explanation": "Shared distinctive terms: nonequilibrium, body, many, physics"
-    },
-    {
-      "source": "49ed099d5bcb197e38a3",
-      "target": "f62489586c39bf17b0fa",
-      "type": "similar",
-      "strength": 0.1505,
-      "terms": [
-        "mechanics",
-        "quantum"
-      ],
-      "explanation": "Shared distinctive terms: mechanics, quantum"
-    },
-    {
-      "source": "4a6974757f7c190fa564",
+      "source": "4625efd4f82d10f27c49",
       "target": "4bcb57d1d3f63d4f7fec",
       "type": "similar",
-      "strength": 0.1614,
+      "strength": 0.25,
       "terms": [
-        "path",
-        "integral",
-        "review",
-        "formalism"
+        "Schwinger–Keldysh formalism",
+        "harmonic",
+        "lindblad",
+        "decoherence"
       ],
-      "explanation": "Shared distinctive terms: path, integral, review, formalism"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, harmonic, lindblad, decoherence"
+    },
+    {
+      "source": "4625efd4f82d10f27c49",
+      "target": "5bee4756ff236b23ed4a",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "regime",
+        "develop",
+        "spin"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, regime, develop, spin"
     },
     {
       "source": "4bcb57d1d3f63d4f7fec",
-      "target": "c6a8bbbcc8265df18526",
+      "target": "5bee4756ff236b23ed4a",
       "type": "similar",
-      "strength": 0.1522,
+      "strength": 0.25,
       "terms": [
-        "path",
-        "integral",
-        "quantum"
+        "Schwinger–Keldysh formalism",
+        "associated",
+        "leading",
+        "time"
       ],
-      "explanation": "Shared distinctive terms: path, integral, quantum"
-    },
-    {
-      "source": "4bcb57d1d3f63d4f7fec",
-      "target": "f62489586c39bf17b0fa",
-      "type": "similar",
-      "strength": 0.2458,
-      "terms": [
-        "path",
-        "integrals",
-        "mechanics",
-        "quantum"
-      ],
-      "explanation": "Shared distinctive terms: path, integrals, mechanics, quantum"
-    },
-    {
-      "source": "4be7e80c62e19b417e09",
-      "target": "f62489586c39bf17b0fa",
-      "type": "similar",
-      "strength": 0.1555,
-      "terms": [
-        "mechanics",
-        "path",
-        "quantum"
-      ],
-      "explanation": "Shared distinctive terms: mechanics, path, quantum"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, associated, leading, time"
     },
     {
       "source": "4cb975cd5b3e0b624695",
       "target": "b7f26028700c3ef31817",
       "type": "similar",
-      "strength": 0.3354,
+      "strength": 0.2258,
       "terms": [
         "packet",
         "medium",
-        "wave",
+        "formulated",
         "nonlinear"
       ],
-      "explanation": "Shared distinctive terms: packet, medium, wave, nonlinear"
-    },
-    {
-      "source": "4cb975cd5b3e0b624695",
-      "target": "f531c4cb2a9604e7dc5f",
-      "type": "similar",
-      "strength": 0.2561,
-      "terms": [
-        "packet",
-        "wave",
-        "nonlinear",
-        "equation"
-      ],
-      "explanation": "Shared distinctive terms: packet, wave, nonlinear, equation"
-    },
-    {
-      "source": "532b57072efb6b926949",
-      "target": "768f6cf863f97685a9a8",
-      "type": "similar",
-      "strength": 0.1644,
-      "terms": [
-        "relativistic",
-        "scalar",
-        "shear",
-        "field"
-      ],
-      "explanation": "Shared distinctive terms: relativistic, scalar, shear, field"
-    },
-    {
-      "source": "532b57072efb6b926949",
-      "target": "7d8ea87d57394a8e7f14",
-      "type": "similar",
-      "strength": 0.1726,
-      "terms": [
-        "thermal",
-        "scalar",
-        "boltzmann",
-        "evaluated"
-      ],
-      "explanation": "Shared distinctive terms: thermal, scalar, boltzmann, evaluated"
+      "explanation": "Common keywords: packet, medium, formulated, nonlinear"
     },
     {
       "source": "57142b88a36bc47e0fd4",
       "target": "6061fda0e8bf37102849",
       "type": "similar",
-      "strength": 0.1993,
+      "strength": 0.25,
       "terms": [
+        "Coherent potential approximation",
         "coherent",
         "approximation",
-        "potential",
-        "mean"
+        "potential"
       ],
-      "explanation": "Shared distinctive terms: coherent, approximation, potential, mean"
-    },
-    {
-      "source": "57142b88a36bc47e0fd4",
-      "target": "db021e7a93b4dcdccdbb",
-      "type": "similar",
-      "strength": 0.2014,
-      "terms": [
-        "coherent",
-        "mean",
-        "potential",
-        "green"
-      ],
-      "explanation": "Shared distinctive terms: coherent, mean, potential, green"
-    },
-    {
-      "source": "5a6da9fe0ee72528e92c",
-      "target": "cf48d65fbff94e717d6c",
-      "type": "similar",
-      "strength": 0.1512,
-      "terms": [
-        "media",
-        "annealed",
-        "medium",
-        "random"
-      ],
-      "explanation": "Shared distinctive terms: media, annealed, medium, random"
+      "explanation": "Common keywords: Coherent potential approximation, coherent, approximation, potential"
     },
     {
       "source": "5a6da9fe0ee72528e92c",
       "target": "e8717203be4b531c3a65",
       "type": "similar",
-      "strength": 0.2736,
+      "strength": 0.2128,
       "terms": [
         "media",
-        "scalar",
-        "field",
+        "averages",
+        "performing",
         "after"
       ],
-      "explanation": "Shared distinctive terms: media, scalar, field, after"
+      "explanation": "Common keywords: media, averages, performing, after"
     },
     {
       "source": "5b6e4d3160e03ffc14fc",
-      "target": "6e88b459a85df2ac012b",
+      "target": "7d88d5d2e8a80174c850",
       "type": "similar",
-      "strength": 0.1707,
+      "strength": 0.248,
       "terms": [
+        "einstein",
+        "bogoliubov",
         "condensate",
-        "depletion",
-        "analytical",
-        "temperature"
+        "bose"
       ],
-      "explanation": "Shared distinctive terms: condensate, depletion, analytical, temperature"
+      "explanation": "Common keywords: einstein, bogoliubov, condensate, bose"
     },
     {
       "source": "5b6e4d3160e03ffc14fc",
       "target": "ca7ea5041cdff518d6a8",
       "type": "similar",
-      "strength": 0.5975,
+      "strength": 0.5067,
       "terms": [
-        "bogoliubov",
         "condensates",
-        "einstein",
-        "condensate"
+        "bogoliubov",
+        "deformed",
+        "einstein"
       ],
-      "explanation": "Shared distinctive terms: bogoliubov, condensates, einstein, condensate"
+      "explanation": "Common keywords: condensates, bogoliubov, deformed, einstein"
     },
     {
-      "source": "5b6e4d3160e03ffc14fc",
+      "source": "5bee4756ff236b23ed4a",
+      "target": "7ecb4482a4065cc083e0",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "corrections",
+        "derivation",
+        "time"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, corrections, derivation, time"
+    },
+    {
+      "source": "6e88b459a85df2ac012b",
+      "target": "7d88d5d2e8a80174c850",
+      "type": "similar",
+      "strength": 0.2025,
+      "terms": [
+        "fraction",
+        "condensate",
+        "superfluid",
+        "strength"
+      ],
+      "explanation": "Common keywords: fraction, condensate, superfluid, strength"
+    },
+    {
+      "source": "7d88d5d2e8a80174c850",
       "target": "d25a2441596737923d53",
       "type": "similar",
-      "strength": 0.1687,
+      "strength": 0.2032,
       "terms": [
-        "sound",
-        "bose",
-        "einstein",
-        "condensate"
+        "superfluidity",
+        "fraction",
+        "superfluid",
+        "bose"
       ],
-      "explanation": "Shared distinctive terms: sound, bose, einstein, condensate"
-    },
-    {
-      "source": "5b9b0448b2934aea906f",
-      "target": "b901d3906f5e576f98dd",
-      "type": "similar",
-      "strength": 0.1966,
-      "terms": [
-        "moments",
-        "continuous",
-        "partition",
-        "symmetry"
-      ],
-      "explanation": "Shared distinctive terms: moments, continuous, partition, symmetry"
-    },
-    {
-      "source": "5b9b0448b2934aea906f",
-      "target": "ef521f5e723383086856",
-      "type": "similar",
-      "strength": 0.1899,
-      "terms": [
-        "symmetry",
-        "euclidean",
-        "partition",
-        "average"
-      ],
-      "explanation": "Shared distinctive terms: symmetry, euclidean, partition, average"
-    },
-    {
-      "source": "5bee4756ff236b23ed4a",
-      "target": "b4f9dcd17017a4562e97",
-      "type": "similar",
-      "strength": 0.36,
-      "terms": [
-        "hydrodynamic",
-        "corrections",
-        "stress",
-        "interference"
-      ],
-      "explanation": "Shared distinctive terms: hydrodynamic, corrections, stress, interference"
-    },
-    {
-      "source": "5bee4756ff236b23ed4a",
-      "target": "cebb15e4fcc4c0dd09eb",
-      "type": "similar",
-      "strength": 0.1692,
-      "terms": [
-        "hydrodynamic",
-        "conservation",
-        "laws",
-        "derivation"
-      ],
-      "explanation": "Shared distinctive terms: hydrodynamic, conservation, laws, derivation"
-    },
-    {
-      "source": "6061fda0e8bf37102849",
-      "target": "7d5c46e20394845a2c86",
-      "type": "similar",
-      "strength": 0.1505,
-      "terms": [
-        "matrix",
-        "bosons",
-        "generator",
-        "family"
-      ],
-      "explanation": "Shared distinctive terms: matrix, bosons, generator, family"
-    },
-    {
-      "source": "61f2fdc2dbb6af404e4a",
-      "target": "75126cd408be2ec7038d",
-      "type": "similar",
-      "strength": 0.162,
-      "terms": [
-        "conductivity",
-        "franz",
-        "wiedemann",
-        "thermal"
-      ],
-      "explanation": "Shared distinctive terms: conductivity, franz, wiedemann, thermal"
-    },
-    {
-      "source": "6a04e495e857c0a1a28b",
-      "target": "6b05ea608990f7bc0055",
-      "type": "similar",
-      "strength": 0.1552,
-      "terms": [
-        "extended",
-        "states",
-        "localization",
-        "localized"
-      ],
-      "explanation": "Shared distinctive terms: extended, states, localization, localized"
-    },
-    {
-      "source": "6c2a255573a9506ab2ab",
-      "target": "ef521f5e723383086856",
-      "type": "similar",
-      "strength": 0.2494,
-      "terms": [
-        "spontaneous",
-        "breaking",
-        "symmetry",
-        "energy"
-      ],
-      "explanation": "Shared distinctive terms: spontaneous, breaking, symmetry, energy"
-    },
-    {
-      "source": "75126cd408be2ec7038d",
-      "target": "bbd0df5b4f37b61dee38",
-      "type": "similar",
-      "strength": 0.2483,
-      "terms": [
-        "metals",
-        "transport",
-        "quantum"
-      ],
-      "explanation": "Shared distinctive terms: metals, transport, quantum"
-    },
-    {
-      "source": "768f6cf863f97685a9a8",
-      "target": "97928184e9e2320fc535",
-      "type": "similar",
-      "strength": 0.2448,
-      "terms": [
-        "viscosity",
-        "shear",
-        "scalar",
-        "real"
-      ],
-      "explanation": "Shared distinctive terms: viscosity, shear, scalar, real"
-    },
-    {
-      "source": "768f6cf863f97685a9a8",
-      "target": "a81a2cf3c3aa7249ffd1",
-      "type": "similar",
-      "strength": 0.1783,
-      "terms": [
-        "viscosity",
-        "shear"
-      ],
-      "explanation": "Shared distinctive terms: viscosity, shear"
-    },
-    {
-      "source": "768f6cf863f97685a9a8",
-      "target": "ad05fe560da2ea573a22",
-      "type": "similar",
-      "strength": 0.1923,
-      "terms": [
-        "viscosity",
-        "shear",
-        "real",
-        "scalar"
-      ],
-      "explanation": "Shared distinctive terms: viscosity, shear, real, scalar"
+      "explanation": "Common keywords: superfluidity, fraction, superfluid, bose"
     },
     {
       "source": "7ecb4482a4065cc083e0",
-      "target": "d9f554f17d9329e67ab9",
+      "target": "800b937e6c7143bf871b",
       "type": "similar",
-      "strength": 0.256,
+      "strength": 0.25,
       "terms": [
-        "etc",
-        "non",
-        "fermionic",
-        "linear"
+        "Nonlinear sigma model",
+        "linear",
+        "sigma"
       ],
-      "explanation": "Shared distinctive terms: etc, non, fermionic, linear"
+      "explanation": "Common keywords: Nonlinear sigma model, linear, sigma"
+    },
+    {
+      "source": "800b937e6c7143bf871b",
+      "target": "82d3accbbeaa252fdcef",
+      "type": "similar",
+      "strength": 0.2,
+      "terms": [
+        "Nonlinear sigma model",
+        "linear",
+        "electrons",
+        "sigma"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, linear, electrons, sigma"
+    },
+    {
+      "source": "800b937e6c7143bf871b",
+      "target": "8edb0b36e9b5e94722f1",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Nonlinear sigma model",
+        "sigma",
+        "well",
+        "electrons"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, sigma, well, electrons"
+    },
+    {
+      "source": "82d3accbbeaa252fdcef",
+      "target": "aee3ae024f95f35d952e",
+      "type": "similar",
+      "strength": 0.2,
+      "terms": [
+        "Nonlinear sigma model",
+        "scaling",
+        "transition",
+        "anderson"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, scaling, transition, anderson"
     },
     {
       "source": "82d3accbbeaa252fdcef",
       "target": "dc505a49516927d0b8e9",
       "type": "similar",
-      "strength": 0.541,
+      "strength": 0.4703,
       "terms": [
+        "Nonlinear sigma model",
         "liquid",
-        "mit",
         "nlsm",
         "fermi"
       ],
-      "explanation": "Shared distinctive terms: liquid, mit, nlsm, fermi"
-    },
-    {
-      "source": "8edb0b36e9b5e94722f1",
-      "target": "dc505a49516927d0b8e9",
-      "type": "similar",
-      "strength": 0.1582,
-      "terms": [
-        "electron",
-        "electrons",
-        "sigma",
-        "finkel"
-      ],
-      "explanation": "Shared distinctive terms: electron, electrons, sigma, finkel"
-    },
-    {
-      "source": "8edb0b36e9b5e94722f1",
-      "target": "de71fb6e60247c50189d",
-      "type": "similar",
-      "strength": 0.1772,
-      "terms": [
-        "sigma",
-        "nonlinear",
-        "superconducting",
-        "electrons"
-      ],
-      "explanation": "Shared distinctive terms: sigma, nonlinear, superconducting, electrons"
-    },
-    {
-      "source": "94ab8e1bc3618a045d81",
-      "target": "d25a2441596737923d53",
-      "type": "similar",
-      "strength": 0.181,
-      "terms": [
-        "gases",
-        "bose",
-        "fraction",
-        "direction"
-      ],
-      "explanation": "Shared distinctive terms: gases, bose, fraction, direction"
-    },
-    {
-      "source": "97928184e9e2320fc535",
-      "target": "a81a2cf3c3aa7249ffd1",
-      "type": "similar",
-      "strength": 0.1599,
-      "terms": [
-        "viscosity",
-        "shear"
-      ],
-      "explanation": "Shared distinctive terms: viscosity, shear"
+      "explanation": "Common keywords: Nonlinear sigma model, liquid, nlsm, fermi"
     },
     {
       "source": "97928184e9e2320fc535",
       "target": "ad05fe560da2ea573a22",
       "type": "similar",
-      "strength": 0.5888,
+      "strength": 0.53,
       "terms": [
-        "hot",
         "real",
-        "viscosity",
-        "shear"
+        "bethe",
+        "shear",
+        "viscosity"
       ],
-      "explanation": "Shared distinctive terms: hot, real, viscosity, shear"
+      "explanation": "Common keywords: real, bethe, shear, viscosity"
     },
     {
-      "source": "9efdc8195ac501cb1afc",
-      "target": "c0ceb6d172fa51731d56",
+      "source": "a3c82d77f4273b859a80",
+      "target": "dfd85e6a178025f0d1dd",
       "type": "similar",
-      "strength": 0.1809,
+      "strength": 0.25,
       "terms": [
-        "years",
-        "phase",
-        "diagram",
-        "superfluid"
+        "Schwinger–Keldysh formalism",
+        "order",
+        "discuss"
       ],
-      "explanation": "Shared distinctive terms: years, phase, diagram, superfluid"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, order, discuss"
+    },
+    {
+      "source": "a3c82d77f4273b859a80",
+      "target": "dff29d4a46bac91afe41",
+      "type": "similar",
+      "strength": 0.2,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "fluctuations",
+        "derive",
+        "scattering"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, fluctuations, derive, scattering"
     },
     {
       "source": "a584b26858c1dcb3fe3a",
-      "target": "b901d3906f5e576f98dd",
+      "target": "cf48d65fbff94e717d6c",
       "type": "similar",
-      "strength": 0.2045,
+      "strength": 0.25,
       "terms": [
-        "partition",
-        "moments",
-        "symmetric",
-        "contribute"
+        "Replica method",
+        "media",
+        "replica",
+        "finite"
       ],
-      "explanation": "Shared distinctive terms: partition, moments, symmetric, contribute"
+      "explanation": "Common keywords: Replica method, media, replica, finite"
+    },
+    {
+      "source": "a584b26858c1dcb3fe3a",
+      "target": "d1a1e6469fd3aa288e3c",
+      "type": "similar",
+      "strength": 0.2,
+      "terms": [
+        "Replica method",
+        "averaged",
+        "quenched",
+        "point"
+      ],
+      "explanation": "Common keywords: Replica method, averaged, quenched, point"
+    },
+    {
+      "source": "a584b26858c1dcb3fe3a",
+      "target": "e39f3f43ff32b1d7e9b9",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Replica method",
+        "moments",
+        "each",
+        "replica"
+      ],
+      "explanation": "Common keywords: Replica method, moments, each, replica"
     },
     {
       "source": "a584b26858c1dcb3fe3a",
       "target": "ef521f5e723383086856",
       "type": "similar",
-      "strength": 0.2202,
+      "strength": 0.25,
       "terms": [
+        "Replica method",
         "partition",
         "replica",
-        "saddle",
-        "each"
+        "saddle"
       ],
-      "explanation": "Shared distinctive terms: partition, replica, saddle, each"
+      "explanation": "Common keywords: Replica method, partition, replica, saddle"
     },
     {
       "source": "a81a2cf3c3aa7249ffd1",
-      "target": "ad05fe560da2ea573a22",
+      "target": "db021e7a93b4dcdccdbb",
       "type": "similar",
-      "strength": 0.2193,
+      "strength": 0.25,
       "terms": [
-        "viscosity",
-        "shear",
-        "nonperturbatively",
-        "kubo"
+        "Anderson localization",
+        "possible"
       ],
-      "explanation": "Shared distinctive terms: viscosity, shear, nonperturbatively, kubo"
+      "explanation": "Common keywords: Anderson localization, possible"
     },
     {
-      "source": "b4ea04d4ad5695ac8397",
-      "target": "dfd85e6a178025f0d1dd",
+      "source": "aee3ae024f95f35d952e",
+      "target": "dc505a49516927d0b8e9",
       "type": "similar",
-      "strength": 0.1572,
+      "strength": 0.2,
       "terms": [
-        "semiclassical",
-        "scalar",
-        "fields",
-        "equilibrium"
+        "Nonlinear sigma model",
+        "scaling",
+        "behavior",
+        "including"
       ],
-      "explanation": "Shared distinctive terms: semiclassical, scalar, fields, equilibrium"
-    },
-    {
-      "source": "b7f26028700c3ef31817",
-      "target": "f531c4cb2a9604e7dc5f",
-      "type": "similar",
-      "strength": 0.2804,
-      "terms": [
-        "packet",
-        "wave",
-        "nonlinear",
-        "propagation"
-      ],
-      "explanation": "Shared distinctive terms: packet, wave, nonlinear, propagation"
-    },
-    {
-      "source": "b901d3906f5e576f98dd",
-      "target": "ef521f5e723383086856",
-      "type": "similar",
-      "strength": 0.2246,
-      "terms": [
-        "partition",
-        "symmetric",
-        "written",
-        "symmetry"
-      ],
-      "explanation": "Shared distinctive terms: partition, symmetric, written, symmetry"
+      "explanation": "Common keywords: Nonlinear sigma model, scaling, behavior, including"
     },
     {
       "source": "c0ceb6d172fa51731d56",
       "target": "f5552fb9534fd12a04b0",
       "type": "similar",
-      "strength": 0.291,
+      "strength": 0.25,
       "terms": [
+        "Bose–Hubbard model",
         "hubbard",
-        "bose",
-        "phases",
-        "mott"
+        "mott",
+        "between"
       ],
-      "explanation": "Shared distinctive terms: hubbard, bose, phases, mott"
+      "explanation": "Common keywords: Bose–Hubbard model, hubbard, mott, between"
     },
     {
       "source": "c6a8bbbcc8265df18526",
-      "target": "f5552fb9534fd12a04b0",
+      "target": "cf48d65fbff94e717d6c",
       "type": "similar",
-      "strength": 0.1667,
+      "strength": 0.25,
       "terms": [
-        "correlations",
-        "range",
-        "potential",
-        "long"
+        "Replica method",
+        "long",
+        "replica",
+        "potential"
       ],
-      "explanation": "Shared distinctive terms: correlations, range, potential, long"
+      "explanation": "Common keywords: Replica method, long, replica, potential"
     },
     {
-      "source": "c8a3663c07202b5b21d9",
-      "target": "f4a7357f092445d4e8f2",
+      "source": "c6a8bbbcc8265df18526",
+      "target": "d1a1e6469fd3aa288e3c",
       "type": "similar",
-      "strength": 0.1585,
+      "strength": 0.2,
       "terms": [
-        "tau",
-        "eigenvalues",
-        "matrices",
-        "integral"
+        "Replica method",
+        "exactly",
+        "found",
+        "replica"
       ],
-      "explanation": "Shared distinctive terms: tau, eigenvalues, matrices, integral"
+      "explanation": "Common keywords: Replica method, exactly, found, replica"
     },
     {
-      "source": "ca7ea5041cdff518d6a8",
-      "target": "d25a2441596737923d53",
+      "source": "c6a8bbbcc8265df18526",
+      "target": "e39f3f43ff32b1d7e9b9",
       "type": "similar",
-      "strength": 0.1813,
+      "strength": 0.25,
       "terms": [
-        "sound",
-        "bose",
-        "speed",
-        "condensate"
+        "Replica method",
+        "replica"
       ],
-      "explanation": "Shared distinctive terms: sound, bose, speed, condensate"
+      "explanation": "Common keywords: Replica method, replica"
+    },
+    {
+      "source": "c6a8bbbcc8265df18526",
+      "target": "ef521f5e723383086856",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Replica method",
+        "replica"
+      ],
+      "explanation": "Common keywords: Replica method, replica"
     },
     {
       "source": "cebb15e4fcc4c0dd09eb",
-      "target": "d3a8b8471de6a39ec861",
+      "target": "d9f554f17d9329e67ab9",
       "type": "similar",
-      "strength": 0.1987,
+      "strength": 0.2,
       "terms": [
-        "body",
-        "many",
-        "nonequilibrium"
+        "Schwinger–Keldysh formalism",
+        "Nonequilibrium dynamics",
+        "kinetic",
+        "interacting"
       ],
-      "explanation": "Shared distinctive terms: body, many, nonequilibrium"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, Nonequilibrium dynamics, kinetic, interacting"
+    },
+    {
+      "source": "cebb15e4fcc4c0dd09eb",
+      "target": "dfd85e6a178025f0d1dd",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "Nonequilibrium dynamics",
+        "technique",
+        "approximation"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, Nonequilibrium dynamics, technique, approximation"
+    },
+    {
+      "source": "cf48d65fbff94e717d6c",
+      "target": "d1a1e6469fd3aa288e3c",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Replica method",
+        "spatial",
+        "large",
+        "quenched"
+      ],
+      "explanation": "Common keywords: Replica method, spatial, large, quenched"
     },
     {
       "source": "d112abc40f17f3d8abd4",
       "target": "db021e7a93b4dcdccdbb",
       "type": "similar",
-      "strength": 0.2228,
+      "strength": 0.2023,
       "terms": [
         "multiple",
         "potentials",
-        "scattering",
-        "induces"
+        "induces",
+        "scattering"
       ],
-      "explanation": "Shared distinctive terms: multiple, potentials, scattering, induces"
+      "explanation": "Common keywords: multiple, potentials, induces, scattering"
     },
     {
       "source": "d1a1e6469fd3aa288e3c",
-      "target": "e146439d89998e5150bc",
+      "target": "e39f3f43ff32b1d7e9b9",
       "type": "similar",
-      "strength": 0.2448,
+      "strength": 0.25,
       "terms": [
-        "fixed",
-        "vector",
-        "point",
-        "mass"
+        "Replica method",
+        "replica",
+        "critical",
+        "energy"
       ],
-      "explanation": "Shared distinctive terms: fixed, vector, point, mass"
+      "explanation": "Common keywords: Replica method, replica, critical, energy"
     },
     {
-      "source": "d3a8b8471de6a39ec861",
-      "target": "d9f554f17d9329e67ab9",
+      "source": "d1a1e6469fd3aa288e3c",
+      "target": "ef521f5e723383086856",
       "type": "similar",
-      "strength": 0.1686,
+      "strength": 0.25,
       "terms": [
-        "body",
-        "many",
-        "introduction",
-        "quantum"
+        "Replica method",
+        "large",
+        "described",
+        "replica"
       ],
-      "explanation": "Shared distinctive terms: body, many, introduction, quantum"
+      "explanation": "Common keywords: Replica method, large, described, replica"
     },
     {
-      "source": "f4a7357f092445d4e8f2",
-      "target": "fdb43c41c7e1d95d490b",
+      "source": "d9f554f17d9329e67ab9",
+      "target": "dfd85e6a178025f0d1dd",
       "type": "similar",
-      "strength": 0.1542,
+      "strength": 0.25,
       "terms": [
-        "matrices",
-        "random"
+        "Schwinger–Keldysh formalism",
+        "Nonequilibrium dynamics",
+        "equilibrium"
       ],
-      "explanation": "Shared distinctive terms: matrices, random"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, Nonequilibrium dynamics, equilibrium"
+    },
+    {
+      "source": "dfd85e6a178025f0d1dd",
+      "target": "dff29d4a46bac91afe41",
+      "type": "similar",
+      "strength": 0.25,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "technique",
+        "term",
+        "diagrammatic"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, technique, term, diagrammatic"
     }
   ],
   "meta": {
     "documents": 130,
-    "links": 241,
-    "citations": 94,
-    "authors": 40,
-    "similar": 107,
+    "links": 248,
+    "citations": 96,
+    "authors": 67,
+    "similar": 85,
     "manual": 0,
-    "openalex_requests": 1
+    "openalex_requests": 4
   }
 }
