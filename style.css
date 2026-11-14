@@ -21,3 +21,213 @@ button{font:inherit;cursor:pointer}.shell{height:100%;display:flex;flex-directio
 .search-result-meta{display:block;margin-top:3px;color:#aeb3bf;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .search-empty{padding:12px 11px;color:#aeb3bf;font-size:12px}
 @media(max-width:680px){.topbar{height:110px;min-height:110px;align-content:center;align-items:center;flex-wrap:wrap;row-gap:8px;padding:9px 14px}.brand{width:100%;font-size:19px}.actions{width:100%}.search-wrap{flex:1 1 auto;min-width:90px}.search-input{height:34px;font-size:11px;padding:7px 8px 7px 31px}.search-wrap::before{top:10px;left:11px}.search-wrap::after{top:21px;left:21px}.action{font-size:11px;padding:8px 9px;white-space:nowrap}.drawer{top:110px}.overlay.show{inset:110px 0 0}.search-results{min-width:min(340px,93vw)}}
+
+
+/* =======================================
+   DISORDER MAP — BLUE THEME
+   Blue-on-navy palette; preserves category distinction.
+   Change these values to customize the shades.
+   ======================================= */
+:root {
+  --bg: #071424;
+  --panel: #0c213b;
+  --edge: #51739a;
+  --muted: #9bb7d9;
+  --white: #e7f2ff;
+  --gold: #62adff; /* Primary accent, despite the legacy variable name. */
+  --border: #29496d;
+  --focus: #87c7ff;
+}
+body { background: var(--bg); color: var(--white); }
+.topbar { background: rgba(7, 20, 36, .97); border-bottom-color: #254664; }
+.brand span { color: #a5c9f2; }
+.canvas { background: radial-gradient(ellipse at 52% 48%, #123053 0%, #071424 76%); }
+.action { background: #0f2743; color: #dceeff; border-color: #325b82; }
+.action:hover, .action:focus-visible { background: #1c3c62; border-color: #8bc6ff; }
+.link { stroke: var(--edge); stroke-opacity: .66; }
+.node:hover circle, .node.active circle { filter: drop-shadow(0 0 7px rgba(98, 173, 255, .48)); }
+.node.folder circle { fill: #c9e1ff; stroke: #edf7ff; }
+.node.folder text { fill: #c9e1ff; }
+.node.article circle { fill: #4b9df3; stroke: #a9d7ff; }
+.node.article text { fill: #8ac3ff; }
+.node.book circle { fill: #3775b6; stroke: #8dbbea; }
+.node.book text { fill: #a4d0ff; }
+.node text { stroke: var(--bg); }
+.node .indicator { fill: #8fb1d8; }
+.drawer { background: #0b2039; border-left-color: #315377; }
+.drawer-header { border-bottom-color: var(--border); }
+.close { color: #bad9ff; }
+.close:hover { color: #f1f8ff; }
+.drawer p { color: #cbdcf2; }
+.field-label, .access { color: #98b8dc; }
+.access strong { color: #e3f1ff; }
+.external a { color: #06172c; background: var(--gold); }
+.external a:hover { background: #94caff; }
+.external a.download { color: var(--gold); border-color: var(--gold); }
+.external a.download:hover { background: rgba(98, 173, 255, .13); }
+.search-input { background: #102844; color: #e6f2ff; border-color: #325b82; }
+.search-input::placeholder { color: #98b7d8; }
+.search-input:focus { border-color: #8bc6ff; background: #173759; }
+.search-wrap::before { border-color: #a0c8f6; }
+.search-wrap::after { background: #a0c8f6; }
+.search-results { background: #102741; border-color: #37618d; }
+.search-result:hover, .search-result:focus-visible { background: #214667; }
+.search-result-meta, .search-empty { color: #afcbea; }
+.message { color: #bdd2ed; }
+::selection { background: #2e6ead; color: #fff; }
+
+/* v3: dedicated repository nodes and compact commit activity footer */
+.node.code circle {fill:#6e80d9;stroke:#c4cfff}
+.node.code text {fill:#b8c8ff}
+.release {position:absolute;z-index:5;right:14px;bottom:12px;max-width:min(480px,calc(100vw - 28px));
+  font-size:11px;color:#a8c6e8;background:rgba(7,20,36,.85);border:1px solid #29496d;
+  border-radius:7px;box-shadow:0 4px 24px rgba(0,0,0,.22);backdrop-filter:blur(7px)}
+.release summary {list-style:none;cursor:pointer;white-space:normal;padding:9px 12px;line-height:1.5}
+.release summary::-webkit-details-marker{display:none}
+.release summary:hover{color:#e3f1ff}
+.release-content {border-top:1px solid #29496d;padding:9px 12px;line-height:1.7;max-height:170px;overflow-y:auto}
+.change-item{overflow-wrap:anywhere;color:#d8eaff}
+@media(max-width:680px){.release{right:6px;bottom:6px;max-width:calc(100vw - 12px);font-size:10px}}
+
+/* v3.1: independent code-tree root, consistent with the blue theme */
+.node.code-root circle {fill:#9bafff;stroke:#d8e2ff}
+.node.code-root text {fill:#ced9ff;font-size:14px;font-weight:650}
+
+
+/* v3.2 — purple independent code tree; does not change article/folder colors elsewhere. */
+.node.code-root circle { fill: #c084fc; stroke: #e9d5ff; }
+.node.code-root text { fill: #e9d5ff; font-size: 14px; font-weight: 650; }
+.node.code-branch.folder:not(.code-root) circle { fill: #b79af2; stroke: #e9d5ff; }
+.node.code-branch.folder:not(.code-root) text { fill: #d8b4fe; }
+.node.code-branch.code circle { fill: #a855f7; stroke: #d8b4fe; }
+.node.code-branch.code text { fill: #d8b4fe; }
+.node.code-branch:hover circle, .node.code-branch.active circle {
+  filter: drop-shadow(0 0 7px rgba(168,85,247,.42));
+}
+
+/* v3.3: two independent views, explainable knowledge graph. */
+[hidden]{display:none!important}
+.view-tabs{display:flex;gap:4px;align-items:center;margin:0 16px}
+.view-tab{border:1px solid transparent;background:transparent;color:#a8bfdc;padding:9px 13px;border-radius:7px;font-size:12px;white-space:nowrap}
+.view-tab.active{border-color:#45678d;color:#e9f3ff;background:#193d60}
+.view-tab:hover,.view-tab:focus-visible{color:#fff;background:#204b75;outline:none}
+.knowledge-view{flex:1;position:relative;min-height:0;background:radial-gradient(ellipse at 50% 55%,#112c4b,#071424 75%)}
+#knowledge-svg{width:100%;height:100%;touch-action:none;display:block}
+.knowledge-controls{position:absolute;z-index:3;left:18px;top:16px;display:flex;flex-direction:column;gap:11px;max-width:min(720px,calc(100% - 36px));padding:13px 16px;background:rgba(6,19,35,.91);border:1px solid #315373;border-radius:10px;box-shadow:0 8px 30px #0003}
+.knowledge-filters{display:flex;flex-wrap:wrap;gap:12px 18px}
+.knowledge-filters label{white-space:nowrap;display:flex;gap:7px;align-items:center;font-size:12px;color:#d5e6fc}
+.knowledge-filters input{accent-color:#679fff}
+.knowledge-strength{display:flex;gap:14px;align-items:center;font-size:11px;color:#aac3e2}
+.knowledge-strength label{white-space:nowrap}.knowledge-strength input{width:130px;accent-color:#679fff}
+.knowledge-status{margin:0;font-size:11px;color:#96b5d9}
+.knowledge-link{cursor:pointer;transition:stroke-opacity .15s}.knowledge-link:hover,.knowledge-link:focus-visible{stroke-opacity:1;stroke-width:4;outline:none}
+.knowledge-node{cursor:pointer}.knowledge-node circle{stroke:#d6edff;stroke-width:1;transition:r .15s}.knowledge-node:hover circle,.knowledge-node:focus-visible circle{stroke:#fff;stroke-width:2.5;filter:drop-shadow(0 0 7px #73b2ff)}
+.knowledge-node text{font-size:11px;fill:#dcecff;paint-order:stroke;stroke:#071424;stroke-width:3px;stroke-linejoin:round;user-select:none;pointer-events:none}
+.knowledge-node .label-hidden{opacity:0}.knowledge-node:hover .label-hidden,.knowledge-node:focus-visible .label-hidden{opacity:1}
+@media(max-width:1150px){.topbar{padding:0 14px}.view-tabs{margin:0 7px}.view-tab{padding:8px 9px}.search-wrap{flex-basis:185px}}
+@media(max-width:750px){.topbar{height:auto;min-height:145px;flex-wrap:wrap;gap:7px;padding:9px 12px}.brand{width:100%}.view-tabs{margin:0}.actions{width:100%}.view-tab{padding:6px 10px}.knowledge-controls{left:6px;top:8px;max-width:calc(100% - 12px);padding:9px}.knowledge-filters{gap:6px 10px}.knowledge-filters label{font-size:10px}.knowledge-strength{flex-wrap:wrap;gap:4px}.drawer{top:145px}.overlay.show{inset:145px 0 0}}
+
+
+/* ================================================================
+   RESEARCH MAP v3.3 — CLASSIC BLACK / ORANGE / YELLOW THEME
+   Only CSS. All Library and Knowledge Graph features stay intact.
+   Palette: near-black background, ivory folders, golden papers,
+   warm amber books, orange code tree, muted warm-gray connections.
+   ================================================================ */
+:root {
+  color-scheme: dark;
+  --bg: #0b0b0d;
+  --panel: #171719;
+  --edge: #77716d;
+  --muted: #b1aaa4;
+  --white: #f5f2ed;
+  --gold: #f2c14f;
+  --border: #39332e;
+  --focus: #ffad42;
+  --amber-orange: #f09135;
+  --amber-yellow: #f2c14f;
+}
+body { background: var(--bg); color: var(--white); }
+.topbar { background: rgba(11,11,13,.97); border-bottom-color: #302b27; }
+.brand span { color: #d0b59b; }
+.canvas { background: radial-gradient(ellipse at 52% 48%, #1c1918 0%, #0b0b0d 76%); }
+.action { background: #191715; color: #f2e7d5; border-color: #494038; }
+.action:hover,.action:focus-visible { background: #30251b; border-color: #f0a249; }
+.link { stroke: #76706b; stroke-opacity: .63; }
+.node:hover circle,.node.active circle { filter: drop-shadow(0 0 7px rgba(242,193,79,.42)); }
+.node.folder circle { fill: #f3f1ed; stroke: #ffffff; }
+.node.folder text { fill: #f4f0ea; }
+.node.article circle { fill: #f2c14f; stroke: #ffe3a0; }
+.node.article text { fill: #f7d783; }
+.node.book circle { fill: #b98b4c; stroke: #e5bd82; }
+.node.book text { fill: #deb98b; }
+.node text { stroke: var(--bg); }
+.node .indicator { fill: #b5aaa0; }
+
+/* Detail drawer and publication links */
+.drawer { background: #171514; border-left-color: #40372e; }
+.drawer-header { border-bottom-color: var(--border); }
+.close { color: #dfcfbe; }
+.close:hover { color: #fffaf3; }
+.drawer p { color: #e0d8d0; }
+.field-label,.access { color: #bdb0a3; }
+.access strong { color: #f4e9d9; }
+.tag { color: #f2c14f; }
+.external a { color: #16110a; background: #f2c14f; }
+.external a:hover { background: #ffdb82; }
+.external a.download { color: #f2c14f; border-color: #e5ae49; }
+.external a.download:hover { background: rgba(242,193,79,.12); }
+
+/* Search */
+.search-input { background: #1d1a18; color: #f3ece4; border-color: #494038; }
+.search-input::placeholder { color: #a69b90; }
+.search-input:focus { background: #25201b; border-color: #f0ac4d; }
+.search-wrap::before { border-color: #cdb18c; }
+.search-wrap::after { background: #cdb18c; }
+.search-results { background: #1d1a18; border-color: #51453a; }
+.search-result:hover,.search-result:focus-visible { background: #33271d; }
+.search-result-meta,.search-empty { color: #c1b4a4; }
+.message { color: #c8bcb0; }
+::selection { background: #a86625; color: #fffaf2; }
+
+/* Code is a separate amber-orange tree, including nested directories */
+.node.code-root circle { fill: #ffa34d; stroke: #ffdda8; }
+.node.code-root text { fill: #ffd3a0; }
+.node.code-branch.folder:not(.code-root) circle { fill: #eaa66c; stroke: #ffdab0; }
+.node.code-branch.folder:not(.code-root) text { fill: #f5c59d; }
+.node.code circle,.node.code-branch.code circle { fill: #e98627; stroke: #ffbf7a; }
+.node.code text,.node.code-branch.code text { fill: #ffc287; }
+.node.code-branch:hover circle,.node.code-branch.active circle {
+  filter: drop-shadow(0 0 8px rgba(245,146,47,.44));
+}
+
+/* Last update / changelog */
+.release { color: #ddc8ac; background: rgba(19,17,15,.9); border-color: #534236; }
+.release summary:hover { color: #ffe3b2; }
+.release-content { border-top-color: #534236; }
+.change-item { color: #f1dac0; }
+
+/* Knowledge Graph tabs and filter controls */
+.view-tab { color: #d4bda3; }
+.view-tab.active { border-color: #8b5a2e; color: #fff0d3; background: #432c19; }
+.view-tab:hover,.view-tab:focus-visible { color: #fff7eb; background: #5c3920; }
+.knowledge-view { background: radial-gradient(ellipse at 50% 55%, #241b16, #0b0b0d 76%); }
+.knowledge-controls { background: rgba(18,15,13,.94); border-color: #604733; }
+.knowledge-filters label { color: #f4dfc3; }
+.knowledge-filters input,.knowledge-strength input { accent-color: #f3b64f; }
+.knowledge-strength { color: #d7b994; }
+.knowledge-status { color: #c1a88c; }
+.knowledge-node circle[fill="#69aaff"] { fill: #f2c14f !important; }
+.knowledge-node circle[fill="#7e8799"] { fill: #82796f !important; stroke: #bbb0a4; }
+.knowledge-node circle { stroke: #ffe6b0; }
+.knowledge-node:hover circle,.knowledge-node:focus-visible circle {
+  stroke: #fff7e6; filter: drop-shadow(0 0 8px rgba(242,193,79,.6));
+}
+.knowledge-node text { fill: #f6ead8; stroke: #0b0b0d; }
+/* Line type colors: citations / shared author / text similarity / manual */
+.knowledge-link[stroke="#c7a3ff"] { stroke: #f19535 !important; }
+.knowledge-link[stroke="#6ed0dd"] { stroke: #e9b35b !important; }
+.knowledge-link[stroke="#659ff1"] { stroke: #ad967a !important; }
+.knowledge-link[stroke="#f6bd74"] { stroke: #ffdb79 !important; }
+.knowledge-link[stroke="#788fae"] { stroke: #80766d !important; }
+#knowledge-citation-arrow path { fill: #f19535 !important; }
