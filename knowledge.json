@@ -2,6 +2,28 @@
   "version": 1,
   "nodes": [
     {
+      "id": "3cf186cdea83cfc7f64d",
+      "title": "A method for constructing random matrix models of disordered bosons",
+      "authors": "Alan Huckleberry, Kathrin Schaffert",
+      "kind": "book",
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/1012.3791",
+      "openUrl": "https://arxiv.org/pdf/1012.3791",
+      "downloadUrl": null,
+      "abstract": "Random matrix models of disordered bosons consist of matrices in the Lie algebra g=sp_n(R). Assuming dynamical stability, their eigenvalues are required to be purely imaginary. Here a method is proposed for constructing ensembles (E,P) of G-invariant sets E of such matrices with probability measures P. These arise as moment map direct images from phase spaces X which play an important role in complex geometry and representation theory. In the toy-model case of n=1, where X is the complex bidisk and P is the direct image of the uniform measure, an explicit description of the spectral measure is given."
+    },
+    {
+      "id": "fdb43c41c7e1d95d490b",
+      "title": "ACADEMIC PRESS New York and London",
+      "authors": "Random Matrices",
+      "kind": "book",
+      "access": "open",
+      "sourceUrl": null,
+      "openUrl": "papers/fdb43c41c7e1d95d490b.pdf",
+      "downloadUrl": "papers/fdb43c41c7e1d95d490b.pdf",
+      "abstract": ""
+    },
+    {
       "id": "6c2a255573a9506ab2ab",
       "title": "An Introduction to Spontaneous Symmetry Breaking",
       "authors": "Aron J. Beekman, Louk Rademaker, Jasper van Wezel",
@@ -22,17 +44,6 @@
       "openUrl": "https://arxiv.org/pdf/2507.20302",
       "downloadUrl": null,
       "abstract": "Determining the transport properties of Quark-Gluon Plasma is one of the most important aspects of relativistic heavy ion collision studies. Field-theoretical calculations of the transport coefficients such as the shear and bulk viscosities require Kubo formulae which in turn require real-time correlation functions of stress-energy tensors. Consequently, knowing the analytic structure of these correlation functions is essential in any such studies. Using the energy-conservation laws and the results from the gravity-hydrodynamics analysis, we determine the low-frequency and low-wavenumber analytic structures of all stress-energy correlation functions in the rest frame of the medium. By comparing with the diffusion and sound spectra from the second-order and the third-order relativistic hydrodynamics, various new Kubo formulae are derived in the limit where the zero-frequency limit is taken first. We also show that the meaning of the Kubo formulae for relaxation times can change when higher-order terms are added to hydrodynamics. A subtle issue of taking the zero frequency and zero wavenumber limits when using skeleton diagrams is addressed as well."
-    },
-    {
-      "id": "fdb43c41c7e1d95d490b",
-      "title": "And the Statistical Theory",
-      "authors": "Academic Press New York and London",
-      "kind": "book",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/fdb43c41c7e1d95d490b.pdf",
-      "downloadUrl": "papers/fdb43c41c7e1d95d490b.pdf",
-      "abstract": ""
     },
     {
       "id": "373a35cd782276b8a6d6",
@@ -156,6 +167,17 @@
       "abstract": "Critical Casimir effect appears when critical fluctuations of an order parameter interact with classical boundaries. We investigate this effect in the setting of a Landau-Ginzburg model with continuous symmetry in the presence of quenched disorder. The quenched free energy is written as an asymptotic series of moments of the models partition function. Our main result is that, in the presence of a strong disorder, Goldstone modes of the system contribute either with an attractive or with a repulsive force. This result was obtained using the distributional zeta-function method without relying on any particular ansatz in the functional space of the moments of the partition function."
     },
     {
+      "id": "dcad17d90fe1f92e328f",
+      "title": "Delocalization in random polymer models",
+      "authors": "S. Jitomirskaya, H. Schulz-Baldes, G. Stolz",
+      "kind": "book",
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/math-ph/0405024",
+      "openUrl": "https://arxiv.org/pdf/math-ph/0405024",
+      "downloadUrl": null,
+      "abstract": "A random polymer model is a one-dimensional Jacobi matrix randomly composed of two finite building blocks. If the two associated transfer matrices commute, the corresponding energy is called critical. Such critical energies appear in physical models, an example being the widely studied random dimer model. It is proven that the Lyapunov exponent vanishes quadratically at a generic critical energy and that the density of states is positive there. Large deviation estimates around these asymptotics allow to prove optimal lower bounds on quantum transport, showing that it is almost surely overdiffusive even though the models are known to have pure-point spectrum with exponentially localized eigenstates for almost every configuration of the polymers. Furthermore, the level spacing is shown to be regular at the critical energy."
+    },
+    {
       "id": "055c052c330ab8474e4f",
       "title": "Dephasing in disordered systems at low temperatures",
       "authors": "Maximilian Treiber",
@@ -202,7 +224,7 @@
     {
       "id": "9681d3f01c763e69038f",
       "title": "Disorder and critical phenomena",
-      "authors": "J.-M. Morel, Cachan",
+      "authors": "B. R. Gadjiev",
       "kind": "book",
       "access": "external",
       "sourceUrl": "https://arxiv.org/abs/0809.5036",
@@ -256,14 +278,14 @@
     },
     {
       "id": "1c876118612c0982e3a4",
-      "title": "Disordered Lattice Glass φ4 Quantum Field Theory",
-      "authors": "",
+      "title": "Disordered Lattice Glass $φ^{4}$ Quantum Field Theory",
+      "authors": "Dimitrios Bachtis",
       "kind": "article",
-      "access": "open",
+      "access": "external",
       "sourceUrl": "https://arxiv.org/abs/2407.06569",
-      "openUrl": "papers/1c876118612c0982e3a4.pdf",
-      "downloadUrl": "papers/1c876118612c0982e3a4.pdf",
-      "abstract": "We study numerically the three-dimensional φ4 spin glass, a prototypical disordered and dis- cretized Euclidean field theory that manifests inhomogeneities in space and time but considers a homogeneous squared mass and lambda terms. The φ4 lattice glass field theory is a conceptual gen- eralization of spin glasses to continuous degrees of freedom and we discuss the existence of a limit under which it formally reduces to the Edwards-Anderson model. By defining four variants of an order parameter which are suitable for continuous spin glasses, we verify numerically the emergence of an overlap in absence of the magnetization thus confirming the presence of a spin glass phase transition for a value of a critical squared mass. We conclude by discussing how the φ4 spin glass can be utilized to address assumptions of complete homogeneity in space or time and how, in parallel to statistical physics, provides a suitable framework to investigate the nonperturbative dynamics of machine learning algorithms from the perspective of disordered lattice and constructive field theory."
+      "openUrl": "https://arxiv.org/pdf/2407.06569",
+      "downloadUrl": null,
+      "abstract": "We study numerically the three-dimensional $φ^{4}$ spin glass, a prototypical disordered and discretized Euclidean field theory that manifests inhomogeneities in space and time but considers a homogeneous squared mass and lambda terms. The $φ^{4}$ lattice glass field theory is a conceptual generalization of spin glasses to continuous degrees of freedom and we discuss the existence of a limit under which it formally reduces to the Edwards-Anderson model. By defining four variants of an order parameter which are suitable for continuous spin glasses, we verify numerically the emergence of an overlap in absence of the magnetization thus confirming the presence of a spin glass phase transition for a value of a critical squared mass. We conclude by discussing how the $φ^{4}$ spin glass can be utilized to address assumptions of complete homogeneity in space or time and how, in parallel to statistical physics, provides a suitable framework to investigate the nonperturbative dynamics of machine learning algorithms from the perspective of disordered lattice and constructive field theory."
     },
     {
       "id": "57142b88a36bc47e0fd4",
@@ -334,7 +356,7 @@
     {
       "id": "7d5c46e20394845a2c86",
       "title": "Energy correlations for a random matrix model of disordered bosons",
-      "authors": "T. Lueck, H. -J. Sommers, M. R. Zirnbauer",
+      "authors": "",
       "kind": "article",
       "access": "external",
       "sourceUrl": "https://arxiv.org/abs/cond-mat/0607243",
@@ -345,7 +367,7 @@
     {
       "id": "17ac10700d8c6034998f",
       "title": "Expansion of a Bose-Einstein Condensate in the Presence of Disorder",
-      "authors": "Boris Shapiro",
+      "authors": "B. Shapiro",
       "kind": "article",
       "access": "external",
       "sourceUrl": "https://arxiv.org/abs/cond-mat/0701346",
@@ -367,7 +389,7 @@
     {
       "id": "78f81527fec4f708aa07",
       "title": "Field theory of disordered bosons",
-      "authors": "Betreuer: Prof. Dr. Martin R. Zirnbauer, Universität Zu Köln Institut Für Theoretische Physik",
+      "authors": "Sebastian E. Schmittner",
       "kind": "book",
       "access": "open",
       "sourceUrl": null,
@@ -388,14 +410,14 @@
     },
     {
       "id": "3c5cdb6af30e2b21eec5",
-      "title": "Finite-size effects in disordered λφ4 model",
+      "title": "Finite-Size Effects in Disordered $λφ^{4}$ Model",
       "authors": "R. Acosta Diaz, N. F. Svaiter",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": "https://doi.org/10.1142/s0217979216502076",
-      "openUrl": "papers/3c5cdb6af30e2b21eec5.pdf",
-      "downloadUrl": "papers/3c5cdb6af30e2b21eec5.pdf",
-      "abstract": "We discuss finite-size effects in one disordered λφ4 model defined in a d-dimensional Euclidean space. We consider that the scalar field satisfies periodic boundary conditions in one dimension and it is coupled with a quenched random field. In order to obtain the average value of the free energy of the system, we use the replica method. We first discuss finite-size effects in the one-loop approximation in d = 3 and d = 4. We show that in both cases, there is a critical length where the system develop a second-order phase transition, when the system presents long-range correlations with power-law decay. Next, we improve the above result studying the gap equation for the size-dependent squared mass, using the composite field operator method. We obtain again that the system present a second-order phase transition with long-range correlation with power- law decay."
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/1510.02038",
+      "openUrl": "https://arxiv.org/pdf/1510.02038",
+      "downloadUrl": null,
+      "abstract": "We discuss finite-size effects in one disordered $λφ^{4}$ model defined in a $d$-dimensional Euclidean space. We consider that the scalar field satisfies periodic boundary conditions in one dimension and it is coupled with a quenched random field. In order to obtain the average value of the free energy of the system we use the replica method. We first discuss finite-size effects in the one-loop approximation in $d=3$ and $d=4$. We show that in both cases there is a critical length where the system develop a second-order phase transition, when the system presents long-range correlations with power-law decay. Next, we improve the above result studying the gap equation for the size- dependent squared mass, using the composite field operator method. We obtain again, that the system present a second order phase transition with long-range correlation with power-law decay."
     },
     {
       "id": "0fb036167205e8ea909f",
@@ -477,7 +499,7 @@
     {
       "id": "cebb15e4fcc4c0dd09eb",
       "title": "Hydrodynamic approach to many-body systems: exact conservation laws",
-      "authors": "Boris N. Narozhny;",
+      "authors": "Narozhny B. N",
       "kind": "article",
       "access": "external",
       "sourceUrl": "https://arxiv.org/abs/2301.02567",
@@ -545,8 +567,8 @@
       "title": "Introduction to Quantum Field Theory",
       "authors": "",
       "kind": "book",
-      "access": "external",
-      "sourceUrl": "https://arxiv.org/abs/hep-th/9505152",
+      "access": "open",
+      "sourceUrl": "https://doi.org/10.1017/9781316678664.008",
       "openUrl": "https://arxiv.org/pdf/hep-th/9505152",
       "downloadUrl": null,
       "abstract": "Even the uninitiated will know that Quantum Field Theory cannot be introduced systematically in just four lectures. I try to give a reasonably connected outline of part of it, from second quantization to the path-integral technique in Euclidean space, where there is an immediate connection with the rules for Feynman diagrams and the partition function of Statistical Mechanics."
@@ -565,7 +587,7 @@
     {
       "id": "a8f7165ccea4f9b9c668",
       "title": "Introduction to the Theory of Disordered Systems",
-      "authors": "",
+      "authors": "Министерство Общего И Профессионального Образования",
       "kind": "book",
       "access": "open",
       "sourceUrl": null,
@@ -576,7 +598,7 @@
     {
       "id": "5d13724e84783bde5ebf",
       "title": "Karslruhe & Non-linear",
-      "authors": "",
+      "authors": "Alexander D. Mirlin",
       "kind": "book",
       "access": "open",
       "sourceUrl": null,
@@ -607,6 +629,17 @@
       "abstract": "We discuss the kinetics of the disordered interacting Bose gas using the Boltzmann transport equation. The theory may serve as a unifying framework for studying questions of dynamics of the expanding Bose gas at different stages of the expansion. We show that the transport theory allows us to straightforwardly reproduce and generalize a number of results previously obtained from microscopic models in different formalisms. Based on estimates for the interparticle scattering rates, we discuss the relevance of interaction effects for the localization problem in the interacting disordered Bose gas. We argue that, if the number of particles is large enough, the size of the expanding cloud may exceed the localization length. We describe the spreading of the wave packet in this regime as collision-induced diffusion and compare the obtained rate of expansion to known results on subdiffusive spreading in nonlinear disordered lattices."
     },
     {
+      "id": "14594afe4b687e2133e1",
+      "title": "Lecture Notes on \"Random Matrices\"",
+      "authors": "Roland Speicher",
+      "kind": "article",
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/2009.05157",
+      "openUrl": "https://arxiv.org/pdf/2009.05157",
+      "downloadUrl": null,
+      "abstract": "This in an introduction to random matrix theory, giving an impression of some of the most important aspects of this modern subject. In particular, it covers the basic combinatorial and analytic theory around Wigner's semicircle law, featuring also concentration phenomena, and the Tracy-Widom distribution of the largest eigenvalue. The circular law and a discussion of Voiculescu's multivariate extension of the semicircle law, as an appetizer for free probability theory, also make an appearance. The material here was presented in the winter term 2019/20 at Saarland University in 24 lectures of 90 minutes each. The lectures were recorded and can be found online at https://www.math.uni-sb.de/ag/speicher/web_video/index.html."
+    },
+    {
       "id": "0de8c5c8f07096f9eb4f",
       "title": "Lectures on random polymers",
       "authors": "Francesco Caravenna, Frank Den Hollander, Nicolas Pétrélis",
@@ -620,7 +653,7 @@
     {
       "id": "3e54fa2ca1dd5f8f6c1e",
       "title": "Lectures on Selected Problems",
-      "authors": "Lectures On Selected Problems, In Condensed Matter Theory",
+      "authors": "",
       "kind": "book",
       "access": "open",
       "sourceUrl": null,
@@ -664,7 +697,7 @@
     {
       "id": "249969930d037073e6f7",
       "title": "Mesoscopic Fluctuations in Stochastic Spacetime",
-      "authors": "Mesoscopic Fluctuations In Stochastic Spacetime",
+      "authors": "K. Shiokawa",
       "kind": "article",
       "access": "external",
       "sourceUrl": "https://arxiv.org/abs/hep-th/0001088",
@@ -686,7 +719,7 @@
     {
       "id": "a562c4570929e232bb92",
       "title": "Methods of Quantum Field Theory in Statistical Physics",
-      "authors": "",
+      "authors": "Абрикосов Алексей Алексеевич",
       "kind": "book",
       "access": "open",
       "sourceUrl": "https://doi.org/10.1142/9789813278646_0013",
@@ -763,7 +796,7 @@
     {
       "id": "1501f760d15f4df69a25",
       "title": "Nonlinear Quantum Coherence Effects in Driven Mesoscopic Systems",
-      "authors": "Non-Linear Quantum Coherence Effects In, Driven Mesoscopic Systems",
+      "authors": "V. E. Kravtsov",
       "kind": "article",
       "access": "external",
       "sourceUrl": "https://arxiv.org/abs/cond-mat/0504671",
@@ -774,13 +807,13 @@
     {
       "id": "de71fb6e60247c50189d",
       "title": "Nonlinear Sigma Model for Disordered Media: Replica Trick for Non-Perturbative Results and Interactions",
-      "authors": "Nonlinear Sigma Model For Disordered Media: Replica Trick, For Non-Perturbative Results and Interactions",
+      "authors": "Igor V. Lerner",
       "kind": "article",
-      "access": "open",
+      "access": "external",
       "sourceUrl": "https://arxiv.org/abs/cond-mat/0205555",
-      "openUrl": "papers/de71fb6e60247c50189d.pdf",
-      "downloadUrl": "papers/de71fb6e60247c50189d.pdf",
-      "abstract": "In these lectures, given at the NATO ASI at Windsor (2001), applications of the replicas non- linear sigma model to disordered systems are reviewed. A particular attention is given to two sets of issues. First, obtaining non-perturbative results in the replica limit is discussed, using as exam- ples (i) an oscillatory behaviour of the two-level correlation function and (ii) long-tail asymptotes of different mesoscopic distributions. Second, a new variant of the sigma model for interacting electrons in disordered normal and superconducting systems is presented, with demonstrating how to reduce it, under certain controlled approximations, to known “phase-only” actions, including that of the “dirty bosons” model.[cond-mat.dis-nn] 1 Introduction Starting from the seminal papers of Wegner [1] and Efetov [2], a field-theoretical description based on the nonlinear σ model (NLσM) has become one of the main analytical approaches to various problems in disordered electronic systems. The ensemble averaging over all configurations of disorder is performed either using bosonic [1, 3] or fermionic [4] n-replicated fields and taking the n →0 limit in the results, or using supersymmetric fields [2, 5]. The main advantage of this approach lies in formulating the theory in terms of low lying excitations (diffusion modes) which greatly simplifies perturbative and renormalization group calculations, and also allows a non-perturbative treatment. The first application of this approach was a deriva"
+      "openUrl": "https://arxiv.org/pdf/cond-mat/0205555",
+      "downloadUrl": null,
+      "abstract": "In these lectures, given at the NATO ASI at Windsor (2001), applications of the replicas nonlinear sigma model to disordered systems are reviewed. A particular attention is given to two sets of issues. First, obtaining non-perturbative results in the replica limit is discussed, using as examples (i) an oscillatory behaviour of the two-level correlation function and (ii) long-tail asymptotes of different mesoscopic distributions. Second, a new variant of the sigma model for interacting electrons in disordered normal and superconducting systems is presented, with demonstrating how to reduce it, under certain controlled approximations, to known `p̀hase-only'' actions, including that of the `d̀irty bosons'' model."
     },
     {
       "id": "8edb0b36e9b5e94722f1",
@@ -806,14 +839,14 @@
     },
     {
       "id": "ad05fe560da2ea573a22",
-      "title": "Nonperturbative calculation of the shear viscosity in hot φ4 theory in real time",
+      "title": "Nonperturbative calculation of the shear viscosity in hot phi**4 theory in real time",
       "authors": "Enke Wang, Ulrich Heinz",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": "https://doi.org/10.1016/s0370-2693(99)01324-6",
-      "openUrl": "papers/ad05fe560da2ea573a22.pdf",
-      "downloadUrl": "papers/ad05fe560da2ea573a22.pdf",
-      "abstract": "erator along the closed time path and corresponds to normal (antichronological) time ordering of operators with time arguments on its upper (lower) branch, and a1, a2, . . . , an = 1, 2 indicate on which of the two branches the fields are located. (For details see, e.g., [8,9].) Using the KMS condition [10] one derives in mo- mentum space [8]"
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/hep-ph/9910367",
+      "openUrl": "https://arxiv.org/pdf/hep-ph/9910367",
+      "downloadUrl": null,
+      "abstract": "Starting from the Kubo formula we calculate the shear viscosity in hot phi**4 theory nonperturbatively by resumming ladders with a real-time version of the Bethe-Salpeter equation at finite temperature. In the weak coupling limit, the generalized Fluctuation-Dissipation Theorem is shown to decouple the Bethe-Salpeter equations for the different real-time components of the 4-point function. The resulting scalar integral equation is identical with the one obtained by Jeon using diagrammatic `c̀utting rules'' in the Imaginary Time Formalism."
     },
     {
       "id": "47480c1dacb05e326600",
@@ -829,7 +862,7 @@
     {
       "id": "6b05ea608990f7bc0055",
       "title": "On Localization in the Theory of the Quantized Hall Effect",
-      "authors": "E North-Holland Publishing Company, Effect: A Two-Dimensional Realization Of The",
+      "authors": "A M M Pruisken",
       "kind": "article",
       "access": "open",
       "sourceUrl": null,
@@ -840,7 +873,7 @@
     {
       "id": "6341bc2343a7816ef447",
       "title": "On Perturbation Theory Dyson Series and Feynman Diagrams",
-      "authors": "On Perturbation Theory, Dyson Series, and Feynman Diagrams, The Interaction Picture Of Qm and The Dyson Series",
+      "authors": "",
       "kind": "article",
       "access": "open",
       "sourceUrl": null,
@@ -857,7 +890,7 @@
       "sourceUrl": "https://doi.org/10.3367/ufnr.0185.201512b.1271",
       "openUrl": "papers/2259544a70f72ac2071b.pdf",
       "downloadUrl": "papers/2259544a70f72ac2071b.pdf",
-      "abstract": "aÊÎÑÉÇÐÂ ÎÑÅËÍÂ ÒÑâÄÎÇÐËâ ÆËÂÅÓÂÏÏÐÑÌ ÕÇØÐËÍË ÆÎâ ÐÇÓÂÄÐÑÄÇÔÐÞØ ÒÓÑÙÇÔÔÑÄ (ÆËÂÅÓÂÏÏÐÑÌ ÕÇØÐËÍË ¬ÇÎÆÞÛÂ). ̄Â ÒÓÑÔÕÞØ ÒÓËÏÇÓÂØ ÒÑÍÂÊÂÐÑ, ÍÂÍ ÒÓÑÄÑÆâÕÔâ ÄÞÚËÔÎÇÐËâ Ä ÓÂÏÍÂØ àÕÑÌ ÕÇØÐËÍË, Ô ÍÂÍËÏË ÕÓÖÆÐÑÔÕâÏË ÏÑÉÐÑ ÒÓË àÕÑÏ ÔÕÑÎÍÐÖÕßÔâ Ë ÍÂÍ ËØ ÏÑÉÐÑ ÓÂÊÓÇÛËÕß. ±ÑÏËÏÑ ÑÃÜÇËÊÄÇÔÕÐÞØ ÔÄÇÆÇÐËÌ, ÏÞ ÒÑÔÕÂÓÂÇÏÔâ ÑÃÔÖÆËÕß ÐÇÍÑÕÑÓÞÇ ÆÇÕÂÎË, ÍÑÕÑÓÞÏ ÓÇÆÍÑ ÖÆÇÎâáÕ ÄÐËÏÂÐËÇ Ä ÎËÕÇÓÂÕÖ- ÓÇ. £ ÚÂÔÕÐÑÔÕË, ÏÞ ÓÂÊÃÇÓÈÏ ÄÑÒÓÑÔ Ñ ÕÑÏ, ÇÔÕß ÎË ÐÇÑÃØÑÆËÏÑÔÕß Ä ËÔÒÑÎßÊÑÄÂÐËË ÕÂÍ ÐÂÊÞÄÂÇÏÑÌ ÕÓÈØ- ÍÑÏÒÑÐÇÐÕÐÑÌ ÕÇØÐËÍË. ±ÓËÄÇÆÇÐÞ ÒÓËÏÇÓÞ ÓâÆÂ ÒÓËÏÇÐÇÐËÌ ÐÇÓÂÄÐÑÄÇÔÐÑÌ ÆËÂÅÓÂÏÏÐÑÌ ÕÇØÐËÍË ( ̄¥ ́) Í ÑÒËÔÂÐËá ÕÖÐÐÇÎßÐÞØ ÔËÔÕÇÏ, Ä ÊÂÆÂÚÂØ ÎËÐÇÌÐÑÅÑ ÑÕÍÎËÍÂ Ë Õ.Æ. ̄ÂÆÇÇÏÔâ, ÚÕÑ ÍÂÍËÇ-ÕÑ ÚÂÔÕË ÑÃÊÑÓÂ ÃÖÆÖÕ ÒÑÎÇÊÐÞ Ë ÆÎâ ÎáÆÇÌ, ÆÑÔÕÂÕÑÚÐÑ ØÑÓÑÛÑ ÊÐÂÍÑÏÞØ Ô ÆËÂÅÓÂÏÏÐÑÌ ÕÇØÐËÍÑÌ ÆÎâ ÐÇÓÂÄÐÑÄÇÔÐÞØ ÒÓÑÙÇÔÔÑÄ."
+      "abstract": ""
     },
     {
       "id": "4a6974757f7c190fa564",
@@ -873,7 +906,7 @@
     {
       "id": "f62489586c39bf17b0fa",
       "title": "Path Integrals in Quantum Mechanics Statistics",
-      "authors": "Path Integrals",
+      "authors": "",
       "kind": "book",
       "access": "open",
       "sourceUrl": null,
@@ -950,7 +983,7 @@
     {
       "id": "216afd1a0fb0c60ee81b",
       "title": "Quantum Kinetics in Transport and Optics of Semiconductors",
-      "authors": "M. Cardona P. Fulde K. von Klitzing R. Merlin H.-J. Queisser H. St ̈Ormer",
+      "authors": "",
       "kind": "book",
       "access": "open",
       "sourceUrl": "https://doi.org/10.1007/978-3-540-73564-9",
@@ -968,17 +1001,6 @@
       "openUrl": "papers/b8b426ab3cdfb812362f.pdf",
       "downloadUrl": "papers/b8b426ab3cdfb812362f.pdf",
       "abstract": ""
-    },
-    {
-      "id": "49ed099d5bcb197e38a3",
-      "title": "Quantum mechanics with a time-dependent random unitary Hamiltonian",
-      "authors": "",
-      "kind": "article",
-      "access": "open",
-      "sourceUrl": "https://arxiv.org/abs/cond-mat/0511030",
-      "openUrl": "papers/49ed099d5bcb197e38a3.pdf",
-      "downloadUrl": "papers/49ed099d5bcb197e38a3.pdf",
-      "abstract": "1Ecole Polytechnique Federale de Lausanne (EPFL), Institute for Theoretical Physics, CH-1015 Lausanne, Switzerland 2L. D. Landau Institute for Theoretical Physics, Moscow 119334, Russia (Dated: March 29, 2006)"
     },
     {
       "id": "1a336799065ae2220b0e",
@@ -1007,8 +1029,8 @@
       "title": "Quenched random mass disorder in the large N theory of vector bosons",
       "authors": "Han Ma",
       "kind": "article",
-      "access": "external",
-      "sourceUrl": "https://arxiv.org/abs/2205.11542",
+      "access": "open",
+      "sourceUrl": "https://doi.org/10.21468/scipostphys.14.3.039",
       "openUrl": "https://arxiv.org/pdf/2205.11542",
       "downloadUrl": null,
       "abstract": "We study the critical bosonic O(N) vector model with quenched random mass disorder in the large N limit. Due to the replicated action which is sometimes not bounded from below, we avoid the replica trick and adopt a traditional approach to directly compute the disorder averaged physical observables. At $N=\\infty$, we can exactly solve the disordered model. The resulting low energy behavior can be described by two scale invariant theories, one of which has an intrinsic scale. At finite $N$, we find that the previously proposed attractive disordered fixed point at $d=2$ continues to exist at $d=2+ε$ spatial dimensions. We also studied the system in the $3<d<4$ spatial dimensions where the disorder is relevant at the Gaussian fixed point. However, no physical attractive fixed point is found right below four spatial dimensions. Nevertheless, the stable fixed point at $2+ε$ dimensions can still survive at $d=3$ where the system has experimental realizations. Some critical exponents are predicted in order to be checked by future numerics and experiments."
@@ -1025,39 +1047,6 @@
       "abstract": "g∈G f(g)dg. Äëÿ ýòîãî, âî ïåðâûõ, ñòîèò ââåñòè ìåðó õààðà íà ãðóïïå, à âî âòîðûõ, ïîñêîëüêó ââåäåííàÿ ìåðà áóäåò çàâèñåòü îò âñåõ ýëåìåíòîâ ãðóïïû, õî÷åòñÿ ïåðåéòè îò íåå èíòåãðèðîâàíèþ ïî ìíîæåñòâó êëàññîâ ñîïðÿæåííîñòè, äëÿ ýòîãî ââîäèòñÿ ðàäèàëüíàÿ ìåðà õààðà. (Ìîæíî ïðîâåñòè àíàëîãèþ ñ ïåðåõîäîì îò èíòåãðèðîâàíèÿ ïî ïåðåìåííûì x,y ôóíêöèé, çàâèñÿùèõ òîëüêî îò ðàäèóñà r = p"
     },
     {
-      "id": "14594afe4b687e2133e1",
-      "title": "Random Matrices Notes",
-      "authors": "",
-      "kind": "article",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/14594afe4b687e2133e1.pdf",
-      "downloadUrl": "papers/14594afe4b687e2133e1.pdf",
-      "abstract": ""
-    },
-    {
-      "id": "3cf186cdea83cfc7f64d",
-      "title": "Random Matrix Models for Disordered Bosons",
-      "authors": "Random Matrix Models",
-      "kind": "book",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/3cf186cdea83cfc7f64d.pdf",
-      "downloadUrl": "papers/3cf186cdea83cfc7f64d.pdf",
-      "abstract": ""
-    },
-    {
-      "id": "dcad17d90fe1f92e328f",
-      "title": "Random Polymer Models",
-      "authors": "Giambattista Giacomin",
-      "kind": "book",
-      "access": "open",
-      "sourceUrl": "https://doi.org/10.1142/p504",
-      "openUrl": "papers/dcad17d90fe1f92e328f.pdf",
-      "downloadUrl": "papers/dcad17d90fe1f92e328f.pdf",
-      "abstract": ""
-    },
-    {
       "id": "cf48d65fbff94e717d6c",
       "title": "Replica field theory for a polymer in random media",
       "authors": "Yadin Y. Goldschmidt",
@@ -1070,11 +1059,11 @@
     },
     {
       "id": "e39f3f43ff32b1d7e9b9",
-      "title": "Replica method for computational problems with randomness",
-      "authors": "J. Steinberg, U. Adomaityt ̇E, A. Fachechi, P. Mergny, D. Barbier and R. Monasson",
+      "title": "Replica method for computational problems with randomness: principles and illustrations",
+      "authors": "J Steinberg, U Adomaitytė, A Fachechi, P Mergny, D Barbier, R Monasson",
       "kind": "article",
       "access": "open",
-      "sourceUrl": null,
+      "sourceUrl": "https://doi.org/10.1088/1742-5468/ad292d",
       "openUrl": "papers/e39f3f43ff32b1d7e9b9.pdf",
       "downloadUrl": "papers/e39f3f43ff32b1d7e9b9.pdf",
       "abstract": "The study of disordered systems in physics is historically related to the discovery of spin glasses, a peculiar class of magnetic materials. In standard paramagnetic systems, the magnetic moments carried by the electronic spins align when an external field is applied, but the effect disappears when the field vanishes. In ferromagnetic systems, however, the magnetization does not vanish, provided the temperature is lower than some critical value, the Curie temperature. The simplest model of a ferromagnetic system considers magnetic moments as vectors Si of unit norms, located at the nodes i of a lattice. Each moment interacts with its nearest neighbors on the lattice, leading to the following energy function"
@@ -1092,14 +1081,14 @@
     },
     {
       "id": "2857dba8f9d9ec6471f6",
-      "title": "Response theory of the ergodic many-body delocalized phase",
-      "authors": "Yunxiang Liaoa, Alex Levchenkob, Matthew S. Fostera,C",
+      "title": "Response theory of the ergodic many-body delocalized phase: Keldysh Finkel'stein sigma models and the 10-fold way",
+      "authors": "Yunxiang Liao, Alex Levchenko, Matthew S. Foster",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/2857dba8f9d9ec6471f6.pdf",
-      "downloadUrl": "papers/2857dba8f9d9ec6471f6.pdf",
-      "abstract": "We derive the finite temperature Keldysh response theory for interacting fermions in the presence of quenched short-ranged disorder, as applicable to any of the 10 Altland-Zirnbauer classes in an Anderson delocalized phase with at least a U(1) continuous symmetry. In this formulation of the interacting Finkel’stein nonlinear sigma model, the statistics of one-body wave functions are encoded by the constrained matrix field, while physical correlations follow from the hydrodynamic density or spin response field, which decouples the interactions. Integrating out the matrix field first, we obtain weak (anti)localization and Altshuler-Aronov quantum conductance corrections from the hydrodynamic response function. This procedure automatically incorporates the correct infrared cutoffphysics, and in particular gives the Altshuler-Aronov-Khmelnitsky (AAK) equations for dephasing of weak (anti)localization due to electron-electron collisions. We explicate the method by deriving known quantum corrections in two dimensions for the symplectic metal class AII, as well as the spin-SU(2) invariant superconductor classes C and CI. We show that quantum conductance corrections due to the special modes at zero energy in nonstandard classes are automatically cut offby temperature, as previously expected, while the Wigner-Dyson class Cooperon modes that persist to all energies are cut by dephasing. We also show that for short-ranged interactions, the standard self-consistent solution for the dephasing rate is equivalent to a particular summation"
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/1706.07066",
+      "openUrl": "https://arxiv.org/pdf/1706.07066",
+      "downloadUrl": null,
+      "abstract": "We derive the finite temperature Keldysh response theory for interacting fermions in the presence of quenched disorder, as applicable to any of the 10 Altland-Zirnbauer classes in an Anderson delocalized phase with at least a U(1) continuous symmetry. In this formulation of the interacting Finkel'stein nonlinear sigma model, the statistics of one-body wave functions are encoded by the constrained matrix field, while physical correlations follow from the hydrodynamic density or spin response field, which decouples the interactions. Integrating out the matrix field first, we obtain weak (anti)localization and Altshuler-Aronov quantum conductance corrections from the hydrodynamic response function. This procedure automatically incorporates the correct infrared physics, and in particular gives the Altshuler-Aronov-Khmelnitsky (AAK) equations for dephasing of weak (anti)localization due to electron-electron collisions. We explicate the method by deriving known quantum corrections in two dimensions for the symplectic metal class AII, as well as the spin-SU(2) invariant superconductor classes C and CI. We show that conductance corrections due to the special modes at zero energy in nonstandard classes are automatically cut off by temperature, as previously expected, while the Wigner-Dyson class Cooperon modes that persist to all energies are cut by dephasing. We also show that for short-ranged interactions, the standard self-consistent solution for the dephasing rate is equivalent to a diagrammatic summation via the self-consistent"
     },
     {
       "id": "5a6da9fe0ee72528e92c",
@@ -1146,26 +1135,15 @@
       "abstract": "We develop a Schwinger-Keldysh field theory (SKFT) for open quantum systems interacting with a dissipative environment and apply it to the spin-boson model as an archetypical example where the environment is composed of infinitely many harmonic oscillators. Prior field-theoretic formulations have been restricted to the Markovian regime, where they offer an alternative to a conventional Lindblad quantum master equation (QME) that is a time-local (i.e., memoryless) matrix differential equation evolving reduced density matrix of the system. Here we combine SKFT with a two-particle irreducible (2PI) action that effectively resums a class of Feynman diagrams to an infinite order, where the diagrams are obtained from 1/N expansion with N being the number of Schwinger bosons to which the spin operator is mapped. This approach yields time-evolution of the spin density matrix in the form of a system of integro-differential equations applicable to both Markovian and non-Markovian regimes. The latter regime—where taking into account memory effects and revival of genuine quantum properties becomes essential—poses a challenge for numerous previously developed methods when trying to incorporate arbitrary properties of the bath, system- bath coupling and length of time evolution. Conversely, it is precisely the non-Markovian dynamics at ultralow temperatures and specific content of bath frequencies that is needed for applications of the spin-boson model in quantum computing, such as understanding of qubit decoherence. In the non-Markovian"
     },
     {
-      "id": "b4ea04d4ad5695ac8397",
-      "title": "Semiclassical and Stochastic Gravity",
-      "authors": "",
-      "kind": "book",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/b4ea04d4ad5695ac8397.pdf",
-      "downloadUrl": "papers/b4ea04d4ad5695ac8397.pdf",
-      "abstract": ""
-    },
-    {
       "id": "dfd85e6a178025f0d1dd",
-      "title": "Semiclassical approximation meets Keldysh–Schwinger diagrammatic technique: scalar $$\\varphi ^4$$",
+      "title": "Semiclassical Approximation meets Keldysh-Schwinger diagrammatic technique: Scalar $\\varphi^4$",
       "authors": "A. A. Radovskaya, A. G. Semenov",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": "https://doi.org/10.1140/epjc/s10052-021-09382-4",
-      "openUrl": "papers/dfd85e6a178025f0d1dd.pdf",
-      "downloadUrl": "papers/dfd85e6a178025f0d1dd.pdf",
-      "abstract": "We study the evolution of the non-equilibriumquantum fields from a highly excited initial state in two approaches: the standard Keldysh-Schwinger diagram technique and the semiclassical expansion. We demonstrate explicitly that these two approaches coincide if the coupling constant g and the Plank constant ̄h are small simultaneously. Also, we discuss loop diagrams of the perturbative approach, which are summed up by the leading order term of the semiclassical expansion. As an example, we consider shear viscosity for the scalar field theory at the leading semiclassical order. We introduce the new technique that unifies both semiclassical and diagrammatic approaches and open the possibility to perform the resummation of the semiclassical contributions."
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/2003.06395",
+      "openUrl": "https://arxiv.org/pdf/2003.06395",
+      "downloadUrl": null,
+      "abstract": "We study the evolution of the non-equilibrium quantum fields from a highly excited initial state in two approaches: the standard Keldysh-Schwinger diagram technique and the semiclassical expansion. We demonstrate explicitly that these two approaches coincide if the coupling constant $g$ and the Plank constant $\\hbar$ are small simultaneously. Also, we discuss loop diagrams of the perturbative approach, which are summed up by the leading order term of the semiclassical expansion. As an example, we consider shear viscosity for the scalar field theory at the leading semiclassical order. We introduce the new technique that unifies both semiclassical and diagrammatic approaches and open the possibility to perform the resummation of the semiclassical contributions."
     },
     {
       "id": "768f6cf863f97685a9a8",
@@ -1203,7 +1181,7 @@
     {
       "id": "e23d0a69c25645e46d80",
       "title": "Solving the Homogeneous Boltzmann Equation with Arbitrary Scattering Kernel",
-      "authors": "Andreas Hohenegger",
+      "authors": "A. Hohenegger",
       "kind": "article",
       "access": "external",
       "sourceUrl": "https://arxiv.org/abs/0806.3098",
@@ -1225,13 +1203,13 @@
     {
       "id": "ef521f5e723383086856",
       "title": "Spontaneous symmetry breaking in replica field theory",
-      "authors": "R. Acosta Diaz, G. Menezes, N. F. Svaiter, and C. A. D. Zarro, §",
+      "authors": "R. Acosta Diaz, G. Menezes, N. F. Svaiter, C. A. D. Zarro",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/ef521f5e723383086856.pdf",
-      "downloadUrl": "papers/ef521f5e723383086856.pdf",
-      "abstract": "In this paper we discuss a disordered d-dimensional Euclidean λφ4 model. The dominant contri- bution to the average free energy of this system is written as a series of the replica partition functions of the model. In each replica partition function, using the saddle-point equations and imposing the replica symmetric ansatz, we show the presence of a spontaneous symmetry breaking mechanism in the disordered model. Moreover, the leading replica partition function must be described by a large-N Euclidean replica field theory. We discuss finite temperature effects considering periodic boundary condition in Euclidean time and also using the Landau-Ginzburg approach. In the low temperature regime we prove the existence of N instantons in the model."
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/1705.06403",
+      "openUrl": "https://arxiv.org/pdf/1705.06403",
+      "downloadUrl": null,
+      "abstract": "In this paper we discuss a disordered $d$-dimensional Euclidean $λ\\varphi^{4}$ model. The dominant contribution to the average free energy of this system is written as a series of the replica partition functions of the model. In each replica partition function, using the saddle-point equations and imposing the replica symmetric ansatz, we show the presence of a spontaneous symmetry breaking mechanism in the disordered model. Moreover, the leading replica partition function must be described by a large-$N$ Euclidean replica field theory. We discuss finite temperature effects considering periodic boundary condition in Euclidean time and also using the Landau-Ginzburg approach. In the low temperature regime we prove the existence of $N$ instantons in the model."
     },
     {
       "id": "7d88d5d2e8a80174c850",
@@ -1245,14 +1223,25 @@
       "abstract": ""
     },
     {
+      "id": "b4ea04d4ad5695ac8397",
+      "title": "Stochastic semiclassical gravity",
+      "authors": "Rosario Martin, Enric Verdaguer",
+      "kind": "book",
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/gr-qc/9904021",
+      "openUrl": "https://arxiv.org/pdf/gr-qc/9904021",
+      "downloadUrl": null,
+      "abstract": "In the first part of this paper, we show that the semiclassical Einstein-Langevin equation, introduced in the framework of a stochastic generalization of semiclassical gravity to describe the back reaction of matter stress-energy fluctuations, can be formally derived from a functional method based on the influence functional of Feynman and Vernon. In the second part, we derive a number of results for background solutions of semiclassical gravity consisting of stationary and conformally stationary spacetimes and scalar fields in thermal equilibrium states. For these cases, fluctuation-dissipation relations are derived. We also show that particle creation is related to the vacuum stress-energy fluctuations and that it is enhanced by the presence of stochastic metric fluctuations."
+    },
+    {
       "id": "35a2662e8ef0172bbaf6",
-      "title": "Superbosonization Formula and Its Application to Random Matrix Theory",
-      "authors": "J.E. Bunder · K.B. Efetov · V.E. Kravtsov ·",
+      "title": "Superbosonization formula and its application to random matrix theory",
+      "authors": "J. E. Bunder, K. B. Efetov, V. E. Kravtsov, O. M. Yevtushenko, M. R. Zirnbauer",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": "https://doi.org/10.1007/s10955-007-9405-y",
-      "openUrl": "papers/35a2662e8ef0172bbaf6.pdf",
-      "downloadUrl": "papers/35a2662e8ef0172bbaf6.pdf",
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/0707.2932",
+      "openUrl": "https://arxiv.org/pdf/0707.2932",
+      "downloadUrl": null,
       "abstract": "Starting from Gaussian random matrix models we derive a new supermatrix field theory model. In contrast to the conventional non-linear sigma models, the new model is applicable for any range of correlations of the elements of the random matrices. We clarify the domain of integration for the supermatrices, and give a demonstration of how the model works by calculating the density of states for an ensemble of almost diagonal matrices. It is also shown how one can reduce the supermatrix model to the conventional sigma model."
     },
     {
@@ -1280,7 +1269,7 @@
     {
       "id": "c381230ab0787ba63cb5",
       "title": "Supersymmetry and theory of disordered metals",
-      "authors": "Please Scroll Down For Article",
+      "authors": "K.B. Efetov",
       "kind": "article",
       "access": "open",
       "sourceUrl": "https://doi.org/10.1080/00018738300101531",
@@ -1313,7 +1302,7 @@
     {
       "id": "c8a3663c07202b5b21d9",
       "title": "Tau Functions and Matrix Integrals",
-      "authors": "A. Yu. Orlov",
+      "authors": "",
       "kind": "article",
       "access": "external",
       "sourceUrl": "https://arxiv.org/abs/math-ph/0210012",
@@ -1368,13 +1357,24 @@
     {
       "id": "e8717203be4b531c3a65",
       "title": "Thermodynamics of a charged scalar field in disordered media",
-      "authors": "E. Arias, G. Krein, G. Menezes, and N. F. Svaiter, §",
+      "authors": "",
       "kind": "article",
       "access": "open",
       "sourceUrl": null,
       "openUrl": "papers/e8717203be4b531c3a65.pdf",
       "downloadUrl": "papers/e8717203be4b531c3a65.pdf",
       "abstract": "1Centro Brasileiro de Pesquisas Físicas, Rua Dr. Xavier Sigaud 150, 22290-180 Rio de Janeiro, RJ, Brazil 2Instituto de Física Teórica, Universidade Estadual Paulista Rua Dr. Bento Teobaldo Ferraz 271 - Bloco II, 01140-070 São Paulo, SP, Brazil"
+    },
+    {
+      "id": "49ed099d5bcb197e38a3",
+      "title": "Time Dependent Quantum Mechanics",
+      "authors": "Peter G. Morrison",
+      "kind": "article",
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/1210.6977",
+      "openUrl": "https://arxiv.org/pdf/1210.6977",
+      "downloadUrl": null,
+      "abstract": "We present a systematic method for dealing with time dependent quantum dynamics, based on the quantum brachistochrone and matrix mechanics. We derive the explicit time dependence of the Hamiltonian operator for a number of constrained finite systems from this formalism. Once this has been achieved we go on to calculate the wavevector as a function of time, in order to demonstrate the use of matrix methods with respect to several concrete examples. Interesting results are derived for elliptic curves and periodic orbits on higher dimensional non-commutative geometries."
     },
     {
       "id": "a3c82d77f4273b859a80",
@@ -1412,7 +1412,7 @@
     {
       "id": "7fca039523e35692b793",
       "title": "Диаграммная техника Фейнмана",
-      "authors": "",
+      "authors": "Теория Возмущений",
       "kind": "article",
       "access": "open",
       "sourceUrl": null,
@@ -1594,6 +1594,30 @@
       "explanation": "The source publication cites the target (OpenAlex)."
     },
     {
+      "source": "2857dba8f9d9ec6471f6",
+      "target": "373a35cd782276b8a6d6",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "2857dba8f9d9ec6471f6",
+      "target": "47480c1dacb05e326600",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "2857dba8f9d9ec6471f6",
+      "target": "7ecb4482a4065cc083e0",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
       "source": "2a285b1519bb617dbd22",
       "target": "216afd1a0fb0c60ee81b",
       "type": "citation",
@@ -1642,8 +1666,24 @@
       "explanation": "The source publication cites the target (OpenAlex)."
     },
     {
+      "source": "396aec0ad44c1a69dd28",
+      "target": "37e8219be70ab9bda23f",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
       "source": "3c5cdb6af30e2b21eec5",
       "target": "5a6da9fe0ee72528e92c",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "3cf186cdea83cfc7f64d",
+      "target": "7d5c46e20394845a2c86",
       "type": "citation",
       "strength": 1.0,
       "directed": true,
@@ -1732,6 +1772,14 @@
     {
       "source": "5b9b0448b2934aea906f",
       "target": "a584b26858c1dcb3fe3a",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "5b9b0448b2934aea906f",
+      "target": "ef521f5e723383086856",
       "type": "citation",
       "strength": 1.0,
       "directed": true,
@@ -1866,6 +1914,14 @@
       "explanation": "The source publication cites the target (OpenAlex)."
     },
     {
+      "source": "a584b26858c1dcb3fe3a",
+      "target": "ef521f5e723383086856",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
       "source": "a81a2cf3c3aa7249ffd1",
       "target": "532b57072efb6b926949",
       "type": "citation",
@@ -1956,6 +2012,14 @@
     {
       "source": "b901d3906f5e576f98dd",
       "target": "a584b26858c1dcb3fe3a",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "b901d3906f5e576f98dd",
+      "target": "ef521f5e723383086856",
       "type": "citation",
       "strength": 1.0,
       "directed": true,
@@ -2067,6 +2131,14 @@
     },
     {
       "source": "dc505a49516927d0b8e9",
+      "target": "2857dba8f9d9ec6471f6",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "dc505a49516927d0b8e9",
       "target": "61f2fdc2dbb6af404e4a",
       "type": "citation",
       "strength": 1.0,
@@ -2106,6 +2178,30 @@
       "explanation": "The source publication cites the target (OpenAlex)."
     },
     {
+      "source": "e39f3f43ff32b1d7e9b9",
+      "target": "2e978a3b38dae0e467f4",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "ef521f5e723383086856",
+      "target": "3c5cdb6af30e2b21eec5",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "ef521f5e723383086856",
+      "target": "c381230ab0787ba63cb5",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
       "source": "f531c4cb2a9604e7dc5f",
       "target": "17ac10700d8c6034998f",
       "type": "citation",
@@ -2130,6 +2226,16 @@
         "alexander m finkel stein"
       ],
       "explanation": "Shared author: alexander m finkel stein"
+    },
+    {
+      "source": "1501f760d15f4df69a25",
+      "target": "35a2662e8ef0172bbaf6",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "v e kravtsov"
+      ],
+      "explanation": "Shared author: v e kravtsov"
     },
     {
       "source": "17c4f3e8965ea7e23d1e",
@@ -2173,6 +2279,36 @@
         "g schwiete"
       ],
       "explanation": "Shared author: a m finkel stein, g schwiete"
+    },
+    {
+      "source": "2857dba8f9d9ec6471f6",
+      "target": "7ecb4482a4065cc083e0",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "alex levchenko"
+      ],
+      "explanation": "Shared author: alex levchenko"
+    },
+    {
+      "source": "35a2662e8ef0172bbaf6",
+      "target": "6061fda0e8bf37102849",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "m r zirnbauer"
+      ],
+      "explanation": "Shared author: m r zirnbauer"
+    },
+    {
+      "source": "35a2662e8ef0172bbaf6",
+      "target": "c381230ab0787ba63cb5",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "k b efetov"
+      ],
+      "explanation": "Shared author: k b efetov"
     },
     {
       "source": "3c5cdb6af30e2b21eec5",
@@ -2291,18 +2427,6 @@
     },
     {
       "source": "5a6da9fe0ee72528e92c",
-      "target": "e8717203be4b531c3a65",
-      "type": "author",
-      "strength": 0.8,
-      "authors": [
-        "e arias",
-        "g krein",
-        "g menezes"
-      ],
-      "explanation": "Shared author: e arias, g krein, g menezes"
-    },
-    {
-      "source": "5a6da9fe0ee72528e92c",
       "target": "ef521f5e723383086856",
       "type": "author",
       "strength": 0.8,
@@ -2337,16 +2461,6 @@
     },
     {
       "source": "5b9b0448b2934aea906f",
-      "target": "e8717203be4b531c3a65",
-      "type": "author",
-      "strength": 0.8,
-      "authors": [
-        "g krein"
-      ],
-      "explanation": "Shared author: g krein"
-    },
-    {
-      "source": "5b9b0448b2934aea906f",
       "target": "ef521f5e723383086856",
       "type": "author",
       "strength": 0.8,
@@ -2364,16 +2478,6 @@
         "alberto cortijo"
       ],
       "explanation": "Shared author: alberto cortijo"
-    },
-    {
-      "source": "6061fda0e8bf37102849",
-      "target": "7d5c46e20394845a2c86",
-      "type": "author",
-      "strength": 0.8,
-      "authors": [
-        "m r zirnbauer"
-      ],
-      "explanation": "Shared author: m r zirnbauer"
     },
     {
       "source": "61f2fdc2dbb6af404e4a",
@@ -2438,16 +2542,6 @@
     },
     {
       "source": "b901d3906f5e576f98dd",
-      "target": "e8717203be4b531c3a65",
-      "type": "author",
-      "strength": 0.8,
-      "authors": [
-        "g krein"
-      ],
-      "explanation": "Shared author: g krein"
-    },
-    {
-      "source": "b901d3906f5e576f98dd",
       "target": "ef521f5e723383086856",
       "type": "author",
       "strength": 0.8,
@@ -2477,20 +2571,10 @@
       "explanation": "Shared author: alex kamenev"
     },
     {
-      "source": "e8717203be4b531c3a65",
-      "target": "ef521f5e723383086856",
-      "type": "author",
-      "strength": 0.8,
-      "authors": [
-        "g menezes"
-      ],
-      "explanation": "Shared author: g menezes"
-    },
-    {
       "source": "0425e01f0af9d0994909",
       "target": "0bdf419313f549dfd175",
       "type": "similar",
-      "strength": 0.1958,
+      "strength": 0.1947,
       "terms": [
         "physics",
         "quantum"
@@ -2501,7 +2585,7 @@
       "source": "09708e781b2eb4b31214",
       "target": "4bcb57d1d3f63d4f7fec",
       "type": "similar",
-      "strength": 0.1987,
+      "strength": 0.1993,
       "terms": [
         "path",
         "integral",
@@ -2514,7 +2598,7 @@
       "source": "09708e781b2eb4b31214",
       "target": "c6a8bbbcc8265df18526",
       "type": "similar",
-      "strength": 0.3191,
+      "strength": 0.3223,
       "terms": [
         "path",
         "square",
@@ -2527,7 +2611,7 @@
       "source": "09708e781b2eb4b31214",
       "target": "f62489586c39bf17b0fa",
       "type": "similar",
-      "strength": 0.2769,
+      "strength": 0.2818,
       "terms": [
         "integrals",
         "path",
@@ -2540,7 +2624,7 @@
       "source": "09a544e3bd22412f011d",
       "target": "20e6e0b3b24a66d38d61",
       "type": "similar",
-      "strength": 0.2132,
+      "strength": 0.2147,
       "terms": [
         "transport",
         "electron",
@@ -2553,7 +2637,7 @@
       "source": "09a544e3bd22412f011d",
       "target": "3b76321646d1a716ec2b",
       "type": "similar",
-      "strength": 0.284,
+      "strength": 0.2823,
       "terms": [
         "gas",
         "electron",
@@ -2566,7 +2650,7 @@
       "source": "09a544e3bd22412f011d",
       "target": "61f2fdc2dbb6af404e4a",
       "type": "similar",
-      "strength": 0.3959,
+      "strength": 0.3944,
       "terms": [
         "gas",
         "heat",
@@ -2579,7 +2663,7 @@
       "source": "09a544e3bd22412f011d",
       "target": "6e88b459a85df2ac012b",
       "type": "similar",
-      "strength": 0.1627,
+      "strength": 0.164,
       "terms": [
         "gas",
         "interaction",
@@ -2590,21 +2674,9 @@
     },
     {
       "source": "0de8c5c8f07096f9eb4f",
-      "target": "a584b26858c1dcb3fe3a",
-      "type": "similar",
-      "strength": 0.1539,
-      "terms": [
-        "polymers",
-        "space",
-        "disorder"
-      ],
-      "explanation": "Shared distinctive terms: polymers, space, disorder"
-    },
-    {
-      "source": "0de8c5c8f07096f9eb4f",
       "target": "d9f554f17d9329e67ab9",
       "type": "similar",
-      "strength": 0.1514,
+      "strength": 0.1506,
       "terms": [
         "lectures",
         "contain",
@@ -2617,7 +2689,7 @@
       "source": "0fb036167205e8ea909f",
       "target": "6a04e495e857c0a1a28b",
       "type": "similar",
-      "strength": 0.1583,
+      "strength": 0.1585,
       "terms": [
         "phonons",
         "localization",
@@ -2630,7 +2702,7 @@
       "source": "10d893ef0a964778604d",
       "target": "249969930d037073e6f7",
       "type": "similar",
-      "strength": 0.1715,
+      "strength": 0.1741,
       "terms": [
         "mesoscopic",
         "electrons"
@@ -2641,7 +2713,7 @@
       "source": "17ac10700d8c6034998f",
       "target": "5b6e4d3160e03ffc14fc",
       "type": "similar",
-      "strength": 0.2308,
+      "strength": 0.2284,
       "terms": [
         "einstein",
         "condensate",
@@ -2654,20 +2726,20 @@
       "source": "17ac10700d8c6034998f",
       "target": "ca7ea5041cdff518d6a8",
       "type": "similar",
-      "strength": 0.1866,
+      "strength": 0.1846,
       "terms": [
-        "einstein",
         "condensate",
+        "einstein",
         "bose",
         "expansion"
       ],
-      "explanation": "Shared distinctive terms: einstein, condensate, bose, expansion"
+      "explanation": "Shared distinctive terms: condensate, einstein, bose, expansion"
     },
     {
       "source": "17c4f3e8965ea7e23d1e",
       "target": "216afd1a0fb0c60ee81b",
       "type": "similar",
-      "strength": 0.1657,
+      "strength": 0.1658,
       "terms": [
         "kinetics",
         "transport"
@@ -2678,20 +2750,20 @@
       "source": "17c4f3e8965ea7e23d1e",
       "target": "4cb975cd5b3e0b624695",
       "type": "similar",
-      "strength": 0.1829,
+      "strength": 0.1845,
       "terms": [
         "packet",
         "expanding",
         "bose",
-        "serve"
+        "wave"
       ],
-      "explanation": "Shared distinctive terms: packet, expanding, bose, serve"
+      "explanation": "Shared distinctive terms: packet, expanding, bose, wave"
     },
     {
       "source": "17c4f3e8965ea7e23d1e",
       "target": "b7f26028700c3ef31817",
       "type": "similar",
-      "strength": 0.2227,
+      "strength": 0.2236,
       "terms": [
         "collisions",
         "packet",
@@ -2717,7 +2789,7 @@
       "source": "1a336799065ae2220b0e",
       "target": "c0ceb6d172fa51731d56",
       "type": "similar",
-      "strength": 0.1656,
+      "strength": 0.1667,
       "terms": [
         "transitions",
         "phase",
@@ -2730,7 +2802,7 @@
       "source": "1b099877a04e5af38ba2",
       "target": "2a285b1519bb617dbd22",
       "type": "similar",
-      "strength": 0.1583,
+      "strength": 0.1538,
       "terms": [
         "equilibrium",
         "dynamics",
@@ -2743,7 +2815,7 @@
       "source": "1b099877a04e5af38ba2",
       "target": "32cb576779b56c52d99c",
       "type": "similar",
-      "strength": 0.2391,
+      "strength": 0.2362,
       "terms": [
         "equilibrium",
         "non",
@@ -2755,7 +2827,7 @@
       "source": "1b099877a04e5af38ba2",
       "target": "532b57072efb6b926949",
       "type": "similar",
-      "strength": 0.1959,
+      "strength": 0.1947,
       "terms": [
         "relativistic",
         "boltzmann",
@@ -2768,7 +2840,7 @@
       "source": "1b099877a04e5af38ba2",
       "target": "7d8ea87d57394a8e7f14",
       "type": "similar",
-      "strength": 0.2222,
+      "strength": 0.2171,
       "terms": [
         "boltzmann",
         "scalar",
@@ -2781,7 +2853,7 @@
       "source": "1c876118612c0982e3a4",
       "target": "2e978a3b38dae0e467f4",
       "type": "similar",
-      "strength": 0.1529,
+      "strength": 0.1573,
       "terms": [
         "glass",
         "spin",
@@ -2794,7 +2866,7 @@
       "source": "1cfb806de3a388033455",
       "target": "d1a1e6469fd3aa288e3c",
       "type": "similar",
-      "strength": 0.1517,
+      "strength": 0.1525,
       "terms": [
         "quenched",
         "mass",
@@ -2807,7 +2879,7 @@
       "source": "1d5c0ba37fe4435426cd",
       "target": "cf48d65fbff94e717d6c",
       "type": "similar",
-      "strength": 0.1876,
+      "strength": 0.1757,
       "terms": [
         "polymer",
         "medium",
@@ -2819,7 +2891,7 @@
       "source": "20e6e0b3b24a66d38d61",
       "target": "61f2fdc2dbb6af404e4a",
       "type": "similar",
-      "strength": 0.2165,
+      "strength": 0.2154,
       "terms": [
         "heat",
         "electron",
@@ -2832,7 +2904,7 @@
       "source": "20e6e0b3b24a66d38d61",
       "target": "75126cd408be2ec7038d",
       "type": "similar",
-      "strength": 0.3025,
+      "strength": 0.2998,
       "terms": [
         "metals",
         "thermal",
@@ -2845,7 +2917,7 @@
       "source": "20e6e0b3b24a66d38d61",
       "target": "bbd0df5b4f37b61dee38",
       "type": "similar",
-      "strength": 0.2291,
+      "strength": 0.2286,
       "terms": [
         "metals",
         "transport",
@@ -2854,10 +2926,48 @@
       "explanation": "Shared distinctive terms: metals, transport, quantum"
     },
     {
+      "source": "2259544a70f72ac2071b",
+      "target": "cebb15e4fcc4c0dd09eb",
+      "type": "similar",
+      "strength": 0.1634,
+      "terms": [
+        "nonequilibrium",
+        "technique",
+        "derivation"
+      ],
+      "explanation": "Shared distinctive terms: nonequilibrium, technique, derivation"
+    },
+    {
+      "source": "249969930d037073e6f7",
+      "target": "b4ea04d4ad5695ac8397",
+      "type": "similar",
+      "strength": 0.1674,
+      "terms": [
+        "stochastic",
+        "fluctuations",
+        "metric",
+        "scalar"
+      ],
+      "explanation": "Shared distinctive terms: stochastic, fluctuations, metric, scalar"
+    },
+    {
+      "source": "2857dba8f9d9ec6471f6",
+      "target": "5bee4756ff236b23ed4a",
+      "type": "similar",
+      "strength": 0.1631,
+      "terms": [
+        "hydrodynamic",
+        "keldysh",
+        "corrections",
+        "self"
+      ],
+      "explanation": "Shared distinctive terms: hydrodynamic, keldysh, corrections, self"
+    },
+    {
       "source": "288de55d1993885892f7",
       "target": "57142b88a36bc47e0fd4",
       "type": "similar",
-      "strength": 0.2251,
+      "strength": 0.2273,
       "terms": [
         "coherent",
         "potential",
@@ -2870,7 +2980,7 @@
       "source": "288de55d1993885892f7",
       "target": "6061fda0e8bf37102849",
       "type": "similar",
-      "strength": 0.1947,
+      "strength": 0.1962,
       "terms": [
         "coherent",
         "approximation",
@@ -2883,7 +2993,7 @@
       "source": "288de55d1993885892f7",
       "target": "db021e7a93b4dcdccdbb",
       "type": "similar",
-      "strength": 0.1517,
+      "strength": 0.1528,
       "terms": [
         "coherent",
         "potential",
@@ -2896,7 +3006,7 @@
       "source": "2945081d4189e94cd785",
       "target": "7d88d5d2e8a80174c850",
       "type": "similar",
-      "strength": 0.2326,
+      "strength": 0.2341,
       "terms": [
         "statistical",
         "physics",
@@ -2909,7 +3019,7 @@
       "source": "2a285b1519bb617dbd22",
       "target": "32cb576779b56c52d99c",
       "type": "similar",
-      "strength": 0.2233,
+      "strength": 0.2145,
       "terms": [
         "equilibrium",
         "non",
@@ -2922,7 +3032,7 @@
       "source": "32cb576779b56c52d99c",
       "target": "bbd0df5b4f37b61dee38",
       "type": "similar",
-      "strength": 0.1921,
+      "strength": 0.2019,
       "terms": [
         "field",
         "quantum"
@@ -2933,7 +3043,7 @@
       "source": "32cb576779b56c52d99c",
       "target": "d9f554f17d9329e67ab9",
       "type": "similar",
-      "strength": 0.2368,
+      "strength": 0.2291,
       "terms": [
         "equilibrium",
         "non",
@@ -2943,20 +3053,9 @@
     },
     {
       "source": "35a2662e8ef0172bbaf6",
-      "target": "3cf186cdea83cfc7f64d",
-      "type": "similar",
-      "strength": 0.2393,
-      "terms": [
-        "matrix",
-        "random"
-      ],
-      "explanation": "Shared distinctive terms: matrix, random"
-    },
-    {
-      "source": "35a2662e8ef0172bbaf6",
       "target": "f4a7357f092445d4e8f2",
       "type": "similar",
-      "strength": 0.1724,
+      "strength": 0.1557,
       "terms": [
         "matrices",
         "formula",
@@ -2969,7 +3068,7 @@
       "source": "373a35cd782276b8a6d6",
       "target": "dc505a49516927d0b8e9",
       "type": "similar",
-      "strength": 0.1516,
+      "strength": 0.1528,
       "terms": [
         "electron",
         "non",
@@ -2979,22 +3078,23 @@
       "explanation": "Shared distinctive terms: electron, non, linear, scaling"
     },
     {
-      "source": "3b76321646d1a716ec2b",
-      "target": "61f2fdc2dbb6af404e4a",
+      "source": "396aec0ad44c1a69dd28",
+      "target": "b4ea04d4ad5695ac8397",
       "type": "similar",
-      "strength": 0.204,
+      "strength": 0.1604,
       "terms": [
-        "gas",
-        "electron",
-        "dimensional"
+        "stochastic",
+        "relations",
+        "stationary",
+        "dissipation"
       ],
-      "explanation": "Shared distinctive terms: gas, electron, dimensional"
+      "explanation": "Shared distinctive terms: stochastic, relations, stationary, dissipation"
     },
     {
       "source": "3b76321646d1a716ec2b",
       "target": "8edb0b36e9b5e94722f1",
       "type": "similar",
-      "strength": 0.3175,
+      "strength": 0.3189,
       "terms": [
         "sigma",
         "nonlinear",
@@ -3007,7 +3107,7 @@
       "source": "3b76321646d1a716ec2b",
       "target": "aee3ae024f95f35d952e",
       "type": "similar",
-      "strength": 0.2185,
+      "strength": 0.2153,
       "terms": [
         "sigma",
         "dimensional",
@@ -3016,48 +3116,35 @@
       "explanation": "Shared distinctive terms: sigma, dimensional, nonlinear"
     },
     {
-      "source": "3cf186cdea83cfc7f64d",
-      "target": "6061fda0e8bf37102849",
+      "source": "3b76321646d1a716ec2b",
+      "target": "de71fb6e60247c50189d",
       "type": "similar",
-      "strength": 0.248,
+      "strength": 0.2445,
       "terms": [
-        "matrix",
-        "bosons",
-        "random",
-        "disordered"
+        "replica",
+        "sigma",
+        "nonlinear"
       ],
-      "explanation": "Shared distinctive terms: matrix, bosons, random, disordered"
+      "explanation": "Shared distinctive terms: replica, sigma, nonlinear"
     },
     {
       "source": "3cf186cdea83cfc7f64d",
       "target": "7d5c46e20394845a2c86",
       "type": "similar",
-      "strength": 0.2807,
+      "strength": 0.1763,
       "terms": [
         "matrix",
         "bosons",
-        "random",
-        "disordered"
+        "measures",
+        "measure"
       ],
-      "explanation": "Shared distinctive terms: matrix, bosons, random, disordered"
-    },
-    {
-      "source": "3cf186cdea83cfc7f64d",
-      "target": "d112abc40f17f3d8abd4",
-      "type": "similar",
-      "strength": 0.2086,
-      "terms": [
-        "bosons",
-        "random",
-        "disordered"
-      ],
-      "explanation": "Shared distinctive terms: bosons, random, disordered"
+      "explanation": "Shared distinctive terms: matrix, bosons, measures, measure"
     },
     {
       "source": "3e54fa2ca1dd5f8f6c1e",
       "target": "4be7e80c62e19b417e09",
       "type": "similar",
-      "strength": 0.1597,
+      "strength": 0.1573,
       "terms": [
         "lectures",
         "introduction",
@@ -3070,20 +3157,20 @@
       "source": "3e54fa2ca1dd5f8f6c1e",
       "target": "df58dd0f10b8b1ae9590",
       "type": "similar",
-      "strength": 0.2369,
+      "strength": 0.2326,
       "terms": [
-        "matter",
         "condensed",
+        "matter",
         "feynman",
         "field"
       ],
-      "explanation": "Shared distinctive terms: matter, condensed, feynman, field"
+      "explanation": "Shared distinctive terms: condensed, matter, feynman, field"
     },
     {
       "source": "3e54fa2ca1dd5f8f6c1e",
       "target": "f1671a28bb8670be1cfd",
       "type": "similar",
-      "strength": 0.2163,
+      "strength": 0.214,
       "terms": [
         "condensed",
         "matter",
@@ -3095,7 +3182,7 @@
       "source": "464498d779ecf5b960e4",
       "target": "82d3accbbeaa252fdcef",
       "type": "similar",
-      "strength": 0.2538,
+      "strength": 0.2542,
       "terms": [
         "liquid",
         "electron",
@@ -3108,33 +3195,33 @@
       "source": "464498d779ecf5b960e4",
       "target": "dc505a49516927d0b8e9",
       "type": "similar",
-      "strength": 0.2633,
+      "strength": 0.264,
       "terms": [
         "liquid",
         "electron",
         "fermi",
-        "interaction"
+        "disordered"
       ],
-      "explanation": "Shared distinctive terms: liquid, electron, fermi, interaction"
+      "explanation": "Shared distinctive terms: liquid, electron, fermi, disordered"
     },
     {
       "source": "480bf89fa59840c30b9a",
       "target": "57142b88a36bc47e0fd4",
       "type": "similar",
-      "strength": 0.1573,
+      "strength": 0.1575,
       "terms": [
-        "dynamical",
         "mean",
+        "dynamical",
         "body",
         "mechanical"
       ],
-      "explanation": "Shared distinctive terms: dynamical, mean, body, mechanical"
+      "explanation": "Shared distinctive terms: mean, dynamical, body, mechanical"
     },
     {
       "source": "480bf89fa59840c30b9a",
       "target": "d3a8b8471de6a39ec861",
       "type": "similar",
-      "strength": 0.1635,
+      "strength": 0.1652,
       "terms": [
         "nonequilibrium",
         "body",
@@ -3147,7 +3234,7 @@
       "source": "49ed099d5bcb197e38a3",
       "target": "f62489586c39bf17b0fa",
       "type": "similar",
-      "strength": 0.1651,
+      "strength": 0.1823,
       "terms": [
         "mechanics",
         "quantum"
@@ -3158,7 +3245,7 @@
       "source": "4a6974757f7c190fa564",
       "target": "4bcb57d1d3f63d4f7fec",
       "type": "similar",
-      "strength": 0.157,
+      "strength": 0.1586,
       "terms": [
         "path",
         "integral",
@@ -3168,10 +3255,22 @@
       "explanation": "Shared distinctive terms: path, integral, review, formalism"
     },
     {
+      "source": "4a6974757f7c190fa564",
+      "target": "c6a8bbbcc8265df18526",
+      "type": "similar",
+      "strength": 0.15,
+      "terms": [
+        "path",
+        "integral",
+        "disorder"
+      ],
+      "explanation": "Shared distinctive terms: path, integral, disorder"
+    },
+    {
       "source": "4bcb57d1d3f63d4f7fec",
       "target": "c6a8bbbcc8265df18526",
       "type": "similar",
-      "strength": 0.1642,
+      "strength": 0.1668,
       "terms": [
         "path",
         "integral",
@@ -3183,7 +3282,7 @@
       "source": "4bcb57d1d3f63d4f7fec",
       "target": "f62489586c39bf17b0fa",
       "type": "similar",
-      "strength": 0.2314,
+      "strength": 0.2379,
       "terms": [
         "path",
         "integrals",
@@ -3196,7 +3295,7 @@
       "source": "4cb975cd5b3e0b624695",
       "target": "b7f26028700c3ef31817",
       "type": "similar",
-      "strength": 0.3362,
+      "strength": 0.337,
       "terms": [
         "packet",
         "medium",
@@ -3209,7 +3308,7 @@
       "source": "4cb975cd5b3e0b624695",
       "target": "f531c4cb2a9604e7dc5f",
       "type": "similar",
-      "strength": 0.2578,
+      "strength": 0.2587,
       "terms": [
         "packet",
         "wave",
@@ -3222,7 +3321,7 @@
       "source": "532b57072efb6b926949",
       "target": "768f6cf863f97685a9a8",
       "type": "similar",
-      "strength": 0.1704,
+      "strength": 0.1681,
       "terms": [
         "relativistic",
         "scalar",
@@ -3235,7 +3334,7 @@
       "source": "532b57072efb6b926949",
       "target": "7d8ea87d57394a8e7f14",
       "type": "similar",
-      "strength": 0.1752,
+      "strength": 0.1727,
       "terms": [
         "thermal",
         "scalar",
@@ -3248,7 +3347,7 @@
       "source": "57142b88a36bc47e0fd4",
       "target": "6061fda0e8bf37102849",
       "type": "similar",
-      "strength": 0.1996,
+      "strength": 0.2009,
       "terms": [
         "coherent",
         "approximation",
@@ -3261,7 +3360,7 @@
       "source": "57142b88a36bc47e0fd4",
       "target": "db021e7a93b4dcdccdbb",
       "type": "similar",
-      "strength": 0.203,
+      "strength": 0.2039,
       "terms": [
         "coherent",
         "mean",
@@ -3271,23 +3370,36 @@
       "explanation": "Shared distinctive terms: coherent, mean, potential, green"
     },
     {
+      "source": "5a6da9fe0ee72528e92c",
+      "target": "cf48d65fbff94e717d6c",
+      "type": "similar",
+      "strength": 0.1511,
+      "terms": [
+        "media",
+        "annealed",
+        "random",
+        "medium"
+      ],
+      "explanation": "Shared distinctive terms: media, annealed, random, medium"
+    },
+    {
       "source": "5b6e4d3160e03ffc14fc",
       "target": "6e88b459a85df2ac012b",
       "type": "similar",
-      "strength": 0.1667,
+      "strength": 0.1711,
       "terms": [
         "condensate",
         "depletion",
-        "temperature",
-        "analytical"
+        "analytical",
+        "temperature"
       ],
-      "explanation": "Shared distinctive terms: condensate, depletion, temperature, analytical"
+      "explanation": "Shared distinctive terms: condensate, depletion, analytical, temperature"
     },
     {
       "source": "5b6e4d3160e03ffc14fc",
       "target": "ca7ea5041cdff518d6a8",
       "type": "similar",
-      "strength": 0.6003,
+      "strength": 0.5996,
       "terms": [
         "bogoliubov",
         "condensates",
@@ -3300,7 +3412,7 @@
       "source": "5b6e4d3160e03ffc14fc",
       "target": "d25a2441596737923d53",
       "type": "similar",
-      "strength": 0.1729,
+      "strength": 0.1728,
       "terms": [
         "sound",
         "bose",
@@ -3313,7 +3425,7 @@
       "source": "5b9b0448b2934aea906f",
       "target": "b901d3906f5e576f98dd",
       "type": "similar",
-      "strength": 0.1985,
+      "strength": 0.1988,
       "terms": [
         "moments",
         "continuous",
@@ -3326,7 +3438,7 @@
       "source": "5b9b0448b2934aea906f",
       "target": "ef521f5e723383086856",
       "type": "similar",
-      "strength": 0.1905,
+      "strength": 0.1903,
       "terms": [
         "symmetry",
         "partition",
@@ -3339,20 +3451,20 @@
       "source": "5bee4756ff236b23ed4a",
       "target": "b4f9dcd17017a4562e97",
       "type": "similar",
-      "strength": 0.3612,
+      "strength": 0.3597,
       "terms": [
         "hydrodynamic",
-        "stress",
         "corrections",
+        "stress",
         "interference"
       ],
-      "explanation": "Shared distinctive terms: hydrodynamic, stress, corrections, interference"
+      "explanation": "Shared distinctive terms: hydrodynamic, corrections, stress, interference"
     },
     {
       "source": "5bee4756ff236b23ed4a",
       "target": "cebb15e4fcc4c0dd09eb",
       "type": "similar",
-      "strength": 0.1695,
+      "strength": 0.1703,
       "terms": [
         "hydrodynamic",
         "conservation",
@@ -3362,23 +3474,10 @@
       "explanation": "Shared distinctive terms: hydrodynamic, conservation, laws, derivation"
     },
     {
-      "source": "6061fda0e8bf37102849",
-      "target": "7d5c46e20394845a2c86",
-      "type": "similar",
-      "strength": 0.152,
-      "terms": [
-        "matrix",
-        "bosons",
-        "family",
-        "generator"
-      ],
-      "explanation": "Shared distinctive terms: matrix, bosons, family, generator"
-    },
-    {
       "source": "61f2fdc2dbb6af404e4a",
       "target": "75126cd408be2ec7038d",
       "type": "similar",
-      "strength": 0.1634,
+      "strength": 0.161,
       "terms": [
         "conductivity",
         "wiedemann",
@@ -3391,7 +3490,7 @@
       "source": "6a04e495e857c0a1a28b",
       "target": "6b05ea608990f7bc0055",
       "type": "similar",
-      "strength": 0.1582,
+      "strength": 0.1556,
       "terms": [
         "extended",
         "states",
@@ -3404,7 +3503,7 @@
       "source": "6c2a255573a9506ab2ab",
       "target": "ef521f5e723383086856",
       "type": "similar",
-      "strength": 0.2471,
+      "strength": 0.2511,
       "terms": [
         "spontaneous",
         "breaking",
@@ -3417,7 +3516,7 @@
       "source": "75126cd408be2ec7038d",
       "target": "bbd0df5b4f37b61dee38",
       "type": "similar",
-      "strength": 0.2488,
+      "strength": 0.249,
       "terms": [
         "metals",
         "transport",
@@ -3429,7 +3528,7 @@
       "source": "75ea5f938dd0f6a73d74",
       "target": "bbd0df5b4f37b61dee38",
       "type": "similar",
-      "strength": 0.184,
+      "strength": 0.1819,
       "terms": [
         "transport",
         "quantum",
@@ -3441,7 +3540,7 @@
       "source": "768f6cf863f97685a9a8",
       "target": "97928184e9e2320fc535",
       "type": "similar",
-      "strength": 0.241,
+      "strength": 0.2439,
       "terms": [
         "viscosity",
         "shear",
@@ -3454,7 +3553,7 @@
       "source": "768f6cf863f97685a9a8",
       "target": "a81a2cf3c3aa7249ffd1",
       "type": "similar",
-      "strength": 0.1756,
+      "strength": 0.1778,
       "terms": [
         "viscosity",
         "shear"
@@ -3465,33 +3564,33 @@
       "source": "768f6cf863f97685a9a8",
       "target": "ad05fe560da2ea573a22",
       "type": "similar",
-      "strength": 0.1775,
+      "strength": 0.1839,
       "terms": [
         "viscosity",
         "shear",
         "real",
-        "branch"
+        "scalar"
       ],
-      "explanation": "Shared distinctive terms: viscosity, shear, real, branch"
+      "explanation": "Shared distinctive terms: viscosity, shear, real, scalar"
     },
     {
       "source": "7ecb4482a4065cc083e0",
       "target": "d9f554f17d9329e67ab9",
       "type": "similar",
-      "strength": 0.2614,
+      "strength": 0.2662,
       "terms": [
         "etc",
         "non",
-        "keldysh",
-        "sigma"
+        "fermionic",
+        "keldysh"
       ],
-      "explanation": "Shared distinctive terms: etc, non, keldysh, sigma"
+      "explanation": "Shared distinctive terms: etc, non, fermionic, keldysh"
     },
     {
       "source": "82d3accbbeaa252fdcef",
       "target": "dc505a49516927d0b8e9",
       "type": "similar",
-      "strength": 0.54,
+      "strength": 0.5414,
       "terms": [
         "liquid",
         "mit",
@@ -3504,20 +3603,33 @@
       "source": "8edb0b36e9b5e94722f1",
       "target": "dc505a49516927d0b8e9",
       "type": "similar",
-      "strength": 0.1539,
+      "strength": 0.1556,
       "terms": [
         "electron",
         "electrons",
         "sigma",
-        "stein"
+        "finkel"
       ],
-      "explanation": "Shared distinctive terms: electron, electrons, sigma, stein"
+      "explanation": "Shared distinctive terms: electron, electrons, sigma, finkel"
+    },
+    {
+      "source": "8edb0b36e9b5e94722f1",
+      "target": "de71fb6e60247c50189d",
+      "type": "similar",
+      "strength": 0.1782,
+      "terms": [
+        "sigma",
+        "nonlinear",
+        "superconducting",
+        "electrons"
+      ],
+      "explanation": "Shared distinctive terms: sigma, nonlinear, superconducting, electrons"
     },
     {
       "source": "94ab8e1bc3618a045d81",
       "target": "d25a2441596737923d53",
       "type": "similar",
-      "strength": 0.1837,
+      "strength": 0.1844,
       "terms": [
         "gases",
         "bose",
@@ -3530,7 +3642,7 @@
       "source": "97928184e9e2320fc535",
       "target": "a81a2cf3c3aa7249ffd1",
       "type": "similar",
-      "strength": 0.1536,
+      "strength": 0.16,
       "terms": [
         "viscosity",
         "shear"
@@ -3541,20 +3653,20 @@
       "source": "97928184e9e2320fc535",
       "target": "ad05fe560da2ea573a22",
       "type": "similar",
-      "strength": 0.3705,
+      "strength": 0.614,
       "terms": [
         "hot",
-        "viscosity",
-        "shear",
-        "real"
+        "phi",
+        "real",
+        "viscosity"
       ],
-      "explanation": "Shared distinctive terms: hot, viscosity, shear, real"
+      "explanation": "Shared distinctive terms: hot, phi, real, viscosity"
     },
     {
       "source": "9efdc8195ac501cb1afc",
       "target": "c0ceb6d172fa51731d56",
       "type": "similar",
-      "strength": 0.1833,
+      "strength": 0.1823,
       "terms": [
         "years",
         "phase",
@@ -3567,7 +3679,7 @@
       "source": "a584b26858c1dcb3fe3a",
       "target": "b901d3906f5e576f98dd",
       "type": "similar",
-      "strength": 0.2036,
+      "strength": 0.2063,
       "terms": [
         "partition",
         "moments",
@@ -3580,31 +3692,46 @@
       "source": "a584b26858c1dcb3fe3a",
       "target": "ef521f5e723383086856",
       "type": "similar",
-      "strength": 0.2188,
+      "strength": 0.2207,
       "terms": [
         "partition",
         "replica",
         "saddle",
-        "each"
+        "symmetric"
       ],
-      "explanation": "Shared distinctive terms: partition, replica, saddle, each"
+      "explanation": "Shared distinctive terms: partition, replica, saddle, symmetric"
     },
     {
       "source": "a81a2cf3c3aa7249ffd1",
       "target": "ad05fe560da2ea573a22",
       "type": "similar",
-      "strength": 0.1525,
+      "strength": 0.2099,
       "terms": [
         "viscosity",
-        "shear"
+        "shear",
+        "nonperturbatively",
+        "kubo"
       ],
-      "explanation": "Shared distinctive terms: viscosity, shear"
+      "explanation": "Shared distinctive terms: viscosity, shear, nonperturbatively, kubo"
+    },
+    {
+      "source": "b4ea04d4ad5695ac8397",
+      "target": "dfd85e6a178025f0d1dd",
+      "type": "similar",
+      "strength": 0.152,
+      "terms": [
+        "semiclassical",
+        "scalar",
+        "fields",
+        "equilibrium"
+      ],
+      "explanation": "Shared distinctive terms: semiclassical, scalar, fields, equilibrium"
     },
     {
       "source": "b7f26028700c3ef31817",
       "target": "f531c4cb2a9604e7dc5f",
       "type": "similar",
-      "strength": 0.2817,
+      "strength": 0.2825,
       "terms": [
         "packet",
         "wave",
@@ -3617,7 +3744,7 @@
       "source": "b8b426ab3cdfb812362f",
       "target": "df58dd0f10b8b1ae9590",
       "type": "similar",
-      "strength": 0.2055,
+      "strength": 0.2037,
       "terms": [
         "condensed",
         "matter",
@@ -3629,7 +3756,7 @@
       "source": "b8b426ab3cdfb812362f",
       "target": "f1671a28bb8670be1cfd",
       "type": "similar",
-      "strength": 0.2418,
+      "strength": 0.2373,
       "terms": [
         "condensed",
         "matter"
@@ -3640,20 +3767,20 @@
       "source": "b901d3906f5e576f98dd",
       "target": "ef521f5e723383086856",
       "type": "similar",
-      "strength": 0.2234,
+      "strength": 0.2257,
       "terms": [
         "partition",
         "symmetric",
-        "written",
-        "symmetry"
+        "symmetry",
+        "written"
       ],
-      "explanation": "Shared distinctive terms: partition, symmetric, written, symmetry"
+      "explanation": "Shared distinctive terms: partition, symmetric, symmetry, written"
     },
     {
       "source": "c0ceb6d172fa51731d56",
       "target": "f5552fb9534fd12a04b0",
       "type": "similar",
-      "strength": 0.2913,
+      "strength": 0.2926,
       "terms": [
         "hubbard",
         "bose",
@@ -3666,7 +3793,7 @@
       "source": "c8a3663c07202b5b21d9",
       "target": "f4a7357f092445d4e8f2",
       "type": "similar",
-      "strength": 0.1737,
+      "strength": 0.1628,
       "terms": [
         "tau",
         "matrices",
@@ -3679,7 +3806,7 @@
       "source": "ca7ea5041cdff518d6a8",
       "target": "d25a2441596737923d53",
       "type": "similar",
-      "strength": 0.1838,
+      "strength": 0.184,
       "terms": [
         "sound",
         "bose",
@@ -3692,7 +3819,7 @@
       "source": "cebb15e4fcc4c0dd09eb",
       "target": "d3a8b8471de6a39ec861",
       "type": "similar",
-      "strength": 0.198,
+      "strength": 0.1993,
       "terms": [
         "body",
         "many",
@@ -3704,7 +3831,7 @@
       "source": "d112abc40f17f3d8abd4",
       "target": "db021e7a93b4dcdccdbb",
       "type": "similar",
-      "strength": 0.2236,
+      "strength": 0.2233,
       "terms": [
         "multiple",
         "potentials",
@@ -3717,7 +3844,7 @@
       "source": "d1a1e6469fd3aa288e3c",
       "target": "e146439d89998e5150bc",
       "type": "similar",
-      "strength": 0.2507,
+      "strength": 0.2482,
       "terms": [
         "fixed",
         "vector",
@@ -3730,7 +3857,7 @@
       "source": "d3a8b8471de6a39ec861",
       "target": "d9f554f17d9329e67ab9",
       "type": "similar",
-      "strength": 0.1663,
+      "strength": 0.1686,
       "terms": [
         "body",
         "many",
@@ -3743,7 +3870,7 @@
       "source": "df58dd0f10b8b1ae9590",
       "target": "f1671a28bb8670be1cfd",
       "type": "similar",
-      "strength": 0.3441,
+      "strength": 0.3445,
       "terms": [
         "condensed",
         "matter",
@@ -3755,7 +3882,7 @@
       "source": "df58dd0f10b8b1ae9590",
       "target": "f62489586c39bf17b0fa",
       "type": "similar",
-      "strength": 0.3797,
+      "strength": 0.3914,
       "terms": [
         "integrals",
         "path",
@@ -3766,11 +3893,11 @@
   ],
   "meta": {
     "documents": 130,
-    "links": 222,
-    "citations": 86,
-    "authors": 35,
-    "similar": 101,
+    "links": 236,
+    "citations": 98,
+    "authors": 34,
+    "similar": 104,
     "manual": 0,
-    "openalex_requests": 20
+    "openalex_requests": 11
   }
 }
