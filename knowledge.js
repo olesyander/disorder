@@ -6,20 +6,61 @@
   const library = $('canvas');
   if (!canvas || !library || !window.d3) return;
   const svg = d3.select('#knowledge-svg');
+  // A single palette shared with checkbox styles via CSS custom properties.
+  const palette = {
+    citation:'#f4c34d',  // gold
+    author:'#f18f39',    // orange
+    similar:'#c18a5e',   // brown
+    manual:'#d76551'     // brick red
+  };
+  const colorOf = type => getComputedStyle(document.documentElement)
+    .getPropertyValue('--relation-' + type).trim() || palette[type] || '#8a8075';
   const defs=svg.append('defs');
   defs.append('marker').attr('id','knowledge-citation-arrow').attr('viewBox','0 -5 10 10')
     .attr('refX',15).attr('refY',0).attr('markerWidth',6).attr('markerHeight',6)
-    .attr('orient','auto').append('path').attr('d','M0,-5L10,0L0,5').attr('fill','#c7a3ff');
+    .attr('orient','auto').append('path').attr('d','M0,-5L10,0L0,5').attr('fill',colorOf('citation'));
   const viewport = svg.append('g');
   const edgeLayer = viewport.append('g').attr('class','knowledge-edges');
   const nodeLayer = viewport.append('g').attr('class','knowledge-nodes');
   const zoom = d3.zoom().scaleExtent([.15,4]).on('zoom',e=>viewport.attr('transform',e.transform));
   svg.call(zoom).on('dblclick.zoom',null);
   let graph={nodes:[],edges:[]}, simulation=null, loaded=false, current='library';
-  const color={citation:'#c7a3ff',author:'#6ed0dd',similar:'#659ff1',manual:'#f6bd74'};
   const edgeNames={citation:'Citation',author:'Shared author',similar:'Similar content',manual:'Curated connection'};
   const filters={citation:$('kg-citation'),author:$('kg-author'),similar:$('kg-similar'),manual:$('kg-manual')};
-  const strength=$('kg-min'), strengthLabel=$('kg-min-value');
+  // Constant minimum: the former slider's lowest value (0.15).
+  // The producer uses the same threshold (0.15); no runtime API needed.
+  const SIMILARITY_FLOOR = 0.15;
+  const RELATION_PRIORITY = {citation:0,author:1,similar:2,manual:3};
+
+  function chooseEdges(allEdges, enabled, available) {
+    // Important: choose the strongest *enabled type*, never discard provenance.
+    // One visible edge per unordered publication pair; citation direction retained.
+    const byPair = new Map();
+    for (const edge of allEdges) {
+      if (!enabled.has(edge.type)) continue;
+      if (!(edge.type in RELATION_PRIORITY)) continue;
+      if (!available.has(edge.source) || !available.has(edge.target)) continue;
+      if (edge.source === edge.target) continue;
+      if (edge.type === 'similar' && Number(edge.strength || 0) < SIMILARITY_FLOOR) continue;
+      const a = String(edge.source), b = String(edge.target);
+      const key = JSON.stringify(a < b ? [a,b] : [b,a]);
+      const old = byPair.get(key);
+      if (!old) {byPair.set(key, edge); continue;}
+      const rankNew = RELATION_PRIORITY[edge.type];
+      const rankOld = RELATION_PRIORITY[old.type];
+      const tie = rankNew === rankOld;
+      const strengthNew = Number(edge.strength || 0);
+      const strengthOld = Number(old.strength || 0);
+      // Deterministic tie-breaker also covers two opposite citations.
+      const directionNew = String(edge.source) + '|' + String(edge.target);
+      const directionOld = String(old.source) + '|' + String(old.target);
+      if (rankNew < rankOld || (tie &&
+          (strengthNew > strengthOld || (strengthNew === strengthOld && directionNew < directionOld)))) {
+        byPair.set(key, edge);
+      }
+    }
+    return [...byPair.values()];
+  }
   const isolates=$('kg-isolated');
   const make=(tag,text)=>{const e=document.createElement(tag); e.textContent=text;return e;};
   function safeUrl(raw) {
@@ -88,9 +129,8 @@
   function draw(){
     closeSimulation();edgeLayer.selectAll('*').remove();nodeLayer.selectAll('*').remove();
     const allowed=new Set(Object.keys(filters).filter(t=>filters[t].checked));
-    const cutoff=Number(strength.value);strengthLabel.textContent=cutoff.toFixed(2);
     const available=new Set(graph.nodes.map(n=>n.id));
-    const edges=graph.edges.filter(e=>allowed.has(e.type)&&Number(e.strength)>=cutoff&&available.has(e.source)&&available.has(e.target));
+    const edges=chooseEdges(graph.edges, allowed, available);
     const degrees=new Map();edges.forEach(e=>{degrees.set(e.source,(degrees.get(e.source)||0)+1);degrees.set(e.target,(degrees.get(e.target)||0)+1);});
     const dataset=graph.nodes.filter(n=>isolates.checked||degrees.has(n.id));
     const nodes=dataset.map((n,i)=>({...n,x:Math.cos(i*2.39996)*135,y:Math.sin(i*2.39996)*135}));
@@ -100,9 +140,9 @@
     $('knowledge-status').textContent=`${nodes.length} publications · ${activeEdges.length} connections · ${graph.nodes.length-nodes.length} hidden`;
     if(!nodes.length){return;}
     const lines=edgeLayer.selectAll('line').data(activeEdges).join('line')
-      .attr('class','knowledge-link').attr('stroke',d=>color[d.type]||'#788fae')
-      .attr('stroke-width',d=>d.type==='citation'?2.1:1.35)
-      .attr('stroke-opacity',.68).attr('marker-end',d=>d.type==='citation'?'url(#knowledge-citation-arrow)':null).attr('tabindex',0).attr('role','button')
+      .attr('class',d=>'knowledge-link relation-'+d.type).attr('stroke',d=>colorOf(d.type))
+      .attr('stroke-width',d=>d.type==='citation'?2.7:d.type==='author'?2.25:1.9)
+      .attr('stroke-opacity',.87).attr('marker-end',d=>d.type==='citation'?'url(#knowledge-citation-arrow)':null).attr('tabindex',0).attr('role','button')
       .attr('aria-label',d=>edgeNames[d.type]||'Connection')
       .on('click',(_e,d)=>openPanel(null,d))
       .on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openPanel(null,d);}});
@@ -139,7 +179,6 @@
   }
   Object.values(filters).forEach(c=>c.addEventListener('change',()=>{if(loaded&&current==='knowledge')draw();}));
   isolates.addEventListener('change',()=>{if(loaded&&current==='knowledge')draw();});
-  strength.addEventListener('input',()=>{strengthLabel.textContent=Number(strength.value).toFixed(2);if(loaded&&current==='knowledge')draw();});
   $('close').addEventListener('click',()=>nodeLayer.selectAll('.knowledge-node').classed('active',false));
   window.addEventListener('resize',()=>{if(current==='knowledge'&&loaded){const {w,h}=dims();svg.call(zoom.transform,d3.zoomIdentity.translate(w/2,h/2).scale(d3.zoomTransform(svg.node()).k));}});
 })();

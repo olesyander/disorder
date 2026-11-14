@@ -224,10 +224,42 @@ body { background: var(--bg); color: var(--white); }
   stroke: #fff7e6; filter: drop-shadow(0 0 8px rgba(242,193,79,.6));
 }
 .knowledge-node text { fill: #f6ead8; stroke: #0b0b0d; }
-/* Line type colors: citations / shared author / text similarity / manual */
-.knowledge-link[stroke="#c7a3ff"] { stroke: #f19535 !important; }
-.knowledge-link[stroke="#6ed0dd"] { stroke: #e9b35b !important; }
-.knowledge-link[stroke="#659ff1"] { stroke: #ad967a !important; }
-.knowledge-link[stroke="#f6bd74"] { stroke: #ffdb79 !important; }
-.knowledge-link[stroke="#788fae"] { stroke: #80766d !important; }
-#knowledge-citation-arrow path { fill: #f19535 !important; }
+
+/* ===========================================================
+   v3.4: relation palette, controls and graph edges
+   Type precedence (strongest first):
+   citation > shared author > similar text > curated.
+   =========================================================== */
+:root {
+  --relation-citation: #f4c34d; /* golden yellow */
+  --relation-author:   #f18f39; /* vivid orange */
+  --relation-similar:  #c18a5e; /* warm brown */
+  --relation-manual:   #d76551; /* terracotta red */
+  --relation-isolated: #b3a89d; /* neutral, no edges */
+}
+.knowledge-controls { gap: 11px; }
+.knowledge-filters { gap: 12px 22px; }
+.knowledge-filters .kg-option {
+  --relation-color: var(--relation-isolated);
+  color: var(--relation-color);
+  cursor: pointer;
+  font-weight: 550;
+}
+.knowledge-filters .kg-citation { --relation-color: var(--relation-citation); }
+.knowledge-filters .kg-author   { --relation-color: var(--relation-author); }
+.knowledge-filters .kg-similar  { --relation-color: var(--relation-similar); }
+.knowledge-filters .kg-manual   { --relation-color: var(--relation-manual); }
+.knowledge-filters .kg-isolated { --relation-color: var(--relation-isolated); }
+.knowledge-filters .kg-option input[type="checkbox"] {
+  accent-color: var(--relation-color);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+.knowledge-filters .kg-option:has(input:not(:checked)) { opacity: .53; }
+.knowledge-link { stroke-linecap: round; }
+.knowledge-link.relation-citation { stroke: var(--relation-citation); }
+.knowledge-link.relation-author   { stroke: var(--relation-author); }
+.knowledge-link.relation-similar  { stroke: var(--relation-similar); }
+.knowledge-link.relation-manual   { stroke: var(--relation-manual); }
+#knowledge-citation-arrow path { fill: var(--relation-citation) !important; }
