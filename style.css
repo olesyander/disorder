@@ -266,3 +266,6 @@ body { background: var(--bg); color: var(--white); }
 .knowledge-link.relation-author   { stroke: var(--relation-author); }
 .knowledge-link.relation-similar  { stroke: var(--relation-similar); }
 .knowledge-link.relation-manual   { stroke: var(--relation-manual); }
+
+/* v3.4.2: Knowledge Graph labels are shown on hover via native SVG title, not permanently. */
+#knowledge-svg .knowledge-node > text { display:none !important; }

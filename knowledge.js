@@ -1,4 +1,4 @@
-/* Research Map v3.3 · Knowledge Graph · D3 force layout, no neural network. */
+/* Research Map v3.4.2 · Independent component layout and hover-only labels. */
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
@@ -150,12 +150,81 @@
     const edges=chooseEdges(graph.edges, allowed, available);
     const degrees=new Map();edges.forEach(e=>{degrees.set(e.source,(degrees.get(e.source)||0)+1);degrees.set(e.target,(degrees.get(e.target)||0)+1);});
     const dataset=graph.nodes.filter(n=>isolates.checked||degrees.has(n.id));
-    const nodes=dataset.map((n,i)=>({...n,x:Math.cos(i*2.39996)*135,y:Math.sin(i*2.39996)*135}));
-    const ids=new Set(nodes.map(n=>n.id));
-    const activeEdges=edges.filter(e=>ids.has(e.source)&&ids.has(e.target)).map((e,i)=>({...e,sourceId:e.source,targetId:e.target,id:i}));
+    const ids=new Set(dataset.map(n=>n.id));
+    const activeEdges=edges.filter(e=>ids.has(e.source)&&ids.has(e.target))
+      .map((e,i)=>({...e,sourceId:e.source,targetId:e.target,id:i}));
     const {w,h}=dims();
-    $('knowledge-status').textContent=`${nodes.length} publications · ${activeEdges.length} connections · ${graph.nodes.length-nodes.length} hidden`;
-    if(!nodes.length){return;}
+    $('knowledge-status').textContent=`${dataset.length} publications · ${activeEdges.length} connections · ${graph.nodes.length-dataset.length} hidden`;
+    if(!dataset.length) return;
+
+    // Find the connected components of the CURRENTLY VISIBLE graph.
+    // Filters can split one group into several; isolates are components of size 1.
+    const adjacency=new Map(dataset.map(n=>[n.id,new Set()]));
+    for(const edge of activeEdges){
+      adjacency.get(edge.sourceId).add(edge.targetId);
+      adjacency.get(edge.targetId).add(edge.sourceId);
+    }
+    const unseen=new Set(dataset.map(n=>n.id));
+    const components=[];
+    for(const n of dataset){
+      if(!unseen.has(n.id))continue;
+      const queue=[n.id], memberIds=new Set([n.id]);unseen.delete(n.id);
+      for(let i=0;i<queue.length;i++){
+        for(const next of adjacency.get(queue[i])){
+          if(unseen.delete(next)){memberIds.add(next);queue.push(next);}
+        }
+      }
+      components.push(memberIds);
+    }
+    components.sort((a,b)=>b.size-a.size||String([...a][0]).localeCompare(String([...b][0])));
+
+    // Each connected component settles in its own local force simulation.
+    // Unlike one global simulation, separate islands cannot attract each other
+    // toward the same center and collide visually.
+    const positioned=[];
+    for(const members of components){
+      const componentNodes=dataset.filter(n=>members.has(n.id)).map((n,i)=>({
+        ...n,
+        x:Math.cos(i*2.39996323)*20*Math.sqrt(i),
+        y:Math.sin(i*2.39996323)*20*Math.sqrt(i)
+      }));
+      const componentLinks=activeEdges.filter(e=>members.has(e.sourceId)&&members.has(e.targetId))
+        .map(e=>({source:e.sourceId,target:e.targetId,type:e.type}));
+      if(componentNodes.length>1){
+        const local=d3.forceSimulation(componentNodes)
+          .force('link',d3.forceLink(componentLinks).id(d=>d.id)
+            .distance(d=>d.type==='citation'?105:120).strength(.4))
+          .force('charge',d3.forceManyBody().strength(componentNodes.length>90?-65:-150))
+          .force('collision',d3.forceCollide(17))
+          .force('center',d3.forceCenter(0,0))
+          .stop();
+        for(let tick=0;tick<230;tick++)local.tick();
+      }
+      const minx=d3.min(componentNodes,n=>n.x),maxx=d3.max(componentNodes,n=>n.x);
+      const miny=d3.min(componentNodes,n=>n.y),maxy=d3.max(componentNodes,n=>n.y);
+      const cx=(minx+maxx)/2,cy=(miny+maxy)/2;
+      // Radius contains all dots plus a generous gap between islands.
+      let radius=0;
+      for(const n of componentNodes){n.x-=cx;n.y-=cy;radius=Math.max(radius,Math.hypot(n.x,n.y));}
+      positioned.push({nodes:componentNodes,radius:Math.max(46,radius+65)});
+    }
+    // Non-overlapping circle packing; keeps disconnected graphs separate.
+    const packed=positioned.map((c,i)=>({r:c.radius,index:i}));
+    d3.packSiblings(packed);
+    for(const packedCircle of packed){
+      const component=positioned[packedCircle.index];
+      for(const n of component.nodes){n.x+=packedCircle.x;n.y+=packedCircle.y;}
+    }
+    const nodes=positioned.flatMap(c=>c.nodes);
+    const coords=new Map(nodes.map(n=>[n.id,n]));
+    const renderPositions=()=>{
+      lines.attr('x1',d=>coords.get(d.sourceId)?.x??0)
+        .attr('y1',d=>coords.get(d.sourceId)?.y??0)
+        .attr('x2',d=>coords.get(d.targetId)?.x??0)
+        .attr('y2',d=>coords.get(d.targetId)?.y??0);
+      group.attr('transform',d=>`translate(${d.x},${d.y})`);
+    };
+
     const lines=edgeLayer.selectAll('line').data(activeEdges).join('line')
       .attr('class',d=>'knowledge-link relation-'+d.type).attr('stroke',d=>colorOf(d.type))
       .attr('stroke-width',d=>d.type==='citation'?2.7:d.type==='author'?2.25:1.9)
@@ -163,40 +232,34 @@
       .attr('aria-label',d=>edgeNames[d.type]||'Connection')
       .on('click',(_e,d)=>openPanel(null,d))
       .on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openPanel(null,d);}});
-    lines.append('title').text(d=>d.explanation);
+    lines.append('title').text(d=>relationSummary(d,coords.get(d.sourceId),coords.get(d.targetId)));
     const group=nodeLayer.selectAll('g').data(nodes,d=>d.id).join('g')
       .attr('class',d=>'knowledge-node'+(degrees.has(d.id)?' is-connected':' is-isolated')+(d.access==='restricted'?' is-restricted':''))
       .attr('tabindex',0).attr('role','button')
+      .attr('aria-label',d=>d.title||'Publication')
       .on('click',(_e,d)=>openPanel(d))
       .on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openPanel(d);}});
     group.append('circle').attr('r',d=>degrees.has(d.id)?6.6:4.9)
       .attr('fill',d=>degrees.has(d.id)?(d.access==='restricted'?'#9a8f83':'#f2c14f'):'#7f776d');
-    group.append('title').text(d=>d.title);
-    group.append('text').attr('x',11).attr('dy','.35em').text(d=>d.title.length>36?d.title.slice(0,35)+'…':d.title)
-      .classed('label-hidden',nodes.length>65);
-    const simulationLinks=activeEdges.map(e=>({...e}));
-    simulation=d3.forceSimulation(nodes)
-      .force('link',d3.forceLink(simulationLinks).id(d=>d.id).distance(d=>d.type==='citation'?115:140).strength(.32))
-      .force('charge',d3.forceManyBody().strength(nodes.length>150?-48:-130))
-      .force('collision',d3.forceCollide(25))
-      .force('x',d3.forceX(0).strength(.035))
-      .force('y',d3.forceY(0).strength(.035))
-      .alphaDecay(.035).on('tick',()=>{
-        const endpoints=new Map(simulationLinks.map(e=>[e.id,e]));
-        lines.attr('x1',d=>endpoints.get(d.id)?.source.x||0)
-          .attr('y1',d=>endpoints.get(d.id)?.source.y||0)
-          .attr('x2',d=>endpoints.get(d.id)?.target.x||0)
-          .attr('y2',d=>endpoints.get(d.id)?.target.y||0);
-        group.attr('transform',d=>`translate(${d.x},${d.y})`);
-      });
-    group.call(d3.drag().on('start',(e,d)=>{if(!e.active)simulation.alphaTarget(.25).restart();d.fx=d.x;d.fy=d.y;})
-      .on('drag',(e,d)=>{d.fx=e.x;d.fy=e.y;})
-      .on('end',(e,d)=>{if(!e.active)simulation.alphaTarget(0);d.fx=null;d.fy=null;}));
-    const initialScale=Math.min(1,Math.max(.38,400/Math.sqrt(nodes.length*950)));
-    svg.call(zoom.transform,d3.zoomIdentity.translate(w/2,h/2).scale(initialScale));
+    // No permanent labels: dense groups remain readable.
+    // Native SVG title shows the full publication name on hover.
+    group.append('title').text(d=>d.title||'Untitled publication');
+    renderPositions();
+    group.call(d3.drag()
+      .on('start',function(){d3.select(this).raise();})
+      .on('drag',function(e,d){d.x=e.x;d.y=e.y;renderPositions();}));
+
+    // Fit all connected components into the available viewport.
+    const minx=d3.min(packed,c=>c.x-c.r),maxx=d3.max(packed,c=>c.x+c.r);
+    const miny=d3.min(packed,c=>c.y-c.r),maxy=d3.max(packed,c=>c.y+c.r);
+    const cx=(minx+maxx)/2,cy=(miny+maxy)/2;
+    const fit=Math.min(1.25,Math.max(.15,
+      Math.min((w-70)/Math.max(1,maxx-minx),(h-135)/Math.max(1,maxy-miny))));
+    svg.call(zoom.transform,d3.zoomIdentity.translate(w/2,h/2+24).scale(fit).translate(-cx,-cy));
   }
+
   Object.values(filters).forEach(c=>c.addEventListener('change',()=>{if(loaded&&current==='knowledge')draw();}));
   isolates.addEventListener('change',()=>{if(loaded&&current==='knowledge')draw();});
   $('close').addEventListener('click',()=>nodeLayer.selectAll('.knowledge-node').classed('active',false));
-  window.addEventListener('resize',()=>{if(current==='knowledge'&&loaded){const {w,h}=dims();svg.call(zoom.transform,d3.zoomIdentity.translate(w/2,h/2).scale(d3.zoomTransform(svg.node()).k));}});
+  window.addEventListener('resize',()=>{if(current==='knowledge'&&loaded)draw();});
 })();
