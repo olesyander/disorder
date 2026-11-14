@@ -2470,9 +2470,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Kevin Costello"
+        "Owen Gwilliam"
       ],
-      "explanation": "Shared author: Kevin Costello"
+      "explanation": "Shared author: Owen Gwilliam"
     },
     {
       "source": "4cb975cd5b3e0b624695",
@@ -2893,110 +2893,85 @@
     },
     {
       "source": "09708e781b2eb4b31214",
+      "target": "09a544e3bd22412f011d",
+      "type": "similar",
+      "strength": 0.22,
+      "terms": [
+        "function",
+        "derived",
+        "where"
+      ],
+      "explanation": "Common keywords: function, derived, where"
+    },
+    {
+      "source": "09708e781b2eb4b31214",
       "target": "0fb036167205e8ea909f",
       "type": "similar",
-      "strength": 0.2,
+      "strength": 0.22,
       "terms": [
         "Anderson localization",
-        "where",
+        "anderson localization",
         "presence",
-        "time"
+        "where"
       ],
-      "explanation": "Common keywords: Anderson localization, where, presence, time"
+      "explanation": "Common keywords: Anderson localization, anderson localization, presence, where"
+    },
+    {
+      "source": "09708e781b2eb4b31214",
+      "target": "17ac10700d8c6034998f",
+      "type": "similar",
+      "strength": 0.22,
+      "terms": [
+        "presence random potential",
+        "potential",
+        "lead",
+        "presence"
+      ],
+      "explanation": "Common keywords: presence random potential, potential, lead, presence"
     },
     {
       "source": "09708e781b2eb4b31214",
       "target": "a81a2cf3c3aa7249ffd1",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Anderson localization",
+        "anderson localization",
         "where"
       ],
-      "explanation": "Common keywords: Anderson localization, where"
-    },
-    {
-      "source": "09708e781b2eb4b31214",
-      "target": "c6a8bbbcc8265df18526",
-      "type": "similar",
-      "strength": 0.2128,
-      "terms": [
-        "square",
-        "path",
-        "integral",
-        "variation"
-      ],
-      "explanation": "Common keywords: square, path, integral, variation"
-    },
-    {
-      "source": "09708e781b2eb4b31214",
-      "target": "db021e7a93b4dcdccdbb",
-      "type": "similar",
-      "strength": 0.2,
-      "terms": [
-        "Anderson localization",
-        "Green's functions",
-        "path",
-        "potential"
-      ],
-      "explanation": "Common keywords: Anderson localization, Green's functions, path, potential"
-    },
-    {
-      "source": "09708e781b2eb4b31214",
-      "target": "f62489586c39bf17b0fa",
-      "type": "similar",
-      "strength": 0.2058,
-      "terms": [
-        "integrals",
-        "path",
-        "mechanics"
-      ],
-      "explanation": "Common keywords: integrals, path, mechanics"
+      "explanation": "Common keywords: Anderson localization, anderson localization, where"
     },
     {
       "source": "09a544e3bd22412f011d",
       "target": "3b76321646d1a716ec2b",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Nonlinear sigma model",
-        "dimensional",
+        "dimensional electron",
         "electron",
-        "sigma"
+        "dimensional"
       ],
-      "explanation": "Common keywords: Nonlinear sigma model, dimensional, electron, sigma"
+      "explanation": "Common keywords: Nonlinear sigma model, dimensional electron, electron, dimensional"
     },
     {
       "source": "09a544e3bd22412f011d",
       "target": "7ecb4482a4065cc083e0",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Nonlinear sigma model",
-        "corrections",
-        "linear",
-        "derivation"
+        "interaction corrections",
+        "linear sigma",
+        "corrections"
       ],
-      "explanation": "Common keywords: Nonlinear sigma model, corrections, linear, derivation"
-    },
-    {
-      "source": "09a544e3bd22412f011d",
-      "target": "800b937e6c7143bf871b",
-      "type": "similar",
-      "strength": 0.2,
-      "terms": [
-        "Nonlinear sigma model",
-        "linear",
-        "both",
-        "sigma"
-      ],
-      "explanation": "Common keywords: Nonlinear sigma model, linear, both, sigma"
+      "explanation": "Common keywords: Nonlinear sigma model, interaction corrections, linear sigma, corrections"
     },
     {
       "source": "09a544e3bd22412f011d",
       "target": "8edb0b36e9b5e94722f1",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Nonlinear sigma model",
         "electron",
@@ -3009,277 +2984,389 @@
       "source": "09a544e3bd22412f011d",
       "target": "de71fb6e60247c50189d",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Nonlinear sigma model",
+        "correlation function",
         "perturbative",
-        "sigma",
-        "long"
+        "sigma"
       ],
-      "explanation": "Common keywords: Nonlinear sigma model, perturbative, sigma, long"
+      "explanation": "Common keywords: Nonlinear sigma model, correlation function, perturbative, sigma"
+    },
+    {
+      "source": "0bdf419313f549dfd175",
+      "target": "57142b88a36bc47e0fd4",
+      "type": "similar",
+      "strength": 0.22,
+      "terms": [
+        "green functions",
+        "green",
+        "functions"
+      ],
+      "explanation": "Common keywords: green functions, green, functions"
+    },
+    {
+      "source": "0bdf419313f549dfd175",
+      "target": "db021e7a93b4dcdccdbb",
+      "type": "similar",
+      "strength": 0.22,
+      "terms": [
+        "green functions",
+        "green",
+        "functions"
+      ],
+      "explanation": "Common keywords: green functions, green, functions"
+    },
+    {
+      "source": "0de8c5c8f07096f9eb4f",
+      "target": "14594afe4b687e2133e1",
+      "type": "similar",
+      "strength": 0.22,
+      "terms": [
+        "lecture notes",
+        "lecture",
+        "notes"
+      ],
+      "explanation": "Common keywords: lecture notes, lecture, notes"
+    },
+    {
+      "source": "0de8c5c8f07096f9eb4f",
+      "target": "1501f760d15f4df69a25",
+      "type": "similar",
+      "strength": 0.22,
+      "terms": [
+        "detail",
+        "phenomena",
+        "notes",
+        "describe"
+      ],
+      "explanation": "Common keywords: detail, phenomena, notes, describe"
+    },
+    {
+      "source": "0de8c5c8f07096f9eb4f",
+      "target": "17c4f3e8965ea7e23d1e",
+      "type": "similar",
+      "strength": 0.22,
+      "terms": [
+        "number",
+        "interacting",
+        "describe"
+      ],
+      "explanation": "Common keywords: number, interacting, describe"
+    },
+    {
+      "source": "0fb036167205e8ea909f",
+      "target": "17ac10700d8c6034998f",
+      "type": "similar",
+      "strength": 0.22,
+      "terms": [
+        "localized",
+        "presence",
+        "where"
+      ],
+      "explanation": "Common keywords: localized, presence, where"
     },
     {
       "source": "0fb036167205e8ea909f",
       "target": "a81a2cf3c3aa7249ffd1",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Anderson localization",
-        "possible",
-        "discuss",
-        "where"
+        "anderson localization",
+        "discuss possible",
+        "possible"
       ],
-      "explanation": "Common keywords: Anderson localization, possible, discuss, where"
+      "explanation": "Common keywords: Anderson localization, anderson localization, discuss possible, possible"
     },
     {
-      "source": "0fb036167205e8ea909f",
-      "target": "db021e7a93b4dcdccdbb",
+      "source": "14594afe4b687e2133e1",
+      "target": "6c2a255573a9506ab2ab",
       "type": "similar",
-      "strength": 0.2,
+      "strength": 0.22,
       "terms": [
-        "Anderson localization",
-        "possible",
-        "scattering",
-        "including"
+        "lecture notes",
+        "notes",
+        "lecture"
       ],
-      "explanation": "Common keywords: Anderson localization, possible, scattering, including"
+      "explanation": "Common keywords: lecture notes, notes, lecture"
     },
     {
-      "source": "1cfb806de3a388033455",
-      "target": "3c5cdb6af30e2b21eec5",
+      "source": "1501f760d15f4df69a25",
+      "target": "249969930d037073e6f7",
       "type": "similar",
-      "strength": 0.2,
+      "strength": 0.22,
       "terms": [
-        "Replica method",
-        "composite",
-        "defined",
-        "quenched"
+        "mesoscopic",
+        "nonlinear",
+        "discussed"
       ],
-      "explanation": "Common keywords: Replica method, composite, defined, quenched"
+      "explanation": "Common keywords: mesoscopic, nonlinear, discussed"
     },
     {
       "source": "1cfb806de3a388033455",
       "target": "cf48d65fbff94e717d6c",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Replica method",
+        "replica",
         "quenched",
-        "free",
-        "replica"
+        "free"
       ],
-      "explanation": "Common keywords: Replica method, quenched, free, replica"
+      "explanation": "Common keywords: Replica method, replica, quenched, free"
     },
     {
       "source": "1cfb806de3a388033455",
       "target": "de71fb6e60247c50189d",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Replica method",
+        "replica trick",
         "trick",
-        "behaviour",
-        "normal"
+        "replica"
       ],
-      "explanation": "Common keywords: Replica method, trick, behaviour, normal"
+      "explanation": "Common keywords: Replica method, replica trick, trick, replica"
     },
     {
       "source": "1cfb806de3a388033455",
       "target": "e39f3f43ff32b1d7e9b9",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Replica method",
-        "when",
-        "replica"
+        "replica",
+        "when"
       ],
-      "explanation": "Common keywords: Replica method, when, replica"
+      "explanation": "Common keywords: Replica method, replica, when"
     },
     {
       "source": "1cfb806de3a388033455",
       "target": "ef521f5e723383086856",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Replica method",
-        "considering",
-        "free",
-        "replica"
+        "replica",
+        "symmetry",
+        "considering"
       ],
-      "explanation": "Common keywords: Replica method, considering, free, replica"
+      "explanation": "Common keywords: Replica method, replica, symmetry, considering"
     },
     {
-      "source": "20e6e0b3b24a66d38d61",
-      "target": "75126cd408be2ec7038d",
+      "source": "2259544a70f72ac2071b",
+      "target": "3e54fa2ca1dd5f8f6c1e",
       "type": "similar",
-      "strength": 0.2582,
+      "strength": 0.22,
       "terms": [
-        "franz",
-        "wiedemann",
-        "metals",
-        "violation"
+        "diagram technique",
+        "diagram",
+        "technique"
       ],
-      "explanation": "Common keywords: franz, wiedemann, metals, violation"
+      "explanation": "Common keywords: diagram technique, diagram, technique"
+    },
+    {
+      "source": "2259544a70f72ac2071b",
+      "target": "cebb15e4fcc4c0dd09eb",
+      "type": "similar",
+      "strength": 0.22,
+      "terms": [
+        "Nonequilibrium dynamics",
+        "nonequilibrium",
+        "technique",
+        "derivation"
+      ],
+      "explanation": "Common keywords: Nonequilibrium dynamics, nonequilibrium, technique, derivation"
     },
     {
       "source": "249969930d037073e6f7",
       "target": "3b76321646d1a716ec2b",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Nonlinear sigma model",
+        "nonlinear sigma",
         "sigma",
         "nonlinear"
       ],
-      "explanation": "Common keywords: Nonlinear sigma model, sigma, nonlinear"
-    },
-    {
-      "source": "249969930d037073e6f7",
-      "target": "7ecb4482a4065cc083e0",
-      "type": "similar",
-      "strength": 0.25,
-      "terms": [
-        "Nonlinear sigma model",
-        "mesoscopic",
-        "sigma",
-        "time"
-      ],
-      "explanation": "Common keywords: Nonlinear sigma model, mesoscopic, sigma, time"
-    },
-    {
-      "source": "249969930d037073e6f7",
-      "target": "800b937e6c7143bf871b",
-      "type": "similar",
-      "strength": 0.2,
-      "terms": [
-        "Nonlinear sigma model",
-        "sigma",
-        "scalar",
-        "electrons"
-      ],
-      "explanation": "Common keywords: Nonlinear sigma model, sigma, scalar, electrons"
+      "explanation": "Common keywords: Nonlinear sigma model, nonlinear sigma, sigma, nonlinear"
     },
     {
       "source": "249969930d037073e6f7",
       "target": "8edb0b36e9b5e94722f1",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Nonlinear sigma model",
+        "nonlinear sigma",
         "sigma",
-        "electrons",
         "nonlinear"
       ],
-      "explanation": "Common keywords: Nonlinear sigma model, sigma, electrons, nonlinear"
+      "explanation": "Common keywords: Nonlinear sigma model, nonlinear sigma, sigma, nonlinear"
+    },
+    {
+      "source": "249969930d037073e6f7",
+      "target": "b4ea04d4ad5695ac8397",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Stochastic gravity and metric fluctuations",
+        "scalar"
+      ],
+      "explanation": "Common keywords: Stochastic gravity and metric fluctuations, scalar"
     },
     {
       "source": "249969930d037073e6f7",
       "target": "de71fb6e60247c50189d",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Nonlinear sigma model",
+        "nonlinear sigma",
         "mesoscopic",
-        "discussed",
         "sigma"
       ],
-      "explanation": "Common keywords: Nonlinear sigma model, mesoscopic, discussed, sigma"
+      "explanation": "Common keywords: Nonlinear sigma model, nonlinear sigma, mesoscopic, sigma"
     },
     {
       "source": "2857dba8f9d9ec6471f6",
       "target": "2a285b1519bb617dbd22",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
         "follow",
         "class",
-        "obtain"
+        "functions"
       ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, follow, class, obtain"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, follow, class, functions"
     },
     {
       "source": "2857dba8f9d9ec6471f6",
       "target": "396aec0ad44c1a69dd28",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
         "response",
-        "invariant",
-        "known"
+        "symmetry",
+        "invariant"
       ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, response, invariant, known"
-    },
-    {
-      "source": "2857dba8f9d9ec6471f6",
-      "target": "3b76321646d1a716ec2b",
-      "type": "similar",
-      "strength": 0.25,
-      "terms": [
-        "Nonlinear sigma model",
-        "sigma",
-        "electron",
-        "nonlinear"
-      ],
-      "explanation": "Common keywords: Nonlinear sigma model, sigma, electron, nonlinear"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, response, symmetry, invariant"
     },
     {
       "source": "2857dba8f9d9ec6471f6",
       "target": "4625efd4f82d10f27c49",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
         "spin",
-        "class",
-        "matrix"
+        "matrix",
+        "class"
       ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, spin, class, matrix"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, spin, matrix, class"
     },
     {
       "source": "2857dba8f9d9ec6471f6",
-      "target": "4bcb57d1d3f63d4f7fec",
+      "target": "5bee4756ff236b23ed4a",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
-        "known",
-        "function"
+        "self consistent",
+        "hydrodynamic",
+        "corrections"
       ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, known, function"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, self consistent, hydrodynamic, corrections"
+    },
+    {
+      "source": "2857dba8f9d9ec6471f6",
+      "target": "8edb0b36e9b5e94722f1",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Nonlinear sigma model",
+        "stein nonlinear sigma",
+        "finkel stein nonlinear",
+        "stein nonlinear",
+        "sigma"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, stein nonlinear sigma, finkel stein nonlinear, stein nonlinear, sigma"
+    },
+    {
+      "source": "2857dba8f9d9ec6471f6",
+      "target": "a3c82d77f4273b859a80",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "response",
+        "nonlinear",
+        "weak"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, response, nonlinear, weak"
+    },
+    {
+      "source": "2857dba8f9d9ec6471f6",
+      "target": "de71fb6e60247c50189d",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Nonlinear sigma model",
+        "nonlinear sigma",
+        "sigma",
+        "nonlinear"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, nonlinear sigma, sigma, nonlinear"
+    },
+    {
+      "source": "2857dba8f9d9ec6471f6",
+      "target": "dff29d4a46bac91afe41",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "standard",
+        "applicable",
+        "density"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, standard, applicable, density"
     },
     {
       "source": "288de55d1993885892f7",
       "target": "57142b88a36bc47e0fd4",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Coherent potential approximation",
-        "coherent",
-        "approximation",
-        "potential"
+        "coherent potential",
+        "potential approximation",
+        "coherent potential approximation",
+        "coherent"
       ],
-      "explanation": "Common keywords: Coherent potential approximation, coherent, approximation, potential"
+      "explanation": "Common keywords: Coherent potential approximation, coherent potential, potential approximation, coherent potential approximation, coherent"
     },
     {
       "source": "288de55d1993885892f7",
       "target": "6061fda0e8bf37102849",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Coherent potential approximation",
-        "coherent",
-        "approximation",
-        "scheme"
+        "coherent potential",
+        "potential approximation",
+        "coherent potential approximation",
+        "coherent"
       ],
-      "explanation": "Common keywords: Coherent potential approximation, coherent, approximation, scheme"
+      "explanation": "Common keywords: Coherent potential approximation, coherent potential, potential approximation, coherent potential approximation, coherent"
     },
     {
       "source": "2a285b1519bb617dbd22",
       "target": "396aec0ad44c1a69dd28",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
         "equilibrium",
@@ -3292,44 +3379,68 @@
       "source": "2a285b1519bb617dbd22",
       "target": "4625efd4f82d10f27c49",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
         "evolution",
         "environment",
-        "time"
+        "class"
       ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, evolution, environment, time"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, evolution, environment, class"
     },
     {
       "source": "2a285b1519bb617dbd22",
       "target": "4bcb57d1d3f63d4f7fec",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
         "evolution",
-        "describe",
-        "time"
+        "describe"
       ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, evolution, describe, time"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, evolution, describe"
     },
     {
       "source": "2a285b1519bb617dbd22",
       "target": "5bee4756ff236b23ed4a",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism"
+    },
+    {
+      "source": "2a285b1519bb617dbd22",
+      "target": "7ecb4482a4065cc083e0",
+      "type": "similar",
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
-        "time"
+        "basic",
+        "mesoscopic",
+        "equilibrium"
       ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, time"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, basic, mesoscopic, equilibrium"
+    },
+    {
+      "source": "2a285b1519bb617dbd22",
+      "target": "dfd85e6a178025f0d1dd",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "Nonequilibrium dynamics",
+        "initial state",
+        "initial"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, Nonequilibrium dynamics, initial state, initial"
     },
     {
       "source": "35a2662e8ef0172bbaf6",
       "target": "3b76321646d1a716ec2b",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Nonlinear sigma model",
         "sigma"
@@ -3340,378 +3451,522 @@
       "source": "35a2662e8ef0172bbaf6",
       "target": "6061fda0e8bf37102849",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Superbosonization",
         "superbosonization",
-        "supermatrix",
-        "matrix"
+        "matrix",
+        "supermatrix"
       ],
-      "explanation": "Common keywords: Superbosonization, superbosonization, supermatrix, matrix"
-    },
-    {
-      "source": "35a2662e8ef0172bbaf6",
-      "target": "7ecb4482a4065cc083e0",
-      "type": "similar",
-      "strength": 0.25,
-      "terms": [
-        "Nonlinear sigma model",
-        "sigma",
-        "linear"
-      ],
-      "explanation": "Common keywords: Nonlinear sigma model, sigma, linear"
-    },
-    {
-      "source": "35a2662e8ef0172bbaf6",
-      "target": "8edb0b36e9b5e94722f1",
-      "type": "similar",
-      "strength": 0.25,
-      "terms": [
-        "Nonlinear sigma model",
-        "sigma"
-      ],
-      "explanation": "Common keywords: Nonlinear sigma model, sigma"
-    },
-    {
-      "source": "35a2662e8ef0172bbaf6",
-      "target": "de71fb6e60247c50189d",
-      "type": "similar",
-      "strength": 0.25,
-      "terms": [
-        "Nonlinear sigma model",
-        "reduce",
-        "sigma"
-      ],
-      "explanation": "Common keywords: Nonlinear sigma model, reduce, sigma"
+      "explanation": "Common keywords: Superbosonization, superbosonization, matrix, supermatrix"
     },
     {
       "source": "396aec0ad44c1a69dd28",
       "target": "4625efd4f82d10f27c49",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
+        "schwinger keldysh",
         "action",
-        "open",
-        "dissipative"
+        "open"
       ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, action, open, dissipative"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, schwinger keldysh, action, open"
     },
     {
       "source": "396aec0ad44c1a69dd28",
       "target": "4bcb57d1d3f63d4f7fec",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
-        "functional",
-        "associated",
-        "known"
+        "schwinger keldysh",
+        "integral",
+        "functional"
       ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, functional, associated, known"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, schwinger keldysh, integral, functional"
     },
     {
       "source": "396aec0ad44c1a69dd28",
-      "target": "5bee4756ff236b23ed4a",
+      "target": "7ecb4482a4065cc083e0",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
-        "associated",
-        "response",
-        "time"
+        "functional integral",
+        "equilibrium",
+        "fluctuation"
       ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, associated, response, time"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, functional integral, equilibrium, fluctuation"
+    },
+    {
+      "source": "396aec0ad44c1a69dd28",
+      "target": "d9f554f17d9329e67ab9",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "functional integral",
+        "equilibrium",
+        "classical"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, functional integral, equilibrium, classical"
+    },
+    {
+      "source": "396aec0ad44c1a69dd28",
+      "target": "dfd85e6a178025f0d1dd",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "equilibrium",
+        "open",
+        "evolution"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, equilibrium, open, evolution"
+    },
+    {
+      "source": "396aec0ad44c1a69dd28",
+      "target": "dff29d4a46bac91afe41",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "fluctuation",
+        "limit",
+        "terms"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, fluctuation, limit, terms"
+    },
+    {
+      "source": "3b76321646d1a716ec2b",
+      "target": "800b937e6c7143bf871b",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Nonlinear sigma model",
+        "sigma"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, sigma"
+    },
+    {
+      "source": "3b76321646d1a716ec2b",
+      "target": "82d3accbbeaa252fdcef",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Nonlinear sigma model",
+        "electron",
+        "sigma",
+        "dimensional"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, electron, sigma, dimensional"
     },
     {
       "source": "3b76321646d1a716ec2b",
       "target": "8edb0b36e9b5e94722f1",
       "type": "similar",
-      "strength": 0.3011,
+      "strength": 0.28,
       "terms": [
         "Nonlinear sigma model",
+        "nonlinear sigma",
         "sigma",
-        "nonlinear",
-        "electron"
+        "nonlinear"
       ],
-      "explanation": "Common keywords: Nonlinear sigma model, sigma, nonlinear, electron"
+      "explanation": "Common keywords: Nonlinear sigma model, nonlinear sigma, sigma, nonlinear"
+    },
+    {
+      "source": "3b76321646d1a716ec2b",
+      "target": "aee3ae024f95f35d952e",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Nonlinear sigma model",
+        "nonlinear sigma",
+        "sigma",
+        "dimensional"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, nonlinear sigma, sigma, dimensional"
+    },
+    {
+      "source": "3b76321646d1a716ec2b",
+      "target": "dc505a49516927d0b8e9",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Nonlinear sigma model",
+        "electron",
+        "sigma"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, electron, sigma"
     },
     {
       "source": "3c5cdb6af30e2b21eec5",
       "target": "cf48d65fbff94e717d6c",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Replica method",
-        "above",
         "finite",
-        "long"
+        "replica",
+        "above"
       ],
-      "explanation": "Common keywords: Replica method, above, finite, long"
-    },
-    {
-      "source": "3c5cdb6af30e2b21eec5",
-      "target": "de71fb6e60247c50189d",
-      "type": "similar",
-      "strength": 0.25,
-      "terms": [
-        "Replica method",
-        "long",
-        "replica"
-      ],
-      "explanation": "Common keywords: Replica method, long, replica"
+      "explanation": "Common keywords: Replica method, finite, replica, above"
     },
     {
       "source": "3c5cdb6af30e2b21eec5",
       "target": "e39f3f43ff32b1d7e9b9",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Replica method",
+        "replica",
         "value",
-        "when",
-        "replica"
+        "when"
       ],
-      "explanation": "Common keywords: Replica method, value, when, replica"
+      "explanation": "Common keywords: Replica method, replica, value, when"
     },
     {
       "source": "3c5cdb6af30e2b21eec5",
       "target": "ef521f5e723383086856",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Replica method",
-        "euclidean",
-        "periodic",
-        "boundary"
+        "discuss finite",
+        "periodic boundary",
+        "dimensional euclidean",
+        "euclidean"
       ],
-      "explanation": "Common keywords: Replica method, euclidean, periodic, boundary"
+      "explanation": "Common keywords: Replica method, discuss finite, periodic boundary, dimensional euclidean, euclidean"
     },
     {
       "source": "4625efd4f82d10f27c49",
       "target": "4bcb57d1d3f63d4f7fec",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
+        "schwinger keldysh",
         "harmonic",
-        "lindblad",
         "decoherence"
       ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, harmonic, lindblad, decoherence"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, schwinger keldysh, harmonic, decoherence"
     },
     {
       "source": "4625efd4f82d10f27c49",
       "target": "5bee4756ff236b23ed4a",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "develop schwinger",
+        "develop schwinger keldysh",
+        "schwinger keldysh",
+        "spin"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, develop schwinger, develop schwinger keldysh, schwinger keldysh, spin"
+    },
+    {
+      "source": "4625efd4f82d10f27c49",
+      "target": "a3c82d77f4273b859a80",
+      "type": "similar",
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
         "regime",
-        "develop",
-        "spin"
+        "computing",
+        "developed"
       ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, regime, develop, spin"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, regime, computing, developed"
+    },
+    {
+      "source": "4625efd4f82d10f27c49",
+      "target": "dfd85e6a178025f0d1dd",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "open",
+        "diagrams",
+        "evolution"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, open, diagrams, evolution"
+    },
+    {
+      "source": "4625efd4f82d10f27c49",
+      "target": "dff29d4a46bac91afe41",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "arbitrary",
+        "density",
+        "diagrams"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, arbitrary, density, diagrams"
     },
     {
       "source": "4bcb57d1d3f63d4f7fec",
       "target": "5bee4756ff236b23ed4a",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
+        "schwinger keldysh",
         "associated",
-        "leading",
-        "time"
+        "leading"
       ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, associated, leading, time"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, schwinger keldysh, associated, leading"
     },
     {
-      "source": "4cb975cd5b3e0b624695",
-      "target": "b7f26028700c3ef31817",
+      "source": "4bcb57d1d3f63d4f7fec",
+      "target": "a3c82d77f4273b859a80",
       "type": "similar",
-      "strength": 0.2258,
+      "strength": 0.28,
       "terms": [
-        "packet",
-        "medium",
-        "formulated",
-        "nonlinear"
+        "Schwinger–Keldysh formalism",
+        "formalism"
       ],
-      "explanation": "Common keywords: packet, medium, formulated, nonlinear"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, formalism"
+    },
+    {
+      "source": "4bcb57d1d3f63d4f7fec",
+      "target": "d9f554f17d9329e67ab9",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "integral",
+        "functional",
+        "formalism"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, integral, functional, formalism"
+    },
+    {
+      "source": "4bcb57d1d3f63d4f7fec",
+      "target": "dfd85e6a178025f0d1dd",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "leading",
+        "evolution"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, leading, evolution"
+    },
+    {
+      "source": "4bcb57d1d3f63d4f7fec",
+      "target": "dff29d4a46bac91afe41",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "larkin"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, larkin"
     },
     {
       "source": "57142b88a36bc47e0fd4",
       "target": "6061fda0e8bf37102849",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Coherent potential approximation",
-        "coherent",
-        "approximation",
-        "potential"
+        "coherent potential",
+        "potential approximation",
+        "coherent potential approximation",
+        "coherent"
       ],
-      "explanation": "Common keywords: Coherent potential approximation, coherent, approximation, potential"
-    },
-    {
-      "source": "5a6da9fe0ee72528e92c",
-      "target": "e8717203be4b531c3a65",
-      "type": "similar",
-      "strength": 0.2128,
-      "terms": [
-        "media",
-        "averages",
-        "performing",
-        "after"
-      ],
-      "explanation": "Common keywords: media, averages, performing, after"
-    },
-    {
-      "source": "5b6e4d3160e03ffc14fc",
-      "target": "7d88d5d2e8a80174c850",
-      "type": "similar",
-      "strength": 0.248,
-      "terms": [
-        "einstein",
-        "bogoliubov",
-        "condensate",
-        "bose"
-      ],
-      "explanation": "Common keywords: einstein, bogoliubov, condensate, bose"
-    },
-    {
-      "source": "5b6e4d3160e03ffc14fc",
-      "target": "ca7ea5041cdff518d6a8",
-      "type": "similar",
-      "strength": 0.5067,
-      "terms": [
-        "condensates",
-        "bogoliubov",
-        "deformed",
-        "einstein"
-      ],
-      "explanation": "Common keywords: condensates, bogoliubov, deformed, einstein"
+      "explanation": "Common keywords: Coherent potential approximation, coherent potential, potential approximation, coherent potential approximation, coherent"
     },
     {
       "source": "5bee4756ff236b23ed4a",
-      "target": "7ecb4482a4065cc083e0",
+      "target": "a3c82d77f4273b859a80",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
-        "corrections",
-        "derivation",
-        "time"
+        "collective",
+        "dimensional",
+        "response"
       ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, corrections, derivation, time"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, collective, dimensional, response"
     },
     {
-      "source": "6e88b459a85df2ac012b",
-      "target": "7d88d5d2e8a80174c850",
+      "source": "5bee4756ff236b23ed4a",
+      "target": "cebb15e4fcc4c0dd09eb",
       "type": "similar",
-      "strength": 0.2025,
+      "strength": 0.28,
       "terms": [
-        "fraction",
-        "condensate",
-        "superfluid",
-        "strength"
+        "Schwinger–Keldysh formalism",
+        "conservation laws",
+        "hydrodynamic",
+        "conservation"
       ],
-      "explanation": "Common keywords: fraction, condensate, superfluid, strength"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, conservation laws, hydrodynamic, conservation"
     },
     {
-      "source": "7d88d5d2e8a80174c850",
-      "target": "d25a2441596737923d53",
+      "source": "5bee4756ff236b23ed4a",
+      "target": "dfd85e6a178025f0d1dd",
       "type": "similar",
-      "strength": 0.2032,
+      "strength": 0.28,
       "terms": [
-        "superfluidity",
-        "fraction",
-        "superfluid",
-        "bose"
+        "Schwinger–Keldysh formalism",
+        "shear viscosity",
+        "leading",
+        "approximation"
       ],
-      "explanation": "Common keywords: superfluidity, fraction, superfluid, bose"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, shear viscosity, leading, approximation"
+    },
+    {
+      "source": "5bee4756ff236b23ed4a",
+      "target": "dff29d4a46bac91afe41",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "correction",
+        "density"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, correction, density"
     },
     {
       "source": "7ecb4482a4065cc083e0",
-      "target": "800b937e6c7143bf871b",
-      "type": "similar",
-      "strength": 0.25,
-      "terms": [
-        "Nonlinear sigma model",
-        "linear",
-        "sigma"
-      ],
-      "explanation": "Common keywords: Nonlinear sigma model, linear, sigma"
-    },
-    {
-      "source": "800b937e6c7143bf871b",
       "target": "82d3accbbeaa252fdcef",
       "type": "similar",
-      "strength": 0.2,
+      "strength": 0.28,
       "terms": [
         "Nonlinear sigma model",
-        "linear",
+        "linear sigma",
+        "sigma",
+        "linear"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, linear sigma, sigma, linear"
+    },
+    {
+      "source": "7ecb4482a4065cc083e0",
+      "target": "cebb15e4fcc4c0dd09eb",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "keldysh technique",
+        "technique",
+        "purpose"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, keldysh technique, technique, purpose"
+    },
+    {
+      "source": "7ecb4482a4065cc083e0",
+      "target": "d9f554f17d9329e67ab9",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "linear sigma disordered",
+        "introduction keldysh",
+        "functional integral",
+        "fermionic"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, linear sigma disordered, introduction keldysh, functional integral, fermionic"
+    },
+    {
+      "source": "7ecb4482a4065cc083e0",
+      "target": "dc505a49516927d0b8e9",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Nonlinear sigma model",
+        "linear sigma",
+        "dependent",
+        "sigma"
+      ],
+      "explanation": "Common keywords: Nonlinear sigma model, linear sigma, dependent, sigma"
+    },
+    {
+      "source": "7ecb4482a4065cc083e0",
+      "target": "dff29d4a46bac91afe41",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Schwinger–Keldysh formalism",
+        "keldysh technique",
+        "technique",
+        "representation"
+      ],
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, keldysh technique, technique, representation"
+    },
+    {
+      "source": "7fca039523e35692b793",
+      "target": "a562c4570929e232bb92",
+      "type": "similar",
+      "strength": 0.22,
+      "terms": [
+        "теории поля",
+        "диаграммная техника",
+        "теории",
+        "диаграммная"
+      ],
+      "explanation": "Common keywords: теории поля, диаграммная техника, теории, диаграммная"
+    },
+    {
+      "source": "82d3accbbeaa252fdcef",
+      "target": "8edb0b36e9b5e94722f1",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Nonlinear sigma model",
+        "electron",
         "electrons",
         "sigma"
       ],
-      "explanation": "Common keywords: Nonlinear sigma model, linear, electrons, sigma"
+      "explanation": "Common keywords: Nonlinear sigma model, electron, electrons, sigma"
     },
     {
-      "source": "800b937e6c7143bf871b",
-      "target": "8edb0b36e9b5e94722f1",
-      "type": "similar",
-      "strength": 0.25,
-      "terms": [
-        "Nonlinear sigma model",
-        "sigma",
-        "well",
-        "electrons"
-      ],
-      "explanation": "Common keywords: Nonlinear sigma model, sigma, well, electrons"
-    },
-    {
-      "source": "82d3accbbeaa252fdcef",
+      "source": "8edb0b36e9b5e94722f1",
       "target": "aee3ae024f95f35d952e",
       "type": "similar",
-      "strength": 0.2,
+      "strength": 0.28,
       "terms": [
         "Nonlinear sigma model",
-        "scaling",
-        "transition",
-        "anderson"
+        "nonlinear sigma",
+        "sigma",
+        "nonlinear"
       ],
-      "explanation": "Common keywords: Nonlinear sigma model, scaling, transition, anderson"
+      "explanation": "Common keywords: Nonlinear sigma model, nonlinear sigma, sigma, nonlinear"
     },
     {
-      "source": "82d3accbbeaa252fdcef",
+      "source": "8edb0b36e9b5e94722f1",
       "target": "dc505a49516927d0b8e9",
       "type": "similar",
-      "strength": 0.4703,
+      "strength": 0.28,
       "terms": [
         "Nonlinear sigma model",
-        "liquid",
-        "nlsm",
-        "fermi"
+        "finkel stein",
+        "electron",
+        "electrons"
       ],
-      "explanation": "Common keywords: Nonlinear sigma model, liquid, nlsm, fermi"
+      "explanation": "Common keywords: Nonlinear sigma model, finkel stein, electron, electrons"
     },
     {
-      "source": "97928184e9e2320fc535",
-      "target": "ad05fe560da2ea573a22",
+      "source": "8edb0b36e9b5e94722f1",
+      "target": "de71fb6e60247c50189d",
       "type": "similar",
-      "strength": 0.53,
+      "strength": 0.28,
       "terms": [
-        "real",
-        "bethe",
-        "shear",
-        "viscosity"
+        "Nonlinear sigma model",
+        "nonlinear sigma disordered",
+        "nonlinear sigma",
+        "sigma"
       ],
-      "explanation": "Common keywords: real, bethe, shear, viscosity"
+      "explanation": "Common keywords: Nonlinear sigma model, nonlinear sigma disordered, nonlinear sigma, sigma"
     },
     {
       "source": "a3c82d77f4273b859a80",
       "target": "dfd85e6a178025f0d1dd",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
         "order",
@@ -3720,23 +3975,10 @@
       "explanation": "Common keywords: Schwinger–Keldysh formalism, order, discuss"
     },
     {
-      "source": "a3c82d77f4273b859a80",
-      "target": "dff29d4a46bac91afe41",
-      "type": "similar",
-      "strength": 0.2,
-      "terms": [
-        "Schwinger–Keldysh formalism",
-        "fluctuations",
-        "derive",
-        "scattering"
-      ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, fluctuations, derive, scattering"
-    },
-    {
       "source": "a584b26858c1dcb3fe3a",
       "target": "cf48d65fbff94e717d6c",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Replica method",
         "media",
@@ -3747,111 +3989,88 @@
     },
     {
       "source": "a584b26858c1dcb3fe3a",
-      "target": "d1a1e6469fd3aa288e3c",
-      "type": "similar",
-      "strength": 0.2,
-      "terms": [
-        "Replica method",
-        "averaged",
-        "quenched",
-        "point"
-      ],
-      "explanation": "Common keywords: Replica method, averaged, quenched, point"
-    },
-    {
-      "source": "a584b26858c1dcb3fe3a",
       "target": "e39f3f43ff32b1d7e9b9",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Replica method",
         "moments",
-        "each",
-        "replica"
+        "replica",
+        "each"
       ],
-      "explanation": "Common keywords: Replica method, moments, each, replica"
+      "explanation": "Common keywords: Replica method, moments, replica, each"
     },
     {
       "source": "a584b26858c1dcb3fe3a",
       "target": "ef521f5e723383086856",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Replica method",
-        "partition",
-        "replica",
-        "saddle"
+        "partition function",
+        "saddle point equations",
+        "replica symmetric",
+        "partition"
       ],
-      "explanation": "Common keywords: Replica method, partition, replica, saddle"
+      "explanation": "Common keywords: Replica method, partition function, saddle point equations, replica symmetric, partition"
     },
     {
       "source": "a81a2cf3c3aa7249ffd1",
       "target": "db021e7a93b4dcdccdbb",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Anderson localization",
+        "anderson localization",
         "possible"
       ],
-      "explanation": "Common keywords: Anderson localization, possible"
+      "explanation": "Common keywords: Anderson localization, anderson localization, possible"
     },
     {
       "source": "aee3ae024f95f35d952e",
-      "target": "dc505a49516927d0b8e9",
+      "target": "de71fb6e60247c50189d",
       "type": "similar",
-      "strength": 0.2,
+      "strength": 0.28,
       "terms": [
         "Nonlinear sigma model",
-        "scaling",
-        "behavior",
-        "including"
+        "nonlinear sigma",
+        "sigma",
+        "nonlinear"
       ],
-      "explanation": "Common keywords: Nonlinear sigma model, scaling, behavior, including"
+      "explanation": "Common keywords: Nonlinear sigma model, nonlinear sigma, sigma, nonlinear"
     },
     {
       "source": "c0ceb6d172fa51731d56",
       "target": "f5552fb9534fd12a04b0",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Bose–Hubbard model",
-        "hubbard",
-        "mott",
-        "between"
+        "bose glass",
+        "mott insulator",
+        "disordered bose hubbard",
+        "hubbard"
       ],
-      "explanation": "Common keywords: Bose–Hubbard model, hubbard, mott, between"
+      "explanation": "Common keywords: Bose–Hubbard model, bose glass, mott insulator, disordered bose hubbard, hubbard"
     },
     {
       "source": "c6a8bbbcc8265df18526",
       "target": "cf48d65fbff94e717d6c",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Replica method",
-        "long",
         "replica",
+        "long",
         "potential"
       ],
-      "explanation": "Common keywords: Replica method, long, replica, potential"
-    },
-    {
-      "source": "c6a8bbbcc8265df18526",
-      "target": "d1a1e6469fd3aa288e3c",
-      "type": "similar",
-      "strength": 0.2,
-      "terms": [
-        "Replica method",
-        "exactly",
-        "found",
-        "replica"
-      ],
-      "explanation": "Common keywords: Replica method, exactly, found, replica"
+      "explanation": "Common keywords: Replica method, replica, long, potential"
     },
     {
       "source": "c6a8bbbcc8265df18526",
       "target": "e39f3f43ff32b1d7e9b9",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Replica method",
         "replica"
@@ -3862,7 +4081,7 @@
       "source": "c6a8bbbcc8265df18526",
       "target": "ef521f5e723383086856",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Replica method",
         "replica"
@@ -3871,22 +4090,9 @@
     },
     {
       "source": "cebb15e4fcc4c0dd09eb",
-      "target": "d9f554f17d9329e67ab9",
-      "type": "similar",
-      "strength": 0.2,
-      "terms": [
-        "Schwinger–Keldysh formalism",
-        "Nonequilibrium dynamics",
-        "kinetic",
-        "interacting"
-      ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, Nonequilibrium dynamics, kinetic, interacting"
-    },
-    {
-      "source": "cebb15e4fcc4c0dd09eb",
       "target": "dfd85e6a178025f0d1dd",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
         "Nonequilibrium dynamics",
@@ -3899,33 +4105,57 @@
       "source": "cf48d65fbff94e717d6c",
       "target": "d1a1e6469fd3aa288e3c",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Replica method",
-        "spatial",
-        "large",
-        "quenched"
+        "spatial dimensions",
+        "large limit",
+        "replica"
       ],
-      "explanation": "Common keywords: Replica method, spatial, large, quenched"
+      "explanation": "Common keywords: Replica method, spatial dimensions, large limit, replica"
     },
     {
-      "source": "d112abc40f17f3d8abd4",
-      "target": "db021e7a93b4dcdccdbb",
+      "source": "cf48d65fbff94e717d6c",
+      "target": "de71fb6e60247c50189d",
       "type": "similar",
-      "strength": 0.2023,
+      "strength": 0.28,
       "terms": [
-        "multiple",
-        "potentials",
-        "induces",
-        "scattering"
+        "Replica method",
+        "replica",
+        "media",
+        "obtaining"
       ],
-      "explanation": "Common keywords: multiple, potentials, induces, scattering"
+      "explanation": "Common keywords: Replica method, replica, media, obtaining"
+    },
+    {
+      "source": "cf48d65fbff94e717d6c",
+      "target": "e39f3f43ff32b1d7e9b9",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Replica method",
+        "replica"
+      ],
+      "explanation": "Common keywords: Replica method, replica"
+    },
+    {
+      "source": "cf48d65fbff94e717d6c",
+      "target": "ef521f5e723383086856",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Replica method",
+        "symmetry breaking",
+        "replica",
+        "breaking"
+      ],
+      "explanation": "Common keywords: Replica method, symmetry breaking, replica, breaking"
     },
     {
       "source": "d1a1e6469fd3aa288e3c",
       "target": "e39f3f43ff32b1d7e9b9",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Replica method",
         "replica",
@@ -3938,48 +4168,62 @@
       "source": "d1a1e6469fd3aa288e3c",
       "target": "ef521f5e723383086856",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Replica method",
-        "large",
-        "described",
-        "replica"
+        "replica",
+        "point",
+        "large"
       ],
-      "explanation": "Common keywords: Replica method, large, described, replica"
+      "explanation": "Common keywords: Replica method, replica, point, large"
     },
     {
-      "source": "d9f554f17d9329e67ab9",
-      "target": "dfd85e6a178025f0d1dd",
+      "source": "dc505a49516927d0b8e9",
+      "target": "de71fb6e60247c50189d",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
-        "Schwinger–Keldysh formalism",
-        "Nonequilibrium dynamics",
-        "equilibrium"
+        "Nonlinear sigma model",
+        "interacting electrons",
+        "sigma",
+        "controlled"
       ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, Nonequilibrium dynamics, equilibrium"
+      "explanation": "Common keywords: Nonlinear sigma model, interacting electrons, sigma, controlled"
     },
     {
       "source": "dfd85e6a178025f0d1dd",
       "target": "dff29d4a46bac91afe41",
       "type": "similar",
-      "strength": 0.25,
+      "strength": 0.28,
       "terms": [
         "Schwinger–Keldysh formalism",
+        "diagrammatic technique",
         "technique",
-        "term",
         "diagrammatic"
       ],
-      "explanation": "Common keywords: Schwinger–Keldysh formalism, technique, term, diagrammatic"
+      "explanation": "Common keywords: Schwinger–Keldysh formalism, diagrammatic technique, technique, diagrammatic"
+    },
+    {
+      "source": "e39f3f43ff32b1d7e9b9",
+      "target": "ef521f5e723383086856",
+      "type": "similar",
+      "strength": 0.28,
+      "terms": [
+        "Replica method",
+        "replica",
+        "temperature",
+        "each"
+      ],
+      "explanation": "Common keywords: Replica method, replica, temperature, each"
     }
   ],
   "meta": {
     "documents": 130,
-    "links": 248,
+    "links": 267,
     "citations": 96,
     "authors": 67,
-    "similar": 85,
+    "similar": 104,
     "manual": 0,
-    "openalex_requests": 4
+    "openalex_requests": 0
   }
 }
