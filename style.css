@@ -266,3 +266,41 @@ body { background: var(--bg); color: var(--white); }
 
 /* v3.4.2: Knowledge Graph labels are shown on hover via native SVG title, not permanently. */
 #knowledge-svg .knowledge-node > text { display:none !important; }
+
+
+/* v3.7 — fixed header slots. Switching views changes button ACTIONS,
+   not their existence, width or location. Both search inputs share one slot. */
+.topbar {display:grid;grid-template-columns:minmax(130px,1fr) max-content minmax(485px,1fr);
+  column-gap:12px;align-items:center;justify-content:stretch;min-height:73px;height:73px;}
+.brand {min-width:0;overflow:hidden;text-overflow:ellipsis;}
+.view-tabs {justify-self:center;margin:0;flex-wrap:nowrap;}
+.view-tab {min-width:113px;}
+.actions {width:100%;display:flex;justify-content:flex-end;align-items:center;min-width:0;flex-wrap:nowrap;}
+.search-slot {width:clamp(170px,25vw,330px);min-width:0;flex:1 1 260px;}
+.search-slot .search-wrap {width:100%;min-width:0;flex:auto;}
+.actions .action {min-width:118px;width:118px;flex:0 0 118px;
+  padding-left:5px;padding-right:5px;white-space:nowrap;text-align:center;}
+@media(max-width:1070px){
+  .topbar {grid-template-columns:minmax(105px,1fr) max-content minmax(380px,1fr);padding:0 12px;gap:7px;}
+  .actions .action {min-width:95px;width:95px;flex-basis:95px;font-size:11px;}
+  .view-tab {min-width:95px;padding:7px 9px;}
+}
+@media(max-width:850px){
+  .topbar {height:113px;min-height:113px;grid-template-columns:minmax(110px,1fr) max-content;
+    grid-template-rows:40px 45px;row-gap:5px;padding:8px 12px;}
+  .brand {width:auto;grid-column:1;grid-row:1;}
+  .view-tabs {grid-column:2;grid-row:1;}
+  .actions {grid-column:1 / 3;grid-row:2;width:100%;}
+  .search-slot {width:auto;flex:1 1 auto;}
+  .actions .action {min-width:104px;width:104px;flex-basis:104px;}
+  .drawer {top:113px;}
+  .overlay.show {inset:113px 0 0;}
+}
+@media(max-width:440px){
+  .topbar {padding:6px 8px;gap:4px;}
+  .brand {font-size:17px;}
+  .view-tab {min-width:0;padding:7px 8px;font-size:10px;}
+  .actions {gap:4px;}
+  .actions .action {min-width:81px;width:81px;flex-basis:81px;font-size:10px;padding:5px 2px;}
+  .search-input {font-size:10px;}
+}

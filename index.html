@@ -6,33 +6,43 @@
   <meta name="theme-color" content="#0b0b0d">
   <meta name="description" content="An interactive map of scientific literature.">
   <title>disorder map</title>
-  <link rel="stylesheet" href="./style.css?v=v3.5.7-no-curated">
+  <link rel="stylesheet" href="./style.css?v=v3.7">
+  <link rel="stylesheet" href="./theme.css?v=v3.7">
 </head>
 <body>
   <div class="shell">
     <header class="topbar">
       <div class="brand" id="brand">Research <span>map</span></div>
       <nav class="view-tabs" role="tablist" aria-label="Map view">
-        <button class="view-tab active" id="tab-library" type="button" role="tab" aria-selected="true" aria-controls="canvas">Library</button>
-        <button class="view-tab" id="tab-knowledge" type="button" role="tab" aria-selected="false" aria-controls="knowledge-view">Knowledge Graph</button>
+        <button class="view-tab active" id="tab-knowledge" type="button" role="tab" aria-selected="true" aria-controls="knowledge-view">Knowledge Graph</button>
+        <button class="view-tab" id="tab-library" type="button" role="tab" aria-selected="false" aria-controls="canvas">Library</button>
       </nav>
       <div class="actions">
-        <div class="search-wrap">
+        <div class="search-slot">
+        <div class="search-wrap" id="library-search-wrap" hidden>
           <label class="sr-only" for="search-input">Search publications by title or author</label>
           <input type="search" id="search-input" class="search-input"
             placeholder="Search title or author…" aria-label="Search title or author"
             aria-controls="search-results" aria-expanded="false" autocomplete="off" spellcheck="false">
           <div id="search-results" class="search-results" role="listbox" aria-label="Matching publications" hidden></div>
         </div>
-        <button type="button" class="action" id="expand" aria-label="Expand all folders">Expand all</button>
-        <button type="button" class="action" id="collapse" aria-label="Collapse all folders">Collapse all</button>
+        <div class="search-wrap" id="kg-search-wrap">
+          <label class="sr-only" for="kg-search-input">Search Knowledge Graph</label>
+          <input type="search" id="kg-search-input" class="search-input"
+            placeholder="Search papers, authors, topics, DOI…" aria-label="Search Knowledge Graph"
+            aria-controls="kg-search-results" aria-expanded="false" autocomplete="off" spellcheck="false">
+          <div id="kg-search-results" class="search-results" role="listbox" aria-label="Graph search results" hidden></div>
+        </div>
+        </div>
+        <button type="button" class="action" id="expand" aria-label="Fit graph">Expand all</button>
+        <button type="button" class="action" id="collapse" aria-label="Collapse groups">Collapse all</button>
       </div>
     </header>
-    <main class="canvas" id="canvas" aria-label="Interactive library tree">
+    <main class="canvas" id="canvas" aria-label="Interactive library tree" hidden>
       <svg id="map" role="img" aria-label="Topic folders and publications. Click folders to expand and articles to read their details."></svg>
       <div id="message" class="message" hidden></div>
     </main>
-    <section id="knowledge-view" class="knowledge-view" aria-label="Publication relationships" hidden>
+    <section id="knowledge-view" class="knowledge-view" aria-label="Publication relationships">
       <div class="knowledge-controls">
         <div class="knowledge-filters">
           <label class="kg-option kg-citation"><input type="checkbox" id="kg-citation" checked> Citations</label>
@@ -41,6 +51,11 @@
           <label class="kg-option kg-isolated"><input type="checkbox" id="kg-isolated" checked> Isolated papers</label>
         </div>
         <p id="knowledge-status" class="knowledge-status" role="status">Knowledge graph</p>
+        <div id="kg-pager" class="kg-pager" hidden>
+          <button type="button" class="kg-page-button" id="kg-prev" aria-label="Previous unconnected publications">Previous</button>
+          <span id="kg-page-text" aria-live="polite">1 / 1</span>
+          <button type="button" class="kg-page-button" id="kg-next" aria-label="Next unconnected publications">Next</button>
+        </div>
       </div>
       <svg id="knowledge-svg" aria-label="Knowledge graph of publications" role="img"></svg>
     </section>
@@ -66,7 +81,8 @@
     </aside>
   </div>
   <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-  <script defer src="./app.js?v=v3.5.7-no-curated"></script>
-  <script defer src="./knowledge.js?v=v3.5.7-no-curated"></script>
+  <script defer src="./site-config.js?v=v3.7"></script>
+  <script defer src="./app.js?v=v3.7"></script>
+  <script defer src="./knowledge.js?v=v3.7"></script>
 </body>
 </html>
