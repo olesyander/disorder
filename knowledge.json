@@ -212,11 +212,11 @@
     },
     {
       "id": "9681d3f01c763e69038f",
-      "title": "Disorder and Critical Phenomena Through Basic Probability Models",
-      "authors": "Giambattista Giacomin",
+      "title": "Disorder and critical phenomena",
+      "authors": "B. R. Gadjiev",
       "kind": "book",
-      "access": "open",
-      "sourceUrl": "https://doi.org/10.1007/978-3-642-21156-0",
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/0809.5036",
       "openUrl": "https://arxiv.org/pdf/0809.5036",
       "downloadUrl": null,
       "abstract": "In the present paper we are discussing the influence of the fractal distribution of defects on the critical behavior of the system. We consider a case when the equation of motion for the order parameter contains influences of defects of random field and random temperature types at the same time and we show that it can lead to a change of distribution function from Gibbs distribution to Tsallis distribution or more general statistics of q-type. We are able to extend the Landau-Khalatnikov equation for the order parameter and represent it in the form of a differential equation of the fractional order. We deduce and we solve the corresponding renormalization group equation with the nonlinear dispersion law and we calculate the critical indices of the system."
@@ -257,13 +257,13 @@
     {
       "id": "464498d779ecf5b960e4",
       "title": "Disordered electronic systems",
-      "authors": "Carlo Di Castro, Roberto Raimondi",
+      "authors": "Patrick A. Lee, T. V. Ramakrishnan",
       "kind": "article",
       "access": "open",
       "sourceUrl": "https://doi.org/10.1017/cbo9780511978999.002",
       "openUrl": "https://arxiv.org/pdf/cond-mat/0402203",
       "downloadUrl": null,
-      "abstract": "These lectures provide an introduction to the theory of disordered interacting electron systems. In particular, we concentrate on those aspects which are fundamental for the problem of the metal-insulator transition due to the interplay of disorder and interaction. After reviewing the problem of disordered non-interacting electrons, we examine the past and recent experimental urgency to take into account interaction effects. We describe, by using the language of standard perturbation theory, how these interactions effects lead to the picture of the renormalized disordered Fermi liquid. This allows us to obtain the renormalization group equations for the disordered interacting electron liquid. The group equations are then discussed by the light of the existing experimental evidence."
+      "abstract": "This paper' reviews the progress made in the last several years in understanding the properties of disordered electronic systems. Even in the metallic limit, serious deviations from the Boltzmann transport theory and Fermi-liquid theory have been predicted and observed experimentally. There are two important ingredients in this new understanding: the concept of Anderson localization and the effects of interaction between elec- trons in a disordered medium. This paper emphasizes the theoretical aspect, even though some of the relevant experiments are also examined. The bulk of the paper focuses on the metallic side, but the authors also discuss the metal-to-insulator transition and comment on problems associated with the insulator."
     },
     {
       "id": "1c876118612c0982e3a4",
@@ -296,7 +296,7 @@
       "sourceUrl": "https://doi.org/10.1016/j.physe.2009.08.008",
       "openUrl": "papers/2a285b1519bb617dbd22.pdf",
       "downloadUrl": "papers/2a285b1519bb617dbd22.pdf",
-      "abstract": "Recent developments in technologies and experiments enable us to observe dynamical behavior of very small quantum systems under conditions when it is sensitive to system parameters, internal interactions, the environment and the external time–dependent fields. This contribution deals with the status and perspectives of description of such truly non-equilibrium quantum many body systems using the non-equilibrium Green’s functions (NGF). The basic aim of this approach is to describe time development of the many-body system out of equilibrium from its initial state over its transient dynamics to its long time asymptotic evolution. The early stages of the transient evolution will be characterized for a broad class of the initial conditions generated in the course of Keldysh switch-on states. Gradual loss of initial correlations due to interactions and related renormalization processes in the system may, under favorable conditions, give rise to the evolution stage expressible in terms of non-equilibrium quasiparticles. This permits to reduce the description of the system behavior to a quantum transport equation. The consistency of such approximations for NGF may be judged by checking the non-equilibrium version of transport Ward identities. These identities follow from the gauge invariance of the 1st kind for NGF. To cover the whole time domain of the transient, we obtain the non-equilibrium Ward identities for NGF with initial conditions included."
+      "abstract": "Recent developments in technologies and experiments enable us to observe dynamical behavior of very small quantum systems under conditions when it is sensitive to system parameters, internal interactions, the environment and the external time–dependent fields. This contribution deals with the status and perspectives of description of such truly non-equilibrium quantum many body systems using the non-equilibrium Green’s functions (NGF)."
     },
     {
       "id": "1cdc50612f2bc213c841",
@@ -576,7 +576,7 @@
     {
       "id": "a8f7165ccea4f9b9c668",
       "title": "Introduction to the Theory of Disordered Systems",
-      "authors": "Министерство Общего И Профессионального Образования",
+      "authors": "Российской Федерации",
       "kind": "book",
       "access": "open",
       "sourceUrl": null,
@@ -1022,7 +1022,7 @@
       "sourceUrl": "https://doi.org/10.21468/scipostphys.14.3.039",
       "openUrl": "https://arxiv.org/pdf/2205.11542",
       "downloadUrl": null,
-      "abstract": "We study the critical bosonic O(N) vector model with quenched random mass disorder in the large N limit. Due to the replicated action which is sometimes not bounded from below, we avoid the replica trick and adopt a traditional approach to directly compute the disorder averaged physical observables. At $N=\\infty$, we can exactly solve the disordered model. The resulting low energy behavior can be described by two scale invariant theories, one of which has an intrinsic scale. At finite $N$, we find that the previously proposed attractive disordered fixed point at $d=2$ continues to exist at $d=2+ε$ spatial dimensions. We also studied the system in the $3<d<4$ spatial dimensions where the disorder is relevant at the Gaussian fixed point. However, no physical attractive fixed point is found right below four spatial dimensions. Nevertheless, the stable fixed point at $2+ε$ dimensions can still survive at $d=3$ where the system has experimental realizations. Some critical exponents are predicted in order to be checked by future numerics and experiments."
+      "abstract": "We study the critical bosonic O(N) vector model with quenched random mass disorder in the large N limit. Due to the replicated action which is sometimes not bounded from below, we avoid the replica trick and adopt a traditional approach to directly compute the disorder averaged physical observables. At N = ∞, we can exactly solve the disordered model. The resulting low energy behavior can be described by two scale invariant theories, one of which has an intrinsic scale. At finite N, we find that the previously proposed attractive disordered fixed point at d = 2 continues to exist at d = 2+ε spatial dimensions. We also studied the system in the 3 < d < 4 spatial dimensions where the disorder is relevant at the Gaussian fixed point. However, no physical attractive fixed point is found right below four spatial dimensions. Nevertheless, the stable fixed point at 2+ε dimensions can still survive at d = 3 where the system has experimental realizations. Some critical exponents are predicted in order to be checked by future numerics and experiments."
     },
     {
       "id": "fdb43c41c7e1d95d490b",
@@ -1298,6 +1298,17 @@
       "openUrl": "https://arxiv.org/pdf/math-ph/0210012",
       "downloadUrl": null,
       "abstract": "We consider solvable matrix models. We generalize Harish-Chandra-Itzykson-Zuber and certain other integrals (Gross-Witten integral and integrals over complex matrices) using the notion of tau function of matrix argument. In this case one can reduce the matrix integral to the integral over eigenvalues, which in turn is certain tau function. The resulting tau function may be analyzed either by the method of orthogonal polynomials or by the Schur functions expansion method."
+    },
+    {
+      "id": "f8ae3b396b247c5f458b",
+      "title": "The Path Integral approach to Quantum Mechanics Lecture Notes for Quantum Mechanics IV",
+      "authors": "Ferruccio Feruglio",
+      "kind": "book",
+      "access": "open",
+      "sourceUrl": null,
+      "openUrl": "papers/f8ae3b396b247c5f458b.pdf",
+      "downloadUrl": "papers/f8ae3b396b247c5f458b.pdf",
+      "abstract": ""
     },
     {
       "id": "1cfb806de3a388033455",
@@ -2470,9 +2481,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Owen Gwilliam"
+        "Kevin Costello"
       ],
-      "explanation": "Shared author: Owen Gwilliam"
+      "explanation": "Shared author: Kevin Costello"
     },
     {
       "source": "4cb975cd5b3e0b624695",
@@ -2935,7 +2946,7 @@
       "source": "0425e01f0af9d0994909",
       "target": "bbd0df5b4f37b61dee38",
       "type": "similar",
-      "strength": 0.881,
+      "strength": 0.8843,
       "terms": [
         "quantum field theoretical",
         "quantum field"
@@ -2986,7 +2997,7 @@
       "source": "055c052c330ab8474e4f",
       "target": "a8f7165ccea4f9b9c668",
       "type": "similar",
-      "strength": 0.8011,
+      "strength": 0.7988,
       "terms": [
         "disorder system"
       ],
@@ -3036,10 +3047,21 @@
       "explanation": "Common keywords: path integral, quantum mechanic"
     },
     {
+      "source": "09708e781b2eb4b31214",
+      "target": "f8ae3b396b247c5f458b",
+      "type": "similar",
+      "strength": 0.54,
+      "terms": [
+        "path integral",
+        "quantum mechanic"
+      ],
+      "explanation": "Common keywords: path integral, quantum mechanic"
+    },
+    {
       "source": "09a544e3bd22412f011d",
       "target": "3b76321646d1a716ec2b",
       "type": "similar",
-      "strength": 0.8285,
+      "strength": 0.8282,
       "terms": [
         "dimensional electron gas",
         "two dimensional electron",
@@ -3052,7 +3074,7 @@
       "source": "09a544e3bd22412f011d",
       "target": "61f2fdc2dbb6af404e4a",
       "type": "similar",
-      "strength": 0.7048,
+      "strength": 0.7049,
       "terms": [
         "electron gas",
         "disorder electron gas",
@@ -3098,7 +3120,7 @@
       "source": "14594afe4b687e2133e1",
       "target": "35a2662e8ef0172bbaf6",
       "type": "similar",
-      "strength": 0.5,
+      "strength": 0.5019,
       "terms": [
         "random matrice"
       ],
@@ -3108,7 +3130,7 @@
       "source": "14594afe4b687e2133e1",
       "target": "3cf186cdea83cfc7f64d",
       "type": "similar",
-      "strength": 0.4643,
+      "strength": 0.466,
       "terms": [
         "random matrice"
       ],
@@ -3128,7 +3150,7 @@
       "source": "14594afe4b687e2133e1",
       "target": "f4a7357f092445d4e8f2",
       "type": "similar",
-      "strength": 0.5064,
+      "strength": 0.5071,
       "terms": [
         "random matrice"
       ],
@@ -3136,9 +3158,19 @@
     },
     {
       "source": "14594afe4b687e2133e1",
+      "target": "f8ae3b396b247c5f458b",
+      "type": "similar",
+      "strength": 0.4479,
+      "terms": [
+        "lecture note"
+      ],
+      "explanation": "Common keywords: lecture note"
+    },
+    {
+      "source": "14594afe4b687e2133e1",
       "target": "fdb43c41c7e1d95d490b",
       "type": "similar",
-      "strength": 0.4941,
+      "strength": 0.4962,
       "terms": [
         "random matrice"
       ],
@@ -3254,12 +3286,11 @@
       "source": "1b099877a04e5af38ba2",
       "target": "2a285b1519bb617dbd22",
       "type": "similar",
-      "strength": 0.54,
+      "strength": 0.44,
       "terms": [
-        "non equilibrium",
-        "initial condition"
+        "non equilibrium"
       ],
-      "explanation": "Common keywords: non equilibrium, initial condition"
+      "explanation": "Common keywords: non equilibrium"
     },
     {
       "source": "1b099877a04e5af38ba2",
@@ -3293,11 +3324,11 @@
       "strength": 0.54,
       "terms": [
         "scalar field",
-        "boltzmann equation",
         "initial condition",
+        "boltzmann equation",
         "distribution function"
       ],
-      "explanation": "Common keywords: scalar field, boltzmann equation, initial condition, distribution function"
+      "explanation": "Common keywords: scalar field, initial condition, boltzmann equation, distribution function"
     },
     {
       "source": "1b099877a04e5af38ba2",
@@ -3402,7 +3433,7 @@
       "source": "1c876118612c0982e3a4",
       "target": "df58dd0f10b8b1ae9590",
       "type": "similar",
-      "strength": 0.7968,
+      "strength": 0.797,
       "terms": [
         "quantum field theory",
         "quantum field"
@@ -3486,7 +3517,7 @@
       "source": "20e6e0b3b24a66d38d61",
       "target": "75126cd408be2ec7038d",
       "type": "similar",
-      "strength": 0.5513,
+      "strength": 0.5515,
       "terms": [
         "disorder metal",
         "thermal transport",
@@ -3622,7 +3653,7 @@
       "source": "288de55d1993885892f7",
       "target": "6061fda0e8bf37102849",
       "type": "similar",
-      "strength": 0.6862,
+      "strength": 0.6866,
       "terms": [
         "potential approximation",
         "coherent potential",
@@ -3658,10 +3689,9 @@
       "strength": 0.54,
       "terms": [
         "non equilibrium",
-        "many body",
-        "quantum transport"
+        "many body"
       ],
-      "explanation": "Common keywords: non equilibrium, many body, quantum transport"
+      "explanation": "Common keywords: non equilibrium, many body"
     },
     {
       "source": "2a285b1519bb617dbd22",
@@ -3687,7 +3717,7 @@
       "source": "32cb576779b56c52d99c",
       "target": "41321a40e77231f9622e",
       "type": "similar",
-      "strength": 0.7746,
+      "strength": 0.7747,
       "terms": [
         "quantum field",
         "field theory",
@@ -3699,7 +3729,7 @@
       "source": "32cb576779b56c52d99c",
       "target": "4be7e80c62e19b417e09",
       "type": "similar",
-      "strength": 0.7287,
+      "strength": 0.7288,
       "terms": [
         "quantum field",
         "field theory",
@@ -3747,7 +3777,7 @@
       "source": "32cb576779b56c52d99c",
       "target": "e4646c29c55f6d8fec65",
       "type": "similar",
-      "strength": 0.8057,
+      "strength": 0.8064,
       "terms": [
         "non equilibrium",
         "field theory"
@@ -3892,7 +3922,7 @@
       "source": "3b76321646d1a716ec2b",
       "target": "61f2fdc2dbb6af404e4a",
       "type": "similar",
-      "strength": 0.5641,
+      "strength": 0.5642,
       "terms": [
         "electron gas",
         "dimensional electron gas",
@@ -3925,7 +3955,7 @@
       "source": "3b76321646d1a716ec2b",
       "target": "8edb0b36e9b5e94722f1",
       "type": "similar",
-      "strength": 0.7098,
+      "strength": 0.7101,
       "terms": [
         "nonlinear sigma",
         "sigma model",
@@ -3951,7 +3981,7 @@
       "source": "3b76321646d1a716ec2b",
       "target": "de71fb6e60247c50189d",
       "type": "similar",
-      "strength": 0.7134,
+      "strength": 0.7135,
       "terms": [
         "nonlinear sigma",
         "sigma model",
@@ -3987,7 +4017,7 @@
       "source": "3cf186cdea83cfc7f64d",
       "target": "7d5c46e20394845a2c86",
       "type": "similar",
-      "strength": 0.7544,
+      "strength": 0.7547,
       "terms": [
         "disorder boson",
         "random matrix model",
@@ -4030,7 +4060,7 @@
       "source": "41321a40e77231f9622e",
       "target": "4be7e80c62e19b417e09",
       "type": "similar",
-      "strength": 0.794,
+      "strength": 0.7944,
       "terms": [
         "quantum field theory",
         "quantum field"
@@ -4041,7 +4071,7 @@
       "source": "41321a40e77231f9622e",
       "target": "5a6da9fe0ee72528e92c",
       "type": "similar",
-      "strength": 0.6919,
+      "strength": 0.6921,
       "terms": [
         "quantum field theory",
         "quantum field"
@@ -4137,32 +4167,6 @@
       "explanation": "Common keywords: schwinger keldysh, field theory"
     },
     {
-      "source": "464498d779ecf5b960e4",
-      "target": "82d3accbbeaa252fdcef",
-      "type": "similar",
-      "strength": 0.3695,
-      "terms": [
-        "electron liquid",
-        "metal insulator",
-        "metal insulator transition",
-        "disorder fermi"
-      ],
-      "explanation": "Common keywords: electron liquid, metal insulator, metal insulator transition, disorder fermi"
-    },
-    {
-      "source": "464498d779ecf5b960e4",
-      "target": "dc505a49516927d0b8e9",
-      "type": "similar",
-      "strength": 0.3587,
-      "terms": [
-        "electron liquid",
-        "metal insulator",
-        "metal insulator transition",
-        "disorder interact electron"
-      ],
-      "explanation": "Common keywords: electron liquid, metal insulator, metal insulator transition, disorder interact electron"
-    },
-    {
       "source": "480bf89fa59840c30b9a",
       "target": "532b57072efb6b926949",
       "type": "similar",
@@ -4176,7 +4180,7 @@
       "source": "480bf89fa59840c30b9a",
       "target": "57142b88a36bc47e0fd4",
       "type": "similar",
-      "strength": 0.6947,
+      "strength": 0.6946,
       "terms": [
         "dynamical mean",
         "dynamical mean field",
@@ -4237,6 +4241,16 @@
       "explanation": "Common keywords: quantum mechanic"
     },
     {
+      "source": "49ed099d5bcb197e38a3",
+      "target": "f8ae3b396b247c5f458b",
+      "type": "similar",
+      "strength": 0.44,
+      "terms": [
+        "quantum mechanic"
+      ],
+      "explanation": "Common keywords: quantum mechanic"
+    },
+    {
       "source": "4a6974757f7c190fa564",
       "target": "4bcb57d1d3f63d4f7fec",
       "type": "similar",
@@ -4270,14 +4284,14 @@
       "source": "4a6974757f7c190fa564",
       "target": "c6a8bbbcc8265df18526",
       "type": "similar",
-      "strength": 0.5611,
+      "strength": 0.5526,
       "terms": [
         "path integral",
-        "integral approach",
         "integral method",
-        "path integral approach"
+        "integral approach",
+        "path integral method"
       ],
-      "explanation": "Common keywords: path integral, integral approach, integral method, path integral approach"
+      "explanation": "Common keywords: path integral, integral method, integral approach, path integral method"
     },
     {
       "source": "4a6974757f7c190fa564",
@@ -4288,6 +4302,18 @@
         "path integral"
       ],
       "explanation": "Common keywords: path integral"
+    },
+    {
+      "source": "4a6974757f7c190fa564",
+      "target": "f8ae3b396b247c5f458b",
+      "type": "similar",
+      "strength": 0.54,
+      "terms": [
+        "path integral",
+        "integral approach",
+        "path integral approach"
+      ],
+      "explanation": "Common keywords: path integral, integral approach, path integral approach"
     },
     {
       "source": "4bcb57d1d3f63d4f7fec",
@@ -4411,7 +4437,7 @@
       "source": "532b57072efb6b926949",
       "target": "768f6cf863f97685a9a8",
       "type": "similar",
-      "strength": 0.7283,
+      "strength": 0.7286,
       "terms": [
         "relativistic scalar",
         "relativistic scalar field",
@@ -4525,7 +4551,7 @@
       "source": "5a6da9fe0ee72528e92c",
       "target": "df58dd0f10b8b1ae9590",
       "type": "similar",
-      "strength": 0.8224,
+      "strength": 0.8226,
       "terms": [
         "quantum field theory",
         "quantum field"
@@ -4559,7 +4585,7 @@
       "source": "5b6e4d3160e03ffc14fc",
       "target": "ca7ea5041cdff518d6a8",
       "type": "similar",
-      "strength": 0.9562,
+      "strength": 0.9564,
       "terms": [
         "disorder bose einstein",
         "bose einstein condensate",
@@ -4585,7 +4611,7 @@
       "source": "5bee4756ff236b23ed4a",
       "target": "b4f9dcd17017a4562e97",
       "type": "similar",
-      "strength": 0.3908,
+      "strength": 0.3896,
       "terms": [
         "electron fluid",
         "quantum interference",
@@ -4629,7 +4655,7 @@
       "source": "6061fda0e8bf37102849",
       "target": "78f81527fec4f708aa07",
       "type": "similar",
-      "strength": 0.5921,
+      "strength": 0.5922,
       "terms": [
         "disorder boson",
         "field theory"
@@ -4674,7 +4700,7 @@
       "source": "6c2a255573a9506ab2ab",
       "target": "ef521f5e723383086856",
       "type": "similar",
-      "strength": 0.7191,
+      "strength": 0.719,
       "terms": [
         "spontaneous symmetry",
         "symmetry break",
@@ -4888,7 +4914,7 @@
       "source": "7d5c46e20394845a2c86",
       "target": "f4a7357f092445d4e8f2",
       "type": "similar",
-      "strength": 0.6337,
+      "strength": 0.6339,
       "terms": [
         "unitary ensemble",
         "gaussian unitary",
@@ -5051,7 +5077,7 @@
       "source": "8edb0b36e9b5e94722f1",
       "target": "a8f7165ccea4f9b9c668",
       "type": "similar",
-      "strength": 0.4669,
+      "strength": 0.4659,
       "terms": [
         "disorder system"
       ],
@@ -5086,7 +5112,7 @@
       "source": "97928184e9e2320fc535",
       "target": "ad05fe560da2ea573a22",
       "type": "similar",
-      "strength": 0.8695,
+      "strength": 0.8696,
       "terms": [
         "real time",
         "time formalism",
@@ -5142,7 +5168,7 @@
       "source": "a562c4570929e232bb92",
       "target": "df58dd0f10b8b1ae9590",
       "type": "similar",
-      "strength": 0.7695,
+      "strength": 0.7697,
       "terms": [
         "quantum field theory",
         "quantum field"
@@ -5231,7 +5257,7 @@
       "source": "bbd0df5b4f37b61dee38",
       "target": "df58dd0f10b8b1ae9590",
       "type": "similar",
-      "strength": 0.4595,
+      "strength": 0.4615,
       "terms": [
         "quantum field"
       ],
@@ -5264,7 +5290,7 @@
       "source": "c0ceb6d172fa51731d56",
       "target": "f5552fb9534fd12a04b0",
       "type": "similar",
-      "strength": 0.7767,
+      "strength": 0.7769,
       "terms": [
         "bose hubbard",
         "bose hubbard model",
@@ -5292,6 +5318,18 @@
         "path integral"
       ],
       "explanation": "Common keywords: path integral"
+    },
+    {
+      "source": "c6a8bbbcc8265df18526",
+      "target": "f8ae3b396b247c5f458b",
+      "type": "similar",
+      "strength": 0.7695,
+      "terms": [
+        "integral approach",
+        "path integral",
+        "path integral approach"
+      ],
+      "explanation": "Common keywords: integral approach, path integral, path integral approach"
     },
     {
       "source": "ca7ea5041cdff518d6a8",
@@ -5453,14 +5491,25 @@
         "random matrice"
       ],
       "explanation": "Common keywords: random matrice"
+    },
+    {
+      "source": "f62489586c39bf17b0fa",
+      "target": "f8ae3b396b247c5f458b",
+      "type": "similar",
+      "strength": 0.7719,
+      "terms": [
+        "quantum mechanic",
+        "path integral"
+      ],
+      "explanation": "Common keywords: quantum mechanic, path integral"
     }
   ],
   "meta": {
-    "documents": 130,
-    "links": 398,
+    "documents": 131,
+    "links": 402,
     "citations": 96,
     "authors": 67,
-    "similar": 235,
+    "similar": 239,
     "openalex_requests": 0
   }
 }
