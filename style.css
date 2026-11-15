@@ -268,39 +268,50 @@ body { background: var(--bg); color: var(--white); }
 #knowledge-svg .knowledge-node > text { display:none !important; }
 
 
-/* v3.7 — fixed header slots. Switching views changes button ACTIONS,
-   not their existence, width or location. Both search inputs share one slot. */
-.topbar {display:grid;grid-template-columns:minmax(130px,1fr) max-content minmax(485px,1fr);
-  column-gap:12px;align-items:center;justify-content:stretch;min-height:73px;height:73px;}
-.brand {min-width:0;overflow:hidden;text-overflow:ellipsis;}
-.view-tabs {justify-self:center;margin:0;flex-wrap:nowrap;}
-.view-tab {min-width:113px;}
-.actions {width:100%;display:flex;justify-content:flex-end;align-items:center;min-width:0;flex-wrap:nowrap;}
-.search-slot {width:clamp(170px,25vw,330px);min-width:0;flex:1 1 260px;}
-.search-slot .search-wrap {width:100%;min-width:0;flex:auto;}
-.actions .action {min-width:118px;width:118px;flex:0 0 118px;
-  padding-left:5px;padding-right:5px;white-space:nowrap;text-align:center;}
-@media(max-width:1070px){
-  .topbar {grid-template-columns:minmax(105px,1fr) max-content minmax(380px,1fr);padding:0 12px;gap:7px;}
-  .actions .action {min-width:95px;width:95px;flex-basis:95px;font-size:11px;}
-  .view-tab {min-width:95px;padding:7px 9px;}
+/* v3.6.1 — STABLE HEADER on every tab (edit sizes here).
+   Three persistent zones: project title | two tabs | search and two buttons.
+   View switching changes button LABELS/ACTIONS only, never their placement.
+   The original v3.6 graph and palette are otherwise untouched. */
+.topbar {
+  display:grid; grid-template-columns:minmax(130px,1fr) max-content minmax(465px,1fr);
+  align-items:center; column-gap:14px; justify-content:stretch;
+  height:73px; min-height:73px; padding:0 22px;
 }
-@media(max-width:850px){
-  .topbar {height:113px;min-height:113px;grid-template-columns:minmax(110px,1fr) max-content;
-    grid-template-rows:40px 45px;row-gap:5px;padding:8px 12px;}
-  .brand {width:auto;grid-column:1;grid-row:1;}
+.brand {min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:auto;}
+.view-tabs {justify-self:center;margin:0;flex-wrap:nowrap;gap:4px;}
+.view-tab {min-width:108px;}
+.actions {width:100%;display:flex;align-items:center;justify-content:flex-end;min-width:0;flex-wrap:nowrap;gap:8px;}
+.search-wrap {flex:1 1 190px;min-width:0;max-width:300px;}
+.actions .action {
+  width:112px;min-width:112px;flex:0 0 112px;text-align:center;
+  padding:9px 5px;white-space:nowrap;
+}
+/* Time-only badge, not an expandable changelog. */
+.release {padding:9px 12px;pointer-events:none;max-width:min(340px,calc(100vw - 28px));}
+.release time {display:block;white-space:nowrap;}
+@media(max-width:1040px) {
+  .topbar {grid-template-columns:minmax(85px,1fr) max-content minmax(360px,1fr);gap:8px;padding:0 12px;}
+  .view-tab {min-width:96px;padding:8px 9px;}
+  .actions .action {min-width:92px;width:92px;flex-basis:92px;font-size:11px;}
+}
+@media(max-width:850px) {
+  .topbar {height:112px;min-height:112px;
+    grid-template-columns:minmax(85px,1fr) max-content;
+    grid-template-rows:39px 45px;row-gap:5px;padding:8px 12px;}
+  .brand {grid-column:1;grid-row:1;width:auto;font-size:19px;}
   .view-tabs {grid-column:2;grid-row:1;}
-  .actions {grid-column:1 / 3;grid-row:2;width:100%;}
-  .search-slot {width:auto;flex:1 1 auto;}
-  .actions .action {min-width:104px;width:104px;flex-basis:104px;}
-  .drawer {top:113px;}
-  .overlay.show {inset:113px 0 0;}
+  .actions {grid-column:1 / -1;grid-row:2;width:100%;}
+  .search-wrap {flex:1 1 auto;}
+  .actions .action {min-width:108px;width:108px;flex-basis:108px;}
+  .drawer {top:112px;}
+  .overlay.show {inset:112px 0 0;}
 }
-@media(max-width:440px){
+@media(max-width:440px) {
   .topbar {padding:6px 8px;gap:4px;}
   .brand {font-size:17px;}
-  .view-tab {min-width:0;padding:7px 8px;font-size:10px;}
+  .view-tabs {gap:1px;}
+  .view-tab {min-width:0;padding:7px 7px;font-size:10px;}
   .actions {gap:4px;}
-  .actions .action {min-width:81px;width:81px;flex-basis:81px;font-size:10px;padding:5px 2px;}
+  .actions .action {min-width:82px;width:82px;flex-basis:82px;font-size:10px;padding:7px 2px;}
   .search-input {font-size:10px;}
 }

@@ -44,15 +44,6 @@
   --relation-isolated: #938779;    /* isolated checkbox */
   --link-hover: #fff7e6;          /* highlight when hovering a node */
 
-  /* Knowledge Graph automatic community UI (overview vs expanded papers) */
-  --community-fill: #bc872f;       /* collapsed group circles */
-  --community-stroke: #f2c14f;     /* collapsed group outlines */
-  --community-text: #17110b;       /* count inside circles */
-  --community-label: #f1e2cf;      /* automatically discovered topic labels */
-  --community-unconnected: #736d68;/* visual-only bundle of unconnected papers */
-  --community-focus: #ffe5a8;      /* selected publication outline */
-  --community-pager-bg: #2d241c;   /* pagination for disconnected publications */
-
   /* Legacy aliases; changing colors here works throughout the site */
   --bg: var(--page-bg);
   --panel: var(--panel-bg);
@@ -133,22 +124,3 @@ body { color:var(--text-primary); background:var(--page-bg); }
 .knowledge-node.is-isolated circle {fill:var(--knowledge-isolated);stroke:var(--knowledge-isolated);}
 .knowledge-node:hover circle,.knowledge-node:focus-visible circle {stroke:var(--link-hover);}
 .knowledge-node text {fill:var(--text-primary);stroke:var(--page-bg);}
-
-
-/* v3.7 — automatic scientific communities (all colors above) */
-.kg-cluster {cursor:pointer;outline:none;}
-.kg-cluster circle {fill:var(--community-fill);stroke:var(--community-stroke);stroke-width:1.7;}
-.kg-cluster .kg-count {fill:var(--community-text);stroke:none;font-size:14px;font-weight:750;pointer-events:none;}
-.kg-cluster .kg-label {fill:var(--community-label);stroke:var(--page-bg);stroke-width:3px;
-  paint-order:stroke;font-size:12px;font-weight:550;letter-spacing:.01em;pointer-events:none;}
-.kg-cluster.is-visual circle {fill:var(--community-unconnected);stroke:var(--knowledge-isolated);}
-.kg-cluster:hover circle,.kg-cluster:focus-visible circle {stroke:var(--community-focus);stroke-width:3;filter:drop-shadow(0 0 9px var(--community-fill));}
-.kg-vertex.is-dimmed,.knowledge-link.is-dimmed {opacity:.15;}
-.kg-vertex.is-focused circle {stroke:var(--community-focus);stroke-width:3.7;filter:drop-shadow(0 0 8px var(--highlight));}
-.knowledge-link.is-focused {stroke-opacity:1;stroke-width:4;}
-.knowledge-link.is-aggregate {stroke-linecap:round;}
-.kg-pager {display:flex;align-items:center;gap:10px;font-size:11px;color:var(--text-secondary);}
-.kg-page-button {background:var(--community-pager-bg);border:1px solid var(--line-ui);
-  color:var(--text-primary);border-radius:5px;padding:5px 8px;font-size:11px;}
-.kg-page-button:hover:not(:disabled) {border-color:var(--highlight);}
-.kg-page-button:disabled {opacity:.38;cursor:default;}
