@@ -232,13 +232,12 @@ body { background: var(--bg); color: var(--white); }
 /* ===========================================================
    v3.4: relation palette, controls and graph edges
    Type precedence (strongest first):
-   citation > shared author > similar text > curated.
+   citation > shared author > similar text.
    =========================================================== */
 :root {
   --relation-citation: #f3c548; /* bright gold */
   --relation-author:   #f08a24; /* vivid orange */
-  --relation-similar:  #b8642a; /* burnt amber */
-  --relation-manual:   #d14f38; /* terracotta red */
+  --relation-similar:  #d14f38; /* terracotta red: text similarity */
   --relation-isolated: #938779; /* warm grey */
 }
 .knowledge-controls { gap: 11px; }
@@ -252,7 +251,6 @@ body { background: var(--bg); color: var(--white); }
 .knowledge-filters .kg-citation { --relation-color: var(--relation-citation); }
 .knowledge-filters .kg-author   { --relation-color: var(--relation-author); }
 .knowledge-filters .kg-similar  { --relation-color: var(--relation-similar); }
-.knowledge-filters .kg-manual   { --relation-color: var(--relation-manual); }
 .knowledge-filters .kg-isolated { --relation-color: var(--relation-isolated); }
 .knowledge-filters .kg-option input[type="checkbox"] {
   accent-color: var(--relation-color);
@@ -265,7 +263,6 @@ body { background: var(--bg); color: var(--white); }
 .knowledge-link.relation-citation { stroke: var(--relation-citation); }
 .knowledge-link.relation-author   { stroke: var(--relation-author); }
 .knowledge-link.relation-similar  { stroke: var(--relation-similar); }
-.knowledge-link.relation-manual   { stroke: var(--relation-manual); }
 
 /* v3.4.2: Knowledge Graph labels are shown on hover via native SVG title, not permanently. */
 #knowledge-svg .knowledge-node > text { display:none !important; }

@@ -1,4 +1,4 @@
-/* Research Map v3.4.2 · Independent component layout and hover-only labels. */
+/* Research Map v3.5.7 · Automatic relations only; independent layouts and hover labels. */
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
@@ -10,8 +10,7 @@
   const palette = {
     citation:'#f4c34d',  // gold
     author:'#f18f39',    // orange
-    similar:'#c18a5e',   // brown
-    manual:'#d76551'     // brick red
+    similar:'#d14f38'    // red: textual similarity
   };
   const colorOf = type => getComputedStyle(document.documentElement)
     .getPropertyValue('--relation-' + type).trim() || palette[type] || '#8a8075';
@@ -21,12 +20,12 @@
   const zoom = d3.zoom().scaleExtent([.15,4]).on('zoom',e=>viewport.attr('transform',e.transform));
   svg.call(zoom).on('dblclick.zoom',null);
   let graph={nodes:[],edges:[]}, simulation=null, loaded=false, current='library';
-  const edgeNames={citation:'Citation',author:'Shared authors',similar:'Shared keywords',manual:'Curated connection'};
-  const filters={citation:$('kg-citation'),author:$('kg-author'),similar:$('kg-similar'),manual:$('kg-manual')};
+  const edgeNames={citation:'Citation',author:'Shared authors',similar:'Shared keywords'};
+  const filters={citation:$('kg-citation'),author:$('kg-author'),similar:$('kg-similar')};
   // Constant minimum: the former slider's lowest value (0.15).
   // The producer uses the same threshold (0.15); no runtime API needed.
   const SIMILARITY_FLOOR = 0.15;
-  const RELATION_PRIORITY = {citation:0,author:1,similar:2,manual:3};
+  const RELATION_PRIORITY = {citation:0,author:1,similar:2};
 
   function chooseEdges(allEdges, enabled, available) {
     // Important: choose the strongest *enabled type*, never discard provenance.
@@ -77,7 +76,7 @@
       const terms = Array.isArray(edge.terms) && edge.terms.length ? edge.terms.join(', ') : '';
       return terms ? 'Common keywords: ' + terms : (edge.explanation || 'Shared keywords.');
     }
-    return edge.explanation || 'Curated connection added by the library maintainer.';
+    return edge.explanation || 'Connection metadata unavailable.';
   }
   function setRelationMode(isRelation){
     const authorsLabel = $('authors-label');
