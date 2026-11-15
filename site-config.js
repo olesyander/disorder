@@ -15,10 +15,6 @@ window.RESEARCH_MAP_CONFIG = {
     libraryTab: 'Library',
     knowledgeTab: 'Knowledge Graph',
     searchPlaceholder: 'Search title or author…',
-    expandAll: 'Expand all',
-    collapseAll: 'Collapse all',
-    graphZoomIn: 'Zoom in',          // Same left button, when the graph is active.
-    graphZoomOut: 'Zoom out',        // Same right button, when the graph is active.
     timeUnavailable: 'Update time unavailable',
     citationFilter: 'Citations',
     authorFilter: 'Shared authors',
@@ -70,8 +66,6 @@ window.RESEARCH_MAP_CONFIG = {
   const set = (id, text) => {const el = document.getElementById(id); if (el) el.textContent = text;};
   set('tab-library', L.libraryTab);
   set('tab-knowledge', L.knowledgeTab);
-  set('expand', L.expandAll);
-  set('collapse', L.collapseAll);
   const search = document.getElementById('search-input');
   if (search) search.placeholder = L.searchPlaceholder;
   for (const [id, label] of [

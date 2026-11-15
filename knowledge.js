@@ -1,4 +1,4 @@
-/* Research Map v3.6.1 · Original automatic relation graph, no clusters. */
+/* Research Map v3.6.2 · Original automatic relation graph, no clusters. */
 (() => {
   'use strict';
   const CFG = window.RESEARCH_MAP_CONFIG || {};
@@ -8,12 +8,9 @@
   const library = $('canvas');
   if (!canvas || !library || !window.d3) return;
   const svg = d3.select('#knowledge-svg');
-  // A single palette shared with checkbox styles via CSS custom properties.
-  // Colors are in theme.css; no duplicate hard-coded palette in JavaScript.
-  const colorOf = type => getComputedStyle(document.documentElement)
-    .getPropertyValue('--relation-' + type).trim() || '#938779';
-  const nodeColor = kind => getComputedStyle(document.documentElement)
-    .getPropertyValue(kind === 'isolated' ? '--knowledge-isolated' : '--knowledge-node').trim() || '#938779';
+  // All node/edge colors come exclusively from CSS classes in theme.css.
+  // Do NOT set SVG fill/stroke attributes in JavaScript: the two colors
+  // (connected gold / isolated grey) stay independent of CSS load order.
   const viewport = svg.append('g');
   const edgeLayer = viewport.append('g').attr('class','knowledge-edges');
   const nodeLayer = viewport.append('g').attr('class','knowledge-nodes');
@@ -133,14 +130,6 @@
     for(const t of ['library','knowledge']){
       const b=$('tab-'+t);b.classList.toggle('active',tab===t);b.setAttribute('aria-selected',String(tab===t));
     }
-    // Keep search and both button SLOTS fixed at all times. No layout jumps.
-    // Library: manage folders. Graph: zoom the original, unclustered network.
-    const graphActive = tab === 'knowledge';
-    const left = $('expand'), right = $('collapse');
-    left.textContent = graphActive ? (T.graphZoomIn || 'Zoom in') : (T.expandAll || 'Expand all');
-    right.textContent = graphActive ? (T.graphZoomOut || 'Zoom out') : (T.collapseAll || 'Collapse all');
-    left.setAttribute('aria-label', left.textContent);
-    right.setAttribute('aria-label', right.textContent);
     // Library search stays available on both tabs; choosing a result switches to Library.
     $('search-input').setAttribute('aria-label', 'Search library publications');
     $('drawer').classList.remove('open');$('drawer').setAttribute('aria-hidden','true');$('overlay').classList.remove('show');
@@ -150,13 +139,7 @@
   window.researchMapShowLibrary=()=>switchTab('library');
   $('tab-library').addEventListener('click',()=>switchTab('library'));
   $('tab-knowledge').addEventListener('click',()=>switchTab('knowledge'));
-  // app.js owns these buttons in Library. Here they zoom Knowledge Graph only.
-  $('expand').addEventListener('click',()=>{
-    if(current === 'knowledge' && loaded) svg.transition().duration(160).call(zoom.scaleBy, 1.28);
-  });
-  $('collapse').addEventListener('click',()=>{
-    if(current === 'knowledge' && loaded) svg.transition().duration(160).call(zoom.scaleBy, 1/1.28);
-  });
+  // Zoom is available through wheel, trackpad and touch gestures only.
   function load(){
     $('knowledge-status').textContent='Loading relationships…';
     fetch('./knowledge.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('knowledge.json unavailable');return r.json();})
@@ -248,7 +231,7 @@
     };
 
     const lines=edgeLayer.selectAll('line').data(activeEdges).join('line')
-      .attr('class',d=>'knowledge-link relation-'+d.type).attr('stroke',d=>colorOf(d.type))
+      .attr('class',d=>'knowledge-link relation-'+d.type)
       .attr('stroke-width',d=>d.type==='citation'?2.7:d.type==='author'?2.25:1.9)
       .attr('stroke-opacity',.9).attr('tabindex',0).attr('role','button')
       .attr('aria-label',d=>edgeNames[d.type]||'Connection')
@@ -261,8 +244,7 @@
       .attr('aria-label',d=>d.title||'Publication')
       .on('click',(_e,d)=>openPanel(d))
       .on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openPanel(d);}});
-    group.append('circle').attr('r',d=>degrees.has(d.id)?6.6:4.9)
-      .attr('fill',d=>nodeColor(degrees.has(d.id)?'connected':'isolated'));
+    group.append('circle').attr('r',d=>degrees.has(d.id)?6.6:4.9);
     // No permanent labels: dense groups remain readable.
     // Native SVG title shows the full publication name on hover.
     group.append('title').text(d=>d.title||'Untitled publication');
