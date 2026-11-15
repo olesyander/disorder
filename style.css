@@ -1,12 +1,95 @@
-/**
- * RESEARCH MAP v3.6.2 — РАЗМЕТКА И ПОВЕДЕНИЕ
- * ========================================
- * Здесь намеренно НЕТ цветовых констант и палитр предыдущих версий.
- * ВСЕ цвета (включая тени, фон и границы) находятся в theme.css.
- * Меняй в этом файле только расстояния, размеры, шрифты и расположение.
- * Имена CSS-переменных var(--...) определены только в theme.css.
+/*
+ * RESEARCH MAP v3.6.3 — ОДИН ФАЙЛ СТИЛЕЙ
+ * =====================================
+ * РЕДАКТИРОВАНИЕ ЦВЕТОВ: блок 01 ниже (:root), в начале style.css.
+ * РЕДАКТИРОВАНИЕ РАЗМЕРОВ: блок 02 (правила ниже).
+ * Отдельный theme.css больше не нужен: при его отсутствии GitHub Pages
+ * переставал видеть ВСЕ цветовые переменные, из-за чего сайт был белым,
+ * узлы чёрными, а цветные рёбра — невидимыми.
+ *
+ * Изменяй цвета ТОЛЬКО в блоке 01 и делай Commit → Push.
  */
 
+/* ================== 01. ЦВЕТОВАЯ ПАЛИТРА ================== */
+:root {
+  color-scheme: dark;
+
+  /* 1. Фон, поверхности, рамки */
+  --page-bg:              #0b0b0d;  /* основной тёмный фон */
+  --page-bg-glow:         #241b16;  /* подсветка центра графа */
+  --toolbar-bg:           #100e0d;  /* верхняя панель */
+  --panel-bg:             #171514;  /* боковая панель, карточки */
+  --filter-bg:            #120f0d;  /* фон фильтров Knowledge Graph */
+  --input-bg:             #1d1a18;  /* поиск */
+  --hover-bg:             #33271d;  /* наведение на кнопки и результаты */
+  --line-ui:              #534236;  /* рамки окон и кнопок */
+  --tree-link:            #77716d;  /* линии дерева Library */
+
+  /* 2. Текст и акценты */
+  --text-primary:         #f5f2ed;  /* главный текст */
+  --text-secondary:       #dfcfbe;  /* абстракты, описание */
+  --text-muted:           #b1aaa4;  /* вторичный текст */
+  --text-warm:            #c1a88c;  /* счётчик связей */
+  --brand-muted:          #d0b59b;  /* часть названия проекта */
+  --highlight:            #f2c14f;  /* акцент: ссылки, кнопки */
+  --highlight-hover:      #ffdb82;  /* акцент при наведении */
+  --button-ink:           #16110a;  /* тёмный текст на жёлтой кнопке */
+  --selection-bg:         #a86625;  /* выделение текста */
+  --selection-text:       #fffaf2;
+
+  /* 3. Вкладки */
+  --tab-active-bg:        #432c19;
+  --tab-active-border:    #8b5a2e;
+  --tab-hover-bg:         #5c3920;
+  --tab-active-text:      #fff0d3;
+
+  /* 4. Library — узлы и подписи */
+  --folder-node:          #f3f1ed;  /* папки */
+  --folder-node-border:   #ffffff;
+  --folder-label:         #f4f0ea;
+  --paper-node:           #f2c14f;  /* статьи */
+  --paper-node-border:    #ffe3a0;
+  --paper-label:          #f7d783;
+  --book-node:            #b98b4c;  /* книги */
+  --book-node-border:     #e5bd82;
+  --book-label:           #deb98b;
+  --code-root:            #ffa34d;  /* отдельное дерево Code */
+  --code-root-border:     #ffdda8;
+  --code-folder:          #eaa66c;
+  --code-folder-border:   #ffdab0;
+  --code-repo:            #e98627;
+  --code-repo-border:     #ffbf7a;
+  --code-label:           #ffc287;
+
+  /* 5. Knowledge Graph — узлы (ВАЖНО: два разных цвета) */
+  --knowledge-node:          #f2c14f; /* связанные точки — жёлтые */
+  --knowledge-node-border:   #ffe6b0;
+  --knowledge-isolated:      #938779; /* изолированные — серые */
+  --knowledge-isolated-border:#beb3a7;
+  --knowledge-label:         #f6ead8;
+  --knowledge-isolated-label:#b8aea1;
+
+  /* 6. Knowledge Graph — рёбра и галочки */
+  --relation-citation:     #f3c548; /* цитирования — золото */
+  --relation-author:       #f08a24; /* общие авторы — оранжевый */
+  --relation-similar:      #d14f38; /* текстовое сходство — красный */
+  --relation-isolated:     #938779; /* флажок изолированных */
+  --link-hover:            #fff7e6;
+
+  /* 7. Полупрозрачные эффекты и тени — тоже настраиваются здесь */
+  --filter-surface:        rgba(18,15,13,.94);
+  --footer-surface:        rgba(19,17,15,.90);
+  --drawer-shadow:         rgba(0,0,0,.45);
+  --menu-shadow:           rgba(0,0,0,.48);
+  --control-shadow:        rgba(0,0,0,.25);
+  --overlay-scrim:         rgba(0,0,0,.38);
+  --node-glow:             rgba(242,193,79,.42);
+  --code-glow:             rgba(245,146,47,.44);
+  --isolated-glow:         rgba(147,135,121,.45);
+  --selection-glow:        rgba(242,193,79,.12);
+}
+
+/* ================== 02. ОФОРМЛЕНИЕ И ГЕОМЕТРИЯ ================== */
 /* ── Basic layout ──────────────────────────────────────────── */
 * { box-sizing: border-box; }
 html, body { height: 100%; margin: 0; overflow: hidden; }
