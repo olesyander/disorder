@@ -1,7 +1,13 @@
-# Public Research Map
+# Карта публикаций
 
-This public GitHub Pages site displays a Library view and a Knowledge Graph view.
+Сайт показывает дерево библиотеки и граф цитирований, соавторства и текстового сходства. Щелчок по линии цитирования открывает сведения о её источнике. Карточки работ хранятся в `catalog.json`, связи — в `knowledge.json`. Страница загружает D3 из CDN.
 
-Files that must be committed here: `index.html`, `app.js`, `knowledge.js`, `style.css`, `catalog.json`, `knowledge.json`, `.github/workflows/deploy-pages.yml`.
+Для просмотра из этой папки запустите:
 
-The PRIVATE repository's Actions workflow regenerates `catalog.json`, `knowledge.json`, `changes.json` and the allowed `papers/` copies. Never place restricted documents or API keys here.
+```bash
+python -m http.server 8000
+```
+
+Откройте [localhost:8000](http://localhost:8000). Каталог и граф из комплекта готовы к просмотру. Для кнопок, ведущих в `papers/`, нужны PDF из действующего репозитория или новой сборки. Исходный ZIP этих файлов не содержал.
+
+`python scripts/validate_site.py --root .` проверяет согласованность каталога и графа. В полном репозитории добавьте `--check-files`, чтобы проверить локальные ссылки на PDF. GitHub Pages публикует сайт через включённый workflow. Сборка данных и порядок обновления описаны в README приватной части комплекта.

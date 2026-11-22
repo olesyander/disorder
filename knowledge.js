@@ -8,7 +8,7 @@
   const library = $('canvas');
   if (!canvas || !library || !window.d3) return;
   const svg = d3.select('#knowledge-svg');
-  // All node/edge colors come exclusively from CSS classes in theme.css.
+  // All node/edge colors come exclusively from CSS classes in style.css.
   // Do NOT set SVG fill/stroke attributes in JavaScript: the two colors
   // (connected gold / isolated grey) stay independent of CSS load order.
   const viewport = svg.append('g');
@@ -36,22 +36,19 @@
       if (edge.type === 'similar' && Number(edge.strength || 0) < SIMILARITY_FLOOR) continue;
       const a = String(edge.source), b = String(edge.target);
       const key = JSON.stringify(a < b ? [a,b] : [b,a]);
-      const old = byPair.get(key);
-      if (!old) {byPair.set(key, edge); continue;}
-      const rankNew = RELATION_PRIORITY[edge.type];
-      const rankOld = RELATION_PRIORITY[old.type];
-      const tie = rankNew === rankOld;
-      const strengthNew = Number(edge.strength || 0);
-      const strengthOld = Number(old.strength || 0);
-      // Deterministic tie-breaker also covers two opposite citations.
-      const directionNew = String(edge.source) + '|' + String(edge.target);
-      const directionOld = String(old.source) + '|' + String(old.target);
-      if (rankNew < rankOld || (tie &&
-          (strengthNew > strengthOld || (strengthNew === strengthOld && directionNew < directionOld)))) {
-        byPair.set(key, edge);
-      }
+      if (!byPair.has(key)) byPair.set(key, []);
+      byPair.get(key).push(edge);
     }
-    return [...byPair.values()];
+    return [...byPair.values()].map(group => {
+      group.sort((a,b) => RELATION_PRIORITY[a.type] - RELATION_PRIORITY[b.type]
+        || Number(b.strength || 0) - Number(a.strength || 0)
+        || String(a.source).localeCompare(String(b.source)));
+      const first = group[0];
+      return {...first,
+        reverse: first.type === 'citation' && group.find(e => e.type === 'citation' && e.source === first.target),
+        related: group.filter(e => e.type !== first.type)
+      };
+    });
   }
   const isolates=$('kg-isolated');
   if (CFG.knowledge) {
@@ -63,7 +60,8 @@
   if (CFG.knowledge) isolates.checked = CFG.knowledge.showIsolatedInitially !== false;
   const make=(tag,text)=>{const e=document.createElement(tag); e.textContent=text;return e;};
   function safeUrl(raw) {
-    try { const u=new URL(String(raw||''),location.href);return ['http:','https:'].includes(u.protocol)?u.href:null;}
+    if (!raw) return null;
+    try { const u=new URL(String(raw),location.href);return ['http:','https:'].includes(u.protocol)?u.href:null;}
     catch {return null;}
   }
   function anchor(target,label,url){
@@ -71,6 +69,7 @@
     const a=make('a',label);a.href=href;a.rel='noopener noreferrer';a.target='_blank';target.append(a);
   }
   function relationSummary(edge, src, dest){
+    if(edge.reverse) return (src?.title || 'Source publication') + ' and ' + (dest?.title || 'target publication') + ' cite each other.';
     if(edge.type==='citation') return 'Citation: ' + (src?.title || 'Source publication') + ' cites ' + (dest?.title || 'target publication') + '.';
     if(edge.type==='author') {
       const names = Array.isArray(edge.authors) && edge.authors.length ? edge.authors.join(', ') : '';
@@ -100,10 +99,34 @@
       const dest=graph.nodes.find(n=>n.id===edge.targetId);
       setRelationMode(true);
       $('type-label').textContent=(T.relationType || 'RELATION');
-      title.textContent=(src?.title||'Unknown')+' ↔ '+(dest?.title||'Unknown');
+      title.textContent=(src?.title||'Unknown')+(edge.type==='citation' && !edge.reverse?' → ':' ↔ ')+(dest?.title||'Unknown');
       authors.textContent=relationSummary(edge, src, dest);
       access.append(make('strong',edgeNames[edge.type]||'Connection'));
-      if(edge.type==='citation') access.append(make('div','Direction: source publication cites target publication.'));
+      if(edge.type==='citation'){
+        const describe=(relation, source)=>{
+          if(edge.reverse) access.append(make('div', 'Cited by '+source.title));
+          for(const proof of relation.evidence || []){
+            const detail=[proof.source, proof.ref && 'ref. '+proof.ref, proof.page && 'p. '+proof.page, proof.method].filter(Boolean).join(' · ');
+            const row=make('div','');
+            if(proof.url) anchor(row,detail,proof.url);
+            else row.textContent=detail;
+            access.append(row);
+          }
+          if(!relation.evidence?.length && relation.explanation) access.append(make('div',relation.explanation));
+        };
+        describe(edge,src);
+        if(edge.reverse) describe(edge.reverse,dest);
+      }
+      for(const relation of [edge,...(edge.related || [])]){
+        if(relation!==edge) access.append(make('strong',edgeNames[relation.type]));
+        if(relation.type==='author'){
+          for(const [name,methods] of Object.entries(relation.authorEvidence || {}))
+            access.append(make('div',name+' · '+methods.join(', ')));
+          if(!relation.authorEvidence && relation!==edge) access.append(make('div',relationSummary(relation,src,dest)));
+        }else if(relation!==edge){
+          access.append(make('div',relationSummary(relation,src,dest)));
+        }
+      }
       if(src)anchor(external,'Source publication',src.sourceUrl||src.openUrl);
       if(dest)anchor(external,'Target publication',dest.sourceUrl||dest.openUrl);
     } else {
@@ -143,8 +166,21 @@
   function load(){
     $('knowledge-status').textContent='Loading relationships…';
     fetch('./knowledge.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('knowledge.json unavailable');return r.json();})
-      .then(data=>{
+      .then(async data=>{
         if(!Array.isArray(data.nodes)||!Array.isArray(data.edges))throw Error('Invalid graph data');
+        if(data.version>=2){
+          const catalog=await window.researchMapCatalog;
+          const entries=new Map();
+          function visit(n){
+            if(n.kind==='article' || n.kind==='book') entries.set(n.id,n);
+            for(const child of n.children || []) visit(child);
+          }
+          visit(catalog.tree);
+          data.nodes=data.nodes.map(n=>{
+            if(!entries.has(n.id)) throw Error('Catalog and graph differ');
+            return entries.get(n.id);
+          });
+        }
         graph=data;loaded=true;draw();
       }).catch(()=>{$('knowledge-status').textContent='Knowledge graph unavailable. Publish knowledge.json from the private build.';});
   }

@@ -24,7 +24,7 @@ def document_ids(tree):
     return result
 
 
-def validate(root):
+def validate(root, check_files=False):
     root=Path(root)
     for name in MANDATORY:
         if not (root/name).is_file():
@@ -52,11 +52,40 @@ def validate(root):
     if set(node_ids)!=set(ids):
         raise ValueError(f'Graph/catalog mismatch: catalog {len(ids)} publication IDs, '
                          f'graph {len(node_ids)}. Rebuild knowledge.json.')
+    nodes = set(node_ids)
+    seen = set()
     for e in k['edges']:
-        if not isinstance(e,dict) or e.get('source') not in node_ids or e.get('target') not in node_ids:
+        if not isinstance(e,dict) or e.get('source') not in nodes or e.get('target') not in nodes:
             raise ValueError('Graph edge references missing publication')
-        if e.get('type') not in ('citation','author','similar'):
-            raise ValueError('Unknown or manual relationship type')
+        a,b,kind = e['source'],e['target'],e.get('type')
+        if kind not in ('citation','author','similar') or a==b:
+            raise ValueError('Invalid relationship')
+        key = (kind,a,b) if kind=='citation' else (kind,*sorted((a,b)))
+        if key in seen:
+            raise ValueError('Repeated relationship')
+        seen.add(key)
+        if k.get('version',1)>=2 and kind=='citation' and not (e.get('directed') and e.get('evidence')):
+            raise ValueError('Citation without direction or evidence')
+    owners = {}
+    def check(node):
+        if node.get('kind') in ('article','book'):
+            aliases = node.get('sourceIds', [node['id']])
+            if (not isinstance(aliases,list) or node['id'] not in aliases or
+                    any(not isinstance(key,str) or not key for key in aliases) or len(aliases)!=len(set(aliases))):
+                raise ValueError('Invalid list of source PDF IDs')
+            for key in aliases:
+                if key in owners:
+                    raise ValueError('A source PDF belongs to two publication cards')
+                owners[key] = node['id']
+        if node.get('access')=='restricted' and any(node.get(k) for k in ('sourceUrl','openUrl','downloadUrl')):
+            raise ValueError('Restricted publication exposes a link')
+        for key in ('openUrl','downloadUrl'):
+            url = node.get(key) or ''
+            if check_files and url.startswith('papers/') and not (root/url).is_file():
+                raise ValueError('Missing public PDF: '+url)
+        for child in node.get('children',[]):
+            check(child)
+    check(c['tree'])
     print(f'Validated site: {len(ids)} publications, {len(k["edges"])} links.')
     return len(ids)
 
@@ -64,8 +93,9 @@ def validate(root):
 if __name__=='__main__':
     p=argparse.ArgumentParser()
     p.add_argument('--root',default='.')
+    p.add_argument('--check-files',action='store_true',help='Require local PDFs in a full publication checkout')
     a=p.parse_args()
     try:
-        validate(a.root)
+        validate(a.root,a.check_files)
     except (ValueError, KeyError, TypeError, OSError, json.JSONDecodeError) as exc:
         p.exit(1, f'ERROR: {exc}\n')

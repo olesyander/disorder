@@ -1,4 +1,4 @@
-name: Deploy NeuralNetwork map
+name: Deploy research map
 on:
   push:
     branches: [main]
@@ -27,42 +27,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          # Keep this manifest together: missing JavaScript/JSON files made
-          # the graph silently disappear in the previous workflow.
+          python scripts/validate_site.py --root .
           required=(index.html style.css site-config.js app.js knowledge.js catalog.json knowledge.json)
-          for name in "${required[@]}"; do
-            if [[ ! -f "$name" ]]; then
-              echo "::error::Missing $name in public repository; aborting Pages deployment."
-              exit 1
-            fi
-          done
-          python - <<'PYTHON'
-          import json
-          from pathlib import Path
-          catalog = json.loads(Path('catalog.json').read_text(encoding='utf-8'))
-          graph = json.loads(Path('knowledge.json').read_text(encoding='utf-8'))
-          nodes, edges = graph.get('nodes'), graph.get('edges')
-          if not isinstance(nodes, list) or not isinstance(edges, list):
-              raise SystemExit('knowledge.json must contain nodes and edges arrays')
-          ids = {str(p['id']) for p in nodes}
-          invalid = [e for e in edges if str(e.get('source')) not in ids or str(e.get('target')) not in ids]
-          if invalid:
-              raise SystemExit(f'knowledge.json has {len(invalid)} dangling relationships')
-          def leaves(folder):
-              return sum(leaves(ch) if ch.get('kind') == 'folder' else (ch.get('kind') in ('article','book'))
-                         for ch in folder.get('children', []))
-          count = leaves(catalog['tree'])
-          if count and not nodes:
-              raise SystemExit('knowledge.json is a placeholder (0 nodes) while catalog has publications: rerun private publish workflow')
-          if count != len(nodes):
-              raise SystemExit(f'Graph/catalog mismatch: {len(nodes)} knowledge nodes vs {count} papers')
-          print(f'Validated: {len(nodes)} publications and {len(edges)} relationships')
-          PYTHON
           mkdir -p _site
           cp "${required[@]}" _site/
           touch _site/.nojekyll
           if [[ -d papers ]]; then cp -a papers _site/papers; fi
-          if [[ -f changes.json ]]; then cp changes.json _site/changes.json; fi
           # Only the date is published; technical commit messages are not shown.
           python - <<'PYTHON'
           import json, pathlib, subprocess

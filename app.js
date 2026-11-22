@@ -274,9 +274,9 @@
       if (valid) status.setAttribute('datetime', date.toISOString());
       else status.removeAttribute('datetime');
     });
-  fetch('./catalog.json', { cache: 'no-store' })
-    .then(response => { if (!response.ok) throw Error('Catalog unavailable'); return response.json(); })
-    .then(data => {
+  window.researchMapCatalog = fetch('./catalog.json', { cache: 'no-store' })
+    .then(response => { if (!response.ok) throw Error('Catalog unavailable'); return response.json(); });
+  window.researchMapCatalog.then(data => {
       // Two independent trees: invisible layout root, no connecting lines.
       // Legacy catalogs without codeTree still render as before.
       const trees = data.codeTree ? [data.tree, data.codeTree] : [data.tree];
