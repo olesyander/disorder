@@ -2,17 +2,6 @@
   "version": 1,
   "nodes": [
     {
-      "id": "57142b88a36bc47e0fd4",
-      "title": "11 Dynamical Mean-Field Theory of Disordered Electrons: Coherent Potential Approximation and Beyond",
-      "authors": "Václav Janiš",
-      "kind": "article",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/57142b88a36bc47e0fd4.pdf",
-      "downloadUrl": "papers/57142b88a36bc47e0fd4.pdf",
-      "abstract": ""
-    },
-    {
       "id": "4be7e80c62e19b417e09",
       "title": "An Introduction to Quantum Field Theory",
       "authors": "",
@@ -58,14 +47,14 @@
     },
     {
       "id": "373a35cd782276b8a6d6",
-      "title": "Beta-functions of non-linear σ-models for disordered and interacting electron systems",
-      "authors": "Luca Dell’Anna",
+      "title": "Beta-functions of non-linear $σ$-models for disordered and interacting electron systems",
+      "authors": "Luca Dell'Anna",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/373a35cd782276b8a6d6.pdf",
-      "downloadUrl": "papers/373a35cd782276b8a6d6.pdf",
-      "abstract": "We provide and study complete sets of one-loop renormalization group equations of several Finkel’stein non-linear σ models, the effective field theories describing the diffusive quantum fluc- tuations in correlated disordered systems. We consider different cases according to the presence of certain symmetries induced by the original random Hamiltonians, and we show that, for interacting systems, the Cartan’s classification of symmetry classes is not enough to uniquely determine their scaling behaviors."
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/1610.05691",
+      "openUrl": "https://arxiv.org/pdf/1610.05691",
+      "downloadUrl": null,
+      "abstract": "We provide and study complete sets of one-loop renormalization group equations of several Finkel'stein non-linear $σ$-models, the effective field theories describing the diffusive quantum fluctuations in correlated disordered systems. We consider different cases according to the presence of certain symmetries induced by the original random Hamiltonians, and we show that, for interacting systems, the Cartan's classification of symmetry classes is not enough to uniquely determine their scaling behaviors."
     },
     {
       "id": "ca7ea5041cdff518d6a8",
@@ -102,14 +91,14 @@
     },
     {
       "id": "94ab8e1bc3618a045d81",
-      "title": "Bose-Condensed Gases at Finite Temperatures",
-      "authors": "Allan Griffin, Tetsuro Nikuni and Eugene Zaremba",
+      "title": "Bose-Condensed Gases in a 1D Optical Lattice at Finite Temperatures",
+      "authors": "E. Arahata, T. Nikuni",
       "kind": "book",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/94ab8e1bc3618a045d81.pdf",
-      "downloadUrl": "papers/94ab8e1bc3618a045d81.pdf",
-      "abstract": ""
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/cond-mat/0607103",
+      "openUrl": "https://arxiv.org/pdf/cond-mat/0607103",
+      "downloadUrl": null,
+      "abstract": "We study equilibrium properties of Bose-Condensed gases in a one-dimensional (1D) optical lattice at finite temperatures. We assume that an additional harmonic confinement is highly anisotropic, in which the confinement in the radial directions is much tighter than in the axial direction. We derive a quasi-1D model of the Gross-Pitaeavkill equation and the Bogoliubov equations, and numerically solve these equations to obtain the condensate fraction as a function of the temperature."
     },
     {
       "id": "7d88d5d2e8a80174c850",
@@ -268,13 +257,24 @@
     {
       "id": "82d3accbbeaa252fdcef",
       "title": "Disordered Electron Liquid with Interactions",
-      "authors": "Alexander M. Finkel’Stein",
+      "authors": "Alexander M. Finkel'Stein",
       "kind": "article",
       "access": "open",
-      "sourceUrl": null,
+      "sourceUrl": "https://doi.org/10.1142/9789814299084_0018",
       "openUrl": "papers/82d3accbbeaa252fdcef.pdf",
       "downloadUrl": "papers/82d3accbbeaa252fdcef.pdf",
       "abstract": "The metal–insulator transition (MIT) observed in a two-dimensional dilute electron liquid raises the question about the applicability of the scaling the- ory of disordered electrons, the approach pioneered by Phil Anderson and his collaborators,8 for the description of this transition. In this context, we review here the scaling theory of disordered electrons with electron–electron interactions. We start with the disordered Fermi liquid, and show how to adjust the microscopic Fermi-liquid theory to the presence of disorder. Then we describe the non-linear sigma model (NLSM) with interactions. This model has a direct relation with the disordered Fermi liquid, but can be more generally applicable, since it is a minimal model for disordered in- teracting electrons. The discussion is mostly about the general structure of the theory emphasizing the connection of the scaling parameters entering the NLSM with conservation laws. Next, we show that the MIT, as de- scribed by the NLSM with interactions, is a quantum phase transition and identify the parameters needed for the description of the kinetics and ther- modynamics of the interacting liquid in the critical region of the transition. Finally, we discuss the MIT observed in Si-MOSFETs. We consider it as an example of the Anderson transition in the presence of the electron interac- tions. We demonstrate that the two-parameter RG equations, which treat disorder in the one-loop approximation but incorporate the full dependence on the interaction amplitudes, describe accurately the e"
+    },
+    {
+      "id": "464498d779ecf5b960e4",
+      "title": "Disordered electronic systems",
+      "authors": "Patrick A. Lee, T. V. Ramakrishnan",
+      "kind": "article",
+      "access": "open",
+      "sourceUrl": "https://doi.org/10.1017/cbo9780511978999.002",
+      "openUrl": "papers/464498d779ecf5b960e4.pdf",
+      "downloadUrl": "papers/464498d779ecf5b960e4.pdf",
+      "abstract": "This paper' reviews the progress made in the last several years in understanding the properties of disordered electronic systems. Even in the metallic limit, serious deviations from the Boltzmann transport theory and Fermi-liquid theory have been predicted and observed experimentally. There are two important ingredients in this new understanding: the concept of Anderson localization and the effects of interaction between elec- trons in a disordered medium. This paper emphasizes the theoretical aspect, even though some of the relevant experiments are also examined. The bulk of the paper focuses on the metallic side, but the authors also discuss the metal-to-insulator transition and comment on problems associated with the insulator."
     },
     {
       "id": "1c876118612c0982e3a4",
@@ -286,6 +286,17 @@
       "openUrl": "papers/1c876118612c0982e3a4.pdf",
       "downloadUrl": "papers/1c876118612c0982e3a4.pdf",
       "abstract": "We study numerically the three-dimensional φ4 spin glass, a prototypical disordered and dis- cretized Euclidean field theory that manifests inhomogeneities in space and time but considers a homogeneous squared mass and lambda terms. The φ4 lattice glass field theory is a conceptual gen- eralization of spin glasses to continuous degrees of freedom and we discuss the existence of a limit under which it formally reduces to the Edwards-Anderson model. By defining four variants of an order parameter which are suitable for continuous spin glasses, we verify numerically the emergence of an overlap in absence of the magnetization thus confirming the presence of a spin glass phase transition for a value of a critical squared mass. We conclude by discussing how the φ4 spin glass can be utilized to address assumptions of complete homogeneity in space or time and how, in parallel to statistical physics, provides a suitable framework to investigate the nonperturbative dynamics of machine learning algorithms from the perspective of disordered lattice and constructive field theory."
+    },
+    {
+      "id": "57142b88a36bc47e0fd4",
+      "title": "Dynamical Mean-Field Theory of Disordered Electrons: Coherent Potential Approximation and Beyond",
+      "authors": "Václav Janiš",
+      "kind": "article",
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/2109.04723",
+      "openUrl": "https://arxiv.org/pdf/2109.04723",
+      "downloadUrl": null,
+      "abstract": "I review the quantum theory of the electron moving in a random environment. First, the quantum mechanics of individual particles scattered on a random potential is discussed. The quantum-mechanical description is extended to many-body systems by using many-body Green functions. The many-body approach is used to derive the coherent-potential approximation and to show how it fits into the dynamical mean-field theory. The generating functional of the coherent-potential approximation is obtained in an analytic form from the limit to infinite dimensions of the general many-body description of non-interacting electrons in random lattices. The analytic generating functional of the mean-field description of random systems is extended to the Falicov-Kimball model with thermally equilibrated scattering lattice potential. The many-body Green functions are then used to calculate transport properties. The electrical conductivity of the coherent-potential approximation is derived from the two-particle Green function calculated in infinite spatial dimensions. Finally, a perturbation theory for the vertex corrections to the mean-field conductivity is introduced. In particular, it is shown how to make the expansion beyond the local approximations conserving."
     },
     {
       "id": "2a285b1519bb617dbd22",
@@ -332,26 +343,15 @@
       "abstract": "The propagation of a wave-packet in a nonlinear disordered medium exhibits interesting dynamics. Here, we present an analysis based on the nonlinear Schrödinger equation (Gross-Pitaevskii equation). This problem is directly connected to experiments on expanding Bose gases and to studies of transverse localization in nonlinear optical media. In a nonlinear medium the energy of the wave-packet is stored both in the kinetic and potential parts, and details of its propagation are to a large extent determined by the transfer from one form of energy to the other. A theory describing the evolution of the wave-packet has been formulated in [G. Schwiete and A. Finkelstein, Phys. Rev. Lett. 104, 103904 (2010)] in terms of a nonlinear kinetic equation. In this paper, we present details of the derivation of the kinetic equation and of its analysis. As an important new ingredient we study interparticle-collisions induced by the nonlinearity and derive the corresponding collision integral. We restrict ourselves to the weakly nonlinear limit, for which disorder scattering is the dominant scattering mechanism. We find that in the special case of a white noise impurity potential the mean squared radius in a two-dimensional system scales linearly with t. This result has previously been obtained in the collisionless limit, but it also holds in the presence of collisions. Finally, we mention different mechanisms through which the nonlinearity may influence localization of the expanding wave-packet."
     },
     {
-      "id": "464498d779ecf5b960e4",
-      "title": "Electronic systems Disordered",
-      "authors": "Patrick A. Lee, T. V. Ramakrishnan",
-      "kind": "article",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/464498d779ecf5b960e4.pdf",
-      "downloadUrl": "papers/464498d779ecf5b960e4.pdf",
-      "abstract": "This paper' reviews the progress made in the last several years in understanding the properties of disordered electronic systems. Even in the metallic limit, serious deviations from the Boltzmann transport theory and Fermi-liquid theory have been predicted and observed experimentally. There are two important ingredients in this new understanding: the concept of Anderson localization and the effects of interaction between elec- trons in a disordered medium. This paper emphasizes the theoretical aspect, even though some of the relevant experiments are also examined. The bulk of the paper focuses on the metallic side, but the authors also discuss the metal-to-insulator transition and comment on problems associated with the insulator."
-    },
-    {
       "id": "75126cd408be2ec7038d",
-      "title": "Electronic Thermal Conductivity of Disordered Metals",
-      "authors": "Peter Schwab",
+      "title": "Electronic thermal conductivity of disordered metals",
+      "authors": "Roberto Raimondi, Giorgio Savona, Peter Schwab, Thomas Lueck",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": "https://doi.org/10.1103/PhysRevB.70.155109",
-      "openUrl": "papers/75126cd408be2ec7038d.pdf",
-      "downloadUrl": "papers/75126cd408be2ec7038d.pdf",
-      "abstract": ""
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/cond-mat/0402245",
+      "openUrl": "https://arxiv.org/pdf/cond-mat/0402245",
+      "downloadUrl": null,
+      "abstract": "We calculate the thermal conductivity of interacting electrons in disordered metals. In our analysis we point out that the interaction affects thermal transport through two distinct mechanims, associated with quantum interference corrections and energy exchange of the quasi particles with the electromagnetic environment, respectively. The latter is seen to lead to a violation of the Wiedemann-Franz law. Our theory predicts a strong enhancement of the Lorenz ratio $κ/σT$ over the value which is predicted by the Wiedemann-Franz law, when the electrons encounter a large environmental impedance."
     },
     {
       "id": "7d5c46e20394845a2c86",
@@ -374,6 +374,17 @@
       "openUrl": "https://arxiv.org/pdf/cond-mat/0701346",
       "downloadUrl": null,
       "abstract": "Expansion of a Bose-Einstein condensate (BEC) is studied, in the presence of a random potential. The expansion is controlled by a single parameter, $(μτ_{eff} /\\hbar)$, where $μ$ is the chemical potential, prior to the release of the BEC from the trap, and $τ_{eff}$ is a transport relaxation time which characterizes the strength of the disorder. Repulsive interactions (nonlinearity) facilitate transport and can lead to diffusive spreading of the condensate which, in the absence of interactions, would have remained localized in the vicinity of its initial location."
+    },
+    {
+      "id": "6a04e495e857c0a1a28b",
+      "title": "Extended and localized phonons, free electrons, and diffusive states in disordered lattice models",
+      "authors": "Barak Galanti, Zeev Olami",
+      "kind": "book",
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/cond-mat/9903392",
+      "openUrl": "https://arxiv.org/pdf/cond-mat/9903392",
+      "downloadUrl": null,
+      "abstract": "In this paper we propose that phonons, free diffusive electrons, and diffusion in two-and three--dimensional disordered lattice problems belong to a different class of localization than bonded electrons. This is manifested by three effects that can be observed numerically. First, there are extended states even at two dimensions, whereas there are no extended states in the usual electronic models. Second, the correlation length does not diverge at the mobility edges in three dimensions, and finally, the participation ratio of the extended states, decays to zero at this edge. This indicates zero electronic conductivity, in the extended region near the mobility edge. We show that low energy modes for these models can either have diverging localization lengths or are extended."
     },
     {
       "id": "78f81527fec4f708aa07",
@@ -477,12 +488,12 @@
     {
       "id": "61f2fdc2dbb6af404e4a",
       "title": "Heat diffusion in the disordered electron gas",
-      "authors": "G. Schwiete, A. M. Finkel’Stein",
+      "authors": "G. Schwiete, A. M. Finkel'Stein",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/61f2fdc2dbb6af404e4a.pdf",
-      "downloadUrl": "papers/61f2fdc2dbb6af404e4a.pdf",
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/1509.02519",
+      "openUrl": "https://arxiv.org/pdf/1509.02519",
+      "downloadUrl": null,
       "abstract": "We study the thermal conductivity of the disordered two-dimensional electron gas. To this end we analyze the heat density-heat density correlation function concentrating on the scattering processes induced by the Coulomb interaction in the sub-temperature energy range. These scattering processes are at the origin of logarithmic corrections violating the Wiedemann-Franz law. Special care is devoted to the definition of the heat density in the presence of the long-range Coulomb interaction. To clarify the structure of the correlation function, we present details of a perturbative calculation. While the conservation of energy strongly constrains the general form of the heat density-heat density correlation function, the balance of various terms turns out to be rather different from that for the correlation functions of other conserved quantities such as the density-density or spin density-spin density correlation function."
     },
     {
@@ -498,14 +509,14 @@
     },
     {
       "id": "5bee4756ff236b23ed4a",
-      "title": "Hydrodynamic Cooperons in Electron Fluids: Schwinger–Keldysh Derivation and Quantum Corrections to Magnetoresistance",
+      "title": "Hydrodynamic Cooperons in Electron Fluids: Schwinger--Keldysh Derivation and Quantum Corrections to Magnetoresistance",
       "authors": "Alberto Cortijo",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/5bee4756ff236b23ed4a.pdf",
-      "downloadUrl": "papers/5bee4756ff236b23ed4a.pdf",
-      "abstract": "We develop a Schwinger–Keldysh effective theory for quantum-interference corrections in a two-dimensional electron system in the hydrodynamic regime. Starting from the clean hydrody- namic fixed point, we introduce a minimal random-friction disorder model that generates a finite momentum-relaxation time within the self-consistent Born approximation. The disorder-averaged theory then allows us to construct a hydrodynamic Cooperon and to compute the associated self- energy corrections to the collective modes. Conservation laws protect the density and momentum sectors, so that the leading quantum-coherence correction is forced into the spin-two stress sector. The associated stress self-energy renormalizes the shear viscosity and modifies both the Gurzhi response and its low-field magnetohydrodynamic signatures."
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/2605.26226",
+      "openUrl": "https://arxiv.org/pdf/2605.26226",
+      "downloadUrl": null,
+      "abstract": "We develop a Schwinger--Keldysh effective theory for quantum-interference corrections in a two-dimensional electron system in the hydrodynamic regime. Starting from the clean hydrodynamic fixed point, we introduce a minimal random-friction disorder model that generates a finite momentum-relaxation time within the self-consistent Born approximation. The disorder-averaged theory then allows us to construct a hydrodynamic Cooperon and to compute the associated self-energy corrections to the collective modes. Conservation laws protect the density and momentum sectors, so that the leading quantum-coherence correction is forced into the spin-two stress sector. The associated stress self-energy renormalizes the shear viscosity and modifies both the Gurzhi response and its low-field magnetohydrodynamic signatures."
     },
     {
       "id": "532b57072efb6b926949",
@@ -542,14 +553,14 @@
     },
     {
       "id": "20e6e0b3b24a66d38d61",
-      "title": "Interaction corrections to thermal transport coefficients in disordered metals: The quantum kinetic equation approach",
-      "authors": "Gianluigi Catelani",
+      "title": "Interaction corrections to the thermal transport coefficients in disordered metals: quantum kinetic equation approach",
+      "authors": "G. Catelani, I. L. Aleiner",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": "https://doi.org/10.1134/1.1884675",
-      "openUrl": "papers/20e6e0b3b24a66d38d61.pdf",
-      "downloadUrl": "papers/20e6e0b3b24a66d38d61.pdf",
-      "abstract": ""
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/cond-mat/0405333",
+      "openUrl": "https://arxiv.org/pdf/cond-mat/0405333",
+      "downloadUrl": null,
+      "abstract": "We consider the singular electron-electron interaction corrections to the transport coefficients in disordered metals to test the validity of the Wiedemann-Franz law. We develop a local, quantum kinetic equation approach in which the charge and energy conservation laws are explicitly obeyed. To obtain the local description, we introduce bosonic distribution functions for the neutral, low-energy collective modes (electron-hole pairs). The resulting system of kinetic equations enables us to distinguish between the different physical processes involved in the charge and energy transport: elastic electron scattering affects both, while the inelastic processes influence only the latter. Moreover, the neutral bosons, though incapable of transporting charge, contribute significantly to the energy transport. In our approach we calculate on equal footing the electrical and thermal conductivities and the specific heat in any dimension. We found that the Wiedemann-Franz law is always violated by the interaction corrections; the violation is larger for one- and two-dimensional systems in the diffusive regime $Tτ\\ll \\hbar$ and it is due to the energy transported by the neutral bosons. For two-dimensional systems in the quasi-ballistic regime $Tτ\\gg \\hbar$ the inelastic scattering of the electron on the bosons also contributes to the violation."
     },
     {
       "id": "a8f7165ccea4f9b9c668",
@@ -630,14 +641,14 @@
     },
     {
       "id": "09a544e3bd22412f011d",
-      "title": "Low-temperature thermoelectric transport in the disordered two-dimensional electron",
+      "title": "Low-temperature thermoelectric transport in the disordered two-dimensional electron gas",
       "authors": "Zahidul Islam Jitu, Georg Schwiete",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/09a544e3bd22412f011d.pdf",
-      "downloadUrl": "papers/09a544e3bd22412f011d.pdf",
-      "abstract": "We study interaction corrections to the thermoelectric transport coefficient α and the thermopower S in the two-dimensional disordered electron gas with long-range Coulomb interactions. To this end, we analyze the heat density-density correlation function using the recently derived generalized non- linear sigma model with particle-hole asymmetry. We present a detailed account of the perturbative calculation of the correlation function, the analysis of its structure, and the derivation of the final results for the transport coefficients. We show that both real and virtual processes give rise to logarithmic interaction corrections to α and S with δα/α < 0 and δS/S < 0 in the diffusive transport regime T ≪1/τ, where T is the temperature and 1/τ is the disorder scattering rate. A short account of our findings is presented in an accompanying letter."
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/2411.01072",
+      "openUrl": "https://arxiv.org/pdf/2411.01072",
+      "downloadUrl": null,
+      "abstract": "We study interaction corrections to the thermoelectric transport coefficient $α$ and the thermopower $S$ in the two-dimensional disordered electron gas with long-range Coulomb interactions. To this end, we analyze the heat density-density correlation function using the recently derived generalized non-linear sigma model with particle-hole asymmetry. We present a detailed account of the perturbative calculation of the correlation function, the analysis of its structure, and the derivation of the final results for the transport coefficients. We show that both real and virtual processes give rise to logarithmic interaction corrections to $α$ and $S$ with $δα/α<0$ and $δS/S<0$ in the diffusive transport regime $T\\ll 1/τ$, where $T$ is the temperature and $1/τ$ is the disorder scattering rate. A short account of our findings is presented in an accompanying letter."
     },
     {
       "id": "d9f554f17d9329e67ab9",
@@ -682,17 +693,6 @@
       "openUrl": "papers/a562c4570929e232bb92.pdf",
       "downloadUrl": "papers/a562c4570929e232bb92.pdf",
       "abstract": "Квантовая статистическая физика изучает свойства систем, состоящих из большого числа частиц, при низких температурах. В последние годы в этой области физики достигнут большой прогресс, что связано главным образом с применением математических методов квантовой теории поля. Основа этих методов — диаграммная техника — обладает высокой степенью автоматизма и наглядности. С ее помощью удалось решить целый ряд интересных физических вопросов, которые раньше были недоступны для рассмотрения."
-    },
-    {
-      "id": "6a04e495e857c0a1a28b",
-      "title": "Models for disordered phonons",
-      "authors": "Sebastian E. Schmittner",
-      "kind": "book",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/6a04e495e857c0a1a28b.pdf",
-      "downloadUrl": "papers/6a04e495e857c0a1a28b.pdf",
-      "abstract": ""
     },
     {
       "id": "800b937e6c7143bf871b",
@@ -906,13 +906,13 @@
     {
       "id": "c0ceb6d172fa51731d56",
       "title": "Phase diagram of the disordered Bose-Hubbard model",
-      "authors": "",
+      "authors": "V. Gurarie, L. Pollet, N. V. Prokof'Ev, B. V. Svistunov, M. Troyer",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/c0ceb6d172fa51731d56.pdf",
-      "downloadUrl": "papers/c0ceb6d172fa51731d56.pdf",
-      "abstract": "We establish the phase diagram of the disordered three-dimensional Bose-Hubbard model at unity filling which has been controversial for many years. The theorem of inclusions, proven in Ref. [1], states that the Bose glass phase always intervenes between the Mott insulating and superfluid phases. Here, we note that assumptions on which the theorem is based exclude phase transitions between gapped (Mott insulator) and gapless phases (Bose glass). The apparent paradox is resolved through a unique mechanism: such transitions have to be of the Griffiths type when the vanishing of the gap at the critical point is due to a zero concentration of rare regions where extreme fluctuations of disorder mimic a regular gapless system. An exactly solvable random transverse field Ising model in one dimension is used to illustrate the point. A highly non-trivial overall shape of the phase diagram is revealed with the worm algorithm. The phase diagram features a long superfluid finger at strong disorder and on-site interaction. Moreover, bosonic superfluidity is extremely robust against disorder in a broad range of interaction parameters; it persists in random potentials nearly 50 (!) times larger than the particle half-bandwidth. Finally, we comment on the feasibility of obtaining this phase diagram in cold-atom experiments, which work with trapped systems at finite temperature."
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/0909.4593",
+      "openUrl": "https://arxiv.org/pdf/0909.4593",
+      "downloadUrl": null,
+      "abstract": "We establish the phase diagram of the disordered three-dimensional Bose-Hubbard model at unity filling, which has been controversial for many years. The theorem of inclusions, proven in Ref. [1], states that the Bose glass phase always intervenes between the Mott insulating and superfluid phases. Here, we note that assumptions on which the theorem is based exclude phase transitions between gapped (Mott insulator) and gapless phases (Bose glass). The apparent paradox is resolved through a unique mechanism: such transitions have to be of the Griffiths type when the vanishing of the gap at the critical point is due to a zero concentration of rare regions where extreme fluctuations of disorder mimic a {\\it regular} gapless system. An exactly solvable random transverse field Ising model in one dimension is used to illustrate the point. A highly non-trivial overall shape of the phase diagram is revealed with the worm algorithm. The phase diagram features a long superfluid finger at strong disorder and on-site interaction. Moreover, bosonic superfluidity is extremely robust against disorder in a broad range of interaction parameters; it persists in random potentials nearly 50 (!) times larger than the particle half-bandwidth. Finally, we comment on the feasibility of obtaining this phase diagram in cold-atom experiments, which work with trapped systems at finite temperature."
     },
     {
       "id": "df58dd0f10b8b1ae9590",
@@ -938,11 +938,11 @@
     },
     {
       "id": "bbd0df5b4f37b61dee38",
-      "title": "Quantum Field-Theoretical Methods in Transport Theory of Metals",
-      "authors": "",
+      "title": "Quantum field-theoretical methods in transport theory of metals",
+      "authors": "J. Rammer, H. Smith",
       "kind": "article",
       "access": "open",
-      "sourceUrl": null,
+      "sourceUrl": "https://doi.org/10.1103/revmodphys.58.323",
       "openUrl": "papers/bbd0df5b4f37b61dee38.pdf",
       "downloadUrl": "papers/bbd0df5b4f37b61dee38.pdf",
       "abstract": ""
@@ -952,11 +952,11 @@
       "title": "Quantum Interference Corrections in Electron Hydrodynamics",
       "authors": "Alberto Cortijo",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/b4f9dcd17017a4562e97.pdf",
-      "downloadUrl": "papers/b4f9dcd17017a4562e97.pdf",
-      "abstract": "We show that quantum-interference corrections in an electron fluid are tightly constrained by hydrodynamic Ward identities: charge and momentum conservation protect the m = 0, ±1 sectors, so the leading correction first appears in the spin-two m = ±2 stress sector. The resulting hydrody- namic Cooperon has a robust infrared structure that renormalizes stress relaxation, and hence the viscosity. In channel flow this lowers the viscous resistivity, producing a hydrodynamic interference signature with the opposite sign to ordinary weak localization."
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/2605.26223",
+      "openUrl": "https://arxiv.org/pdf/2605.26223",
+      "downloadUrl": null,
+      "abstract": "We show that quantum-interference corrections in an electron fluid are tightly constrained by hydrodynamic Ward identities: charge and momentum conservation protect the $m=0,\\pm1$ sectors, so the leading correction first appears in the spin-two $m=\\pm2$ stress sector. The resulting hydrodynamic Cooperon has a robust infrared structure that renormalizes stress relaxation, and hence the viscosity. In channel flow this lowers the viscous resistivity, producing a hydrodynamic interference signature with the opposite sign to ordinary weak localization."
     },
     {
       "id": "216afd1a0fb0c60ee81b",
@@ -1192,13 +1192,13 @@
     {
       "id": "8a7cd033d5890585993c",
       "title": "Simulating dirty bosons on a quantum computer",
-      "authors": "Lindsay Bassman Oftelie,Roel Van Beeumen,Daan Camps,Wibe A de Jong,Maxime Dupont",
+      "authors": "Lindsay Bassman Oftelie, Roel Van Beeumen, Daan Camps, Wibe A. de Jong, Maxime Dupont",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": "https://doi.org/10.1088/1367-2630/ad1a2d",
-      "openUrl": "papers/8a7cd033d5890585993c.pdf",
-      "downloadUrl": "papers/8a7cd033d5890585993c.pdf",
-      "abstract": ""
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/2210.08386",
+      "openUrl": "https://arxiv.org/pdf/2210.08386",
+      "downloadUrl": null,
+      "abstract": "The physics of dirty bosons highlights the intriguing interplay of disorder and interactions in quantum systems, playing a central role in describing, for instance, ultracold gases in a random potential, doped quantum magnets, and amorphous superconductors. Here, we demonstrate how quantum computers can be used to elucidate the physics of dirty bosons in one and two dimensions. Specifically, we explore the disorder-induced delocalized-to-localized transition using adiabatic state preparation. In one dimension, the quantum circuits can be compressed to small enough depths for execution on currently available quantum computers. In two dimensions, the compression scheme is no longer applicable, thereby requiring the use of large-scale classical state vector simulations to emulate quantum computer performance. In addition, simulating interacting bosons via emulation of a noisy quantum computer allowed us to study the effect of quantum hardware noise on the physical properties of the simulated system. Our results suggest that scaling laws control how noise modifies observables versus its strength, the circuit depth, and the number of qubits. Moreover, we observe that noise impacts the delocalized and localized phases differently. A better understanding of how noise alters the genuine properties of the simulated system is essential for leveraging noisy intermediate-scale quantum devices for simulation of dirty bosons, and indeed for condensed matter systems in general."
     },
     {
       "id": "e23d0a69c25645e46d80",
@@ -1260,11 +1260,11 @@
       "title": "Superfluidity and sound propagation in disordered Bose gases",
       "authors": "Kevin T. Geier, Jeff Maki, Alberto Biella, Franco Dalfovo, Stefano Giorgini, Sandro Stringari",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/d25a2441596737923d53.pdf",
-      "downloadUrl": "papers/d25a2441596737923d53.pdf",
-      "abstract": "Superfluidity describes the ability of quantum matter to flow without friction. Due to its funda- mental role in many transport phenomena, it is crucial to understand the robustness of superfluid properties to external perturbations. Here, we theoretically study the effects of speckle disorder on the propagation of sound waves in a two-dimensional Bose–Einstein condensate at zero temperature. We numerically solve the Gross–Pitaevskii equation in the presence of disorder and employ a super- fluid hydrodynamic approach to elucidate the role of the compressibility and superfluid fraction on the propagation of sound. A key result is that disorder reduces the superfluid fraction and hence the speed of sound; it also introduces damping and mode coupling. In the limit of weak disorder, the predictions for the speed of sound and its damping rate are well reproduced by a quadratic perturbation theory. The hydrodynamic description is valid over a wide range of parameters, while discrepancies become evident if the disorder becomes too strong, the effect being more significant for disorder applied in only one spatial direction. Our predictions are well within the reach of state-of-the-art cold-atom experiments and carry over to more general disorder potentials."
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/2407.17558",
+      "openUrl": "https://arxiv.org/pdf/2407.17558",
+      "downloadUrl": null,
+      "abstract": "Superfluidity describes the ability of quantum matter to flow without friction. Due to its fundamental role in many transport phenomena, it is crucial to understand the robustness of superfluid properties to external perturbations. Here, we theoretically study the effects of speckle disorder on the propagation of sound waves in a two-dimensional Bose-Einstein condensate at zero temperature. We numerically solve the Gross-Pitaevskii equation in the presence of disorder and employ a superfluid hydrodynamic approach to elucidate the role of the compressibility and superfluid fraction on the propagation of sound. A key result is that disorder reduces the superfluid fraction and hence the speed of sound; it also introduces damping and mode coupling. In the limit of weak disorder, the predictions for the speed of sound and its damping rate are well reproduced by a quadratic perturbation theory. The hydrodynamic description is valid over a wide range of parameters, while discrepancies become evident if the disorder becomes too strong, the effect being more significant for disorder applied in only one spatial direction. Our predictions are well within the reach of state-of-the-art cold-atom experiments and carry over to more general disorder potentials."
     },
     {
       "id": "c381230ab0787ba63cb5",
@@ -1379,13 +1379,13 @@
     {
       "id": "a3c82d77f4273b859a80",
       "title": "Two-dimensional spectroscopy of bosonic collective excitations in disordered many-body systems",
-      "authors": "Alex Gómez Salvador; Ivan Morera; Marios H. Michael; Pavel E. Dolgirev; Danica Pavicevic; Albert Liu; Andrea Cavalleri; Eugene Demler",
+      "authors": "Alex Gómez Salvador, Ivan Morera, Marios H. Michael, Pavel E. Dolgirev, Danica Pavicevic, Albert Liu, Andrea Cavalleri, Eugene Demler",
       "kind": "article",
-      "access": "open",
-      "sourceUrl": null,
-      "openUrl": "papers/a3c82d77f4273b859a80.pdf",
-      "downloadUrl": "papers/a3c82d77f4273b859a80.pdf",
-      "abstract": "We present a novel theoretical approach for computing and analyzing two-dimensional spec- troscopy of bosonic collective excitations in disordered many-body systems. Specifically, we employ the Keldysh formalism to derive, within a non-pertubative treatment of disorder effects, the third- order nonlinear response and obtain two-dimensional spectroscopy maps. In the weak nonlinear regime of our formalism, we demonstrate the ability of the echo peak to distinguish between elas- tic and inelastic scattering processes, in perfect agreement with the intuition developed in isolated two-level systems. Furthermore, we discuss unique many-body effects on the echo peak signature arising from interaction induced quantum fluctuations. In particular, we show that these quantum fluctuations induce a finite nonrephasable broadening and examine how the echo peak is influenced by the attractive or repulsive nature of the collective excitations."
+      "access": "external",
+      "sourceUrl": "https://arxiv.org/abs/2501.16856",
+      "openUrl": "https://arxiv.org/pdf/2501.16856",
+      "downloadUrl": null,
+      "abstract": "We present a novel theoretical approach for computing and analyzing two-dimensional spectroscopy of bosonic collective excitations in disordered many-body systems. Specifically, we employ the Keldysh formalism to derive, within a non-pertubative treatment of disorder effects, the third-order nonlinear response and obtain two-dimensional spectroscopy maps. In the weak nonlinear regime of our formalism, we demonstrate the ability of the echo peak to distinguish between elastic and inelastic scattering processes, in perfect agreement with the intuition developed in isolated two-level systems. Furthermore, we discuss unique many-body effects on the echo peak signature arising from interaction induced quantum fluctuations. In particular, we show that these quantum fluctuations induce a finite nonrephasable broadening and examine how the echo peak is influenced by the attractive or repulsive nature of the collective excitations."
     },
     {
       "id": "0425e01f0af9d0994909",
@@ -1464,6 +1464,54 @@
       "explanation": "The source publication cites the target (OpenAlex)."
     },
     {
+      "source": "09a544e3bd22412f011d",
+      "target": "20e6e0b3b24a66d38d61",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "09a544e3bd22412f011d",
+      "target": "61f2fdc2dbb6af404e4a",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "09a544e3bd22412f011d",
+      "target": "75126cd408be2ec7038d",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "09a544e3bd22412f011d",
+      "target": "b7f26028700c3ef31817",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "0fb036167205e8ea909f",
+      "target": "61f2fdc2dbb6af404e4a",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "20e6e0b3b24a66d38d61",
+      "target": "75126cd408be2ec7038d",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
       "source": "5b6e4d3160e03ffc14fc",
       "target": "ca7ea5041cdff518d6a8",
       "type": "citation",
@@ -1488,8 +1536,40 @@
       "explanation": "The source publication cites the target (OpenAlex)."
     },
     {
+      "source": "61f2fdc2dbb6af404e4a",
+      "target": "20e6e0b3b24a66d38d61",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "61f2fdc2dbb6af404e4a",
+      "target": "75126cd408be2ec7038d",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "9efdc8195ac501cb1afc",
+      "target": "464498d779ecf5b960e4",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
       "source": "a584b26858c1dcb3fe3a",
       "target": "3c5cdb6af30e2b21eec5",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "b2c5f6c36b0205ebc5a2",
+      "target": "532b57072efb6b926949",
       "type": "citation",
       "strength": 1.0,
       "directed": true,
@@ -1506,6 +1586,14 @@
     {
       "source": "b7f26028700c3ef31817",
       "target": "db021e7a93b4dcdccdbb",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "b7f26028700c3ef31817",
+      "target": "f531c4cb2a9604e7dc5f",
       "type": "citation",
       "strength": 1.0,
       "directed": true,
@@ -1528,7 +1616,39 @@
       "explanation": "The source publication cites the target (OpenAlex)."
     },
     {
+      "source": "d112abc40f17f3d8abd4",
+      "target": "ca7ea5041cdff518d6a8",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "d112abc40f17f3d8abd4",
+      "target": "f531c4cb2a9604e7dc5f",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
       "source": "db021e7a93b4dcdccdbb",
+      "target": "17ac10700d8c6034998f",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "db021e7a93b4dcdccdbb",
+      "target": "464498d779ecf5b960e4",
+      "type": "citation",
+      "strength": 1.0,
+      "directed": true,
+      "explanation": "The source publication cites the target (OpenAlex)."
+    },
+    {
+      "source": "f531c4cb2a9604e7dc5f",
       "target": "17ac10700d8c6034998f",
       "type": "citation",
       "strength": 1.0,
@@ -1591,9 +1711,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Alexander M. Finkel’Stein"
+        "Alexander M. Finkel'Stein"
       ],
-      "explanation": "Shared author: Alexander M. Finkel’Stein"
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
     },
     {
       "source": "0fb036167205e8ea909f",
@@ -1601,9 +1721,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Alexander M. Finkel’Stein"
+        "Alexander M. Finkel'Stein"
       ],
-      "explanation": "Shared author: Alexander M. Finkel’Stein"
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
     },
     {
       "source": "0fb036167205e8ea909f",
@@ -1611,9 +1731,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Alexander M. Finkel’Stein"
+        "Alexander M. Finkel'Stein"
       ],
-      "explanation": "Shared author: Alexander M. Finkel’Stein"
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
     },
     {
       "source": "0fb036167205e8ea909f",
@@ -1621,9 +1741,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Alexander M. Finkel’Stein"
+        "Alexander M. Finkel'Stein"
       ],
-      "explanation": "Shared author: Alexander M. Finkel’Stein"
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
     },
     {
       "source": "0fb036167205e8ea909f",
@@ -1641,9 +1761,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Alexander M. Finkel’Stein"
+        "Alexander M. Finkel'Stein"
       ],
-      "explanation": "Shared author: Alexander M. Finkel’Stein"
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
     },
     {
       "source": "17c4f3e8965ea7e23d1e",
@@ -1651,10 +1771,10 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Alexander M. Finkel’Stein",
+        "Alexander M. Finkel'Stein",
         "Georg Schwiete"
       ],
-      "explanation": "Shared author: Alexander M. Finkel’Stein, Georg Schwiete"
+      "explanation": "Shared author: Alexander M. Finkel'Stein, Georg Schwiete"
     },
     {
       "source": "17c4f3e8965ea7e23d1e",
@@ -1662,10 +1782,10 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Alexander M. Finkel’Stein",
+        "Alexander M. Finkel'Stein",
         "Georg Schwiete"
       ],
-      "explanation": "Shared author: Alexander M. Finkel’Stein, Georg Schwiete"
+      "explanation": "Shared author: Alexander M. Finkel'Stein, Georg Schwiete"
     },
     {
       "source": "17c4f3e8965ea7e23d1e",
@@ -1673,9 +1793,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Alexander M. Finkel’Stein"
+        "Alexander M. Finkel'Stein"
       ],
-      "explanation": "Shared author: Alexander M. Finkel’Stein"
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
     },
     {
       "source": "17c4f3e8965ea7e23d1e",
@@ -1693,10 +1813,10 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Alexander M. Finkel’Stein",
+        "Alexander M. Finkel'Stein",
         "Georg Schwiete"
       ],
-      "explanation": "Shared author: Alexander M. Finkel’Stein, Georg Schwiete"
+      "explanation": "Shared author: Alexander M. Finkel'Stein, Georg Schwiete"
     },
     {
       "source": "249969930d037073e6f7",
@@ -1786,10 +1906,10 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Alexander M. Finkel’Stein",
+        "Alexander M. Finkel'Stein",
         "Georg Schwiete"
       ],
-      "explanation": "Shared author: Alexander M. Finkel’Stein, Georg Schwiete"
+      "explanation": "Shared author: Alexander M. Finkel'Stein, Georg Schwiete"
     },
     {
       "source": "4cb975cd5b3e0b624695",
@@ -1797,9 +1917,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Alexander M. Finkel’Stein"
+        "Alexander M. Finkel'Stein"
       ],
-      "explanation": "Shared author: Alexander M. Finkel’Stein"
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
     },
     {
       "source": "4cb975cd5b3e0b624695",
@@ -1817,10 +1937,10 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Alexander M. Finkel’Stein",
+        "Alexander M. Finkel'Stein",
         "Georg Schwiete"
       ],
-      "explanation": "Shared author: Alexander M. Finkel’Stein, Georg Schwiete"
+      "explanation": "Shared author: Alexander M. Finkel'Stein, Georg Schwiete"
     },
     {
       "source": "532b57072efb6b926949",
@@ -1907,16 +2027,6 @@
     },
     {
       "source": "6061fda0e8bf37102849",
-      "target": "6a04e495e857c0a1a28b",
-      "type": "author",
-      "strength": 0.8,
-      "authors": [
-        "Sebastian E. Schmittner"
-      ],
-      "explanation": "Shared author: Sebastian E. Schmittner"
-    },
-    {
-      "source": "6061fda0e8bf37102849",
       "target": "78f81527fec4f708aa07",
       "type": "author",
       "strength": 0.8,
@@ -1931,9 +2041,9 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Alexander M. Finkel’Stein"
+        "Alexander M. Finkel'Stein"
       ],
-      "explanation": "Shared author: Alexander M. Finkel’Stein"
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
     },
     {
       "source": "61f2fdc2dbb6af404e4a",
@@ -1951,20 +2061,20 @@
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Alexander M. Finkel’Stein",
+        "Alexander M. Finkel'Stein",
         "Georg Schwiete"
       ],
-      "explanation": "Shared author: Alexander M. Finkel’Stein, Georg Schwiete"
+      "explanation": "Shared author: Alexander M. Finkel'Stein, Georg Schwiete"
     },
     {
-      "source": "6a04e495e857c0a1a28b",
-      "target": "78f81527fec4f708aa07",
+      "source": "75ea5f938dd0f6a73d74",
+      "target": "bbd0df5b4f37b61dee38",
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Sebastian E. Schmittner"
+        "Jørgen Rammer"
       ],
-      "explanation": "Shared author: Sebastian E. Schmittner"
+      "explanation": "Shared author: Jørgen Rammer"
     },
     {
       "source": "7d88d5d2e8a80174c850",
@@ -1998,13 +2108,23 @@
     },
     {
       "source": "82d3accbbeaa252fdcef",
+      "target": "b7f26028700c3ef31817",
+      "type": "author",
+      "strength": 0.8,
+      "authors": [
+        "Alexander M. Finkel’stein"
+      ],
+      "explanation": "Shared author: Alexander M. Finkel’stein"
+    },
+    {
+      "source": "82d3accbbeaa252fdcef",
       "target": "dc505a49516927d0b8e9",
       "type": "author",
       "strength": 0.8,
       "authors": [
-        "Alexander M. Finkel’Stein"
+        "Alexander M. Finkel'Stein"
       ],
-      "explanation": "Shared author: Alexander M. Finkel’Stein"
+      "explanation": "Shared author: Alexander M. Finkel'Stein"
     },
     {
       "source": "97928184e9e2320fc535",
@@ -2131,16 +2251,6 @@
     },
     {
       "source": "0425e01f0af9d0994909",
-      "target": "1c876118612c0982e3a4",
-      "type": "similar",
-      "strength": 0.44,
-      "terms": [
-        "quantum field"
-      ],
-      "explanation": "Common keywords: quantum field"
-    },
-    {
-      "source": "0425e01f0af9d0994909",
       "target": "41321a40e77231f9622e",
       "type": "similar",
       "strength": 0.44,
@@ -2163,7 +2273,7 @@
       "source": "0425e01f0af9d0994909",
       "target": "bbd0df5b4f37b61dee38",
       "type": "similar",
-      "strength": 0.8852,
+      "strength": 0.8861,
       "terms": [
         "quantum field theoretical",
         "quantum field"
@@ -2179,16 +2289,6 @@
         "low temperature"
       ],
       "explanation": "Common keywords: low temperature"
-    },
-    {
-      "source": "055c052c330ab8474e4f",
-      "target": "464498d779ecf5b960e4",
-      "type": "similar",
-      "strength": 0.44,
-      "terms": [
-        "disorder system"
-      ],
-      "explanation": "Common keywords: disorder system"
     },
     {
       "source": "055c052c330ab8474e4f",
@@ -2214,7 +2314,7 @@
       "source": "055c052c330ab8474e4f",
       "target": "a8f7165ccea4f9b9c668",
       "type": "similar",
-      "strength": 0.7853,
+      "strength": 0.7964,
       "terms": [
         "disorder system"
       ],
@@ -2278,27 +2378,27 @@
       "source": "09a544e3bd22412f011d",
       "target": "3b76321646d1a716ec2b",
       "type": "similar",
-      "strength": 0.7279,
+      "strength": 0.8302,
       "terms": [
-        "dimensional electron",
+        "dimensional electron gas",
         "two dimensional electron",
         "two dimensional",
-        "electron gas"
+        "sigma model"
       ],
-      "explanation": "Common keywords: dimensional electron, two dimensional electron, two dimensional, electron gas"
+      "explanation": "Common keywords: dimensional electron gas, two dimensional electron, two dimensional, sigma model"
     },
     {
       "source": "09a544e3bd22412f011d",
       "target": "61f2fdc2dbb6af404e4a",
       "type": "similar",
-      "strength": 0.5036,
+      "strength": 0.7062,
       "terms": [
+        "electron gas",
         "disorder electron gas",
         "disorder two",
-        "disorder two dimensional",
-        "dimensional electron"
+        "disorder two dimensional"
       ],
-      "explanation": "Common keywords: disorder electron gas, disorder two, disorder two dimensional, dimensional electron"
+      "explanation": "Common keywords: electron gas, disorder electron gas, disorder two, disorder two dimensional"
     },
     {
       "source": "09a544e3bd22412f011d",
@@ -2317,11 +2417,11 @@
       "strength": 0.54,
       "terms": [
         "two dimensional",
-        "dimensional disorder",
         "two dimensional disorder",
-        "low temperature"
+        "low temperature",
+        "sigma model"
       ],
-      "explanation": "Common keywords: two dimensional, dimensional disorder, two dimensional disorder, low temperature"
+      "explanation": "Common keywords: two dimensional, two dimensional disorder, low temperature, sigma model"
     },
     {
       "source": "0de8c5c8f07096f9eb4f",
@@ -2367,7 +2467,7 @@
       "source": "14594afe4b687e2133e1",
       "target": "f4a7357f092445d4e8f2",
       "type": "similar",
-      "strength": 0.6976,
+      "strength": 0.6967,
       "terms": [
         "random matrice"
       ],
@@ -2398,7 +2498,7 @@
       "source": "17ac10700d8c6034998f",
       "target": "5b6e4d3160e03ffc14fc",
       "type": "similar",
-      "strength": 0.7997,
+      "strength": 0.799,
       "terms": [
         "bose einstein condensate",
         "einstein condensate",
@@ -2420,7 +2520,7 @@
       "source": "17ac10700d8c6034998f",
       "target": "ca7ea5041cdff518d6a8",
       "type": "similar",
-      "strength": 0.7331,
+      "strength": 0.7334,
       "terms": [
         "bose einstein condensate",
         "einstein condensate"
@@ -2592,7 +2692,7 @@
       "source": "1c876118612c0982e3a4",
       "target": "4be7e80c62e19b417e09",
       "type": "similar",
-      "strength": 0.7705,
+      "strength": 0.772,
       "terms": [
         "quantum field theory",
         "quantum field"
@@ -2612,6 +2712,17 @@
     },
     {
       "source": "1c876118612c0982e3a4",
+      "target": "6a04e495e857c0a1a28b",
+      "type": "similar",
+      "strength": 0.54,
+      "terms": [
+        "disorder lattice",
+        "three dimensional"
+      ],
+      "explanation": "Common keywords: disorder lattice, three dimensional"
+    },
+    {
+      "source": "1c876118612c0982e3a4",
       "target": "a562c4570929e232bb92",
       "type": "similar",
       "strength": 0.68,
@@ -2626,7 +2737,7 @@
       "source": "1c876118612c0982e3a4",
       "target": "df58dd0f10b8b1ae9590",
       "type": "similar",
-      "strength": 0.7853,
+      "strength": 0.7869,
       "terms": [
         "quantum field theory",
         "quantum field"
@@ -2690,7 +2801,7 @@
       "source": "20e6e0b3b24a66d38d61",
       "target": "216afd1a0fb0c60ee81b",
       "type": "similar",
-      "strength": 0.4841,
+      "strength": 0.44,
       "terms": [
         "quantum kinetic"
       ],
@@ -2710,11 +2821,14 @@
       "source": "20e6e0b3b24a66d38d61",
       "target": "75126cd408be2ec7038d",
       "type": "similar",
-      "strength": 0.44,
+      "strength": 0.5523,
       "terms": [
-        "disorder metal"
+        "disorder metal",
+        "thermal transport",
+        "thermal conductivity",
+        "franz law"
       ],
-      "explanation": "Common keywords: disorder metal"
+      "explanation": "Common keywords: disorder metal, thermal transport, thermal conductivity, franz law"
     },
     {
       "source": "20e6e0b3b24a66d38d61",
@@ -2844,13 +2958,14 @@
       "source": "288de55d1993885892f7",
       "target": "57142b88a36bc47e0fd4",
       "type": "similar",
-      "strength": 0.7515,
+      "strength": 0.7057,
       "terms": [
         "potential approximation",
         "coherent potential",
-        "coherent potential approximation"
+        "coherent potential approximation",
+        "spatial dimension"
       ],
-      "explanation": "Common keywords: potential approximation, coherent potential, coherent potential approximation"
+      "explanation": "Common keywords: potential approximation, coherent potential, coherent potential approximation, spatial dimension"
     },
     {
       "source": "288de55d1993885892f7",
@@ -2909,7 +3024,7 @@
       "source": "32cb576779b56c52d99c",
       "target": "41321a40e77231f9622e",
       "type": "similar",
-      "strength": 0.7669,
+      "strength": 0.7655,
       "terms": [
         "quantum field",
         "field theory",
@@ -2933,7 +3048,7 @@
       "source": "32cb576779b56c52d99c",
       "target": "4be7e80c62e19b417e09",
       "type": "similar",
-      "strength": 0.9266,
+      "strength": 0.9245,
       "terms": [
         "quantum field",
         "field theory",
@@ -2969,7 +3084,7 @@
       "source": "32cb576779b56c52d99c",
       "target": "df58dd0f10b8b1ae9590",
       "type": "similar",
-      "strength": 0.95,
+      "strength": 0.9478,
       "terms": [
         "quantum field",
         "field theory",
@@ -2981,7 +3096,7 @@
       "source": "32cb576779b56c52d99c",
       "target": "e4646c29c55f6d8fec65",
       "type": "similar",
-      "strength": 0.8003,
+      "strength": 0.8089,
       "terms": [
         "non equilibrium",
         "field theory"
@@ -2992,7 +3107,7 @@
       "source": "35a2662e8ef0172bbaf6",
       "target": "3cf186cdea83cfc7f64d",
       "type": "similar",
-      "strength": 0.5445,
+      "strength": 0.544,
       "terms": [
         "random matrix",
         "matrix model",
@@ -3016,7 +3131,7 @@
       "source": "35a2662e8ef0172bbaf6",
       "target": "f4a7357f092445d4e8f2",
       "type": "similar",
-      "strength": 0.5294,
+      "strength": 0.5289,
       "terms": [
         "random matrix"
       ],
@@ -3031,17 +3146,6 @@
         "random matrix"
       ],
       "explanation": "Common keywords: random matrix"
-    },
-    {
-      "source": "373a35cd782276b8a6d6",
-      "target": "464498d779ecf5b960e4",
-      "type": "similar",
-      "strength": 0.54,
-      "terms": [
-        "electron system",
-        "disorder system"
-      ],
-      "explanation": "Common keywords: electron system, disorder system"
     },
     {
       "source": "373a35cd782276b8a6d6",
@@ -3138,7 +3242,7 @@
       "source": "3b76321646d1a716ec2b",
       "target": "61f2fdc2dbb6af404e4a",
       "type": "similar",
-      "strength": 0.5674,
+      "strength": 0.5665,
       "terms": [
         "electron gas",
         "dimensional electron gas",
@@ -3161,7 +3265,7 @@
       "source": "3b76321646d1a716ec2b",
       "target": "8edb0b36e9b5e94722f1",
       "type": "similar",
-      "strength": 0.7038,
+      "strength": 0.7033,
       "terms": [
         "nonlinear sigma",
         "sigma model",
@@ -3187,7 +3291,7 @@
       "source": "3b76321646d1a716ec2b",
       "target": "de71fb6e60247c50189d",
       "type": "similar",
-      "strength": 0.7054,
+      "strength": 0.7069,
       "terms": [
         "nonlinear sigma",
         "sigma model",
@@ -3213,7 +3317,7 @@
       "source": "3cf186cdea83cfc7f64d",
       "target": "78f81527fec4f708aa07",
       "type": "similar",
-      "strength": 0.6123,
+      "strength": 0.6119,
       "terms": [
         "disorder boson"
       ],
@@ -3223,7 +3327,7 @@
       "source": "3cf186cdea83cfc7f64d",
       "target": "7d5c46e20394845a2c86",
       "type": "similar",
-      "strength": 0.8172,
+      "strength": 0.8175,
       "terms": [
         "disorder boson",
         "matrix model",
@@ -3236,7 +3340,7 @@
       "source": "3cf186cdea83cfc7f64d",
       "target": "f4a7357f092445d4e8f2",
       "type": "similar",
-      "strength": 0.5709,
+      "strength": 0.5703,
       "terms": [
         "random matrix"
       ],
@@ -3299,7 +3403,7 @@
       "source": "41321a40e77231f9622e",
       "target": "5a6da9fe0ee72528e92c",
       "type": "similar",
-      "strength": 0.6965,
+      "strength": 0.6964,
       "terms": [
         "quantum field theory",
         "quantum field"
@@ -3373,38 +3477,6 @@
       "explanation": "Common keywords: quantum field theory, quantum field"
     },
     {
-      "source": "464498d779ecf5b960e4",
-      "target": "4a6974757f7c190fa564",
-      "type": "similar",
-      "strength": 0.44,
-      "terms": [
-        "system disorder"
-      ],
-      "explanation": "Common keywords: system disorder"
-    },
-    {
-      "source": "464498d779ecf5b960e4",
-      "target": "8edb0b36e9b5e94722f1",
-      "type": "similar",
-      "strength": 0.54,
-      "terms": [
-        "system disorder",
-        "electronic system",
-        "disorder electronic system"
-      ],
-      "explanation": "Common keywords: system disorder, electronic system, disorder electronic system"
-    },
-    {
-      "source": "464498d779ecf5b960e4",
-      "target": "a8f7165ccea4f9b9c668",
-      "type": "similar",
-      "strength": 0.4657,
-      "terms": [
-        "system disorder"
-      ],
-      "explanation": "Common keywords: system disorder"
-    },
-    {
       "source": "480bf89fa59840c30b9a",
       "target": "532b57072efb6b926949",
       "type": "similar",
@@ -3418,7 +3490,7 @@
       "source": "480bf89fa59840c30b9a",
       "target": "57142b88a36bc47e0fd4",
       "type": "similar",
-      "strength": 0.9634,
+      "strength": 0.8115,
       "terms": [
         "dynamical mean",
         "dynamical mean field",
@@ -3559,9 +3631,19 @@
     },
     {
       "source": "4a6974757f7c190fa564",
+      "target": "8edb0b36e9b5e94722f1",
+      "type": "similar",
+      "strength": 0.44,
+      "terms": [
+        "disorder system"
+      ],
+      "explanation": "Common keywords: disorder system"
+    },
+    {
+      "source": "4a6974757f7c190fa564",
       "target": "a8f7165ccea4f9b9c668",
       "type": "similar",
-      "strength": 0.4468,
+      "strength": 0.4514,
       "terms": [
         "disorder system"
       ],
@@ -3571,7 +3653,7 @@
       "source": "4a6974757f7c190fa564",
       "target": "c6a8bbbcc8265df18526",
       "type": "similar",
-      "strength": 0.5561,
+      "strength": 0.5569,
       "terms": [
         "path integral",
         "integral method",
@@ -3667,7 +3749,7 @@
       "source": "4be7e80c62e19b417e09",
       "target": "a562c4570929e232bb92",
       "type": "similar",
-      "strength": 0.7543,
+      "strength": 0.7541,
       "terms": [
         "quantum field theory",
         "quantum field"
@@ -3678,7 +3760,7 @@
       "source": "4be7e80c62e19b417e09",
       "target": "bbd0df5b4f37b61dee38",
       "type": "similar",
-      "strength": 0.454,
+      "strength": 0.4535,
       "terms": [
         "quantum field"
       ],
@@ -3733,7 +3815,7 @@
       "source": "532b57072efb6b926949",
       "target": "768f6cf863f97685a9a8",
       "type": "similar",
-      "strength": 0.7347,
+      "strength": 0.7349,
       "terms": [
         "relativistic scalar",
         "relativistic scalar field",
@@ -3769,7 +3851,7 @@
       "source": "57142b88a36bc47e0fd4",
       "target": "6061fda0e8bf37102849",
       "type": "similar",
-      "strength": 0.7034,
+      "strength": 0.68,
       "terms": [
         "potential approximation",
         "coherent potential",
@@ -3792,11 +3874,12 @@
       "source": "57142b88a36bc47e0fd4",
       "target": "6e88b459a85df2ac012b",
       "type": "similar",
-      "strength": 0.44,
+      "strength": 0.54,
       "terms": [
-        "field theory"
+        "field theory",
+        "spatial dimension"
       ],
-      "explanation": "Common keywords: field theory"
+      "explanation": "Common keywords: field theory, spatial dimension"
     },
     {
       "source": "57142b88a36bc47e0fd4",
@@ -3810,23 +3893,25 @@
     },
     {
       "source": "57142b88a36bc47e0fd4",
-      "target": "78f81527fec4f708aa07",
+      "target": "cf48d65fbff94e717d6c",
       "type": "similar",
-      "strength": 0.44,
+      "strength": 0.54,
       "terms": [
-        "field theory"
+        "field theory",
+        "spatial dimension"
       ],
-      "explanation": "Common keywords: field theory"
+      "explanation": "Common keywords: field theory, spatial dimension"
     },
     {
       "source": "57142b88a36bc47e0fd4",
-      "target": "82d3accbbeaa252fdcef",
+      "target": "dc505a49516927d0b8e9",
       "type": "similar",
-      "strength": 0.44,
+      "strength": 0.54,
       "terms": [
-        "disorder electron"
+        "disorder electron",
+        "interact electron"
       ],
-      "explanation": "Common keywords: disorder electron"
+      "explanation": "Common keywords: disorder electron, interact electron"
     },
     {
       "source": "5a6da9fe0ee72528e92c",
@@ -3875,7 +3960,7 @@
       "source": "5b6e4d3160e03ffc14fc",
       "target": "ca7ea5041cdff518d6a8",
       "type": "similar",
-      "strength": 0.9578,
+      "strength": 0.9572,
       "terms": [
         "disorder bose einstein",
         "bose einstein condensate",
@@ -3901,14 +3986,14 @@
       "source": "5bee4756ff236b23ed4a",
       "target": "b4f9dcd17017a4562e97",
       "type": "similar",
-      "strength": 0.3972,
+      "strength": 0.3908,
       "terms": [
         "electron fluid",
         "quantum interference",
         "interference correction",
-        "quantum interference correction"
+        "hydrodynamic cooperon"
       ],
-      "explanation": "Common keywords: electron fluid, quantum interference, interference correction, quantum interference correction"
+      "explanation": "Common keywords: electron fluid, quantum interference, interference correction, hydrodynamic cooperon"
     },
     {
       "source": "5bee4756ff236b23ed4a",
@@ -3990,7 +4075,7 @@
       "source": "6c2a255573a9506ab2ab",
       "target": "ef521f5e723383086856",
       "type": "similar",
-      "strength": 0.7089,
+      "strength": 0.7095,
       "terms": [
         "spontaneous symmetry",
         "symmetry break",
@@ -4064,7 +4149,7 @@
       "source": "75126cd408be2ec7038d",
       "target": "c381230ab0787ba63cb5",
       "type": "similar",
-      "strength": 0.4532,
+      "strength": 0.44,
       "terms": [
         "disorder metal"
       ],
@@ -4174,7 +4259,7 @@
       "source": "78f81527fec4f708aa07",
       "target": "7d5c46e20394845a2c86",
       "type": "similar",
-      "strength": 0.4789,
+      "strength": 0.479,
       "terms": [
         "disorder boson"
       ],
@@ -4191,10 +4276,20 @@
       "explanation": "Common keywords: field theory"
     },
     {
+      "source": "78f81527fec4f708aa07",
+      "target": "ef521f5e723383086856",
+      "type": "similar",
+      "strength": 0.44,
+      "terms": [
+        "field theory"
+      ],
+      "explanation": "Common keywords: field theory"
+    },
+    {
       "source": "7d5c46e20394845a2c86",
       "target": "f4a7357f092445d4e8f2",
       "type": "similar",
-      "strength": 0.4555,
+      "strength": 0.4556,
       "terms": [
         "random matrix"
       ],
@@ -4288,21 +4383,24 @@
       "source": "8a7cd033d5890585993c",
       "target": "8ec011c19e59f0b80554",
       "type": "similar",
-      "strength": 0.44,
+      "strength": 0.54,
       "terms": [
-        "dirty boson"
+        "dirty boson",
+        "interact boson"
       ],
-      "explanation": "Common keywords: dirty boson"
+      "explanation": "Common keywords: dirty boson, interact boson"
     },
     {
       "source": "8a7cd033d5890585993c",
       "target": "9efdc8195ac501cb1afc",
       "type": "similar",
-      "strength": 0.44,
+      "strength": 0.54,
       "terms": [
-        "dirty boson"
+        "dirty boson",
+        "one dimension",
+        "two dimension"
       ],
-      "explanation": "Common keywords: dirty boson"
+      "explanation": "Common keywords: dirty boson, one dimension, two dimension"
     },
     {
       "source": "8ec011c19e59f0b80554",
@@ -4318,7 +4416,7 @@
       "source": "8edb0b36e9b5e94722f1",
       "target": "a8f7165ccea4f9b9c668",
       "type": "similar",
-      "strength": 0.462,
+      "strength": 0.4662,
       "terms": [
         "disorder system"
       ],
@@ -4353,7 +4451,7 @@
       "source": "97928184e9e2320fc535",
       "target": "ad05fe560da2ea573a22",
       "type": "similar",
-      "strength": 0.748,
+      "strength": 0.7481,
       "terms": [
         "real time",
         "shear viscosity",
@@ -4409,7 +4507,7 @@
       "source": "a562c4570929e232bb92",
       "target": "df58dd0f10b8b1ae9590",
       "type": "similar",
-      "strength": 0.7682,
+      "strength": 0.768,
       "terms": [
         "quantum field theory",
         "quantum field"
@@ -4497,7 +4595,7 @@
       "source": "bbd0df5b4f37b61dee38",
       "target": "df58dd0f10b8b1ae9590",
       "type": "similar",
-      "strength": 0.4647,
+      "strength": 0.4641,
       "terms": [
         "quantum field"
       ],
@@ -4530,7 +4628,7 @@
       "source": "c0ceb6d172fa51731d56",
       "target": "f5552fb9534fd12a04b0",
       "type": "similar",
-      "strength": 0.779,
+      "strength": 0.7789,
       "terms": [
         "bose hubbard",
         "bose hubbard model",
@@ -4563,7 +4661,7 @@
       "source": "c6a8bbbcc8265df18526",
       "target": "f8ae3b396b247c5f458b",
       "type": "similar",
-      "strength": 0.7702,
+      "strength": 0.7714,
       "terms": [
         "integral approach",
         "path integral",
@@ -4580,9 +4678,9 @@
         "disorder bose",
         "bose einstein condensate",
         "einstein condensate",
-        "perturbation theory"
+        "disorder potential"
       ],
-      "explanation": "Common keywords: disorder bose, bose einstein condensate, einstein condensate, perturbation theory"
+      "explanation": "Common keywords: disorder bose, bose einstein condensate, einstein condensate, disorder potential"
     },
     {
       "source": "cebb15e4fcc4c0dd09eb",
@@ -4642,7 +4740,7 @@
       "source": "d3a8b8471de6a39ec861",
       "target": "d9f554f17d9329e67ab9",
       "type": "similar",
-      "strength": 0.73,
+      "strength": 0.7268,
       "terms": [
         "body theory",
         "many body",
@@ -4654,7 +4752,7 @@
       "source": "d9f554f17d9329e67ab9",
       "target": "e4646c29c55f6d8fec65",
       "type": "similar",
-      "strength": 0.9493,
+      "strength": 0.9527,
       "terms": [
         "non equilibrium system",
         "non equilibrium"
@@ -4716,7 +4814,7 @@
       "source": "f4a7357f092445d4e8f2",
       "target": "fdb43c41c7e1d95d490b",
       "type": "similar",
-      "strength": 0.5254,
+      "strength": 0.5244,
       "terms": [
         "random matrice"
       ],
@@ -4726,7 +4824,7 @@
       "source": "f62489586c39bf17b0fa",
       "target": "f8ae3b396b247c5f458b",
       "type": "similar",
-      "strength": 0.781,
+      "strength": 0.7766,
       "terms": [
         "quantum mechanic",
         "path integral"
@@ -4736,10 +4834,10 @@
   ],
   "meta": {
     "documents": 132,
-    "links": 309,
-    "citations": 10,
+    "links": 321,
+    "citations": 25,
     "authors": 58,
-    "similar": 241,
+    "similar": 238,
     "openalex_requests": 20
   }
 }
