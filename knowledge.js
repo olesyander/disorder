@@ -10,13 +10,12 @@
   const svg = d3.select('#knowledge-svg');
   const paperRadius = 10.5;
   const viewport = svg.append('g');
-  const edgeLayer = viewport.append('g').attr('class','knowledge-edges');
+  const edgeLayer = viewport.append('g').attr('class','knowledge-edges').attr('aria-hidden','true');
   const nodeLayer = viewport.append('g').attr('class','knowledge-nodes');
   const zoom = d3.zoom().scaleExtent([.15,4]).on('zoom',e=>viewport.attr('transform',e.transform));
   svg.call(zoom).on('dblclick.zoom',null);
   let graph={nodes:[],edges:[]}, loaded=false, current='knowledge';
   let mapCenter=[0,0], lastCenter=null, resizeFrame=0, loading=false;
-  const edgeNames={citation:(T.citationFilter || 'Citations'),author:(T.authorFilter || 'Shared authors'),similar:(T.similarFilter || 'Similar text')};
   const filters={citation:$('kg-citation'),author:$('kg-author'),similar:$('kg-similar')};
   // Constant minimum: the former slider's lowest value (0.15).
   // The producer uses the same threshold (0.15); no runtime API needed.
@@ -25,7 +24,7 @@
 
   const isolates=$('kg-isolated');
   let papers=new Map(), pairs=[], incident=new Map();
-  let pinnedId=null, revealedId=null, cardId=null, edgeCard=null, repaint=()=>{};
+  let pinnedId=null, revealedId=null, cardId=null, repaint=()=>{};
   const enabledTypes=()=>new Set(Object.keys(filters).filter(type=>filters[type].checked));
 
   function indexRelations(data){
@@ -49,12 +48,8 @@
   function visibleEdges(allowed){
     const edges=[];
     for(const group of pairs){
-      const relations=group.filter(e=>allowed.has(e.type));
-      if(!relations.length) continue;
-      const first=relations[0];
-      edges.push({...first,sourceId:first.source,targetId:first.target,
-        reverse:first.type==='citation' && relations.find(e=>e.type==='citation' && e.source===first.target),
-        related:relations.filter(e=>e.type!==first.type)});
+      const first=group.find(e=>allowed.has(e.type));
+      if(first) edges.push(first);
     }
     return edges;
   }
@@ -75,28 +70,8 @@
     const href=safeUrl(url);if(!href)return;
     const a=make('a',label);a.href=href;a.rel='noopener noreferrer';a.target='_blank';target.append(a);
   }
-  function relationSummary(edge, src, dest){
-    if(edge.reverse) return src && dest ? src.title+' and '+dest.title+' cite each other.' : 'These publications cite each other.';
-    if(edge.type==='citation') return src && dest ? src.title+' cites '+dest.title+'.' : 'The first publication cites the second.';
-    if(edge.type==='author') {
-      const names = Array.isArray(edge.authors) && edge.authors.length ? edge.authors.join(', ') : '';
-      return names ? 'Shared author' + (edge.authors.length>1 ? 's' : '') + ': ' + names : (edge.explanation || 'Shared authorship.');
-    }
-    if(edge.type==='similar') {
-      const terms = Array.isArray(edge.terms) && edge.terms.length ? edge.terms.join(', ') : '';
-      return terms ? 'Common keywords: ' + terms : (edge.explanation || 'Shared keywords.');
-    }
-    return edge.explanation || 'Connection metadata unavailable.';
-  }
-  function setRelationMode(isRelation){
-    const authorsLabel = $('authors-label');
-    const abstractLabel = $('abstract-label');
-    const abstract = $('abstract');
-    if (authorsLabel) authorsLabel.textContent = isRelation ? (T.connection || 'CONNECTION') : (T.authors || 'AUTHORS');
-    if (abstractLabel) abstractLabel.style.display = isRelation ? 'none' : '';
-    if (abstract) abstract.style.display = isRelation ? 'none' : '';
-    if (!isRelation && abstractLabel) abstractLabel.textContent = (T.abstract || 'ABSTRACT');
-  }
+  $('authors-label').textContent = T.authors || 'AUTHORS';
+  $('abstract-label').textContent = T.abstract || 'ABSTRACT';
   const connections=make('section','');
   connections.className='paper-connections';connections.id='paper-connections';connections.hidden=true;connections.tabIndex=-1;
   connections.setAttribute('aria-label','Publication connections');
@@ -150,7 +125,7 @@
       return;
     }
     jump.hidden=false;
-    for(const [key,label] of [['out','Cites'],['in','Cited by'],['author',edgeNames.author],['similar',edgeNames.similar]]){
+    for(const [key,label] of [['out','Cites'],['in','Cited by'],['author',T.authorFilter || 'Shared authors'],['similar',T.similarFilter || 'Similar text']]){
       const rows=groups[key];if(!rows.length) continue;
       rows.sort((a,b)=>(key==='similar'?(b.e.strength || 0)-(a.e.strength || 0):0)
         || String(a.other.title || '').localeCompare(String(b.other.title || '')));
@@ -190,10 +165,10 @@
     draw();
   }
   function clearSelection(){
-    cardId=null;edgeCard=null;pinPaper(null);listConnections();
+    cardId=null;pinPaper(null);listConnections();
   }
   function selectPaper(node,focusTitle=false){
-    edgeCard=null;pinPaper(node.id);openPanel(node);
+    pinPaper(node.id);openPanel(node);
     revealPaper(node);
     if(focusTitle){
       const heading=$('paper-title');heading.tabIndex=-1;heading.focus({preventScroll:true});
@@ -212,47 +187,21 @@
     svg.call(zoom.transform,d3.zoomIdentity.translate((frame.x+right)/2,(frame.y+bottom)/2)
       .scale(t.k).translate(-node.x,-node.y));
   }
-  function openPanel(node,edge=null){
+  function openPanel(node){
     const title=$('paper-title'), authors=$('authors'), abstract=$('abstract'), access=$('access'), external=$('external');
     if(!title||!authors||!abstract||!access||!external)return;
-    if(edge){edgeCard=null;pinPaper(null);}
-    cardId=node?.id ?? null;edgeCard=edge;
+    cardId=node.id;
     access.replaceChildren();external.replaceChildren();
-    if(edge){
-      const src=papers.get(edge.sourceId);
-      const dest=papers.get(edge.targetId);
-      setRelationMode(true);
-      $('type-label').textContent=(T.relationType || 'RELATION');
-      title.textContent=(src?.title||'Unknown')+(edge.type==='citation' && !edge.reverse?' → ':' ↔ ')+(dest?.title||'Unknown');
-      authors.textContent=relationSummary(edge,src,dest);
-      if(edge.type==='citation'){
-        for(const [relation,source] of [[edge,src],[edge.reverse,dest]]){
-          if(!relation) continue;
-          const proof=citationSources(relation);
-          if(proof){
-            if(edge.reverse) proof.querySelector('summary').textContent='Sources in '+source.title;
-            access.append(proof);
-          }
-        }
-      }
-      for(const relation of edge.related || []){
-        access.append(make('div',relationSummary(relation,papers.get(relation.source),papers.get(relation.target))));
-      }
-      if(src)anchor(external,'Source publication',src.sourceUrl||src.openUrl);
-      if(dest)anchor(external,'Target publication',dest.sourceUrl||dest.openUrl);
-    } else {
-      setRelationMode(false);
-      $('type-label').textContent=node.kind==='book'?(T.bookType || 'BOOK'):(T.articleType || 'ARTICLE');
-      title.textContent=node.title||'Untitled';
-      authors.textContent=node.authors||(T.unknownAuthor || 'Not identified');
-      abstract.textContent=node.abstract||(T.missingAbstract || 'Abstract not available.');
-      access.append(make('strong',node.access==='restricted'?(T.restricted || 'Restricted access'):'Publication details'));
-      if(node.access!=='restricted'){
-        if(node.sourceUrl)anchor(external,(T.viewPublication || 'View publication'),node.sourceUrl);
-        else anchor(external,(T.findPublication || 'Find publication'),'https://scholar.google.com/scholar?q='+encodeURIComponent(node.title||''));
-        anchor(external,(T.openArticle || 'Open article'),node.openUrl||(node.downloadUrl?'./'+node.downloadUrl:null));
-      }else access.append(make('div','The original file is not publicly available.'));
-    }
+    $('type-label').textContent=node.kind==='book'?(T.bookType || 'BOOK'):(T.articleType || 'ARTICLE');
+    title.textContent=node.title||'Untitled';
+    authors.textContent=node.authors||(T.unknownAuthor || 'Not identified');
+    abstract.textContent=node.abstract||(T.missingAbstract || 'Abstract not available.');
+    access.append(make('strong',node.access==='restricted'?(T.restricted || 'Restricted access'):'Publication details'));
+    if(node.access!=='restricted'){
+      if(node.sourceUrl)anchor(external,(T.viewPublication || 'View publication'),node.sourceUrl);
+      else anchor(external,(T.findPublication || 'Find publication'),'https://scholar.google.com/scholar?q='+encodeURIComponent(node.title||''));
+      anchor(external,(T.openArticle || 'Open article'),node.openUrl||(node.downloadUrl?'./'+node.downloadUrl:null));
+    }else access.append(make('div','The original file is not publicly available.'));
     $('drawer').classList.add('open');$('drawer').setAttribute('aria-hidden','false');
     $('overlay').classList.remove('show');
     listConnections();$('drawer').scrollTop=0;
@@ -423,21 +372,21 @@
   function draw(){
     edgeLayer.selectAll('*').remove();nodeLayer.selectAll('*').remove();
     repaint=()=>{};
-    const adjacency=new Map(graph.nodes.map(n=>[n.id,new Map()]));
+    const adjacency=new Map(graph.nodes.map(n=>[n.id,new Set()]));
     const activeEdges=visibleEdges(enabledTypes()).sort((a,b)=>RELATION_PRIORITY[b.type]-RELATION_PRIORITY[a.type]);
     for(const edge of activeEdges){
-      adjacency.get(edge.sourceId).set(edge.targetId,edge);
-      adjacency.get(edge.targetId).set(edge.sourceId,edge);
+      adjacency.get(edge.source).add(edge.target);
+      adjacency.get(edge.target).add(edge.source);
     }
     const nodes=graph.nodes.filter(n=>isolates.checked || adjacency.get(n.id).size || n.id===revealedId);
     const coords=new Map(nodes.map(n=>[n.id,n]));
     const hidden=graph.nodes.length-nodes.length;
     $('knowledge-status').textContent=nodes.length+' publications · '+activeEdges.length+' connections'+(hidden?' · '+hidden+' papers filtered out':'');
     if(pinnedId!=null && !coords.has(pinnedId)) $('close').click();
-    if(!nodes.length){if(edgeCard) $('close').click();return;}
+    if(!nodes.length) return;
     function renderPositions(){
       lines.each(function(edge){
-        const a=coords.get(edge.sourceId),b=coords.get(edge.targetId);
+        const a=coords.get(edge.source),b=coords.get(edge.target);
         const dx=b.x-a.x,dy=b.y-a.y,length=Math.hypot(dx,dy);
         const inset=Math.min(.5,(paperRadius+2)/(length || 1));
         d3.select(this).attr('x1',a.x+dx*inset).attr('y1',a.y+dy*inset)
@@ -450,11 +399,7 @@
     const lines=edgeLayer.selectAll('line').data(activeEdges).join('line')
       .attr('class',d=>'knowledge-link relation-'+d.type)
       .attr('stroke-width',d=>d.type==='citation'?2.65:d.type==='author'?2.4:2.15)
-      .attr('stroke-opacity',edgeOpacity).attr('tabindex',0).attr('role','button')
-      .attr('aria-label',d=>edgeNames[d.type]||'Connection')
-      .on('click',(_e,d)=>openPanel(null,d))
-      .on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openPanel(null,d);}});
-    lines.append('title').text(d=>relationSummary(d,coords.get(d.sourceId),coords.get(d.targetId)));
+      .attr('stroke-opacity',edgeOpacity);
     const group=nodeLayer.selectAll('g').data(nodes,d=>d.id).join('g')
       .attr('class','knowledge-node')
       .attr('tabindex',0).attr('role','button')
@@ -471,19 +416,15 @@
       const neighbors=adjacency.get(id);
       group.attr('opacity',n=>!neighbors || n.id===id || neighbors.has(n.id)?1:.32)
         .classed('is-selected',n=>n.id===id).attr('aria-pressed',n=>String(n.id===id));
-      lines.attr('stroke-opacity',e=>!neighbors?edgeOpacity(e):e.sourceId===id || e.targetId===id?1:.09)
-        .classed('is-incident',e=>e.sourceId===id || e.targetId===id);
-      if(neighbors) lines.filter(e=>e.sourceId===id || e.targetId===id).raise();
+      lines.attr('stroke-opacity',e=>!neighbors?edgeOpacity(e):e.source===id || e.target===id?1:.09)
+        .classed('is-incident',e=>e.source===id || e.target===id);
+      if(neighbors) lines.filter(e=>e.source===id || e.target===id).raise();
     };
     group.call(d3.drag()
       .on('start',function(){d3.select(this).raise();})
       .on('drag',function(e,d){d.x=e.x;d.y=e.y;renderPositions();}));
     renderPositions();repaint(pinnedId);positionCamera();
     if(cardId!=null) listConnections();
-    if(edgeCard){
-      const a=edgeCard.sourceId,b=edgeCard.targetId,updated=adjacency.get(a)?.get(b);
-      if(updated) openPanel(null,updated);else $('close').click();
-    }
   }
   Object.values(filters).concat(isolates).forEach(control=>control.addEventListener('change',()=>{
     if(loaded && current==='knowledge') draw();
@@ -493,9 +434,8 @@
   });
   window.addEventListener('research-map:drawer-closed',clearSelection);
   window.addEventListener('research-map:library-detail',e=>{
-    setRelationMode(false);
     cardId=['article','book'].includes(e.detail.kind)?e.detail.id:null;
-    edgeCard=null;listConnections();
+    listConnections();
   });
   window.addEventListener('resize',()=>{
     if(current!=='knowledge' || !loaded || resizeFrame) return;

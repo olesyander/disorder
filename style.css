@@ -568,7 +568,6 @@ button {
 }
 
 .knowledge-link {
-  cursor: pointer;
   stroke-linecap: round;
   transition: stroke-opacity .15s;
 }
@@ -583,13 +582,6 @@ button {
 
 .knowledge-link.relation-similar {
   stroke: var(--relation-similar);
-}
-
-.knowledge-link:hover,
-.knowledge-link:focus-visible {
-  stroke-opacity: 1;
-  stroke-width: 4;
-  outline: none;
 }
 
 .knowledge-node {
