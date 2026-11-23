@@ -83,15 +83,11 @@
   --code-repo-border: #ffbf7a;
   --code-label: #ffc287;
 
-  /* 5. Knowledge Graph — узлы (ВАЖНО: два разных цвета) */
-  --knowledge-node: #f2c14f;
-  /* связанные точки — жёлтые */
-  --knowledge-node-border: #ffe6b0;
-  --knowledge-isolated: #938779;
-  /* изолированные — серые */
-  --knowledge-isolated-border: #beb3a7;
-  --knowledge-label: #f6ead8;
-  --knowledge-isolated-label: #b8aea1;
+  /* 5. Knowledge Graph — публикации и выделение */
+  --knowledge-node: #b49b77;
+  --knowledge-node-border: #0b0909;
+  --knowledge-node-rim: #e5ddcf;
+  --knowledge-node-active: #ceb68f;
 
   /* 6. Knowledge Graph — рёбра и галочки */
   --relation-citation: #f3c548;
@@ -113,7 +109,6 @@
   --overlay-scrim: rgba(0, 0, 0, .38);
   --node-glow: rgba(242, 193, 79, .42);
   --code-glow: rgba(245, 146, 47, .44);
-  --isolated-glow: rgba(147, 135, 121, .45);
   --selection-glow: rgba(242, 193, 79, .12);
 }
 
@@ -599,49 +594,44 @@ button {
 
 .knowledge-node {
   cursor: pointer;
+  outline: none;
 }
 
-.knowledge-node circle {
-  stroke-width: 1.5;
-  transition: r .15s, filter .15s;
-}
-
-/* Do not allow inherited node styles or SVG attributes to override the two states. */
-.knowledge-node.is-connected circle {
+.knowledge-node .paper-dot {
   fill: var(--knowledge-node);
   stroke: var(--knowledge-node-border);
+  stroke-width: 3.6;
 }
 
-.knowledge-node.is-isolated circle {
-  fill: var(--knowledge-isolated);
-  stroke: var(--knowledge-isolated-border);
+.knowledge-node .paper-rim {
+  fill: none;
+  stroke: var(--knowledge-node-rim);
+  stroke-width: .85;
 }
 
-.knowledge-node:hover circle,
-.knowledge-node:focus-visible circle {
-  stroke: var(--link-hover);
-  stroke-width: 2.5;
-  filter: drop-shadow(0 0 8px var(--node-glow));
+.knowledge-node .paper-hit-area {
+  fill: transparent;
+  pointer-events: all;
 }
 
-.knowledge-node.is-isolated:hover circle,
-.knowledge-node.is-isolated:focus-visible circle {
-  filter: drop-shadow(0 0 6px var(--isolated-glow));
+.knowledge-node:is(:hover, :focus-visible, .is-selected) .paper-dot {
+  fill: var(--knowledge-node-active);
 }
 
-.knowledge-node text {
-  font-size: 11px;
-  fill: var(--knowledge-label);
-  paint-order: stroke;
-  stroke: var(--page-bg);
-  stroke-width: 3px;
-  stroke-linejoin: round;
-  user-select: none;
-  pointer-events: none;
+.knowledge-node .selection-ring {
+  display: none;
+  fill: none;
+  stroke: var(--knowledge-node-rim);
+  stroke-width: 1.75;
 }
 
-.knowledge-node.is-isolated text {
-  fill: var(--knowledge-isolated-label);
+.knowledge-node.is-selected .selection-ring,
+.knowledge-node:focus-visible .selection-ring {
+  display: inline;
+}
+
+.knowledge-node:focus-visible:not(.is-selected) .selection-ring {
+  stroke-dasharray: 3 2;
 }
 
 /* Publication names are available on hover via the SVG <title>. */
@@ -989,3 +979,82 @@ button {
   padding: 0;
   white-space: nowrap;
 }
+
+/* Publication relationships in both views */
+.knowledge-link.is-incident { stroke-width: 3.4; }
+.paper-connections {
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-ui);
+}
+.paper-connections h2 {
+  margin: 0 0 14px;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+}
+.connection-group { margin: 0 0 10px; --accent: var(--relation-citation); }
+.connection-group.group-author { --accent: var(--relation-author); }
+.connection-group.group-similar { --accent: var(--relation-similar); }
+.connection-group > summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  min-height: 37px;
+  padding: 7px 10px;
+  border-inline-start: 3px solid var(--accent);
+  border-radius: 3px;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+.connection-group > summary::-webkit-details-marker { display: none; }
+.connection-group > summary span:last-child {
+  margin-inline-start: auto; color: var(--accent); font-variant-numeric: tabular-nums;
+}
+.connection-group > summary::after {
+  content: ''; width: 6px; height: 6px;
+  border: solid var(--text-muted); border-width: 0 1px 1px 0;
+  margin: 0 4px; transform: rotate(-45deg);
+}
+.connection-group[open] > summary::after { transform: rotate(45deg); }
+.connection-group ul { list-style: none; margin: 0; padding: 0 0 0 13px; }
+.connection-group li { padding: 9px 0; border-bottom: 1px solid var(--line-ui); }
+.connected-paper {
+  width: 100%; display: block; text-align: start;
+  border: 0; background: transparent; color: var(--text-primary);
+  padding: 3px 0; cursor: pointer; font: inherit; font-size: 13px;
+  line-height: 1.45; overflow-wrap: anywhere;
+}
+.connected-paper:hover, .connected-paper:focus-visible { color: var(--accent); text-decoration: underline; }
+.drawer .connection-group li p, .citation-sources {
+  color: var(--text-muted); font-size: 12px; line-height: 1.5;
+}
+.citation-sources { margin-top: 4px; overflow-wrap: anywhere; }
+.citation-sources summary { cursor: pointer; }
+.citation-sources a { color: var(--highlight); }
+@media (max-width: 700px) {
+  #knowledge-view:not([hidden]) ~ .drawer {
+    --graph-bottom-sheet: 1;
+    top: auto; bottom: 0; width: 100%; height: 52%; height: 52dvh;
+    box-sizing: border-box; border: 0; border-top: 1px solid var(--line-ui);
+    border-radius: 14px 14px 0 0; transform: translateY(105%); visibility: hidden;
+  }
+  #knowledge-view:not([hidden]) ~ .drawer.open { transform: translateY(0); visibility: visible; }
+  #knowledge-view:not([hidden]) ~ .drawer .drawer-header {
+    position: sticky; z-index: 1; top: 0; height: 43px; background: var(--panel-bg);
+  }
+}
+
+.connections-jump {
+  margin-inline-start: auto; margin-inline-end: 12px;
+  border: 1px solid var(--line-ui); border-radius: 5px;
+  padding: 5px 9px; background: transparent; color: var(--text-secondary);
+  font: inherit; font-size: 12px; cursor: pointer;
+}
+.connections-jump:hover, .connections-jump:focus-visible { color: var(--highlight); }
+.paper-connections { scroll-margin-top: 52px; }

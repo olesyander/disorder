@@ -21,6 +21,7 @@
     $('drawer').classList.remove('open'); $('drawer').setAttribute('aria-hidden', 'true');
     $('overlay').classList.remove('show'); selected = null;
     nodes.selectAll('.node').classed('active', false);
+    window.dispatchEvent(new Event('research-map:drawer-closed'));
   }
   function publicationPage(data) {
     // Prefer a DOI/arXiv/publisher page recorded during catalog generation.
@@ -106,6 +107,8 @@
     $('drawer').classList.add('open'); $('drawer').setAttribute('aria-hidden', 'false');
     $('overlay').classList.add('show');
     nodes.selectAll('.node').classed('active', n => n.data.id === selected);
+    $('drawer').scrollTop=0;
+    window.dispatchEvent(new CustomEvent('research-map:library-detail',{detail:data}));
   }
   // Search the complete catalog, including publications hidden in collapsed branches.
   const searchInput = $('search-input');
@@ -142,6 +145,13 @@
     activate(node);
     centerNode(node);
   }
+  window.researchMapOpenLibraryPaper=id=>{
+    const node=searchable.find(item=>item.data.id===id);
+    if(node){
+      chooseSearchResult(node);
+      const title=$('paper-title');title.tabIndex=-1;title.focus({preventScroll:true});
+    }
+  };
   function updateSearch() {
     const terms = norm(searchInput.value).split(' ').filter(Boolean);
     searchResults.replaceChildren();
