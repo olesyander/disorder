@@ -69,8 +69,8 @@
     const a=make('a',label);a.href=href;a.rel='noopener noreferrer';a.target='_blank';target.append(a);
   }
   function relationSummary(edge, src, dest){
-    if(edge.reverse) return (src?.title || 'Source publication') + ' and ' + (dest?.title || 'target publication') + ' cite each other.';
-    if(edge.type==='citation') return 'Citation: ' + (src?.title || 'Source publication') + ' cites ' + (dest?.title || 'target publication') + '.';
+    if(edge.reverse) return src && dest ? src.title+' and '+dest.title+' cite each other.' : 'These publications cite each other.';
+    if(edge.type==='citation') return src && dest ? src.title+' cites '+dest.title+'.' : 'The first publication cites the second.';
     if(edge.type==='author') {
       const names = Array.isArray(edge.authors) && edge.authors.length ? edge.authors.join(', ') : '';
       return names ? 'Shared author' + (edge.authors.length>1 ? 's' : '') + ': ' + names : (edge.explanation || 'Shared authorship.');
@@ -100,32 +100,32 @@
       setRelationMode(true);
       $('type-label').textContent=(T.relationType || 'RELATION');
       title.textContent=(src?.title||'Unknown')+(edge.type==='citation' && !edge.reverse?' → ':' ↔ ')+(dest?.title||'Unknown');
-      authors.textContent=relationSummary(edge, src, dest);
-      access.append(make('strong',edgeNames[edge.type]||'Connection'));
+      authors.textContent=relationSummary(edge);
       if(edge.type==='citation'){
-        const describe=(relation, source)=>{
-          if(edge.reverse) access.append(make('div', 'Cited by '+source.title));
+        const sources=make('details','');
+        sources.append(make('summary',edge.reverse?'Citation sources in both publications':'Citation sources'));
+        for(const [relation,source] of [[edge,src],[edge.reverse,dest]]){
+          if(!relation) continue;
+          if(edge.reverse && source) sources.append(make('strong',source.title));
+          const seen=new Set();
           for(const proof of relation.evidence || []){
-            const detail=[proof.source, proof.ref && 'ref. '+proof.ref, proof.page && 'p. '+proof.page, proof.method].filter(Boolean).join(' · ');
+            const location=[];
+            if(proof.ref) location.push('reference '+proof.ref);
+            if(proof.page) location.push('page '+proof.page);
+            const label=(proof.source || 'Bibliography')+(location.length?' ('+location.join(', ')+')':'');
+            const key=JSON.stringify([label,proof.url || '']);
+            if(seen.has(key)) continue;
+            seen.add(key);
             const row=make('div','');
-            if(proof.url) anchor(row,detail,proof.url);
-            else row.textContent=detail;
-            access.append(row);
+            if(safeUrl(proof.url)) anchor(row,'Open '+label,proof.url);
+            else row.textContent=label;
+            sources.append(row);
           }
-          if(!relation.evidence?.length && relation.explanation) access.append(make('div',relation.explanation));
-        };
-        describe(edge,src);
-        if(edge.reverse) describe(edge.reverse,dest);
-      }
-      for(const relation of [edge,...(edge.related || [])]){
-        if(relation!==edge) access.append(make('strong',edgeNames[relation.type]));
-        if(relation.type==='author'){
-          for(const [name,methods] of Object.entries(relation.authorEvidence || {}))
-            access.append(make('div',name+' · '+methods.join(', ')));
-          if(!relation.authorEvidence && relation!==edge) access.append(make('div',relationSummary(relation,src,dest)));
-        }else if(relation!==edge){
-          access.append(make('div',relationSummary(relation,src,dest)));
         }
+        if(sources.querySelector('div')) access.append(sources);
+      }
+      for(const relation of edge.related || []){
+        access.append(make('div',relationSummary(relation,src,dest)));
       }
       if(src)anchor(external,'Source publication',src.sourceUrl||src.openUrl);
       if(dest)anchor(external,'Target publication',dest.sourceUrl||dest.openUrl);
@@ -169,7 +169,7 @@
       .then(async data=>{
         if(!Array.isArray(data.nodes)||!Array.isArray(data.edges))throw Error('Invalid graph data');
         if(data.version>=2){
-          const catalog=await window.researchMapCatalog;
+          const catalog=await (window.researchMapCatalog || fetch('./catalog.json',{cache:'no-store'}).then(response=>response.json()));
           const entries=new Map();
           function visit(n){
             if(n.kind==='article' || n.kind==='book') entries.set(n.id,n);
