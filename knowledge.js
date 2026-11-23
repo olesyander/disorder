@@ -8,7 +8,9 @@
   const library = $('canvas');
   if (!canvas || !library || !window.d3) return;
   const svg = d3.select('#knowledge-svg');
-  const paperRadius = 10.5;
+  // All node/edge colors come exclusively from CSS classes in style.css.
+  // Do NOT set SVG fill/stroke attributes in JavaScript: the two colors
+  // (connected gold / isolated grey) stay independent of CSS load order.
   const viewport = svg.append('g');
   const edgeLayer = viewport.append('g').attr('class','knowledge-edges');
   const nodeLayer = viewport.append('g').attr('class','knowledge-nodes');
@@ -198,7 +200,7 @@
     const bottom=bottomSheet ? Math.min(frame.y+frame.h,rect.height-drawer.offsetHeight-12) : frame.y+frame.h;
     if(right<=frame.x || bottom<=frame.y) return;
     const t=d3.zoomTransform(svg.node()),x=t.applyX(node.x),y=t.applyY(node.y);
-    const pad=(paperRadius+5)*t.k+2;
+    const pad=node.mapRadius*t.k+6;
     if(x-pad>=frame.x && x+pad<=right && y-pad>=frame.y && y+pad<=bottom) return;
     svg.call(zoom.transform,d3.zoomIdentity.translate((frame.x+right)/2,(frame.y+bottom)/2)
       .scale(t.k).translate(-node.x,-node.y));
@@ -258,6 +260,10 @@
     return {x:padding,y:top,w:Math.max(1,rect.width-2*padding),h:Math.max(1,bottom-top)};
   }
 
+  function markerRadius(degree){
+    return degree ? Math.min(12.5,7.6+1.2*Math.log2(1+degree)) : 6.2;
+  }
+
   function side(a,b,p){
     return (b.x-a.x)*(p.y-a.y)-(b.y-a.y)*(p.x-a.x);
   }
@@ -283,7 +289,7 @@
       d3.forceSimulation(nodes).randomSource(random)
         .force('links',d3.forceLink(links).distance(e=>e.distance).strength(e=>e.strength))
         .force('charge',d3.forceManyBody().strength(-335))
-        .force('separation',d3.forceCollide(paperRadius+11).iterations(2))
+        .force('separation',d3.forceCollide(n=>n.mapRadius+11).iterations(2))
         .force('center',d3.forceCenter()).stop().tick(195);
       if(trials===1) return;
       // Among deterministic starts, prefer the one with fewer crossings of real edges.
@@ -307,6 +313,7 @@
       adjacent.get(edge.source).push(edge.target);
       adjacent.get(edge.target).push(edge.source);
     }
+    for(const n of nodes) n.mapRadius=markerRadius(adjacent.get(n.id).length);
     const visited=new Set(),islands=[],isolated=[];
     for(const node of nodes){
       if(visited.has(node.id)) continue;
@@ -425,13 +432,15 @@
     $('knowledge-status').textContent=nodes.length+' publications · '+activeEdges.length+' connections'+(hidden?' · '+hidden+' papers filtered out':'');
     if(pinnedId!=null && !coords.has(pinnedId)) $('close').click();
     if(!nodes.length){if(edgeCard) $('close').click();return;}
+    const radius=n=>adjacency.get(n.id).size ? n.mapRadius : markerRadius(0);
     function renderPositions(){
       lines.each(function(edge){
         const a=coords.get(edge.sourceId),b=coords.get(edge.targetId);
         const dx=b.x-a.x,dy=b.y-a.y,length=Math.hypot(dx,dy);
-        const inset=Math.min(.5,(paperRadius+2)/(length || 1));
-        d3.select(this).attr('x1',a.x+dx*inset).attr('y1',a.y+dy*inset)
-          .attr('x2',b.x-dx*inset).attr('y2',b.y-dy*inset);
+        const start=Math.min(.5,(radius(a)+3)/(length || 1));
+        const end=Math.min(.5,(radius(b)+3)/(length || 1));
+        d3.select(this).attr('x1',a.x+dx*start).attr('y1',a.y+dy*start)
+          .attr('x2',b.x-dx*end).attr('y2',b.y-dy*end);
       });
       group.attr('transform',d=>`translate(${d.x},${d.y})`);
     }
@@ -446,15 +455,18 @@
       .on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openPanel(null,d);}});
     lines.append('title').text(d=>relationSummary(d,coords.get(d.sourceId),coords.get(d.targetId)));
     const group=nodeLayer.selectAll('g').data(nodes,d=>d.id).join('g')
-      .attr('class','knowledge-node')
+      .attr('class',d=>'knowledge-node'+(adjacency.get(d.id).size?' is-connected':' is-isolated')+(d.access==='restricted'?' is-restricted':''))
       .attr('tabindex',0).attr('role','button')
       .attr('aria-label',d=>d.title||'Publication')
       .on('click',(_e,d)=>selectPaper(d))
       .on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectPaper(d,true);}});
-    group.append('circle').attr('class','selection-ring').attr('r',paperRadius+4).attr('pointer-events','none');
-    group.append('circle').attr('class','paper-dot').attr('r',paperRadius);
-    group.append('circle').attr('class','paper-rim').attr('r',paperRadius-1.8).attr('pointer-events','none');
-    group.append('circle').attr('class','paper-hit-area').attr('r',Math.max(15,paperRadius+3));
+    group.append('circle').attr('class','selection-ring').attr('r',n=>radius(n)+4).attr('pointer-events','none');
+    group.append('circle').attr('class','paper-dot').attr('r',radius);
+    const hubDegree=Math.max(8,d3.quantile(nodes,.9,n=>adjacency.get(n.id).size) || 0);
+    group.filter(n=>adjacency.get(n.id).size>=hubDegree).append('circle')
+      .attr('r',n=>radius(n)-3.2).style('fill','none').style('stroke','var(--button-ink)')
+      .style('stroke-width',1.3).attr('opacity',.66).attr('pointer-events','none');
+    group.append('circle').attr('r',n=>Math.max(15,radius(n)+3)).attr('opacity',0);
     // Every paper also exposes its full title on hover.
     group.append('title').text(d=>d.title||'Untitled publication');
     repaint=id=>{
