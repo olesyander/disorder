@@ -25,7 +25,7 @@
 
   const isolates=$('kg-isolated');
   let papers=new Map(), pairs=[], incident=new Map();
-  let pinnedId=null, cardId=null, edgeCard=null, repaint=()=>{};
+  let pinnedId=null, revealedId=null, cardId=null, edgeCard=null, repaint=()=>{};
   const enabledTypes=()=>new Set(Object.keys(filters).filter(type=>filters[type].checked));
 
   function indexRelations(data){
@@ -180,11 +180,20 @@
     }
   }
 
+  function pinPaper(id){
+    pinnedId=id;
+    // Search also reaches papers hidden by the isolated-papers filter.
+    const hidden=id!=null && !isolates.checked && !incident.get(id).some(e=>filters[e.type].checked);
+    const reveal=hidden ? id : null;
+    if(revealedId===reveal){repaint(id);return;}
+    revealedId=reveal;
+    draw();
+  }
   function clearSelection(){
-    pinnedId=null;cardId=null;edgeCard=null;repaint(null);listConnections();
+    cardId=null;edgeCard=null;pinPaper(null);listConnections();
   }
   function selectPaper(node,focusTitle=false){
-    pinnedId=node.id;repaint(node.id);openPanel(node);
+    edgeCard=null;pinPaper(node.id);openPanel(node);
     revealPaper(node);
     if(focusTitle){
       const heading=$('paper-title');heading.tabIndex=-1;heading.focus({preventScroll:true});
@@ -206,8 +215,8 @@
   function openPanel(node,edge=null){
     const title=$('paper-title'), authors=$('authors'), abstract=$('abstract'), access=$('access'), external=$('external');
     if(!title||!authors||!abstract||!access||!external)return;
+    if(edge){edgeCard=null;pinPaper(null);}
     cardId=node?.id ?? null;edgeCard=edge;
-    if(edge){pinnedId=null;repaint(null);}
     access.replaceChildren();external.replaceChildren();
     if(edge){
       const src=papers.get(edge.sourceId);
@@ -374,8 +383,8 @@
     for(const t of ['library','knowledge']){
       const b=$('tab-'+t);b.classList.toggle('active',tab===t);b.setAttribute('aria-selected',String(tab===t));
     }
-    // Library search stays available on both tabs; choosing a result switches to Library.
-    $('search-input').setAttribute('aria-label', 'Search library publications');
+    $('search-input').setAttribute('aria-label', tab==='knowledge'
+      ? 'Search graph publications by title or author' : 'Search library by title or author');
     $('drawer').classList.remove('open');$('drawer').setAttribute('aria-hidden','true');$('overlay').classList.remove('show');
     if(tab==='knowledge'){if(loaded)draw();else load();}
     else {window.dispatchEvent(new Event('resize'));}
@@ -408,6 +417,7 @@
         indexRelations(data);
         mapCenter=arrangeGraph(data.nodes,pairs.map(group=>group[0]));
         graph=data;loaded=true;loading=false;if(current==='knowledge')draw();else listConnections();
+        window.researchMapSetGraphSearch?.(graph.nodes, node=>selectPaper(node,true));
       }).catch(()=>{loading=false;listConnections();$('knowledge-status').textContent='Knowledge graph unavailable. Publish knowledge.json from the private build.';});
   }
   function draw(){
@@ -419,7 +429,7 @@
       adjacency.get(edge.sourceId).set(edge.targetId,edge);
       adjacency.get(edge.targetId).set(edge.sourceId,edge);
     }
-    const nodes=graph.nodes.filter(n=>isolates.checked || adjacency.get(n.id).size);
+    const nodes=graph.nodes.filter(n=>isolates.checked || adjacency.get(n.id).size || n.id===revealedId);
     const coords=new Map(nodes.map(n=>[n.id,n]));
     const hidden=graph.nodes.length-nodes.length;
     $('knowledge-status').textContent=nodes.length+' publications · '+activeEdges.length+' connections'+(hidden?' · '+hidden+' papers filtered out':'');

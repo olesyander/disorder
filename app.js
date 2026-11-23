@@ -13,7 +13,7 @@
   svg.call(zoom).on('dblclick.zoom', null);
   const treeLayout = d3.tree().nodeSize([CFG.library?.nodeGap ?? 37, CFG.library?.branchGap ?? 255]).separation((a, b) => a.parent === b.parent ? 1 : 1.3);
   let root, selected = null;
-  let searchable = [];
+  const libraryNodes = new Map();
   const labelLimit = CFG.library?.labelMaxCharacters ?? 53;
   function short(s, n = labelLimit) { return s.length > n ? s.slice(0, n - 1) + '…' : s; }
   function el(tag, text) { const e = document.createElement(tag); e.textContent = text; return e; }
@@ -110,13 +110,19 @@
     $('drawer').scrollTop=0;
     window.dispatchEvent(new CustomEvent('research-map:library-detail',{detail:data}));
   }
-  // Search the complete catalog, including publications hidden in collapsed branches.
   const searchInput = $('search-input');
   const searchResults = $('search-results');
+  let graphSearch = null, librarySearch = [];
   const norm = value => String(value || '').normalize('NFKD')
-    .replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase().replace(/\s+/g, ' ').trim();
+    .replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/['‘’ʼ]/g, '')
+    .replace(/[^\p{L}\p{M}\p{N}]+/gu, ' ').trim();
   const searchableTitle = data => String(data.title || data.name || '');
   const searchableAuthors = data => Array.isArray(data.authors) ? data.authors.join(', ') : String(data.authors || '');
+  function searchIndex(papers) {
+    return papers.map(paper => ({
+      paper, title: norm(searchableTitle(paper)), authors: norm(searchableAuthors(paper))
+    }));
+  }
   function closeSearch() {
     searchResults.hidden = true;
     searchInput.setAttribute('aria-expanded', 'false');
@@ -133,40 +139,53 @@
     const y = canvas.height * 0.47 - node.x * scale;
     svg.transition().duration(350).call(zoom.transform, d3.zoomIdentity.translate(x, y).scale(scale));
   }
-  function chooseSearchResult(node) {
-    if (window.researchMapShowLibrary) window.researchMapShowLibrary();
+  function openLibraryResult(paper) {
+    const node = libraryNodes.get(paper.id);
     // Unfold ancestors of the result while preserving other collapsed branches.
     for (let p = node.parent; p; p = p.parent) {
       if (p._children) { p.children = p._children; p._children = null; }
     }
-    closeSearch();
-    searchInput.value = searchableTitle(node.data);
     render(false);
     activate(node);
     centerNode(node);
   }
+  function chooseResult(paper, open) {
+    closeSearch();
+    searchInput.value = searchableTitle(paper);
+    open(paper);
+  }
   window.researchMapOpenLibraryPaper=id=>{
-    const node=searchable.find(item=>item.data.id===id);
+    const node=libraryNodes.get(id);
     if(node){
-      chooseSearchResult(node);
+      if ($('canvas').hidden) window.researchMapShowLibrary?.();
+      chooseResult(node.data, openLibraryResult);
       const title=$('paper-title');title.tabIndex=-1;title.focus({preventScroll:true});
     }
   };
+  function refreshFocusedSearch() {
+    if (document.activeElement === searchInput && searchInput.value.trim()) updateSearch();
+  }
+  window.researchMapSetGraphSearch = (papers, open) => {
+    graphSearch = {index: searchIndex(papers), open};
+    if (!$('knowledge-view').hidden) refreshFocusedSearch();
+  };
   function updateSearch() {
     const terms = norm(searchInput.value).split(' ').filter(Boolean);
+    if (!terms.length) { closeSearch(); return; }
+    const onGraph = !$('knowledge-view').hidden;
+    if (onGraph && !graphSearch) { closeSearch(); return; }
+    const index = onGraph ? graphSearch.index : librarySearch;
+    const open = onGraph ? graphSearch.open : openLibraryResult;
+    const query = terms.join(' ');
     searchResults.replaceChildren();
-    if (!terms.length || !searchable.length) { closeSearch(); return; }
-    const matches = searchable.map(node => {
-      const title = norm(searchableTitle(node.data));
-      const authors = norm(searchableAuthors(node.data));
+    const matches = index.map(({paper, title, authors}) => {
       const combined = title + ' ' + authors;
       if (!terms.every(term => combined.includes(term))) return null;
-      const query = terms.join(' ');
       const priority = title.startsWith(query) ? 0 : title.includes(query) ? 1 :
         authors.startsWith(query) ? 2 : 3;
-      return { node, priority };
+      return { paper, priority };
     }).filter(Boolean).sort((a, b) => a.priority - b.priority ||
-      searchableTitle(a.node.data).localeCompare(searchableTitle(b.node.data)));
+      searchableTitle(a.paper).localeCompare(searchableTitle(b.paper)));
     searchResults.hidden = false;
     searchInput.setAttribute('aria-expanded', 'true');
     if (!matches.length) {
@@ -175,18 +194,18 @@
       searchResults.append(empty);
       return;
     }
-    for (const { node } of matches.slice(0, CFG.library?.searchMaxResults ?? 12)) {
+    for (const { paper } of matches.slice(0, CFG.library?.searchMaxResults ?? 12)) {
       const button = document.createElement('button');
       button.type = 'button';
       button.className = 'search-result';
       button.setAttribute('role', 'option');
-      const title = el('span', searchableTitle(node.data));
+      const title = el('span', searchableTitle(paper));
       title.className = 'search-result-title';
-      const authors = searchableAuthors(node.data);
-      const subtitle = el('span', authors || (node.data.kind === 'code' ? 'Code' : node.data.kind === 'book' ? 'Book' : 'Article'));
+      const authors = searchableAuthors(paper);
+      const subtitle = el('span', authors || (paper.kind === 'code' ? 'Code' : paper.kind === 'book' ? 'Book' : 'Article'));
       subtitle.className = 'search-result-meta';
       button.append(title, subtitle);
-      button.addEventListener('click', () => chooseSearchResult(node));
+      button.addEventListener('click', () => chooseResult(paper, open));
       searchResults.append(button);
     }
     if (matches.length > (CFG.library?.searchMaxResults ?? 12)) {
@@ -204,7 +223,7 @@
   searchResults.addEventListener('keydown', event => {
     const buttons = [...searchResults.querySelectorAll('button.search-result')];
     const index = buttons.indexOf(document.activeElement);
-    if (event.key === 'Escape') { event.preventDefault(); closeSearch(); searchInput.focus(); event.stopPropagation(); }
+    if (event.key === 'Escape') { event.preventDefault(); searchInput.focus(); closeSearch(); event.stopPropagation(); }
     if (event.key === 'ArrowDown') { event.preventDefault(); buttons[Math.min(buttons.length - 1, index + 1)]?.focus(); }
     if (event.key === 'ArrowUp') { event.preventDefault(); if (index === 0) searchInput.focus(); else buttons[Math.max(0, index - 1)]?.focus(); }
   });
@@ -301,7 +320,11 @@
         const finalWord = parts.pop();
         brand.replaceChildren(document.createTextNode(parts.length ? parts.join(' ') + ' ' : ''), el('span', finalWord));
       }
-      searchable = root.descendants().filter(node => ['article', 'book', 'code'].includes(node.data.kind));
+      for (const node of root.descendants()) {
+        if (['article', 'book', 'code'].includes(node.data.kind)) libraryNodes.set(node.data.id, node);
+      }
+      librarySearch = searchIndex(Array.from(libraryNodes.values(), node => node.data));
+      if (!$('canvas').hidden) refreshFocusedSearch();
       // Start compact: root and main topics; click a folder to expand it.
       const treeRoots = root.data.kind === 'virtual' ? root.children : [root];
       treeRoots.forEach(top => (top.children || []).forEach(collapse));
