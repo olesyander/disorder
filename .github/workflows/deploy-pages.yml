@@ -4,21 +4,19 @@ on:
     branches: [main]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      pages: read
+    outputs:
+      artifact_id: ${{ steps.upload.outputs.artifact_id }}
+      page_url: ${{ steps.pages.outputs.base_url }}
     steps:
       - name: Checkout public repository
         uses: actions/checkout@v4
@@ -54,11 +52,88 @@ jobs:
           PYTHON
 
       - name: Configure GitHub Pages
+        id: pages
         uses: actions/configure-pages@v5
+
       - name: Upload prepared site
+        id: upload
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
+          name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Check upload receipt
+        if: ${{ steps.upload.outputs.artifact_id == '' }}
+        run: |
+          echo "::error::Upload prepared site returned no artifact ID. Re-run the build to upload the site again."
+          exit 1
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ needs.build.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
         id: deployment
+        uses: actions/github-script@v8
+        env:
+          PAGES_ARTIFACT_ID: ${{ needs.build.outputs.artifact_id }}
+        with:
+          script: |
+            const artifactId = Number(process.env.PAGES_ARTIFACT_ID);
+            if (!Number.isSafeInteger(artifactId) || artifactId < 1) {
+              throw new Error('Upload prepared site did not return an artifact ID. See the build job.');
+            }
+            core.info(`Deploying artifact ${artifactId} for commit ${context.sha}.`);
+            const {data} = await github.request('POST /repos/{owner}/{repo}/pages/deployments', {
+              ...context.repo,
+              artifact_id: artifactId,
+              pages_build_version: context.sha,
+              oidc_token: await core.getIDToken()
+            });
+            core.setOutput('deployment_id', data.id || context.sha);
+
+      - name: Wait for publication
+        id: publication
+        uses: actions/github-script@v8
+        timeout-minutes: 12
+        env:
+          DEPLOYMENT_ID: ${{ steps.deployment.outputs.deployment_id }}
+        with:
+          retries: 3
+          retry-exempt-status-codes: 400,401,403,422,451
+          script: |
+            const target = {...context.repo, pages_deployment_id: process.env.DEPLOYMENT_ID};
+            const failures = new Set(['deployment_failed', 'deployment_content_failed',
+              'deployment_cancelled', 'deployment_attempt_error', 'deployment_lost', 'unknown_status']);
+            const deadline = Date.now() + 10 * 60 * 1000;
+            let previous;
+            while (Date.now() < deadline) {
+              const {data: {status}} = await github.request(
+                'GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}', target);
+              if (status !== previous) core.info(`Pages deployment ${target.pages_deployment_id}: ${status}`);
+              previous = status;
+              if (status === 'succeed' || failures.has(status)) {
+                core.setOutput('finished', 'true');
+                if (status === 'succeed') return;
+                throw new Error(`Pages reported ${status}.`);
+              }
+              await new Promise(resolve => setTimeout(resolve, 10000));
+            }
+            throw new Error('Pages did not confirm publication within 10 minutes.');
+
+      - name: Cancel unfinished publication
+        if: ${{ (failure() || cancelled()) && steps.deployment.outputs.deployment_id != '' && steps.publication.outputs.finished != 'true' }}
+        uses: actions/github-script@v8
+        env:
+          DEPLOYMENT_ID: ${{ steps.deployment.outputs.deployment_id }}
+        with:
+          script: |
+            await github.request('POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel', {
+              ...context.repo, pages_deployment_id: process.env.DEPLOYMENT_ID
+            });
