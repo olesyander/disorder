@@ -356,13 +356,16 @@ button {
   font-size: 12px;
 }
 
-/* ── Library: tree nodes ────────────────────────────────────── */
-.canvas {
+.canvas,
+.knowledge-view {
   position: relative;
   flex: 1;
   min-height: 0;
-  overflow: hidden;
   background: radial-gradient(ellipse at 52% 48%, var(--page-bg-glow), var(--page-bg) 76%);
+}
+
+.canvas {
+  overflow: hidden;
 }
 
 #map,
@@ -493,13 +496,6 @@ button {
 }
 
 /* ── Knowledge Graph: edges, nodes, filters ─────────────────── */
-.knowledge-view {
-  position: relative;
-  flex: 1;
-  min-height: 0;
-  background: radial-gradient(ellipse at 50% 55%, var(--page-bg-glow), var(--page-bg) 76%);
-}
-
 .knowledge-controls {
   position: absolute;
   z-index: 3;
@@ -1053,7 +1049,6 @@ button {
 .paper-connections { scroll-margin-top: 52px; }
 
 :root {
-  --map-bg: #121314;
   --map-line: #9c9d9f;
   --map-label: #e5ddcf;
 }
@@ -1084,7 +1079,6 @@ button {
 .search-input { border-color: #46423d; background: #201f1e; font-size: .875rem; }
 .search-results { left: auto; width: max(100%, min(380px, 92vw)); min-width: 0; }
 .search-result-title { font-size: .90rem; }.search-result-meta { font-size: .77rem; }
-.knowledge-view { background: radial-gradient(ellipse at 48% 48%, #1e1d1b 0%, var(--map-bg) 72%); }
 .knowledge-controls {
   flex-direction: row; align-items:center; justify-content:space-between;
   inset: 0 0 auto; width:100%; max-width:none; padding: 12px clamp(16px,2.5vw,40px);
