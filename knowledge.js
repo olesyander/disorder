@@ -29,7 +29,6 @@
   const enabledTypes=()=>new Set(Object.keys(filters).filter(type=>filters[type].checked));
 
   function arrangeFolders(tree, nodes, edges) {
-    const circle = 2 * Math.PI;
     const groups = [], owner = new Map();
     const byId = new Map(nodes.map(paper => [paper.id, paper]));
     const root = {id: tree.id, name: tree.name, members: []};
@@ -55,7 +54,6 @@
     if (root.members.length) groups.push(root);
     if (!groups.length) return {groups, owner, bounds:{x:0, y:0, w:1, h:1}};
 
-    // The chord between adjacent papers is 29 map units, irrespective of folder size.
     function labelLines(name) {
       const lines = [];
       for (const word of (name || 'Library').split(/\s+/)) {
@@ -65,50 +63,67 @@
       }
       return lines;
     }
-    groups.forEach((folder, index) => {
-      const n = folder.members.length;
-      folder.radius = n === 1 ? 0 : 14.5 / Math.sin(Math.PI / n);
-      folder.label = labelLines(folder.name);
-      const titleWidth = Math.max(...folder.label.map(s => Array.from(s).reduce((w, ch) =>
-        w + (ch.codePointAt(0) > 0x2e80 ? 18 : 10.5), 0)));
-      const dots = folder.radius + paperRadius + 5;
-      folder.halfWidth = Math.max(dots, titleWidth / 2);
-      folder.above = dots + 32 + (folder.label.length - 1) * 22;
-      folder.below = dots;
-      const angle = -Math.PI / 2 + circle * index / groups.length;
-      folder.ux = Math.cos(angle);
-      folder.uy = Math.sin(angle);
-    });
-
-    // Pick the smallest common orbit on which each pair clears either horizontally or vertically.
-    const gap = 19;
-    let orbit = 0;
-    if (groups.length > 128) {
-      const extent = d3.max(groups, g => Math.hypot(g.halfWidth, g.above));
-      orbit = (extent + gap / 2) / Math.sin(Math.PI / groups.length);
-    } else {
-      for (let i = 0; i < groups.length; i++) for (let j = i + 1; j < groups.length; j++) {
-        const a = groups[i], b = groups[j], dy = b.uy - a.uy;
-        const rx = (a.halfWidth + b.halfWidth + gap) / Math.abs(b.ux - a.ux);
-        const ry = ((dy >= 0 ? a.below + b.above : b.below + a.above) + gap) / Math.abs(dy);
-        orbit = Math.max(orbit, Math.min(rx, ry));
-      }
-    }
-
     const neighbours = new Map(nodes.map(paper => [paper.id, []]));
+    for (const folder of groups) folder.externalLinks = 0;
     for (const {source, target} of edges) {
       neighbours.get(source).push(byId.get(target));
       neighbours.get(target).push(byId.get(source));
+      const a = owner.get(source), b = owner.get(target);
+      if (a !== b) { a.externalLinks++; b.externalLinks++; }
     }
-    for (const folder of groups) {
-      folder.x = orbit * folder.ux;
-      folder.y = orbit * folder.uy;
-      folder.labelY = folder.y - folder.above + 17;
+
+    const spacing = 32, gap = 20;
+    const goldenAngle = Math.PI * (3 - Math.sqrt(5));
+    const footprints = groups.map((folder, index) => {
+      const count = folder.members.length;
+      const phase = index * goldenAngle - Math.PI / 2;
+      let angularStep = goldenAngle;
+      if (count <= 3) angularStep = 2 * Math.PI / count;
+      else if (count <= 7) angularStep = 2 * Math.PI / (count - 1);
+
+      // A square-root radius allots equal area per paper on the sunflower spiral.
+      folder.radius = 0;
       folder.members.forEach((paper, i) => {
-        const angle = -Math.PI / 2 + circle * i / folder.members.length;
-        paper.x = folder.x + folder.radius * Math.cos(angle);
-        paper.y = folder.y + folder.radius * Math.sin(angle);
+        let radius = 0;
+        if (count === 2 || count === 3) radius = spacing / (2 * Math.sin(Math.PI / count));
+        else if (i > 0) radius = count <= 7 ? spacing : spacing * Math.sqrt((i + 1) / 2);
+        const angle = phase + i * angularStep;
+        paper.x = radius * Math.cos(angle);
+        paper.y = radius * Math.sin(angle);
+        folder.radius = Math.max(folder.radius, radius);
       });
+
+      folder.label = labelLines(folder.name);
+      const labelWidth = d3.max(folder.label, line => Array.from(line).reduce((width, ch) =>
+        width + (ch.codePointAt(0) > 0x2e80 ? 18 : 10.5), 0));
+      const labelHalf = labelWidth / 2 + 4;
+      const dots = folder.radius + paperRadius + 5;
+      folder.halfWidth = Math.max(dots, labelHalf);
+      folder.above = dots + 30 + (folder.label.length - 1) * 22;
+      folder.below = dots;
+
+      // Pack the paper disk together with the four corners of its heading.
+      const boundary = [{x: 0, y: 0, r: dots}];
+      for (const x of [-labelHalf, labelHalf]) {
+        boundary.push({x, y: -folder.above, r: 0}, {x, y: -dots - 2, r: 0});
+      }
+      const enclosing = d3.packEnclose(boundary);
+      return {folder, r: enclosing.r + gap / 2, offsetX: enclosing.x, offsetY: enclosing.y};
+    });
+
+    // Placing well-connected folders first gives them interior slots in the disk packing.
+    footprints.sort((a, b) => b.folder.externalLinks - a.folder.externalLinks
+      || b.folder.members.length - a.folder.members.length);
+    d3.packSiblings(footprints);
+    for (const footprint of footprints) {
+      const folder = footprint.folder;
+      folder.x = footprint.x - footprint.offsetX;
+      folder.y = footprint.y - footprint.offsetY;
+      folder.labelY = folder.y - folder.above + 17;
+      for (const paper of folder.members) {
+        paper.x += folder.x;
+        paper.y += folder.y;
+      }
     }
 
     // Exchange slots, never distances, to bring related papers closer together.
@@ -445,7 +460,10 @@
         .classed('is-incident',e=>e.source===id || e.target===id);
       if(neighbors) lines.filter(e=>e.source===id || e.target===id).raise();
     };
-    group.filter(paper=>folderLayout.owner.get(paper.id).members.length>1).call(d3.drag()
+    group.filter(paper=>{
+      const folder=folderLayout.owner.get(paper.id);
+      return Math.hypot(paper.x-folder.x,paper.y-folder.y)>1;
+    }).call(d3.drag()
       .clickDistance(3)
       .on('drag',(event,paper)=>{
         const folder=folderLayout.owner.get(paper.id), dx=event.x-folder.x, dy=event.y-folder.y;
