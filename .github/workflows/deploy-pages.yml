@@ -35,9 +35,21 @@ jobs:
           if [[ -d papers ]]; then cp -a papers _site/papers; fi
           # Only the date is published; technical commit messages are not shown.
           python - <<'PYTHON'
-          import json, pathlib, subprocess
+          import hashlib, json, pathlib, re, subprocess
+
+          site = pathlib.Path('_site')
+          index = site / 'index.html'
+
+          def version_asset(match):
+              name = match['name']
+              digest = hashlib.sha256((site / name).read_bytes()).hexdigest()[:12]
+              return f'{match["attr"]}="./{name}?v={digest}"'
+
+          assets = r'\b(?P<attr>src|href)="\./(?P<name>[\w.-]+\.(?:css|js))(?:\?[^"]*)?"'
+          index.write_text(re.sub(assets, version_asset, index.read_text(encoding='utf-8')), encoding='utf-8')
+
           date = subprocess.check_output(['git', 'log', '-1', '--format=%cI'], text=True).strip()
-          pathlib.Path('_site/release.json').write_text(
+          (site / 'release.json').write_text(
               json.dumps({'date': date}, ensure_ascii=False), encoding='utf-8')
           PYTHON
 

@@ -84,10 +84,10 @@
   --code-label: #ffc287;
 
   /* 5. Knowledge Graph — публикации и выделение */
-  --knowledge-node: #b49b77;
+  --knowledge-node: #f2c14f;
   --knowledge-node-border: #0b0909;
   --knowledge-node-rim: #e5ddcf;
-  --knowledge-node-active: #ceb68f;
+  --knowledge-node-active: #ffdc85;
 
   /* 6. Knowledge Graph — рёбра и галочки */
   --relation-citation: #f3c548;
@@ -568,19 +568,20 @@ button {
 }
 
 .knowledge-link {
+  stroke: var(--map-line);
   stroke-linecap: round;
   transition: stroke-opacity .15s;
 }
 
-.knowledge-link.relation-citation {
+.knowledge-link.is-incident.relation-citation {
   stroke: var(--relation-citation);
 }
 
-.knowledge-link.relation-author {
+.knowledge-link.is-incident.relation-author {
   stroke: var(--relation-author);
 }
 
-.knowledge-link.relation-similar {
+.knowledge-link.is-incident.relation-similar {
   stroke: var(--relation-similar);
 }
 
@@ -973,7 +974,7 @@ button {
 }
 
 /* Publication relationships in both views */
-.knowledge-link.is-incident { stroke-width: 3.4; }
+.knowledge-link.is-incident { stroke-width: 2.9; }
 .paper-connections {
   margin-top: 26px;
   padding-top: 20px;
@@ -1050,3 +1051,81 @@ button {
 }
 .connections-jump:hover, .connections-jump:focus-visible { color: var(--highlight); }
 .paper-connections { scroll-margin-top: 52px; }
+
+:root {
+  --map-bg: #121314;
+  --map-line: #9c9d9f;
+  --map-label: #e5ddcf;
+}
+.topbar {
+  grid-template-columns: max-content max-content minmax(0, 1fr);
+  justify-content: start;
+  column-gap: 26px;
+  background: #111111;
+  border-bottom-color: #353330;
+  padding-inline: clamp(16px, 2.5vw, 40px);
+}
+.brand { letter-spacing: -.055em; font-weight: 620; font-size: 24px; }
+.brand span { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 400; color: #c5b59e; letter-spacing: -.055em; }
+.view-picker { position: relative; border-left: 1px solid #423e38; padding-left: 23px; }
+.view-picker select {
+  appearance: none; -webkit-appearance: none; cursor: pointer;
+  font: 500 .94rem/1.3 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  color: #ece5d9; background: #252422; border: 1px solid #48443e;
+  border-radius: 8px; min-width: 109px; height: 38px; padding: 0 34px 0 15px;
+}
+.view-picker::after {
+  content: ''; width: 6px; height: 6px; position: absolute;
+  top: calc(50% - 5px); right: 15px; border: solid #d1c5b5; border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg); pointer-events: none;
+}
+.view-picker select:focus-visible,.zoom-controls button:focus-visible { outline: 2px solid #cab391; outline-offset: 3px; }
+.search-wrap { max-width: 340px; }
+.search-input { border-color: #46423d; background: #201f1e; font-size: .875rem; }
+.search-results { left: auto; width: max(100%, min(380px, 92vw)); min-width: 0; }
+.search-result-title { font-size: .90rem; }.search-result-meta { font-size: .77rem; }
+.knowledge-view { background: radial-gradient(ellipse at 48% 48%, #1e1d1b 0%, var(--map-bg) 72%); }
+.knowledge-controls {
+  flex-direction: row; align-items:center; justify-content:space-between;
+  inset: 0 0 auto; width:100%; max-width:none; padding: 12px clamp(16px,2.5vw,40px);
+  border: 0; border-radius:0; border-bottom:1px solid #302e2d; box-shadow:none;
+  background: #171717; gap: 9px 22px; min-height: 48px;
+}
+.knowledge-filters { gap:8px clamp(14px,2vw,30px); }
+.knowledge-filters .kg-option { color:#d2cec7; font-size:.85rem; font-weight:450; gap:7px; }
+.knowledge-filters .kg-option input[type="checkbox"] { width:14px; height:14px; accent-color:var(--relation-color); }
+.knowledge-status { color:#b3aaa0; font-size:.79rem; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.folder-label {
+  font: 500 18px/1.2 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  fill:var(--map-label); letter-spacing:.06px; paint-order:stroke;
+  stroke:#171717; stroke-width:6px; stroke-linejoin:round; pointer-events:none; user-select:none;
+}
+.folder-label.is-current { fill:#fff0da; }
+.knowledge-node .paper-dot { stroke-width:3; }
+.knowledge-node .paper-rim { stroke-width:.80; }
+.zoom-controls { display:flex; position:absolute; right:clamp(12px,2vw,30px); bottom:13px;
+  z-index:2; align-items:center; border:1px solid #4a453e; border-radius:8px;
+  background:#1b1b1b; padding:2px; }
+.zoom-controls button { border:0; font:500 19px/1 system-ui,sans-serif;
+  border-radius:5px; color:#e2d9ca; background:transparent; min-width:36px; height:31px; }
+.zoom-controls button:last-child { border-radius:0 5px 5px 0; border-left:1px solid #423e39;
+  padding-inline:13px; font-size:.85rem; }
+.zoom-controls button:hover { background:#34312d; }
+@media(max-width:850px){
+  .topbar { grid-template-columns:1fr max-content; column-gap:12px; }
+  .brand { font-size:22px; }
+  .view-picker { grid-row:1;grid-column:2; border:0;padding:0; }
+  .view-picker select { height:33px; min-width:100px; }
+  .search-wrap { max-width:none; width:100%; }
+  .knowledge-controls { align-items:flex-start;flex-direction:column;gap:7px;padding-block:10px; }
+  .knowledge-filters { gap:7px 14px; }
+}
+@media(max-width:560px){
+  .knowledge-filters { display:grid; grid-template-columns:auto auto; gap:6px 20px; }
+  .knowledge-filters .kg-option { font-size:.78rem; }
+  .knowledge-controls { padding:10px 16px; }
+  .knowledge-status { font-size:.75rem; }
+  .zoom-controls { right:10px;bottom:9px; }
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:0s!important;}}
+#release { left:clamp(12px,2vw,30px); right:auto; bottom:14px; }

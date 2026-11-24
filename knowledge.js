@@ -8,14 +8,15 @@
   const library = $('canvas');
   if (!canvas || !library || !window.d3) return;
   const svg = d3.select('#knowledge-svg');
-  const paperRadius = 10.5;
+  const paperRadius = 8.6;
   const viewport = svg.append('g');
   const edgeLayer = viewport.append('g').attr('class','knowledge-edges').attr('aria-hidden','true');
   const nodeLayer = viewport.append('g').attr('class','knowledge-nodes');
+  const labelLayer = viewport.append('g').attr('class','folder-labels').attr('pointer-events','none');
   const zoom = d3.zoom().scaleExtent([.15,4]).on('zoom',e=>viewport.attr('transform',e.transform));
   svg.call(zoom).on('dblclick.zoom',null);
   let graph={nodes:[],edges:[]}, loaded=false, current='knowledge';
-  let mapCenter=[0,0], lastCenter=null, resizeFrame=0, loading=false;
+  let folderLayout, lastFrame=null, resizeFrame=0, loading=false;
   const filters={citation:$('kg-citation'),author:$('kg-author'),similar:$('kg-similar')};
   // Constant minimum: the former slider's lowest value (0.15).
   // The producer uses the same threshold (0.15); no runtime API needed.
@@ -26,6 +27,114 @@
   let papers=new Map(), pairs=[], incident=new Map();
   let pinnedId=null, revealedId=null, cardId=null, repaint=()=>{};
   const enabledTypes=()=>new Set(Object.keys(filters).filter(type=>filters[type].checked));
+
+  function arrangeFolders(tree, nodes, edges) {
+    const circle = 2 * Math.PI;
+    const groups = [], owner = new Map();
+    const byId = new Map(nodes.map(paper => [paper.id, paper]));
+    const root = {id: tree.id, name: tree.name, members: []};
+
+    function collect(entry, folder) {
+      const paper = byId.get(entry.id);
+      if (paper && !owner.has(paper.id)) {
+        folder.members.push(paper);
+        owner.set(paper.id, folder);
+      }
+      for (const child of entry.children || []) collect(child, folder);
+    }
+
+    for (const entry of tree.children || []) {
+      if (entry.kind !== 'folder') { collect(entry, root); continue; }
+      const folder = {id: entry.id, name: entry.name, members: []};
+      collect(entry, folder);
+      if (folder.members.length) groups.push(folder);
+    }
+    for (const paper of nodes) {
+      if (!owner.has(paper.id)) { root.members.push(paper); owner.set(paper.id, root); }
+    }
+    if (root.members.length) groups.push(root);
+    if (!groups.length) return {groups, owner, bounds:{x:0, y:0, w:1, h:1}};
+
+    // The chord between adjacent papers is 29 map units, irrespective of folder size.
+    function labelLines(name) {
+      const lines = [];
+      for (const word of (name || 'Library').split(/\s+/)) {
+        const last = lines.length - 1;
+        if (last < 0 || lines[last].length + 1 + word.length > 24) lines.push(word);
+        else lines[last] += ' ' + word;
+      }
+      return lines;
+    }
+    groups.forEach((folder, index) => {
+      const n = folder.members.length;
+      folder.radius = n === 1 ? 0 : 14.5 / Math.sin(Math.PI / n);
+      folder.label = labelLines(folder.name);
+      const titleWidth = Math.max(...folder.label.map(s => Array.from(s).reduce((w, ch) =>
+        w + (ch.codePointAt(0) > 0x2e80 ? 18 : 10.5), 0)));
+      const dots = folder.radius + paperRadius + 5;
+      folder.halfWidth = Math.max(dots, titleWidth / 2);
+      folder.above = dots + 32 + (folder.label.length - 1) * 22;
+      folder.below = dots;
+      const angle = -Math.PI / 2 + circle * index / groups.length;
+      folder.ux = Math.cos(angle);
+      folder.uy = Math.sin(angle);
+    });
+
+    // Pick the smallest common orbit on which each pair clears either horizontally or vertically.
+    const gap = 19;
+    let orbit = 0;
+    if (groups.length > 128) {
+      const extent = d3.max(groups, g => Math.hypot(g.halfWidth, g.above));
+      orbit = (extent + gap / 2) / Math.sin(Math.PI / groups.length);
+    } else {
+      for (let i = 0; i < groups.length; i++) for (let j = i + 1; j < groups.length; j++) {
+        const a = groups[i], b = groups[j], dy = b.uy - a.uy;
+        const rx = (a.halfWidth + b.halfWidth + gap) / Math.abs(b.ux - a.ux);
+        const ry = ((dy >= 0 ? a.below + b.above : b.below + a.above) + gap) / Math.abs(dy);
+        orbit = Math.max(orbit, Math.min(rx, ry));
+      }
+    }
+
+    const neighbours = new Map(nodes.map(paper => [paper.id, []]));
+    for (const {source, target} of edges) {
+      neighbours.get(source).push(byId.get(target));
+      neighbours.get(target).push(byId.get(source));
+    }
+    for (const folder of groups) {
+      folder.x = orbit * folder.ux;
+      folder.y = orbit * folder.uy;
+      folder.labelY = folder.y - folder.above + 17;
+      folder.members.forEach((paper, i) => {
+        const angle = -Math.PI / 2 + circle * i / folder.members.length;
+        paper.x = folder.x + folder.radius * Math.cos(angle);
+        paper.y = folder.y + folder.radius * Math.sin(angle);
+      });
+    }
+
+    // Exchange slots, never distances, to bring related papers closer together.
+    function edgeLength(paper, slot, skip) {
+      let total = 0;
+      for (const other of neighbours.get(paper.id)) {
+        if (other !== skip) total += Math.hypot(slot.x - other.x, slot.y - other.y);
+      }
+      return total;
+    }
+    for (const {members} of groups) {
+      if (members.length > 64) continue;
+      for (let i = 0; i < members.length; i++) for (let j = i + 1; j < members.length; j++) {
+        const a = members[i], b = members[j];
+        if (edgeLength(a,b,b) + edgeLength(b,a,a) + .01 >= edgeLength(a,a,b) + edgeLength(b,b,a)) continue;
+        [a.x,b.x] = [b.x,a.x];
+        [a.y,b.y] = [b.y,a.y];
+      }
+    }
+
+    const left = d3.min(groups, g => g.x - g.halfWidth) - gap;
+    const right = d3.max(groups, g => g.x + g.halfWidth) + gap;
+    const top = d3.min(groups, g => g.y - g.above) - gap;
+    const bottom = d3.max(groups, g => g.y + g.below) + gap;
+    return {groups, owner, bounds:{x:(left+right)/2, y:(top+bottom)/2, w:right-left, h:bottom-top}};
+  }
 
   function indexRelations(data){
     papers=new Map(data.nodes.map(n=>[n.id,n]));
@@ -76,7 +185,7 @@
   connections.className='paper-connections';connections.id='paper-connections';connections.hidden=true;connections.tabIndex=-1;
   connections.setAttribute('aria-label','Publication connections');
   $('external').after(connections);
-  const jump=make('button','Connections ↓');
+  const jump=make('button','Connections');
   jump.type='button';jump.className='connections-jump';jump.hidden=true;
   jump.setAttribute('aria-controls',connections.id);
   $('close').before(jump);
@@ -104,8 +213,12 @@
   }
 
   function listConnections(){
+    const samePaper=cardId!=null && String(cardId)===connections.dataset.paperId;
+    const openGroups=new Set(samePaper
+      ? Array.from(connections.querySelectorAll('.connection-group[open]'), section=>section.dataset.kind) : []);
     jump.hidden=true;connections.replaceChildren();connections.hidden=cardId==null;
-    if(cardId==null) return;
+    if(cardId==null){delete connections.dataset.paperId;return;}
+    connections.dataset.paperId=String(cardId);
     connections.append(make('h2','Connections'));
     if(!loaded){
       connections.append(make('p',loading?'Loading connections…':'Connections unavailable.'));
@@ -129,7 +242,8 @@
       const rows=groups[key];if(!rows.length) continue;
       rows.sort((a,b)=>(key==='similar'?(b.e.strength || 0)-(a.e.strength || 0):0)
         || String(a.other.title || '').localeCompare(String(b.other.title || '')));
-      const section=make('details','');section.className='connection-group group-'+key;section.open=true;
+      const section=make('details','');section.className='connection-group group-'+key;
+      section.dataset.kind=key;section.open=openGroups.has(key);
       const summary=make('summary','');
       summary.append(make('span',label),make('span',String(rows.length)));
       section.append(summary);
@@ -210,128 +324,32 @@
     const rect=canvas.getBoundingClientRect();
     const padding=Math.min(20,Math.min(rect.width,rect.height)*.04);
     const filtersBottom=canvas.querySelector('.knowledge-controls').getBoundingClientRect().bottom;
-    const footerTop=$('release')?.getBoundingClientRect().top ?? rect.bottom;
+    const footerTop=canvas.querySelector('.zoom-controls').getBoundingClientRect().top;
     const top=Math.max(padding,filtersBottom-rect.top+padding/2);
     const bottom=Math.min(rect.height-padding,footerTop-rect.top-padding/2);
     return {x:padding,y:top,w:Math.max(1,rect.width-2*padding),h:Math.max(1,bottom-top)};
   }
 
-  function side(a,b,p){
-    return (b.x-a.x)*(p.y-a.y)-(b.y-a.y)*(p.x-a.x);
+  function fitMap() {
+    if (!folderLayout) return;
+    const frame=dims(),bounds=folderLayout.bounds;
+    const k=Math.min(1.65,frame.w/bounds.w,frame.h/bounds.h);
+    zoom.scaleExtent([Math.min(.15,k),4]);
+    svg.call(zoom.transform,d3.zoomIdentity.translate(frame.x+frame.w/2,frame.y+frame.h/2)
+      .scale(k).translate(-bounds.x,-bounds.y));
+    lastFrame=frame;
   }
-
-  function layoutComponent(nodes,neighbors){
-    const sets=neighbors.map(row=>new Set(row)),links=[];
-    neighbors.forEach((row,i)=>row.forEach(j=>{
-      if(j<=i) return;
-      let common=0;
-      for(const k of row) if(sets[j].has(k)) common++;
-      const overlap=common/Math.sqrt(row.length*neighbors[j].length);
-      links.push({source:nodes[i],target:nodes[j],distance:110-55*overlap,
-        strength:(.58+overlap)/Math.sqrt(Math.min(row.length,neighbors[j].length))});
-    }));
-    const trials=nodes.length>8 && nodes.length<=170 && links.length<=650 ? 3 : 1;
-    let best=null,bestScore=Infinity;
-    for(let trial=0;trial<trials;trial++){
-      const random=d3.randomLcg(83+trial*29);
-      const span=52*Math.sqrt(nodes.length);
-      for(const n of nodes){
-        n.x=(random()-.5)*span;n.y=(random()-.5)*span;n.vx=0;n.vy=0;
-      }
-      d3.forceSimulation(nodes).randomSource(random)
-        .force('links',d3.forceLink(links).distance(e=>e.distance).strength(e=>e.strength))
-        .force('charge',d3.forceManyBody().strength(-335))
-        .force('separation',d3.forceCollide(paperRadius+11).iterations(2))
-        .force('center',d3.forceCenter()).stop().tick(195);
-      if(trials===1) return;
-      // Among deterministic starts, prefer the one with fewer crossings of real edges.
-      let score=0;
-      for(let i=0;i<links.length;i++){
-        const {source:a,target:b}=links[i];
-        for(let j=0;j<i;j++){
-          const {source:c,target:d}=links[j];
-          if(side(a,b,c)*side(a,b,d)<0 && side(c,d,a)*side(c,d,b)<0) score++;
-        }
-        score+=.001*Math.hypot(b.x-a.x,b.y-a.y);
-      }
-      if(score<bestScore){bestScore=score;best=nodes.map(n=>[n.x,n.y]);}
-    }
-    nodes.forEach((n,i)=>{[n.x,n.y]=best[i];});
-  }
-  function arrangeGraph(nodes,edges){
-    const byId=new Map(nodes.map(n=>[n.id,n]));
-    const adjacent=new Map(nodes.map(n=>[n.id,[]]));
-    for(const edge of edges){
-      adjacent.get(edge.source).push(edge.target);
-      adjacent.get(edge.target).push(edge.source);
-    }
-    const visited=new Set(),islands=[],isolated=[];
-    for(const node of nodes){
-      if(visited.has(node.id)) continue;
-      if(!adjacent.get(node.id).length){isolated.push(node);continue;}
-      const ids=[node.id];visited.add(node.id);
-      for(let i=0;i<ids.length;i++){
-        for(const next of adjacent.get(ids[i])){
-          if(!visited.has(next)){visited.add(next);ids.push(next);}
-        }
-      }
-      ids.sort();
-      const index=new Map(ids.map((id,i)=>[id,i]));
-      const members=ids.map(id=>byId.get(id));
-      layoutComponent(members,ids.map(id=>adjacent.get(id).map(other=>index.get(other)).sort((a,b)=>a-b)));
-      // A single rotation keeps distances and angles intact on a wide canvas.
-      if(members.length>=8){
-        const cx=d3.mean(members,n=>n.x),cy=d3.mean(members,n=>n.y);
-        let xx=0,yy=0,xy=0;
-        for(const n of members){
-          const x=n.x-cx,y=n.y-cy;xx+=x*x;yy+=y*y;xy+=x*y;
-        }
-        const angle=.5*Math.atan2(2*xy,xx-yy),cos=Math.cos(angle),sin=Math.sin(angle);
-        for(const n of members){
-          const x=n.x-cx,y=n.y-cy;
-          n.x=x*cos+y*sin;n.y=y*cos-x*sin;
-        }
-      }
-      islands.push(members);
-    }
-    islands.sort((a,b)=>b.length-a.length);
-    if(isolated.length){
-      const cols=Math.ceil(Math.sqrt(isolated.length));
-      isolated.forEach((n,i)=>{n.x=(i%cols+(Math.floor(i/cols)%2)*.5)*49;n.y=Math.floor(i/cols)*45;});
-      islands.push(isolated);
-    }
-    if(!islands.length) return [0,0];
-    const boxes=islands.map(members=>{
-      const [left,right]=d3.extent(members,n=>n.x),[top,bottom]=d3.extent(members,n=>n.y);
-      return {members,left,top,width:right-left+72,height:bottom-top+72};
-    });
-    const rowWidth=Math.max(d3.max(boxes,b=>b.width),Math.sqrt(d3.sum(boxes,b=>b.width*b.height))*1.35);
-    let x=0,y=0,rowHeight=0;
-    for(const box of boxes){
-      if(x && x+box.width>rowWidth){y+=rowHeight;x=0;rowHeight=0;}
-      for(const n of box.members){n.x+=x-box.left;n.y+=y-box.top;}
-      x+=box.width;rowHeight=Math.max(rowHeight,box.height);
-    }
-    return [d3.median(islands[0],n=>n.x),d3.median(islands[0],n=>n.y)];
-  }
-
   function positionCamera(){
-    const frame=dims(),center=[frame.x+frame.w/2,frame.y+frame.h/2];
-    const transform=d3.zoomTransform(svg.node());
-    if(!lastCenter){
-      const scale=frame.w<600 ? .7 : .86;
-      svg.call(zoom.transform,d3.zoomIdentity.translate(...center).scale(scale).translate(-mapCenter[0],-mapCenter[1]));
-    }else if(center[0]!==lastCenter[0] || center[1]!==lastCenter[1]){
-      svg.call(zoom.transform,transform.translate((center[0]-lastCenter[0])/transform.k,(center[1]-lastCenter[1])/transform.k));
-    }
-    lastCenter=center;
+    const frame=dims();
+    if(!lastFrame){fitMap();return;}
+    const dx=frame.x+frame.w/2-lastFrame.x-lastFrame.w/2,dy=frame.y+frame.h/2-lastFrame.y-lastFrame.h/2;
+    if(dx || dy){const t=d3.zoomTransform(svg.node());svg.call(zoom.transform,t.translate(dx/t.k,dy/t.k));}
+    lastFrame=frame;
   }
   function switchTab(tab){
     clearSelection();current=tab;
     library.hidden=(tab!=='library');canvas.hidden=(tab!=='knowledge');
-    for(const t of ['library','knowledge']){
-      const b=$('tab-'+t);b.classList.toggle('active',tab===t);b.setAttribute('aria-selected',String(tab===t));
-    }
+    $('map-view').value=tab;
     $('search-input').setAttribute('aria-label', tab==='knowledge'
       ? 'Search graph publications by title or author' : 'Search library by title or author');
     $('drawer').classList.remove('open');$('drawer').setAttribute('aria-hidden','true');$('overlay').classList.remove('show');
@@ -339,9 +357,10 @@
     else {window.dispatchEvent(new Event('resize'));}
   }
   window.researchMapShowLibrary=()=>switchTab('library');
-  $('tab-library').addEventListener('click',()=>switchTab('library'));
-  $('tab-knowledge').addEventListener('click',()=>switchTab('knowledge'));
-  // Zoom is available through wheel, trackpad and touch gestures only.
+  $('map-view').addEventListener('change',e=>switchTab(e.target.value));
+  $('zoom-in').addEventListener('click',()=>svg.call(zoom.scaleBy,1.3));
+  $('zoom-out').addEventListener('click',()=>svg.call(zoom.scaleBy,1/1.3));
+  $('zoom-fit').addEventListener('click',()=>{fitMap();});
   function load(){
     if(loading) return;
     loading=true;
@@ -349,8 +368,8 @@
     fetch('./knowledge.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('knowledge.json unavailable');return r.json();})
       .then(async data=>{
         if(!Array.isArray(data.nodes)||!Array.isArray(data.edges))throw Error('Invalid graph data');
+        const catalog=await window.researchMapCatalog;
         if(data.version>=2){
-          const catalog=await (window.researchMapCatalog || fetch('./catalog.json',{cache:'no-store'}).then(response=>response.json()));
           const entries=new Map();
           function visit(n){
             if(n.kind==='article' || n.kind==='book') entries.set(n.id,n);
@@ -364,12 +383,13 @@
         }
         data.nodes=data.nodes.map(n=>({...n}));
         indexRelations(data);
-        mapCenter=arrangeGraph(data.nodes,pairs.map(group=>group[0]));
+        folderLayout=arrangeFolders(catalog.tree,data.nodes,pairs.map(group=>group[0]));
         graph=data;loaded=true;loading=false;if(current==='knowledge')draw();else listConnections();
         window.researchMapSetGraphSearch?.(graph.nodes, node=>selectPaper(node,true));
       }).catch(()=>{loading=false;listConnections();$('knowledge-status').textContent='Knowledge graph unavailable. Publish knowledge.json from the private build.';});
   }
   function draw(){
+    positionCamera();
     edgeLayer.selectAll('*').remove();nodeLayer.selectAll('*').remove();
     repaint=()=>{};
     const adjacency=new Map(graph.nodes.map(n=>[n.id,new Set()]));
@@ -380,8 +400,14 @@
     }
     const nodes=graph.nodes.filter(n=>isolates.checked || adjacency.get(n.id).size || n.id===revealedId);
     const coords=new Map(nodes.map(n=>[n.id,n]));
-    const hidden=graph.nodes.length-nodes.length;
-    $('knowledge-status').textContent=nodes.length+' publications · '+activeEdges.length+' connections'+(hidden?' · '+hidden+' papers filtered out':'');
+
+    const visibleFolders=folderLayout.groups.filter(g=>g.members.some(n=>coords.has(n.id)));
+    const labels=labelLayer.selectAll('text').data(visibleFolders,g=>g.id).join('text')
+      .attr('class','folder-label').attr('transform',g=>`translate(${g.x},${g.labelY})`).attr('text-anchor','middle');
+    labels.each(function(g){
+      d3.select(this).selectAll('tspan').data(g.label).join('tspan').attr('x',0).attr('y',(_,i)=>i*22).text(line=>line);
+    });
+    $('knowledge-status').textContent=visibleFolders.length+' folders · '+nodes.length+' publications · '+activeEdges.length+' connections';
     if(pinnedId!=null && !coords.has(pinnedId)) $('close').click();
     if(!nodes.length) return;
     function renderPositions(){
@@ -395,10 +421,11 @@
       group.attr('transform',d=>`translate(${d.x},${d.y})`);
     }
 
-    const edgeOpacity=e=>e.type==='citation' ? .67 : e.type==='author' ? .60 : .52;
+    const sameFolder=e=>folderLayout.owner.get(e.source)===folderLayout.owner.get(e.target);
+    const edgeOpacity=e=>sameFolder(e) ? .50 : .29;
     const lines=edgeLayer.selectAll('line').data(activeEdges).join('line')
       .attr('class',d=>'knowledge-link relation-'+d.type)
-      .attr('stroke-width',d=>d.type==='citation'?2.65:d.type==='author'?2.4:2.15)
+      .attr('stroke-width',d=>sameFolder(d)?1.35:1.05)
       .attr('stroke-opacity',edgeOpacity);
     const group=nodeLayer.selectAll('g').data(nodes,d=>d.id).join('g')
       .attr('class','knowledge-node')
@@ -414,16 +441,27 @@
     group.append('title').text(d=>d.title||'Untitled publication');
     repaint=id=>{
       const neighbors=adjacency.get(id);
+      labels.classed('is-current',g=>id!=null && folderLayout.owner.get(id)===g);
       group.attr('opacity',n=>!neighbors || n.id===id || neighbors.has(n.id)?1:.32)
         .classed('is-selected',n=>n.id===id).attr('aria-pressed',n=>String(n.id===id));
       lines.attr('stroke-opacity',e=>!neighbors?edgeOpacity(e):e.source===id || e.target===id?1:.09)
         .classed('is-incident',e=>e.source===id || e.target===id);
       if(neighbors) lines.filter(e=>e.source===id || e.target===id).raise();
     };
-    group.call(d3.drag()
-      .on('start',function(){d3.select(this).raise();})
-      .on('drag',function(e,d){d.x=e.x;d.y=e.y;renderPositions();}));
-    renderPositions();repaint(pinnedId);positionCamera();
+    group.filter(paper=>folderLayout.owner.get(paper.id).members.length>1).call(d3.drag()
+      .clickDistance(3)
+      .on('drag',(event,paper)=>{
+        const folder=folderLayout.owner.get(paper.id), dx=event.x-folder.x, dy=event.y-folder.y;
+        if(Math.hypot(dx,dy)<1) return;
+        const turn=Math.atan2(dy,dx)-Math.atan2(paper.y-folder.y,paper.x-folder.x);
+        const cos=Math.cos(turn),sin=Math.sin(turn);
+        for(const member of folder.members){
+          const x=member.x-folder.x,y=member.y-folder.y;
+          member.x=folder.x+x*cos-y*sin;member.y=folder.y+x*sin+y*cos;
+        }
+        renderPositions();
+      }));
+    renderPositions();repaint(pinnedId);
     if(cardId!=null) listConnections();
   }
   Object.values(filters).concat(isolates).forEach(control=>control.addEventListener('change',()=>{
@@ -442,7 +480,11 @@
     resizeFrame=requestAnimationFrame(()=>{
       resizeFrame=0;
       if(current==='knowledge'){
-        positionCamera();if(pinnedId!=null) revealPaper(papers.get(pinnedId));
+        const frame=dims();
+        if(lastFrame && ((frame.w<620)!==(lastFrame.w<620))){
+          fitMap();
+        }else positionCamera();
+        if(pinnedId!=null) revealPaper(papers.get(pinnedId));
       }
     });
   });
