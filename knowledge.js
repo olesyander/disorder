@@ -324,7 +324,7 @@
     const rect=canvas.getBoundingClientRect();
     const padding=Math.min(20,Math.min(rect.width,rect.height)*.04);
     const filtersBottom=canvas.querySelector('.knowledge-controls').getBoundingClientRect().bottom;
-    const footerTop=canvas.querySelector('.zoom-controls').getBoundingClientRect().top;
+    const footerTop=$('release').getBoundingClientRect().top;
     const top=Math.max(padding,filtersBottom-rect.top+padding/2);
     const bottom=Math.min(rect.height-padding,footerTop-rect.top-padding/2);
     return {x:padding,y:top,w:Math.max(1,rect.width-2*padding),h:Math.max(1,bottom-top)};
@@ -358,9 +358,6 @@
   }
   window.researchMapShowLibrary=()=>switchTab('library');
   $('map-view').addEventListener('change',e=>switchTab(e.target.value));
-  $('zoom-in').addEventListener('click',()=>svg.call(zoom.scaleBy,1.3));
-  $('zoom-out').addEventListener('click',()=>svg.call(zoom.scaleBy,1/1.3));
-  $('zoom-fit').addEventListener('click',()=>{fitMap();});
   function load(){
     if(loading) return;
     loading=true;
