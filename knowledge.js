@@ -72,25 +72,41 @@
       if (a !== b) { a.externalLinks++; b.externalLinks++; }
     }
 
-    const spacing = 32, gap = 20;
-    const goldenAngle = Math.PI * (3 - Math.sqrt(5));
-    const footprints = groups.map((folder, index) => {
-      const count = folder.members.length;
-      const phase = index * goldenAngle - Math.PI / 2;
-      let angularStep = goldenAngle;
-      if (count <= 3) angularStep = 2 * Math.PI / count;
-      else if (count <= 7) angularStep = 2 * Math.PI / (count - 1);
+    const spacing = 48, gap = 20;
+    function diskSlots(count) {
+      const rowHeight = spacing * Math.sqrt(3) / 2;
+      if (count === 1) return [{x: 0, y: 0}];
+      if (count === 2) return [{x: -spacing / 2, y: 0}, {x: spacing / 2, y: 0}];
+      if (count === 3) return [
+        {x: 0, y: -2 * rowHeight / 3},
+        {x: -spacing / 2, y: rowHeight / 3}, {x: spacing / 2, y: rowHeight / 3}
+      ];
 
-      // A square-root radius allots equal area per paper on the sunflower spiral.
-      folder.radius = 0;
+      // On a triangular lattice the squared distance in units of spacing is an integer.
+      const limit = Math.ceil(Math.sqrt(count)), sites = [];
+      for (let row = -limit; row <= limit; row++) {
+        for (let col = -limit; col <= limit; col++) {
+          sites.push({x: spacing * (col + row / 2), y: rowHeight * row,
+            distance2: col * col + col * row + row * row});
+        }
+      }
+      sites.sort((a, b) => a.distance2 - b.distance2);
+      const cutoff = sites[count - 1].distance2;
+      const slots = sites.filter(p => p.distance2 < cutoff);
+      // Distribute any remaining papers around the rim, starting from the left.
+      const rim = sites.filter(p => p.distance2 === cutoff)
+        .sort((a, b) => Math.atan2(-a.y, a.x) - Math.atan2(-b.y, b.x));
+      const remaining = count - slots.length;
+      for (let i = 0; i < remaining; i++) slots.push(rim[Math.floor(i * rim.length / remaining)]);
+      return slots;
+    }
+
+    const footprints = groups.map(folder => {
+      const slots = diskSlots(folder.members.length);
+      folder.radius = d3.max(slots, p => Math.hypot(p.x, p.y));
       folder.members.forEach((paper, i) => {
-        let radius = 0;
-        if (count === 2 || count === 3) radius = spacing / (2 * Math.sin(Math.PI / count));
-        else if (i > 0) radius = count <= 7 ? spacing : spacing * Math.sqrt((i + 1) / 2);
-        const angle = phase + i * angularStep;
-        paper.x = radius * Math.cos(angle);
-        paper.y = radius * Math.sin(angle);
-        folder.radius = Math.max(folder.radius, radius);
+        paper.x = slots[i].x;
+        paper.y = slots[i].y;
       });
 
       folder.label = labelLines(folder.name);
@@ -173,7 +189,9 @@
     const edges=[];
     for(const group of pairs){
       const first=group.find(e=>allowed.has(e.type));
-      if(first) edges.push(first);
+      if(!first) continue;
+      const mutual=first.type==='citation' && group.some(e=>e.type==='citation' && e.source===first.target);
+      edges.push(mutual ? {...first, mutual:true} : first);
     }
     return edges;
   }
@@ -338,11 +356,16 @@
   function dims(){
     const rect=canvas.getBoundingClientRect();
     const padding=Math.min(20,Math.min(rect.width,rect.height)*.04);
-    const filtersBottom=canvas.querySelector('.knowledge-controls').getBoundingClientRect().bottom;
+    const controls=canvas.querySelector('.knowledge-controls').getBoundingClientRect();
     const footerTop=$('release').getBoundingClientRect().top;
-    const top=Math.max(padding,filtersBottom-rect.top+padding/2);
+    const top=Math.max(padding,controls.bottom-rect.top+padding/2);
     const bottom=Math.min(rect.height-padding,footerTop-rect.top-padding/2);
-    return {x:padding,y:top,w:Math.max(1,rect.width-2*padding),h:Math.max(1,bottom-top)};
+    const below={x:padding,y:top,w:Math.max(1,rect.width-2*padding),h:Math.max(1,bottom-top)};
+    const left=controls.right-rect.left+padding;
+    const beside={x:left,y:padding,w:rect.width-left-padding,h:bottom-padding};
+    const bounds=folderLayout?.bounds;
+    if(bounds && Math.min(beside.w/bounds.w,beside.h/bounds.h)>Math.min(below.w/bounds.w,below.h/bounds.h)) return beside;
+    return below;
   }
 
   function fitMap() {
@@ -423,7 +446,7 @@
     if(pinnedId!=null && !coords.has(pinnedId)) $('close').click();
     if(!nodes.length) return;
     function renderPositions(){
-      lines.each(function(edge){
+      edgeLayer.selectAll('line').each(function(edge){
         const a=coords.get(edge.source),b=coords.get(edge.target);
         const dx=b.x-a.x,dy=b.y-a.y,length=Math.hypot(dx,dy);
         const inset=Math.min(.5,(paperRadius+2)/(length || 1));
@@ -435,10 +458,12 @@
 
     const sameFolder=e=>folderLayout.owner.get(e.source)===folderLayout.owner.get(e.target);
     const edgeOpacity=e=>sameFolder(e) ? .50 : .29;
-    const lines=edgeLayer.selectAll('line').data(activeEdges).join('line')
+    const lines=edgeLayer.selectAll('line.knowledge-link').data(activeEdges).join('line')
       .attr('class',d=>'knowledge-link relation-'+d.type)
       .attr('stroke-width',d=>sameFolder(d)?1.35:1.05)
       .attr('stroke-opacity',edgeOpacity);
+    const mutualLines=edgeLayer.selectAll('line.mutual-citation').data(activeEdges.filter(e=>e.mutual)).join('line')
+      .attr('class','mutual-citation').attr('display','none');
     const group=nodeLayer.selectAll('g').data(nodes,d=>d.id).join('g')
       .attr('class','knowledge-node')
       .attr('tabindex',0).attr('role','button')
@@ -456,25 +481,40 @@
       labels.classed('is-current',g=>id!=null && folderLayout.owner.get(id)===g);
       group.attr('opacity',n=>!neighbors || n.id===id || neighbors.has(n.id)?1:.32)
         .classed('is-selected',n=>n.id===id).attr('aria-pressed',n=>String(n.id===id));
-      lines.attr('stroke-opacity',e=>!neighbors?edgeOpacity(e):e.source===id || e.target===id?1:.09)
-        .classed('is-incident',e=>e.source===id || e.target===id);
-      if(neighbors) lines.filter(e=>e.source===id || e.target===id).raise();
+      const touches=e=>e.source===id || e.target===id;
+      lines.attr('stroke-opacity',e=>!neighbors?edgeOpacity(e):touches(e)?1:.09)
+        .classed('is-incident',touches)
+        .classed('is-outgoing',e=>e.type==='citation' && e.source===id && !e.mutual);
+      if(neighbors) lines.filter(touches).raise();
+      mutualLines.attr('display',e=>touches(e)?null:'none').filter(touches).raise();
     };
     group.filter(paper=>{
       const folder=folderLayout.owner.get(paper.id);
       return Math.hypot(paper.x-folder.x,paper.y-folder.y)>1;
     }).call(d3.drag()
       .clickDistance(3)
-      .on('drag',(event,paper)=>{
-        const folder=folderLayout.owner.get(paper.id), dx=event.x-folder.x, dy=event.y-folder.y;
-        if(Math.hypot(dx,dy)<1) return;
-        const turn=Math.atan2(dy,dx)-Math.atan2(paper.y-folder.y,paper.x-folder.x);
-        const cos=Math.cos(turn),sin=Math.sin(turn);
-        for(const member of folder.members){
-          const x=member.x-folder.x,y=member.y-folder.y;
-          member.x=folder.x+x*cos-y*sin;member.y=folder.y+x*sin+y*cos;
+      .on('start',(event,paper)=>{
+        const folder=folderLayout.owner.get(paper.id);
+        const startAngle=Math.atan2(paper.y-folder.y,paper.x-folder.x);
+        const offsets=folder.members.map(p=>({paper:p,x:p.x-folder.x,y:p.y-folder.y}));
+        let turn=0;
+        function rotate(angle){
+          const cos=Math.cos(angle),sin=Math.sin(angle);
+          for(const {paper,x,y} of offsets){
+            paper.x=folder.x+x*cos-y*sin; paper.y=folder.y+x*sin+y*cos;
+          }
+          renderPositions();
         }
-        renderPositions();
+        event.on('drag',e=>{
+          const dx=e.x-folder.x,dy=e.y-folder.y;
+          if(Math.hypot(dx,dy)<1) return;
+          turn=Math.atan2(dy,dx)-startAngle;
+          rotate(turn);
+        }).on('end',()=>{
+          // A sixth of a turn puts staggered rows back on horizontal lines.
+          const step=Math.PI/3;
+          if(turn) rotate(Math.round(turn/step)*step);
+        });
       }));
     renderPositions();repaint(pinnedId);
     if(cardId!=null) listConnections();

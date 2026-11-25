@@ -92,6 +92,7 @@
   /* 6. Knowledge Graph — рёбра и галочки */
   --relation-citation: #f3c548;
   /* цитирования — золото */
+  --citation-outgoing: #fffccc;
   --relation-author: #f08a24;
   /* общие авторы — оранжевый */
   --relation-similar: #d14f38;
@@ -183,7 +184,13 @@ button {
 
 .brand span {
   font-weight: 390;
-  color: var(--brand-muted);
+  font-family: inherit;
+  font-style: normal;
+  display: inline-block;
+  transform: skewX(-6deg);
+  transform-origin: center 75%;
+  letter-spacing: -.035em;
+  color: #c5b59e;
 }
 
 .view-tabs {
@@ -514,8 +521,9 @@ button {
 
 .knowledge-filters {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px 22px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
 }
 
 .knowledge-filters .kg-option {
@@ -567,10 +575,22 @@ button {
   stroke: var(--map-line);
   stroke-linecap: round;
   transition: stroke-opacity .15s;
+  pointer-events: none;
 }
 
 .knowledge-link.is-incident.relation-citation {
   stroke: var(--relation-citation);
+}
+
+.knowledge-link.is-incident.is-outgoing,
+.mutual-citation {
+  stroke: var(--citation-outgoing);
+}
+
+.mutual-citation {
+  stroke-width: 2.9;
+  stroke-dasharray: 6 5;
+  pointer-events: none;
 }
 
 .knowledge-link.is-incident.relation-author {
@@ -911,14 +931,6 @@ button {
     padding: 9px;
   }
 
-  .knowledge-filters {
-    gap: 6px 10px;
-  }
-
-  .knowledge-filters label {
-    font-size: 10px;
-  }
-
   .release {
     right: 6px;
     bottom: 6px;
@@ -983,6 +995,7 @@ button {
   font-weight: 600;
 }
 .connection-group { margin: 0 0 10px; --accent: var(--relation-citation); }
+.connection-group.group-out { --accent: var(--citation-outgoing); }
 .connection-group.group-author { --accent: var(--relation-author); }
 .connection-group.group-similar { --accent: var(--relation-similar); }
 .connection-group > summary {
@@ -1061,7 +1074,6 @@ button {
   padding-inline: clamp(16px, 2.5vw, 40px);
 }
 .brand { letter-spacing: -.055em; font-weight: 620; font-size: 24px; }
-.brand span { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 400; color: #c5b59e; letter-spacing: -.055em; }
 .view-picker { position: relative; border-left: 1px solid #423e38; padding-left: 23px; }
 .view-picker select {
   appearance: none; -webkit-appearance: none; cursor: pointer;
@@ -1080,15 +1092,14 @@ button {
 .search-results { left: auto; width: max(100%, min(380px, 92vw)); min-width: 0; }
 .search-result-title { font-size: .90rem; }.search-result-meta { font-size: .77rem; }
 .knowledge-controls {
-  flex-direction: row; align-items:center; justify-content:space-between;
-  inset: 0 0 auto; width:100%; max-width:none; padding: 12px clamp(16px,2.5vw,40px);
-  border: 0; border-radius:0; border-bottom:1px solid #302e2d; box-shadow:none;
-  background: #171717; gap: 9px 22px; min-height: 48px;
+  width: max-content;
+  max-width: min(28rem, calc(100% - 36px));
+  padding: 10px 14px;
+  gap: 8px;
 }
-.knowledge-filters { gap:8px clamp(14px,2vw,30px); }
-.knowledge-filters .kg-option { color:#d2cec7; font-size:.85rem; font-weight:450; gap:7px; }
-.knowledge-filters .kg-option input[type="checkbox"] { width:14px; height:14px; accent-color:var(--relation-color); }
-.knowledge-status { color:#b3aaa0; font-size:.79rem; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.knowledge-filters .kg-option { color:#d2cec7; font-size:.85rem; font-weight:450; gap:8px; min-height:24px; }
+.knowledge-filters .kg-option input[type="checkbox"] { width:14px; height:14px; margin:0; }
+.knowledge-status { color:#b3aaa0; font-size:.79rem; font-variant-numeric:tabular-nums; }
 .folder-label {
   font: 500 18px/1.2 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   fill:var(--map-label); letter-spacing:.06px; paint-order:stroke;
@@ -1103,13 +1114,10 @@ button {
   .view-picker { grid-row:1;grid-column:2; border:0;padding:0; }
   .view-picker select { height:33px; min-width:100px; }
   .search-wrap { max-width:none; width:100%; }
-  .knowledge-controls { align-items:flex-start;flex-direction:column;gap:7px;padding-block:10px; }
-  .knowledge-filters { gap:7px 14px; }
 }
 @media(max-width:560px){
-  .knowledge-filters { display:grid; grid-template-columns:auto auto; gap:6px 20px; }
   .knowledge-filters .kg-option { font-size:.78rem; }
-  .knowledge-controls { padding:10px 16px; }
+  .knowledge-controls { left:8px; top:8px; max-width:calc(100% - 16px); padding:8px 12px; }
   .knowledge-status { font-size:.75rem; }
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:0s!important;}}
