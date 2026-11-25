@@ -5,18 +5,21 @@
   const T = CFG.labels || {};
   const $ = id => document.getElementById(id);
   const canvas = $('knowledge-view');
-  const library = $('canvas');
-  if (!canvas || !library || !window.d3) return;
+  const drawer = $('drawer');
+  const {loadCatalog, bindSearch, authorsOf, titleOf} = window.researchMap;
+  if (!window.d3) {
+    $('knowledge-status').textContent = 'Unable to load the graph renderer.';
+    return;
+  }
   const svg = d3.select('#knowledge-svg');
   const paperRadius = 8.6;
   const viewport = svg.append('g');
   const edgeLayer = viewport.append('g').attr('class','knowledge-edges').attr('aria-hidden','true');
   const nodeLayer = viewport.append('g').attr('class','knowledge-nodes');
-  const labelLayer = viewport.append('g').attr('class','folder-labels').attr('pointer-events','none');
-  const zoom = d3.zoom().scaleExtent([.15,4]).on('zoom',e=>viewport.attr('transform',e.transform));
+  const labelLayer = viewport.append('g').attr('class','folder-labels');
+  const zoom = d3.zoom().clickDistance(4).scaleExtent([.15,4]).on('zoom',e=>viewport.attr('transform',e.transform));
   svg.call(zoom).on('dblclick.zoom',null);
-  let graph={nodes:[],edges:[]}, loaded=false, current='knowledge';
-  let folderLayout, lastFrame=null, resizeFrame=0, loading=false;
+  let graph={nodes:[],edges:[]}, folderLayout, lastFrame=null, resizeFrame=0;
   const filters={citation:$('kg-citation'),author:$('kg-author'),similar:$('kg-similar')};
   // Constant minimum: the former slider's lowest value (0.15).
   // The producer uses the same threshold (0.15); no runtime API needed.
@@ -25,13 +28,15 @@
 
   const isolates=$('kg-isolated');
   let papers=new Map(), pairs=[], incident=new Map();
-  let pinnedId=null, revealedId=null, cardId=null, repaint=()=>{};
+  let panel=null, opener=null, memberIds=null, revealedId=null, repaint=()=>{};
+  const history=[];
+  const paperId=()=>panel?.kind==='paper' ? panel.item.id : null;
   const enabledTypes=()=>new Set(Object.keys(filters).filter(type=>filters[type].checked));
 
   function arrangeFolders(tree, nodes, edges) {
     const groups = [], owner = new Map();
     const byId = new Map(nodes.map(paper => [paper.id, paper]));
-    const root = {id: tree.id, name: tree.name, members: []};
+    const root = {id: tree.id, name: tree.name || 'Publications', members: []};
 
     function collect(entry, folder) {
       const paper = byId.get(entry.id);
@@ -44,7 +49,7 @@
 
     for (const entry of tree.children || []) {
       if (entry.kind !== 'folder') { collect(entry, root); continue; }
-      const folder = {id: entry.id, name: entry.name, members: []};
+      const folder = {id: entry.id, name: entry.name || 'Publications', members: []};
       collect(entry, folder);
       if (folder.members.length) groups.push(folder);
     }
@@ -56,7 +61,7 @@
 
     function labelLines(name) {
       const lines = [];
-      for (const word of (name || 'Library').split(/\s+/)) {
+      for (const word of name.split(/\s+/)) {
         const last = lines.length - 1;
         if (last < 0 || lines[last].length + 1 + word.length > 24) lines.push(word);
         else lines[last] += ' ' + word;
@@ -110,9 +115,9 @@
       });
 
       folder.label = labelLines(folder.name);
-      const labelWidth = d3.max(folder.label, line => Array.from(line).reduce((width, ch) =>
+      folder.labelWidth = d3.max(folder.label, line => Array.from(line).reduce((width, ch) =>
         width + (ch.codePointAt(0) > 0x2e80 ? 18 : 10.5), 0));
-      const labelHalf = labelWidth / 2 + 4;
+      const labelHalf = folder.labelWidth / 2 + 4;
       const dots = folder.radius + paperRadius + 5;
       folder.halfWidth = Math.max(dots, labelHalf);
       folder.above = dots + 30 + (folder.label.length - 1) * 22;
@@ -246,6 +251,7 @@
   }
 
   function listConnections(){
+    const cardId=paperId();
     const samePaper=cardId!=null && String(cardId)===connections.dataset.paperId;
     const openGroups=new Set(samePaper
       ? Array.from(connections.querySelectorAll('.connection-group[open]'), section=>section.dataset.kind) : []);
@@ -253,12 +259,8 @@
     if(cardId==null){delete connections.dataset.paperId;return;}
     connections.dataset.paperId=String(cardId);
     connections.append(make('h2','Connections'));
-    if(!loaded){
-      connections.append(make('p',loading?'Loading connections…':'Connections unavailable.'));
-      return;
-    }
     const all=incident.get(cardId) || [];
-    const allowed=current==='library'?new Set(Object.keys(filters)):enabledTypes();
+    const allowed=enabledTypes();
     const groups={out:[],in:[],author:[],similar:[]};
     for(const e of all){
       if(!allowed.has(e.type)) continue;
@@ -284,10 +286,7 @@
       for(const {e,other} of rows){
         const li=make('li',''),button=make('button',other.title || other.name || 'Untitled');
         button.type='button';button.className='connected-paper';button.dataset.paperId=other.id;
-        button.addEventListener('click',()=>{
-          if(current==='library') window.researchMapOpenLibraryPaper(other.id);
-          else selectPaper(other,true);
-        });
+        button.addEventListener('click',()=>navigate('paper',other,button));
         li.append(button);
         if(e.type==='citation'){
           const proof=citationSources(e);if(proof) li.append(proof);
@@ -302,67 +301,125 @@
     }
   }
 
-  function pinPaper(id){
-    pinnedId=id;
-    // Search also reaches papers hidden by the isolated-papers filter.
-    const hidden=id!=null && !isolates.checked && !incident.get(id).some(e=>filters[e.type].checked);
-    const reveal=hidden ? id : null;
-    if(revealedId===reveal){repaint(id);return;}
-    revealedId=reveal;
-    draw();
-  }
-  function clearSelection(){
-    cardId=null;pinPaper(null);listConnections();
-  }
-  function selectPaper(node,focusTitle=false){
-    pinPaper(node.id);openPanel(node);
-    revealPaper(node);
-    if(focusTitle){
-      const heading=$('paper-title');heading.tabIndex=-1;heading.focus({preventScroll:true});
+  function renderFolder(folder) {
+    $('type-label').textContent = 'FOLDER';
+    $('folder-title').textContent = folder.name;
+    const items = folder.members.slice().sort((a,b) => titleOf(a).localeCompare(titleOf(b), undefined, {sensitivity:'base'}));
+    $('folder-count').textContent = items.length + (items.length === 1 ? ' publication' : ' publications');
+    const list = $('folder-papers');
+    list.replaceChildren();
+    for (const paper of items) {
+      const li = make('li', ''), title = make('button', titleOf(paper)), authors = make('p', '');
+      title.type = 'button'; title.className = 'folder-paper'; title.dataset.paperId = paper.id;
+      title.addEventListener('click', () => navigate('paper', paper, title));
+      authors.textContent = authorsOf(paper) || T.unknownAuthor || 'Not identified';
+      li.append(title, authors); list.append(li);
     }
   }
-  function revealPaper(node){
-    const drawer=$('drawer'),frame=dims(),rect=canvas.getBoundingClientRect();
-    if(!rect.width || !rect.height) return;
-    const bottomSheet=getComputedStyle(drawer).getPropertyValue('--graph-bottom-sheet').trim()==='1';
-    const right=bottomSheet ? frame.x+frame.w : Math.min(frame.x+frame.w,rect.width-drawer.offsetWidth-14);
-    const bottom=bottomSheet ? Math.min(frame.y+frame.h,rect.height-drawer.offsetHeight-12) : frame.y+frame.h;
-    if(right<=frame.x || bottom<=frame.y) return;
-    const t=d3.zoomTransform(svg.node()),x=t.applyX(node.x),y=t.applyY(node.y);
-    const pad=(paperRadius+5)*t.k+2;
-    if(x-pad>=frame.x && x+pad<=right && y-pad>=frame.y && y+pad<=bottom) return;
-    svg.call(zoom.transform,d3.zoomIdentity.translate((frame.x+right)/2,(frame.y+bottom)/2)
-      .scale(t.k).translate(-node.x,-node.y));
-  }
-  function openPanel(node){
-    const title=$('paper-title'), authors=$('authors'), abstract=$('abstract'), access=$('access'), external=$('external');
-    if(!title||!authors||!abstract||!access||!external)return;
-    cardId=node.id;
+
+  function renderPaper(node) {
+    const access=$('access'), external=$('external');
     access.replaceChildren();external.replaceChildren();
     $('type-label').textContent=node.kind==='book'?(T.bookType || 'BOOK'):(T.articleType || 'ARTICLE');
-    title.textContent=node.title||'Untitled';
-    authors.textContent=node.authors||(T.unknownAuthor || 'Not identified');
-    abstract.textContent=node.abstract||(T.missingAbstract || 'Abstract not available.');
+    $('paper-title').textContent=titleOf(node);
+    $('authors').textContent=authorsOf(node) || T.unknownAuthor || 'Not identified';
+    $('abstract').textContent=node.abstract || (T.missingAbstract || 'Abstract not available.');
     access.append(make('strong',node.access==='restricted'?(T.restricted || 'Restricted access'):'Publication details'));
     if(node.access!=='restricted'){
       if(node.sourceUrl)anchor(external,(T.viewPublication || 'View publication'),node.sourceUrl);
-      else anchor(external,(T.findPublication || 'Find publication'),'https://scholar.google.com/scholar?q='+encodeURIComponent(node.title||''));
+      else anchor(external,(T.findPublication || 'Find publication'),'https://scholar.google.com/scholar?q='+encodeURIComponent(titleOf(node)));
       anchor(external,(T.openArticle || 'Open article'),node.openUrl||(node.downloadUrl?'./'+node.downloadUrl:null));
     }else access.append(make('div','The original file is not publicly available.'));
-    $('drawer').classList.add('open');$('drawer').setAttribute('aria-hidden','false');
-    $('overlay').classList.remove('show');
-    listConnections();$('drawer').scrollTop=0;
   }
-  function dims(){
+
+  function syncSelection(redraw = false) {
+    const id = paperId();
+    const reveal = id != null && !isolates.checked && !incident.get(id).some(e => filters[e.type].checked) ? id : null;
+    if (redraw || reveal !== revealedId) { revealedId = reveal; draw(); }
+    else repaint();
+  }
+  function showPanel(next) {
+    panel = next;
+    const {kind, item} = panel, isPaper = kind === 'paper';
+    memberIds = isPaper ? null : new Set(item.members.map(n => n.id));
+    $('paper-detail').hidden = !isPaper;
+    $('folder-detail').hidden = isPaper;
+    $('panel-back').hidden = history.length === 0;
+    if (isPaper) renderPaper(item);
+    else renderFolder(item);
+    const heading = $(isPaper ? 'paper-title' : 'folder-title');
+    drawer.setAttribute('aria-labelledby', heading.id);
+    drawer.setAttribute('aria-hidden', 'false'); drawer.removeAttribute('inert'); drawer.classList.add('open');
+    listConnections();
+    syncSelection(); revealSelection();
+    heading.focus({preventScroll:true}); drawer.scrollTop = 0;
+  }
+  function navigate(kind, item, trigger) {
+    if (panel?.kind === kind && panel.item === item && drawer.contains(trigger)) return;
+    if (panel && drawer.contains(trigger)) {
+      const section = $(panel.kind === 'paper' ? 'paper-detail' : 'folder-detail');
+      history.push({panel, scroll:drawer.scrollTop, button:[...section.querySelectorAll('button')].indexOf(trigger),
+        groups:[...connections.querySelectorAll('details[open]')].map(d => d.dataset.kind).filter(Boolean),
+        camera:d3.zoomTransform(svg.node())});
+    } else {
+      history.length = 0;
+      opener = trigger;
+    }
+    showPanel({kind, item});
+  }
+  $('panel-back').addEventListener('click', () => {
+    const previous = history.pop();
+    if (!previous) return;
+    svg.call(zoom.transform, previous.camera);
+    showPanel(previous.panel);
+    for (const section of connections.querySelectorAll('.connection-group')) section.open = previous.groups.includes(section.dataset.kind);
+    const section = $(panel.kind === 'paper' ? 'paper-detail' : 'folder-detail');
+    section.querySelectorAll('button')[previous.button]?.focus({preventScroll:true});
+    drawer.scrollTop = previous.scroll;
+  });
+  function closePanel() {
+    if (!panel) return;
+    if (drawer.contains(document.activeElement)) (opener?.isConnected ? opener : $('search-input')).focus({preventScroll:true});
+    panel = null; memberIds = null; history.length = 0; opener = null;
+    drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); drawer.setAttribute('inert','');
+    drawer.removeAttribute('aria-labelledby');
+    listConnections(); syncSelection();
+  }
+  $('close').addEventListener('click', closePanel);
+  window.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+
+  function revealSelection() {
+    if (!panel) return;
+    const {kind, item} = panel, bottomSheet = getComputedStyle(drawer).getPropertyValue('--graph-bottom-sheet').trim() === '1';
+    const frame = dims(bottomSheet ? 0 : drawer.offsetWidth + 12, bottomSheet ? drawer.offsetHeight + 10 : 0);
+    if (frame.w < 20 || frame.h < 20) return;
+    let left, right, top, bottom;
+    if (kind === 'folder') {
+      left = item.x - item.halfWidth; right = item.x + item.halfWidth;
+      top = item.y - item.above; bottom = item.y + item.below;
+    } else {
+      left = item.x - paperRadius; right = item.x + paperRadius;
+      top = item.y - paperRadius; bottom = item.y + paperRadius;
+    }
+    const t = d3.zoomTransform(svg.node()), pad = 6;
+    if (t.applyX(left) >= frame.x + pad && t.applyX(right) <= frame.x + frame.w - pad &&
+        t.applyY(top) >= frame.y + pad && t.applyY(bottom) <= frame.y + frame.h - pad) return;
+    const k = Math.min(t.k, (frame.w - 2*pad)/(right-left), (frame.h - 2*pad)/(bottom-top));
+    if (k < zoom.scaleExtent()[0]) zoom.scaleExtent([k,4]);
+    svg.call(zoom.transform,d3.zoomIdentity.translate(frame.x + frame.w/2, frame.y + frame.h/2)
+      .scale(k).translate(-(left+right)/2, -(top+bottom)/2));
+  }
+  function dims(sideInset=0, bottomInset=0){
     const rect=canvas.getBoundingClientRect();
     const padding=Math.min(20,Math.min(rect.width,rect.height)*.04);
     const controls=canvas.querySelector('.knowledge-controls').getBoundingClientRect();
     const footerTop=$('release').getBoundingClientRect().top;
     const top=Math.max(padding,controls.bottom-rect.top+padding/2);
-    const bottom=Math.min(rect.height-padding,footerTop-rect.top-padding/2);
-    const below={x:padding,y:top,w:Math.max(1,rect.width-2*padding),h:Math.max(1,bottom-top)};
+    const width=rect.width-sideInset;
+    const bottom=Math.min(rect.height-padding-bottomInset,footerTop-rect.top-padding/2);
+    const below={x:padding,y:top,w:Math.max(1,width-2*padding),h:Math.max(1,bottom-top)};
     const left=controls.right-rect.left+padding;
-    const beside={x:left,y:padding,w:rect.width-left-padding,h:bottom-padding};
+    const beside={x:left,y:padding,w:width-left-padding,h:bottom-padding};
     const bounds=folderLayout?.bounds;
     if(bounds && Math.min(beside.w/bounds.w,beside.h/bounds.h)>Math.min(below.w/bounds.w,below.h/bounds.h)) return beside;
     return below;
@@ -384,44 +441,35 @@
     if(dx || dy){const t=d3.zoomTransform(svg.node());svg.call(zoom.transform,t.translate(dx/t.k,dy/t.k));}
     lastFrame=frame;
   }
-  function switchTab(tab){
-    clearSelection();current=tab;
-    library.hidden=(tab!=='library');canvas.hidden=(tab!=='knowledge');
-    $('map-view').value=tab;
-    $('search-input').setAttribute('aria-label', tab==='knowledge'
-      ? 'Search graph publications by title or author' : 'Search library by title or author');
-    $('drawer').classList.remove('open');$('drawer').setAttribute('aria-hidden','true');$('overlay').classList.remove('show');
-    if(tab==='knowledge'){if(loaded)draw();else load();}
-    else {window.dispatchEvent(new Event('resize'));}
-  }
-  window.researchMapShowLibrary=()=>switchTab('library');
-  $('map-view').addEventListener('change',e=>switchTab(e.target.value));
-  function load(){
-    if(loading) return;
-    loading=true;
-    $('knowledge-status').textContent='Loading relationships…';
-    fetch('./knowledge.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('knowledge.json unavailable');return r.json();})
-      .then(async data=>{
-        if(!Array.isArray(data.nodes)||!Array.isArray(data.edges))throw Error('Invalid graph data');
-        const catalog=await window.researchMapCatalog;
-        if(data.version>=2){
-          const entries=new Map();
-          function visit(n){
-            if(n.kind==='article' || n.kind==='book') entries.set(n.id,n);
-            for(const child of n.children || []) visit(child);
-          }
-          visit(catalog.tree);
-          data.nodes=data.nodes.map(n=>{
-            if(!entries.has(n.id)) throw Error('Catalog and graph differ');
-            return entries.get(n.id);
-          });
-        }
-        data.nodes=data.nodes.map(n=>({...n}));
-        indexRelations(data);
-        folderLayout=arrangeFolders(catalog.tree,data.nodes,pairs.map(group=>group[0]));
-        graph=data;loaded=true;loading=false;if(current==='knowledge')draw();else listConnections();
-        window.researchMapSetGraphSearch?.(graph.nodes, node=>selectPaper(node,true));
-      }).catch(()=>{loading=false;listConnections();$('knowledge-status').textContent='Knowledge graph unavailable. Publish knowledge.json from the private build.';});
+  async function load() {
+    const status = $('knowledge-status');
+    status.textContent = 'Loading relationships…';
+    try {
+      const [catalog, data] = await Promise.all([loadCatalog(), fetch('./knowledge.json',{cache:'no-store'}).then(r => {
+        if (!r.ok) throw Error('Graph unavailable');
+        return r.json();
+      })]);
+      if (!Array.isArray(data.nodes) || !Array.isArray(data.edges)) throw Error('Invalid graph data');
+      // Older graphs embed metadata; current graphs refer to catalog records by ID.
+      const entries = new Map();
+      function visit(entry) {
+        if (entry.kind === 'article' || entry.kind === 'book') entries.set(entry.id, entry);
+        for (const child of entry.children || []) visit(child);
+      }
+      visit(catalog.tree);
+      data.nodes = data.nodes.map(n => {
+        const entry = entries.get(n.id);
+        if (data.version >= 2 && !entry) throw Error('Catalog and graph differ');
+        return {...n, ...entry};
+      });
+      indexRelations(data);
+      folderLayout = arrangeFolders(catalog.tree, data.nodes, pairs.map(group => group[0]));
+      graph = data;
+      draw();
+      bindSearch(data.nodes, (paper, input) => navigate('paper', paper, input));
+    } catch {
+      status.textContent = 'Unable to load the publication map.';
+    }
   }
   function draw(){
     positionCamera();
@@ -437,13 +485,22 @@
     const coords=new Map(nodes.map(n=>[n.id,n]));
 
     const visibleFolders=folderLayout.groups.filter(g=>g.members.some(n=>coords.has(n.id)));
-    const labels=labelLayer.selectAll('text').data(visibleFolders,g=>g.id).join('text')
-      .attr('class','folder-label').attr('transform',g=>`translate(${g.x},${g.labelY})`).attr('text-anchor','middle');
-    labels.each(function(g){
+    const folderButtons=labelLayer.selectAll('.folder-target').data(visibleFolders,g=>g.id).join(enter=>{
+      const button=enter.append('g').attr('class','folder-target').attr('tabindex',0)
+        .attr('role','button').attr('aria-controls','drawer');
+      button.append('rect').attr('class','folder-hit').attr('rx',4);
+      button.append('text').attr('class','folder-label').attr('text-anchor','middle');
+      return button;
+    }).attr('transform',g=>`translate(${g.x},${g.labelY})`)
+      .attr('aria-label',g=>'Open folder '+g.name)
+      .on('click',(e,g)=>navigate('folder',g,e.currentTarget))
+      .on('keydown',(e,g)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();navigate('folder',g,e.currentTarget);}});
+    folderButtons.select('rect').attr('x',g=>-g.labelWidth/2-6).attr('y',-21)
+      .attr('width',g=>g.labelWidth+12).attr('height',g=>28+(g.label.length-1)*22);
+    folderButtons.select('text').each(function(g){
       d3.select(this).selectAll('tspan').data(g.label).join('tspan').attr('x',0).attr('y',(_,i)=>i*22).text(line=>line);
     });
     $('knowledge-status').textContent=visibleFolders.length+' folders · '+nodes.length+' publications · '+activeEdges.length+' connections';
-    if(pinnedId!=null && !coords.has(pinnedId)) $('close').click();
     if(!nodes.length) return;
     function renderPositions(){
       edgeLayer.selectAll('line').each(function(edge){
@@ -468,21 +525,28 @@
       .attr('class','knowledge-node')
       .attr('tabindex',0).attr('role','button')
       .attr('aria-label',d=>d.title||'Publication')
-      .on('click',(_e,d)=>selectPaper(d))
-      .on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectPaper(d,true);}});
+      .attr('aria-controls','drawer')
+      .on('click',(e,d)=>navigate('paper',d,e.currentTarget))
+      .on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();navigate('paper',d,e.currentTarget);}});
     group.append('circle').attr('class','selection-ring').attr('r',paperRadius+4).attr('pointer-events','none');
     group.append('circle').attr('class','paper-dot').attr('r',paperRadius);
     group.append('circle').attr('class','paper-rim').attr('r',paperRadius-1.8).attr('pointer-events','none');
     group.append('circle').attr('class','paper-hit-area').attr('r',Math.max(15,paperRadius+3));
     // Every paper also exposes its full title on hover.
     group.append('title').text(d=>d.title||'Untitled publication');
-    repaint=id=>{
+    repaint=()=>{
+      const id=paperId();
       const neighbors=adjacency.get(id);
-      labels.classed('is-current',g=>id!=null && folderLayout.owner.get(id)===g);
-      group.attr('opacity',n=>!neighbors || n.id===id || neighbors.has(n.id)?1:.32)
+      const inFolder=g=>panel?.kind==='folder' && panel.item===g;
+      folderButtons.classed('is-current',g=>inFolder(g) || (id!=null && folderLayout.owner.get(id)===g))
+        .classed('is-muted',g=>memberIds && !g.members.some(n=>memberIds.has(n.id)))
+        .attr('aria-pressed',g=>String(inFolder(g)));
+      group.attr('opacity',n=>memberIds ? (memberIds.has(n.id)?1:.24) : (!neighbors || n.id===id || neighbors.has(n.id)?1:.32))
+        .classed('is-member',n=>memberIds?.has(n.id) || false)
         .classed('is-selected',n=>n.id===id).attr('aria-pressed',n=>String(n.id===id));
       const touches=e=>e.source===id || e.target===id;
-      lines.attr('stroke-opacity',e=>!neighbors?edgeOpacity(e):touches(e)?1:.09)
+      lines.attr('stroke-opacity',e=>memberIds && !(memberIds.has(e.source) && memberIds.has(e.target)) ? .09
+        : !neighbors?edgeOpacity(e):touches(e)?1:.09)
         .classed('is-incident',touches)
         .classed('is-outgoing',e=>e.type==='citation' && e.source===id && !e.mutual);
       if(neighbors) lines.filter(touches).raise();
@@ -516,33 +580,23 @@
           if(turn) rotate(Math.round(turn/step)*step);
         });
       }));
-    renderPositions();repaint(pinnedId);
-    if(cardId!=null) listConnections();
+    renderPositions();repaint();
   }
   Object.values(filters).concat(isolates).forEach(control=>control.addEventListener('change',()=>{
-    if(loaded && current==='knowledge') draw();
+    if(folderLayout) {syncSelection(true);if(paperId()!=null)listConnections();}
   }));
   svg.on('click.background',e=>{
-    if(!e.target.closest('.knowledge-node,.knowledge-link') && $('drawer').classList.contains('open')) $('close').click();
-  });
-  window.addEventListener('research-map:drawer-closed',clearSelection);
-  window.addEventListener('research-map:library-detail',e=>{
-    cardId=['article','book'].includes(e.detail.kind)?e.detail.id:null;
-    listConnections();
+    if(!e.target.closest('.knowledge-node,.folder-target,.knowledge-link')) closePanel();
   });
   window.addEventListener('resize',()=>{
-    if(current!=='knowledge' || !loaded || resizeFrame) return;
+    if(!folderLayout || resizeFrame) return;
     resizeFrame=requestAnimationFrame(()=>{
       resizeFrame=0;
-      if(current==='knowledge'){
-        const frame=dims();
-        if(lastFrame && ((frame.w<620)!==(lastFrame.w<620))){
-          fitMap();
-        }else positionCamera();
-        if(pinnedId!=null) revealPaper(papers.get(pinnedId));
-      }
+      const frame=dims();
+      if(lastFrame && ((frame.w<620)!==(lastFrame.w<620))) fitMap();
+      else positionCamera();
+      revealSelection();
     });
   });
-  // The graph is FIRST and visible immediately, including on a fresh page load.
-  switchTab('knowledge');
+  load();
 })();

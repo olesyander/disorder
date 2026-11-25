@@ -31,9 +31,6 @@
   /* наведение на кнопки и результаты */
   --line-ui: #534236;
   /* рамки окон и кнопок */
-  --tree-link: #77716d;
-  /* линии дерева Library */
-
   /* 2. Текст и акценты */
   --text-primary: #f5f2ed;
   /* главный текст */
@@ -54,34 +51,6 @@
   --selection-bg: #a86625;
   /* выделение текста */
   --selection-text: #fffaf2;
-
-  /* 3. Вкладки */
-  --tab-active-bg: #432c19;
-  --tab-active-border: #8b5a2e;
-  --tab-hover-bg: #5c3920;
-  --tab-active-text: #fff0d3;
-
-  /* 4. Library — узлы и подписи */
-  --folder-node: #f3f1ed;
-  /* папки */
-  --folder-node-border: #ffffff;
-  --folder-label: #f4f0ea;
-  --paper-node: #f2c14f;
-  /* статьи */
-  --paper-node-border: #ffe3a0;
-  --paper-label: #f7d783;
-  --book-node: #b98b4c;
-  /* книги */
-  --book-node-border: #e5bd82;
-  --book-label: #deb98b;
-  --code-root: #ffa34d;
-  /* отдельное дерево Code */
-  --code-root-border: #ffdda8;
-  --code-folder: #eaa66c;
-  --code-folder-border: #ffdab0;
-  --code-repo: #e98627;
-  --code-repo-border: #ffbf7a;
-  --code-label: #ffc287;
 
   /* 5. Knowledge Graph — публикации и выделение */
   --knowledge-node: #f2c14f;
@@ -154,13 +123,13 @@ button {
   position: relative;
 }
 
-/* ── Permanent header: its geometry never changes between views ── */
+/* Header */
 .topbar {
   position: relative;
   z-index: 9;
   flex-shrink: 0;
   display: grid;
-  grid-template-columns: minmax(130px, 1fr) max-content minmax(210px, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 340px);
   align-items: center;
   justify-content: stretch;
   gap: 14px;
@@ -191,39 +160,6 @@ button {
   transform-origin: center 75%;
   letter-spacing: -.035em;
   color: #c5b59e;
-}
-
-.view-tabs {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-  justify-self: center;
-  margin: 0;
-  flex-wrap: nowrap;
-}
-
-.view-tab {
-  min-width: 108px;
-  border: 1px solid transparent;
-  background: transparent;
-  color: var(--text-secondary);
-  padding: 9px 13px;
-  border-radius: 7px;
-  font-size: 12px;
-  white-space: nowrap;
-}
-
-.view-tab.active {
-  border-color: var(--tab-active-border);
-  background: var(--tab-active-bg);
-  color: var(--tab-active-text);
-}
-
-.view-tab:hover,
-.view-tab:focus-visible {
-  background: var(--tab-hover-bg);
-  color: var(--text-primary);
-  outline: none;
 }
 
 .actions {
@@ -363,143 +299,19 @@ button {
   font-size: 12px;
 }
 
-.canvas,
 .knowledge-view {
   position: relative;
   flex: 1;
   min-height: 0;
+  overflow: hidden;
   background: radial-gradient(ellipse at 52% 48%, var(--page-bg-glow), var(--page-bg) 76%);
 }
 
-.canvas {
-  overflow: hidden;
-}
-
-#map,
 #knowledge-svg {
   width: 100%;
   height: 100%;
   display: block;
   touch-action: none;
-}
-
-.link {
-  stroke: var(--tree-link);
-  stroke-opacity: .63;
-  fill: none;
-  stroke-width: 1.2;
-}
-
-.node {
-  cursor: pointer;
-}
-
-.node:focus-visible {
-  outline: none;
-}
-
-.node circle {
-  transition: stroke-width .15s, filter .15s;
-}
-
-.node:hover circle,
-.node.active circle {
-  stroke-width: 3;
-  filter: drop-shadow(0 0 7px var(--node-glow));
-}
-
-.node.folder circle {
-  fill: var(--folder-node);
-  stroke: var(--folder-node-border);
-}
-
-.node.article circle {
-  fill: var(--paper-node);
-  stroke: var(--paper-node-border);
-}
-
-.node.book circle {
-  fill: var(--book-node);
-  stroke: var(--book-node-border);
-}
-
-.node text {
-  fill: var(--text-primary);
-  font-size: 12px;
-  letter-spacing: .002em;
-  user-select: none;
-  paint-order: stroke;
-  stroke: var(--page-bg);
-  stroke-width: 3.4px;
-  stroke-linejoin: round;
-}
-
-.node.folder text {
-  font-size: 13px;
-  font-weight: 550;
-  fill: var(--folder-label);
-}
-
-.node.article text {
-  fill: var(--paper-label);
-}
-
-.node.book text {
-  fill: var(--book-label);
-}
-
-.node .indicator {
-  font-size: 13px;
-  stroke: none;
-  fill: var(--text-muted);
-}
-
-.node.code-root circle {
-  fill: var(--code-root);
-  stroke: var(--code-root-border);
-}
-
-.node.code-root text {
-  fill: var(--code-label);
-  font-size: 14px;
-  font-weight: 650;
-}
-
-.node.code-branch.folder:not(.code-root) circle {
-  fill: var(--code-folder);
-  stroke: var(--code-folder-border);
-}
-
-.node.code-branch.folder:not(.code-root) text {
-  fill: var(--code-label);
-}
-
-.node.code circle,
-.node.code-branch.code circle {
-  fill: var(--code-repo);
-  stroke: var(--code-repo-border);
-}
-
-.node.code text,
-.node.code-branch.code text {
-  fill: var(--code-label);
-}
-
-.node.code-branch:hover circle,
-.node.code-branch.active circle {
-  filter: drop-shadow(0 0 8px var(--code-glow));
-}
-
-.message {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 320px;
-  color: var(--text-muted);
-  text-align: center;
-  line-height: 1.5;
-  font-size: 14px;
 }
 
 /* ── Knowledge Graph: edges, nodes, filters ─────────────────── */
@@ -648,7 +460,7 @@ button {
   display: none;
 }
 
-/* ── Drawer and footer ──────────────────────────────────────── */
+/* The right-hand inspector is shared by folders and publications. */
 .drawer {
   position: absolute;
   z-index: 7;
@@ -669,11 +481,15 @@ button {
 }
 
 .drawer-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--panel-bg);
   height: 62px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 26px;
+  gap: 12px;
+  padding: 0 22px;
   border-bottom: 1px solid var(--line-ui);
 }
 
@@ -685,6 +501,7 @@ button {
 }
 
 .close {
+  margin-inline-start: auto;
   color: var(--text-secondary);
   border: 0;
   background: none;
@@ -774,18 +591,6 @@ button {
   background: var(--selection-glow);
 }
 
-.overlay {
-  display: none;
-}
-
-.overlay.show {
-  position: absolute;
-  z-index: 6;
-  display: block;
-  inset: 73px 0 0;
-  background: var(--overlay-scrim);
-}
-
 /* LAST COMMIT — обычная подпись, не кнопка */
 .release {
   position: absolute;
@@ -819,124 +624,6 @@ button {
 .release time {
   display: inline;
   white-space: nowrap;
-}
-
-/* ── Responsive positioning (same coordinates in both tabs) ── */
-@media (max-width: 1040px) {
-  .topbar {
-    grid-template-columns: minmax(85px, 1fr) max-content minmax(170px, 1fr);
-    gap: 8px;
-    padding: 0 12px;
-  }
-
-  .view-tab {
-    min-width: 96px;
-    padding: 8px 9px;
-  }
-}
-
-@media (max-width: 850px) {
-  .topbar {
-    height: 112px;
-    min-height: 112px;
-    grid-template-columns: minmax(85px, 1fr) max-content;
-    grid-template-rows: 39px 45px;
-    row-gap: 5px;
-    padding: 8px 12px;
-  }
-
-  .brand {
-    grid-column: 1;
-    grid-row: 1;
-    font-size: 19px;
-  }
-
-  .view-tabs {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .actions {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
-
-  .search-wrap {
-    flex: 1 1 auto;
-  }
-
-  .drawer {
-    top: 112px;
-  }
-
-  .overlay.show {
-    inset: 112px 0 0;
-  }
-}
-
-@media (max-width: 440px) {
-
-  /* Header coordinates are identical on every tab. */
-  .topbar {
-    height: 106px;
-    min-height: 106px;
-    grid-template-columns: minmax(75px, 1fr) max-content;
-    grid-template-rows: 32px 37px;
-    align-content: center;
-    row-gap: 4px;
-    padding: 6px 8px;
-  }
-
-  .brand {
-    font-size: 17px;
-  }
-
-  .view-tabs {
-    gap: 1px;
-  }
-
-  .view-tab {
-    min-width: 0;
-    padding: 7px;
-    font-size: 10px;
-  }
-
-  .actions {
-    grid-row: 2;
-    display: flex;
-  }
-
-  .search-wrap {
-    width: 100%;
-    max-width: none;
-  }
-
-  .search-input {
-    height: 37px;
-    font-size: 12px;
-  }
-
-  .drawer {
-    top: 106px;
-  }
-
-  .overlay.show {
-    inset: 106px 0 0;
-  }
-
-  .knowledge-controls {
-    left: 6px;
-    top: 8px;
-    max-width: calc(100% - 12px);
-    padding: 9px;
-  }
-
-  .release {
-    right: 6px;
-    bottom: 6px;
-    max-width: calc(100vw - 12px);
-    font-size: 10px;
-  }
 }
 
 /* LAST COMMIT — plain text, one line */
@@ -981,7 +668,7 @@ button {
   white-space: nowrap;
 }
 
-/* Publication relationships in both views */
+/* Publication relationships */
 .knowledge-link.is-incident { stroke-width: 2.9; }
 .paper-connections {
   margin-top: 26px;
@@ -1039,25 +726,13 @@ button {
 .citation-sources { margin-top: 4px; overflow-wrap: anywhere; }
 .citation-sources summary { cursor: pointer; }
 .citation-sources a { color: var(--highlight); }
-@media (max-width: 700px) {
-  #knowledge-view:not([hidden]) ~ .drawer {
-    --graph-bottom-sheet: 1;
-    top: auto; bottom: 0; width: 100%; height: 52%; height: 52dvh;
-    box-sizing: border-box; border: 0; border-top: 1px solid var(--line-ui);
-    border-radius: 14px 14px 0 0; transform: translateY(105%); visibility: hidden;
-  }
-  #knowledge-view:not([hidden]) ~ .drawer.open { transform: translateY(0); visibility: visible; }
-  #knowledge-view:not([hidden]) ~ .drawer .drawer-header {
-    position: sticky; z-index: 1; top: 0; height: 43px; background: var(--panel-bg);
-  }
-}
-
 .connections-jump {
-  margin-inline-start: auto; margin-inline-end: 12px;
+  margin-inline-start: auto;
   border: 1px solid var(--line-ui); border-radius: 5px;
   padding: 5px 9px; background: transparent; color: var(--text-secondary);
   font: inherit; font-size: 12px; cursor: pointer;
 }
+.connections-jump:not([hidden]) + .close { margin-inline-start:0; }
 .connections-jump:hover, .connections-jump:focus-visible { color: var(--highlight); }
 .paper-connections { scroll-margin-top: 52px; }
 
@@ -1066,27 +741,12 @@ button {
   --map-label: #e5ddcf;
 }
 .topbar {
-  grid-template-columns: max-content max-content minmax(0, 1fr);
-  justify-content: start;
   column-gap: 26px;
   background: #111111;
   border-bottom-color: #353330;
   padding-inline: clamp(16px, 2.5vw, 40px);
 }
 .brand { letter-spacing: -.055em; font-weight: 620; font-size: 24px; }
-.view-picker { position: relative; border-left: 1px solid #423e38; padding-left: 23px; }
-.view-picker select {
-  appearance: none; -webkit-appearance: none; cursor: pointer;
-  font: 500 .94rem/1.3 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  color: #ece5d9; background: #252422; border: 1px solid #48443e;
-  border-radius: 8px; min-width: 109px; height: 38px; padding: 0 34px 0 15px;
-}
-.view-picker::after {
-  content: ''; width: 6px; height: 6px; position: absolute;
-  top: calc(50% - 5px); right: 15px; border: solid #d1c5b5; border-width: 0 1.5px 1.5px 0;
-  transform: rotate(45deg); pointer-events: none;
-}
-.view-picker select:focus-visible { outline: 2px solid #cab391; outline-offset: 3px; }
 .search-wrap { max-width: 340px; }
 .search-input { border-color: #46423d; background: #201f1e; font-size: .875rem; }
 .search-results { left: auto; width: max(100%, min(380px, 92vw)); min-width: 0; }
@@ -1103,19 +763,57 @@ button {
 .folder-label {
   font: 500 18px/1.2 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   fill:var(--map-label); letter-spacing:.06px; paint-order:stroke;
-  stroke:#171717; stroke-width:6px; stroke-linejoin:round; pointer-events:none; user-select:none;
+  stroke:#171717; stroke-width:6px; stroke-linejoin:round; user-select:none;
 }
-.folder-label.is-current { fill:#fff0da; }
+.folder-target { cursor:pointer; outline:none; }
+.folder-hit { fill:transparent; pointer-events:all; }
+.folder-target.is-muted { opacity:.54; }
+.folder-target:is(.is-current,:hover,:focus-visible) { opacity:1; }
+.folder-target:is(.is-current,:hover,:focus-visible) .folder-label { fill:var(--highlight-hover); }
+.folder-target:focus-visible .folder-hit { stroke:var(--highlight); stroke-width:1.5; }
+.knowledge-node.is-member .paper-dot { fill:var(--knowledge-node-active); }
 .knowledge-node .paper-dot { stroke-width:3; }
 .knowledge-node .paper-rim { stroke-width:.80; }
-@media(max-width:850px){
-  .topbar { grid-template-columns:1fr max-content; column-gap:12px; }
-  .brand { font-size:22px; }
-  .view-picker { grid-row:1;grid-column:2; border:0;padding:0; }
-  .view-picker select { height:33px; min-width:100px; }
-  .search-wrap { max-width:none; width:100%; }
+.panel-back {
+  display:inline-flex; align-items:center; gap:6px; border:0; background:none;
+  padding:6px 2px; color:var(--text-secondary); font-size:13px;
+}
+.panel-back::before {
+  content:''; width:6px; height:6px; border:solid currentColor;
+  border-width:0 0 1.5px 1.5px; transform:rotate(45deg);
+}
+.panel-back:hover, .panel-back:focus-visible { color:var(--highlight-hover); }
+.drawer h1:focus { outline:none; }
+#folder-title { margin-bottom:7px; }
+#folder-count { color:var(--text-muted); font-size:12px; }
+#folder-papers { list-style:none; margin:18px 0 0; padding:0; }
+#folder-papers li { padding:13px 0; border-top:1px solid var(--line-ui); }
+.folder-paper {
+  display:block; width:100%; text-align:start; font:inherit; font-size:15px; font-weight:550;
+  line-height:1.4; overflow-wrap:anywhere; padding:2px 0; border:0; background:none; color:var(--text-primary);
+}
+#folder-papers p { margin-top:4px; line-height:1.6; font-size:12.5px; color:var(--text-muted); }
+.folder-paper:hover, .folder-paper:focus-visible {
+  color:var(--highlight-hover); text-decoration:underline;
+}
+.panel-back:focus-visible, .folder-paper:focus-visible {
+  outline:1px solid var(--highlight); outline-offset:2px; border-radius:2px;
+}
+@media (max-width:700px){
+  .drawer {
+    --graph-bottom-sheet:1;
+    top:auto; bottom:0; right:0; width:min(94vw,430px); height:52%; height:52dvh;
+    border:1px solid var(--line-ui); border-right:0; border-bottom:0; border-radius:14px 0 0 0;
+  }
+  .drawer-header { height:44px; padding:0 17px; }
+  .drawer-content { padding:20px 18px 30px; }
 }
 @media(max-width:560px){
+  .topbar { grid-template-columns:minmax(0,1fr); grid-template-rows:auto auto; gap:5px;
+    height:96px; min-height:96px; align-content:center; padding:7px 12px; }
+  .brand { font-size:22px; }
+  .search-wrap { width:100%; max-width:none; }
+  .search-input { height:36px; }
   .knowledge-filters .kg-option { font-size:.78rem; }
   .knowledge-controls { left:8px; top:8px; max-width:calc(100% - 16px); padding:8px 12px; }
   .knowledge-status { font-size:.75rem; }
