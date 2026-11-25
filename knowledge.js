@@ -29,7 +29,6 @@
   const isolates=$('kg-isolated');
   let papers=new Map(), pairs=[], incident=new Map();
   let panel=null, opener=null, memberIds=null, revealedId=null, repaint=()=>{};
-  const history=[];
   const paperId=()=>panel?.kind==='paper' ? panel.item.id : null;
   const enabledTypes=()=>new Set(Object.keys(filters).filter(type=>filters[type].checked));
 
@@ -220,17 +219,9 @@
   $('authors-label').textContent = T.authors || 'AUTHORS';
   $('abstract-label').textContent = T.abstract || 'ABSTRACT';
   const connections=make('section','');
-  connections.className='paper-connections';connections.id='paper-connections';connections.hidden=true;connections.tabIndex=-1;
+  connections.className='paper-connections';connections.id='paper-connections';connections.hidden=true;
   connections.setAttribute('aria-label','Publication connections');
   $('external').after(connections);
-  const jump=make('button','Connections');
-  jump.type='button';jump.className='connections-jump';jump.hidden=true;
-  jump.setAttribute('aria-controls',connections.id);
-  $('close').before(jump);
-  jump.addEventListener('click',()=>{
-    connections.focus({preventScroll:true});
-    connections.scrollIntoView({block:'start'});
-  });
 
   function citationSources(edge){
     const details=make('details',''),seen=new Set();
@@ -255,7 +246,7 @@
     const samePaper=cardId!=null && String(cardId)===connections.dataset.paperId;
     const openGroups=new Set(samePaper
       ? Array.from(connections.querySelectorAll('.connection-group[open]'), section=>section.dataset.kind) : []);
-    jump.hidden=true;connections.replaceChildren();connections.hidden=cardId==null;
+    connections.replaceChildren();connections.hidden=cardId==null;
     if(cardId==null){delete connections.dataset.paperId;return;}
     connections.dataset.paperId=String(cardId);
     connections.append(make('h2','Connections'));
@@ -272,7 +263,6 @@
       connections.append(make('p',all.length?'No connections match the selected filters.':'No connections to other publications on this map.'));
       return;
     }
-    jump.hidden=false;
     for(const [key,label] of [['out','Cites'],['in','Cited by'],['author',T.authorFilter || 'Shared authors'],['similar',T.similarFilter || 'Similar text']]){
       const rows=groups[key];if(!rows.length) continue;
       rows.sort((a,b)=>(key==='similar'?(b.e.strength || 0)-(a.e.strength || 0):0)
@@ -338,13 +328,14 @@
     if (redraw || reveal !== revealedId) { revealedId = reveal; draw(); }
     else repaint();
   }
-  function showPanel(next) {
-    panel = next;
-    const {kind, item} = panel, isPaper = kind === 'paper';
+  function navigate(kind, item, trigger) {
+    if (panel?.kind === kind && panel.item === item && drawer.contains(trigger)) return;
+    if (!drawer.contains(trigger)) opener = trigger;
+    panel = {kind, item};
+    const isPaper = kind === 'paper';
     memberIds = isPaper ? null : new Set(item.members.map(n => n.id));
     $('paper-detail').hidden = !isPaper;
     $('folder-detail').hidden = isPaper;
-    $('panel-back').hidden = history.length === 0;
     if (isPaper) renderPaper(item);
     else renderFolder(item);
     const heading = $(isPaper ? 'paper-title' : 'folder-title');
@@ -354,33 +345,10 @@
     syncSelection(); revealSelection();
     heading.focus({preventScroll:true}); drawer.scrollTop = 0;
   }
-  function navigate(kind, item, trigger) {
-    if (panel?.kind === kind && panel.item === item && drawer.contains(trigger)) return;
-    if (panel && drawer.contains(trigger)) {
-      const section = $(panel.kind === 'paper' ? 'paper-detail' : 'folder-detail');
-      history.push({panel, scroll:drawer.scrollTop, button:[...section.querySelectorAll('button')].indexOf(trigger),
-        groups:[...connections.querySelectorAll('details[open]')].map(d => d.dataset.kind).filter(Boolean),
-        camera:d3.zoomTransform(svg.node())});
-    } else {
-      history.length = 0;
-      opener = trigger;
-    }
-    showPanel({kind, item});
-  }
-  $('panel-back').addEventListener('click', () => {
-    const previous = history.pop();
-    if (!previous) return;
-    svg.call(zoom.transform, previous.camera);
-    showPanel(previous.panel);
-    for (const section of connections.querySelectorAll('.connection-group')) section.open = previous.groups.includes(section.dataset.kind);
-    const section = $(panel.kind === 'paper' ? 'paper-detail' : 'folder-detail');
-    section.querySelectorAll('button')[previous.button]?.focus({preventScroll:true});
-    drawer.scrollTop = previous.scroll;
-  });
   function closePanel() {
     if (!panel) return;
     if (drawer.contains(document.activeElement)) (opener?.isConnected ? opener : $('search-input')).focus({preventScroll:true});
-    panel = null; memberIds = null; history.length = 0; opener = null;
+    panel = null; memberIds = null; opener = null;
     drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); drawer.setAttribute('inert','');
     drawer.removeAttribute('aria-labelledby');
     listConnections(); syncSelection();

@@ -726,15 +726,6 @@ button {
 .citation-sources { margin-top: 4px; overflow-wrap: anywhere; }
 .citation-sources summary { cursor: pointer; }
 .citation-sources a { color: var(--highlight); }
-.connections-jump {
-  margin-inline-start: auto;
-  border: 1px solid var(--line-ui); border-radius: 5px;
-  padding: 5px 9px; background: transparent; color: var(--text-secondary);
-  font: inherit; font-size: 12px; cursor: pointer;
-}
-.connections-jump:not([hidden]) + .close { margin-inline-start:0; }
-.connections-jump:hover, .connections-jump:focus-visible { color: var(--highlight); }
-.paper-connections { scroll-margin-top: 52px; }
 
 :root {
   --map-line: #b4a498;
@@ -774,15 +765,6 @@ button {
 .knowledge-node.is-member .paper-dot { fill:var(--knowledge-node-active); }
 .knowledge-node .paper-dot { stroke-width:3; }
 .knowledge-node .paper-rim { stroke-width:.80; }
-.panel-back {
-  display:inline-flex; align-items:center; gap:6px; border:0; background:none;
-  padding:6px 2px; color:var(--text-secondary); font-size:13px;
-}
-.panel-back::before {
-  content:''; width:6px; height:6px; border:solid currentColor;
-  border-width:0 0 1.5px 1.5px; transform:rotate(45deg);
-}
-.panel-back:hover, .panel-back:focus-visible { color:var(--highlight-hover); }
 .drawer h1:focus { outline:none; }
 #folder-title { margin-bottom:7px; }
 #folder-count { color:var(--text-muted); font-size:12px; }
@@ -796,7 +778,7 @@ button {
 .folder-paper:hover, .folder-paper:focus-visible {
   color:var(--highlight-hover); text-decoration:underline;
 }
-.panel-back:focus-visible, .folder-paper:focus-visible {
+.folder-paper:focus-visible {
   outline:1px solid var(--highlight); outline-offset:2px; border-radius:2px;
 }
 @media (max-width:700px){
